@@ -10,14 +10,20 @@ import {
 
 type SpecTableProps = {
   specs: SpecRow[];
+  caption?: string;
   className?: string;
 };
 
-export function SpecTable({ specs, className }: SpecTableProps) {
+export function SpecTable({ specs, caption, className }: SpecTableProps) {
   if (specs.length === 0) return null;
+
+  const hasUnverified = specs.some((row) => !row.verified);
 
   return (
     <div className={className}>
+      {caption ? (
+        <p className="mb-4 text-sm font-medium text-ink">{caption}</p>
+      ) : null}
       <Table>
         <TableHead>
           <TableRow>
@@ -48,6 +54,12 @@ export function SpecTable({ specs, className }: SpecTableProps) {
           ))}
         </TableBody>
       </Table>
+      {hasUnverified ? (
+        <p className="mt-3 text-xs text-zinc">
+          Values marked as confirmed before dispatch are verified against approved project
+          documentation prior to manufacturing.
+        </p>
+      ) : null}
     </div>
   );
 }

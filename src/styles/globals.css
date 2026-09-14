@@ -129,3 +129,16 @@ body {
   font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
   font-variant-numeric: tabular-nums;
 }
+
+@keyframes hero-scale {
+  from {
+    transform: scale(1.03);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.animate-hero-scale {
+  animation: hero-scale 6500ms ease-out forwards;
+}

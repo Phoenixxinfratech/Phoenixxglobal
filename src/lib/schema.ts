@@ -1,5 +1,7 @@
 import { site } from "@/config/site";
+import type { Product, Solution } from "@/content/types";
 import { confirmed, isConfirmed } from "@/lib/confirmed";
+import { routes } from "@/lib/links";
 
 type JsonLd = Record<string, unknown>;
 
@@ -142,4 +144,52 @@ export function itemListSchema(
       url: `${site.domain}${item.path}`,
     })),
   };
+}
+
+export function productSchema(product: Product): JsonLd {
+  const schema: JsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.summary,
+    url: `${site.domain}${routes.product(product.slug)}`,
+    brand: {
+      "@type": "Brand",
+      name: site.brand,
+    },
+    manufacturer: {
+      "@type": "Organization",
+      name: site.legalName,
+    },
+  };
+
+  const primaryImage = product.images[0];
+  if (primaryImage) {
+    schema.image = `${site.domain}${primaryImage.src}`;
+  }
+
+  return schema;
+}
+
+export function serviceSchema(solution: Solution): JsonLd {
+  const schema: JsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: solution.name,
+    description: solution.summary,
+    url: `${site.domain}${routes.solution(solution.slug)}`,
+    provider: {
+      "@type": "Organization",
+      name: site.legalName,
+      url: site.domain,
+    },
+    areaServed: "Worldwide",
+  };
+
+  const primaryImage = solution.images[0];
+  if (primaryImage) {
+    schema.image = `${site.domain}${primaryImage.src}`;
+  }
+
+  return schema;
 }

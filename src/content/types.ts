@@ -15,8 +15,30 @@ export const ImageRefSchema = z.object({
   width: z.number().int().positive(),
   height: z.number().int().positive(),
   caption: z.string().optional(),
+  credit: z.string().optional(),
+  sourceUrl: z.string().optional(),
+  isStock: z.boolean().optional(),
 });
 export type ImageRef = z.infer<typeof ImageRefSchema>;
+
+export const ThermalPerfSchema = z.object({
+  thickness: z.string().min(1),
+  uValue: z.string().min(1),
+  indicative: z.boolean().default(true),
+});
+export type ThermalPerf = z.infer<typeof ThermalPerfSchema>;
+
+export const FailurePointSchema = z.object({
+  problem: z.string().min(1),
+  prevention: z.string().min(1),
+});
+export type FailurePoint = z.infer<typeof FailurePointSchema>;
+
+export const ProductRationaleSchema = z.object({
+  slug: z.string().min(1),
+  why: z.string().min(1),
+});
+export type ProductRationale = z.infer<typeof ProductRationaleSchema>;
 
 export const FaqItemSchema = z.object({
   question: z.string().min(1),
@@ -49,6 +71,15 @@ export const ProductSchema = z.object({
   images: z.array(ImageRefSchema).default([]),
   datasheet: z.string().optional(),
   holdingCopy: z.string().optional(),
+  quickAnswer: z.string().optional(),
+  overview: z.string().optional(),
+  construction: z.string().optional(),
+  benefits: z.array(z.string()).optional(),
+  selectionGuidance: z.string().optional(),
+  thermalPerformance: z.array(ThermalPerfSchema).optional(),
+  installationNotes: z.string().optional(),
+  comparisonNotes: z.string().optional(),
+  keySpec: z.string().optional(),
   draft: z.boolean(),
   updatedAt: z.string().optional(),
 });
@@ -67,6 +98,12 @@ export const SolutionSchema = z.object({
   faqs: z.array(FaqItemSchema).default([]),
   images: z.array(ImageRefSchema).default([]),
   holdingCopy: z.string().optional(),
+  quickAnswer: z.string().optional(),
+  engineeringRequirement: z.string().optional(),
+  recommendedSpec: z.array(SpecRowSchema).optional(),
+  failurePoints: z.array(FailurePointSchema).optional(),
+  estimatingGuidance: z.string().optional(),
+  productRationale: z.array(ProductRationaleSchema).optional(),
   draft: z.boolean(),
   updatedAt: z.string().optional(),
 });
