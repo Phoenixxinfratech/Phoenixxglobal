@@ -43,8 +43,17 @@ export type ProductRationale = z.infer<typeof ProductRationaleSchema>;
 export const FaqItemSchema = z.object({
   question: z.string().min(1),
   answer: z.string().min(1),
+  linkHref: z.string().optional(),
+  linkLabel: z.string().optional(),
 });
 export type FaqItem = z.infer<typeof FaqItemSchema>;
+
+export const FaqCategorySchema = z.object({
+  id: z.enum(["product", "technical", "export", "commercial", "installation"]),
+  label: z.string().min(1),
+  faqs: z.array(FaqItemSchema).min(1),
+});
+export type FaqCategory = z.infer<typeof FaqCategorySchema>;
 
 export const ProductSchema = z.object({
   slug: z.string().min(1),
@@ -256,6 +265,7 @@ export const GuideSchema = z.object({
   updatedAt: z.string().optional(),
 });
 export type Guide = z.infer<typeof GuideSchema>;
+export type GuideInput = z.input<typeof GuideSchema>;
 
 export const AuthorSchema = z.object({
   slug: z.string().min(1),

@@ -55,7 +55,7 @@ const CONTEXTUAL_OVERVIEW_LINKS: Record<
   ],
   "rockwool-panels": [
     { href: routes.product("wall-panels"), label: "insulated wall cladding options" },
-    { href: routes.comparison("puf-vs-rockwool-panels"), label: "PUF versus Rockwool trade-offs" },
+    { href: routes.comparison("rockwool-vs-glasswool-panels"), label: "Rockwool versus glass wool trade-offs" },
     { href: routes.product("puf-panels"), label: "polyurethane foam panel range" },
   ],
   "roofing-panels": [

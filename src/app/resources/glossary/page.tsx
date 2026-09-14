@@ -1,7 +1,7 @@
 import { InlineLink } from "@/components/blocks";
 import { Breadcrumbs } from "@/components/layout";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { Container, Heading, Section } from "@/components/ui";
+import { Container, Heading, Link, Section } from "@/components/ui";
 import { glossaryTerms } from "@/content";
 import { requirePageByPath } from "@/content/pages";
 import { buildMetadata } from "@/lib/metadata";
@@ -11,6 +11,18 @@ import { breadcrumbSchema, itemListSchema } from "@/lib/schema";
 const PATH = "/resources/glossary/";
 const page = requirePageByPath(PATH);
 
+const liveTerms = glossaryTerms.filter((term) => !term.draft);
+
+function groupByLetter(terms: typeof liveTerms) {
+  const groups = new Map<string, typeof liveTerms>();
+  for (const term of terms) {
+    const letter = term.term.charAt(0).toUpperCase();
+    const key = /[A-Z]/.test(letter) ? letter : "#";
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key)!.push(term);
+  }
+  return [...groups.entries()].sort(([a], [b]) => a.localeCompare(b));
+}
 
 export const metadata = buildMetadata({
   title: page.title,
@@ -20,6 +32,9 @@ export const metadata = buildMetadata({
 });
 
 export default function GlossaryPage() {
+  const letterGroups = groupByLetter(liveTerms);
+  const letters = letterGroups.map(([letter]) => letter);
+
   return (
     <>
       <JsonLd
@@ -31,7 +46,7 @@ export default function GlossaryPage() {
           ]),
           itemListSchema(
             "Panel glossary",
-            glossaryTerms.map((term) => ({
+            liveTerms.map((term) => ({
               name: term.term,
               path: `${PATH}#${term.slug}`,
             })),
@@ -51,19 +66,58 @@ export default function GlossaryPage() {
 
           <Heading as="h1">{page.h1}</Heading>
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-steel">
-            {page.holdingCopy}
+            {liveTerms.length} definitions for terms on drawings, datasheets and
+            export documents. Jump to a letter or scroll the list — each entry
+            links to related product pages where relevant.
           </p>
 
-          <dl className="mt-10 space-y-8">
-            {glossaryTerms.map((term) => (
-              <div key={term.slug} id={term.slug}>
-                <dt className="text-lg font-semibold text-ink">{term.term}</dt>
-                <dd className="mt-2 text-base leading-relaxed text-steel">
-                  {term.definition}
-                </dd>
-              </div>
+          <nav
+            aria-label="Glossary letter index"
+            className="mt-8 flex flex-wrap gap-2"
+          >
+            {letters.map((letter) => (
+              <Link
+                key={letter}
+                href={`#letter-${letter}`}
+                className="flex h-9 min-w-9 items-center justify-center rounded-[2px] border border-line px-2 text-sm font-medium text-steel hover:border-ink hover:text-ink"
+              >
+                {letter}
+              </Link>
             ))}
-          </dl>
+          </nav>
+
+          <div className="mt-10 space-y-12">
+            {letterGroups.map(([letter, terms]) => (
+              <section key={letter} id={`letter-${letter}`}>
+                <h2 className="border-b border-line pb-2 text-2xl font-semibold text-ink">
+                  {letter}
+                </h2>
+                <dl className="mt-6 space-y-8">
+                  {terms.map((term) => (
+                    <div key={term.slug} id={term.slug} className="scroll-mt-24">
+                      <dt className="text-lg font-semibold text-ink">{term.term}</dt>
+                      <dd className="mt-2 max-w-3xl text-base leading-relaxed text-steel">
+                        {term.definition}
+                      </dd>
+                      {term.relatedProducts.length > 0 ? (
+                        <dd className="mt-2 text-sm">
+                          Related:{" "}
+                          {term.relatedProducts.map((slug, index) => (
+                            <span key={slug}>
+                              {index > 0 ? ", " : ""}
+                              <InlineLink href={routes.product(slug)}>
+                                {slug.replace(/-/g, " ")}
+                              </InlineLink>
+                            </span>
+                          ))}
+                        </dd>
+                      ) : null}
+                    </div>
+                  ))}
+                </dl>
+              </section>
+            ))}
+          </div>
 
           <div className="mt-12">
             <h2 className="text-xl font-semibold text-ink">Related pages</h2>
@@ -80,7 +134,7 @@ export default function GlossaryPage() {
                 <InlineLink href={routes.product("pir-panels")}>PIR panels</InlineLink>
               </li>
               <li>
-                <InlineLink href={routes.panelSelection}>Panel selection</InlineLink>
+                <InlineLink href={routes.panelSelection}>Panel selection tool</InlineLink>
               </li>
               <li>
                 <InlineLink href={routes.faqs}>FAQs</InlineLink>

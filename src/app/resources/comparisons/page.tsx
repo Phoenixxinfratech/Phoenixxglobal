@@ -11,6 +11,7 @@ import { breadcrumbSchema, itemListSchema } from "@/lib/schema";
 const PATH = "/resources/comparisons/";
 const page = requirePageByPath(PATH);
 
+const liveComparisons = comparisons.filter((c) => !c.draft);
 
 export const metadata = buildMetadata({
   title: page.title,
@@ -31,7 +32,7 @@ export default function ComparisonsHubPage() {
           ]),
           itemListSchema(
             "Panel comparisons",
-            comparisons.map((c) => ({
+            liveComparisons.map((c) => ({
               name: c.name,
               path: routes.comparison(c.slug),
             })),
@@ -51,11 +52,15 @@ export default function ComparisonsHubPage() {
 
           <Heading as="h1">{page.h1}</Heading>
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-steel">
-            {page.holdingCopy}
+            Side-by-side comparisons for core type, build method and roof
+            systems. Each page states where one option wins and where it does
+            not — including honest cost trade-offs. Use the{" "}
+            <InlineLink href={routes.panelSelection}>panel selection tool</InlineLink>{" "}
+            if you already know your temperature and fire requirements.
           </p>
 
           <ul className="mt-10 grid gap-4 sm:grid-cols-2">
-            {comparisons.map((comparison) => (
+            {liveComparisons.map((comparison) => (
               <li
                 key={comparison.slug}
                 className="rounded-[2px] border border-line p-5"
@@ -68,6 +73,11 @@ export default function ComparisonsHubPage() {
                 </InlineLink>
                 {comparison.summary ? (
                   <p className="mt-2 text-sm text-steel">{comparison.summary}</p>
+                ) : null}
+                {comparison.quickAnswer ? (
+                  <p className="mt-3 text-sm text-zinc line-clamp-3">
+                    {comparison.quickAnswer}
+                  </p>
                 ) : null}
               </li>
             ))}
@@ -83,10 +93,17 @@ export default function ComparisonsHubPage() {
                 <InlineLink href={routes.product("pir-panels")}>PIR panels</InlineLink>
               </li>
               <li>
-                <InlineLink href={routes.product("rockwool-panels")}>Rockwool panels</InlineLink>
+                <InlineLink href={routes.product("rockwool-panels")}>
+                  Rockwool panels
+                </InlineLink>
               </li>
               <li>
-                <InlineLink href={routes.panelSelection}>Panel selection guide</InlineLink>
+                <InlineLink href={routes.product("cold-room-panels")}>
+                  Cold room panel kits
+                </InlineLink>
+              </li>
+              <li>
+                <InlineLink href={routes.panelSelection}>Panel selection tool</InlineLink>
               </li>
               <li>
                 <InlineLink href={routes.glossary}>Glossary</InlineLink>

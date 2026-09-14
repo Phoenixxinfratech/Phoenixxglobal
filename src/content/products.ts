@@ -64,7 +64,7 @@ export const products: Product[] = [
       "controlled-temperature-storage",
     ],
     industries: ["cold-storage", "food-processing", "warehousing-logistics", "dairy"],
-    comparisons: ["puf-vs-pir-panels", "puf-vs-rockwool-panels"],
+    comparisons: ["puf-vs-pir-panels", "puf-vs-eps-panels"],
     relatedProducts: ["pir-panels", "cold-room-panels", "roofing-panels"],
     faqs: [
       {
@@ -362,7 +362,7 @@ export const products: Product[] = [
     finishes: ["standard RAL colours on request"],
     applications: ["warehouse-insulation", "industrial-envelope", "food-processing-envelope"],
     industries: ["manufacturing-plants", "warehousing-logistics", "food-processing"],
-    comparisons: ["pir-vs-rockwool-panels", "puf-vs-rockwool-panels"],
+    comparisons: ["pir-vs-rockwool-panels", "rockwool-vs-glasswool-panels"],
     relatedProducts: ["fire-rated-panels", "wall-panels", "puf-panels"],
     faqs: [
       {
@@ -508,7 +508,7 @@ export const products: Product[] = [
     finishes: ["standard RAL on outer face", "white inner liner typical"],
     applications: ["warehouse-insulation", "industrial-envelope", "cold-room-construction"],
     industries: ["warehousing-logistics", "manufacturing-plants", "cold-storage"],
-    comparisons: ["puf-vs-pir-panels"],
+    comparisons: ["panel-roof-vs-conventional-roof"],
     relatedProducts: ["wall-panels", "puf-panels", "pir-panels"],
     faqs: [
       {
@@ -654,7 +654,7 @@ export const products: Product[] = [
     finishes: ["RAL outer colours", "white inner liner standard"],
     applications: ["warehouse-insulation", "industrial-envelope", "food-processing-envelope"],
     industries: ["warehousing-logistics", "manufacturing-plants", "food-processing"],
-    comparisons: ["puf-vs-rockwool-panels"],
+    comparisons: ["sandwich-panel-vs-masonry"],
     relatedProducts: ["roofing-panels", "puf-panels", "rockwool-panels"],
     faqs: [
       {
@@ -804,7 +804,7 @@ export const products: Product[] = [
       "food-processing-envelope",
     ],
     industries: ["cold-storage", "food-processing", "dairy", "warehousing-logistics"],
-    comparisons: ["puf-vs-pir-panels"],
+    comparisons: ["puf-vs-pir-cold-storage"],
     relatedProducts: ["puf-panels", "pir-panels", "industrial-doors"],
     faqs: [
       {
@@ -1096,7 +1096,7 @@ export const products: Product[] = [
     finishes: ["standard RAL colours on request"],
     applications: ["industrial-envelope", "warehouse-insulation", "food-processing-envelope"],
     industries: ["manufacturing-plants", "warehousing-logistics", "food-processing"],
-    comparisons: ["pir-vs-rockwool-panels", "puf-vs-rockwool-panels"],
+    comparisons: ["pir-vs-rockwool-panels", "rockwool-vs-glasswool-panels"],
     relatedProducts: ["rockwool-panels", "wall-panels", "roofing-panels"],
     faqs: [
       {
@@ -1384,7 +1384,7 @@ export const products: Product[] = [
     finishes: ["RAL cladding colours coordinated wall and roof"],
     applications: ["warehouse-insulation", "industrial-envelope", "cold-room-construction"],
     industries: ["warehousing-logistics", "manufacturing-plants", "food-processing"],
-    comparisons: [],
+    comparisons: ["peb-vs-rcc", "sandwich-panel-vs-masonry"],
     relatedProducts: ["roofing-panels", "wall-panels", "puf-panels"],
     faqs: [
       {

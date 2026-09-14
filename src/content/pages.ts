@@ -202,7 +202,8 @@ export const pages: PageMeta[] = [
     h1: "Technical guides",
     holdingCopy:
       "Guides will cover the questions project engineers actually ask on site calls — condensation risk, joint choice, and what fails when span tables are ignored. Individual articles publish as they clear technical review.",
-    draft: true,
+    draft: false,
+    updatedAt: "2026-09-14",
     section: "resources",
   },
   {
@@ -213,8 +214,9 @@ export const pages: PageMeta[] = [
     h1: "Comparisons",
     holdingCopy:
       "Each comparison page will state where one core wins and where it does not. PUF vs PIR is the first priority. Until the full tables are live, tell us your fire rating and temperature target and we'll recommend a core in plain language.",
-    draft: true,
+    draft: false,
     section: "resources",
+    updatedAt: "2026-09-14",
   },
   {
     path: "/resources/faqs/",
@@ -248,8 +250,9 @@ export const pages: PageMeta[] = [
     h1: "Datasheets",
     holdingCopy:
       "We list a datasheet only when the file is ready. Fake download buttons waste everyone's time. Email your product interest and application — we send the current PDF the same working day when it exists.",
-    draft: true,
+    draft: false,
     section: "resources",
+    updatedAt: "2026-09-14",
   },
   {
     path: "/resources/panel-selection/",
@@ -259,8 +262,9 @@ export const pages: PageMeta[] = [
     h1: "Panel selection",
     holdingCopy:
       "A guided selection tool is planned for a later phase. Until then, send process temperature, required fire performance and whether the room needs wash-down facings — we'll reply with a short shortlist and why each option fits.",
-    draft: true,
+    draft: false,
     section: "resources",
+    updatedAt: "2026-09-14",
   },
   {
     path: "/blog/",

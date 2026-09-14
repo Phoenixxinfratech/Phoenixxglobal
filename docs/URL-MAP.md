@@ -117,17 +117,33 @@ Pattern: `/export/[country]/[city]/`
 | URL | Status | Notes |
 | --- | --- | --- |
 | `/resources/` | phase-1 shell | Hub noindex until expanded |
-| `/resources/guides/` | phase-1 shell | |
-| `/resources/guides/[slug]/` | phase-3 | Route stub; no guide entities yet |
-| `/resources/comparisons/` | phase-1 shell | |
-| `/resources/comparisons/puf-vs-pir-panels/` | phase-1 shell | Draft comparison |
-| `/resources/comparisons/pir-vs-rockwool-panels/` | phase-1 shell | |
-| `/resources/comparisons/puf-vs-rockwool-panels/` | phase-1 shell | |
-| `/resources/faqs/` | phase-1 live | Shared FAQs |
-| `/resources/glossary/` | phase-1 live | 10 terms on hub page |
+| `/resources/guides/` | phase-3 live | Hub listing 12 live guides |
+| `/resources/guides/cold-storage-panel-thickness/` | phase-3 live | Full guide template |
+| `/resources/guides/puf-core-density-explained/` | phase-3 live | Full guide template |
+| `/resources/guides/u-values-and-running-cost/` | phase-3 live | Full guide template |
+| `/resources/guides/fire-performance-insulated-panels/` | phase-3 live | Full guide template |
+| `/resources/guides/joint-systems-compared/` | phase-3 live | Full guide template |
+| `/resources/guides/ppgi-coating-selection/` | phase-3 live | Full guide template |
+| `/resources/guides/roofing-panel-spans/` | phase-3 live | Full guide template |
+| `/resources/guides/condensation-vapour-control/` | phase-3 live | Full guide template |
+| `/resources/guides/cleanroom-panel-requirements/` | phase-3 live | Full guide template |
+| `/resources/guides/estimating-panel-quantity/` | phase-3 live | Full guide template |
+| `/resources/guides/installation-sequence-mistakes/` | phase-3 live | Full guide template |
+| `/resources/guides/evaluating-sandwich-panel-suppliers/` | phase-3 live | Full guide template |
+| `/resources/comparisons/` | phase-3 live | Hub — 8 live comparisons |
+| `/resources/comparisons/puf-vs-pir-panels/` | phase-3 live | Full decision table + FAQ |
+| `/resources/comparisons/pir-vs-rockwool-panels/` | phase-3 live | Thermal vs fire |
+| `/resources/comparisons/puf-vs-eps-panels/` | phase-3 live | PUF vs EPS board build-ups |
+| `/resources/comparisons/rockwool-vs-glasswool-panels/` | phase-3 live | Mineral wool compared |
+| `/resources/comparisons/sandwich-panel-vs-masonry/` | phase-3 live | Speed vs block construction |
+| `/resources/comparisons/puf-vs-pir-cold-storage/` | phase-3 live | Cold room core choice |
+| `/resources/comparisons/panel-roof-vs-conventional-roof/` | phase-3 live | Insulated roof vs site-built |
+| `/resources/comparisons/peb-vs-rcc/` | phase-3 live | Steel frame vs concrete |
+| `/resources/faqs/` | phase-3 live | Categorised searchable FAQs |
+| `/resources/glossary/` | phase-3 live | 56 terms with letter anchors |
 | `/resources/glossary/[slug]/` | phase-3 | Per-term pages (sitemap reserved) |
-| `/resources/datasheets/` | phase-1 shell | Lists only when PDF exists |
-| `/resources/panel-selection/` | phase-4 | Guided selector tool |
+| `/resources/datasheets/` | phase-3 live | Lists PDFs when present; else email request |
+| `/resources/panel-selection/` | phase-3 live | Client selection tool + static noscript guidance |
 
 ---
 

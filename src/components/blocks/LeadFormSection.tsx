@@ -5,6 +5,7 @@ import type { LeadVariant } from "@/lib/validation";
 type LeadFormSectionProps = {
   variant: LeadVariant;
   defaultProduct?: string;
+  defaultMessage?: string;
   heading?: string;
   background?: "paper" | "white";
   className?: string;
@@ -20,6 +21,7 @@ const VARIANT_HEADINGS: Partial<Record<LeadVariant, string>> = {
 export function LeadFormSection({
   variant,
   defaultProduct,
+  defaultMessage,
   heading,
   background = "paper",
   className,
@@ -32,7 +34,11 @@ export function LeadFormSection({
         <Heading as="h2" className="mb-8 text-2xl md:text-3xl">
           {resolvedHeading}
         </Heading>
-        <LeadForm variant={variant} defaultProduct={defaultProduct} />
+        <LeadForm
+          variant={variant}
+          defaultProduct={defaultProduct}
+          defaultMessage={defaultMessage}
+        />
       </Container>
     </Section>
   );

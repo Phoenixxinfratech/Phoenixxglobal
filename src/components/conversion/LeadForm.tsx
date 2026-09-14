@@ -82,10 +82,16 @@ const VARIANT_COPY: Record<
 type LeadFormProps = {
   variant: LeadVariant;
   defaultProduct?: string;
+  defaultMessage?: string;
   className?: string;
 };
 
-export function LeadForm({ variant, defaultProduct, className }: LeadFormProps) {
+export function LeadForm({
+  variant,
+  defaultProduct,
+  defaultMessage,
+  className,
+}: LeadFormProps) {
   const [showProjectDetails, setShowProjectDetails] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSuccess, setIsSuccess] = useState(false);
@@ -103,6 +109,7 @@ export function LeadForm({ variant, defaultProduct, className }: LeadFormProps) 
     defaultValues: {
       variant,
       productInterest: defaultProduct ?? "",
+      message: defaultMessage ?? "",
       country: "",
       formStartedAt,
       website: "",
@@ -116,9 +123,11 @@ export function LeadForm({ variant, defaultProduct, className }: LeadFormProps) 
         ...current,
         sourcePage: window.location.pathname,
         formStartedAt,
+        ...(defaultProduct ? { productInterest: defaultProduct } : {}),
+        ...(defaultMessage ? { message: defaultMessage } : {}),
       }));
     }
-  }, [formStartedAt, reset]);
+  }, [defaultMessage, defaultProduct, formStartedAt, reset]);
 
   async function onSubmit(values: LeadFormValues) {
     setSubmitError(null);

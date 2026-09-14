@@ -3,8 +3,9 @@ import { certifications } from "./certifications";
 import { cities } from "./cities";
 import { comparisons } from "./comparisons";
 import { countries } from "./countries";
-import { sharedFaqs } from "./faqs";
+import { faqCategories, sharedFaqs } from "./faqs";
 import { glossaryTerms } from "./glossary";
+import { guides } from "./guides";
 import { industrialZones } from "./industrialZones";
 import { products } from "./products";
 import { solutions } from "./solutions";
@@ -14,8 +15,10 @@ import {
   CitySchema,
   ComparisonSchema,
   CountrySchema,
+  FaqCategorySchema,
   FaqItemSchema,
   GlossaryTermSchema,
+  GuideSchema,
   IndustrialZoneSchema,
   ProductSchema,
   SolutionSchema,
@@ -26,8 +29,10 @@ import type {
   City,
   Comparison,
   Country,
+  FaqCategory,
   FaqItem,
   GlossaryTerm,
+  Guide,
   IndustrialZone,
   Product,
   Solution,
@@ -70,6 +75,7 @@ const validatedComparisons = validateContent(
   comparisons,
   ComparisonSchema,
 );
+const validatedGuides = validateContent("guides", guides, GuideSchema);
 const validatedCertifications = validateContent(
   "certifications",
   certifications,
@@ -81,6 +87,11 @@ const validatedGlossaryTerms = validateContent(
   GlossaryTermSchema,
 );
 const validatedSharedFaqs = validateContent("sharedFaqs", sharedFaqs, FaqItemSchema);
+const validatedFaqCategories = validateContent(
+  "faqCategories",
+  faqCategories,
+  FaqCategorySchema,
+);
 
 function assertUniqueSlugs<T extends { slug: string }>(
   label: string,
@@ -102,10 +113,12 @@ assertUniqueSlugs("countries", validatedCountries);
 assertUniqueSlugs("cities", validatedCities);
 assertUniqueSlugs("industrialZones", validatedIndustrialZones);
 assertUniqueSlugs("comparisons", validatedComparisons);
+assertUniqueSlugs("guides", validatedGuides);
 assertUniqueSlugs("glossaryTerms", validatedGlossaryTerms);
 
 const productSlugs = new Set(validatedProducts.map((p) => p.slug));
 const solutionSlugs = new Set(validatedSolutions.map((s) => s.slug));
+const comparisonSlugs = new Set(validatedComparisons.map((c) => c.slug));
 const applicationSlugs = new Set(validatedApplications.map((a) => a.slug));
 const countrySlugs = new Set(validatedCountries.map((c) => c.slug));
 const citySlugs = new Set(validatedCities.map((c) => c.slug));
@@ -125,9 +138,15 @@ function assertSlugsExist(
   }
 }
 
+for (const guide of validatedGuides) {
+  assertSlugsExist(guide.slug, "relatedProducts", guide.relatedProducts, productSlugs);
+  assertSlugsExist(guide.slug, "relatedSolutions", guide.relatedSolutions, solutionSlugs);
+  assertSlugsExist(guide.slug, "relatedComparisons", guide.relatedComparisons, comparisonSlugs);
+}
+
 for (const product of validatedProducts) {
   assertSlugsExist(product.slug, "relatedProducts", product.relatedProducts, productSlugs);
-  assertSlugsExist(product.slug, "comparisons", product.comparisons, new Set(validatedComparisons.map((c) => c.slug)));
+  assertSlugsExist(product.slug, "comparisons", product.comparisons, comparisonSlugs);
   assertSlugsExist(product.slug, "applications", product.applications, applicationSlugs);
   assertSlugsExist(product.slug, "industries", product.industries, solutionSlugs);
 }
@@ -135,7 +154,7 @@ for (const product of validatedProducts) {
 for (const solution of validatedSolutions) {
   assertSlugsExist(solution.slug, "relevantProducts", solution.relevantProducts, productSlugs);
   assertSlugsExist(solution.slug, "applications", solution.applications, applicationSlugs);
-  assertSlugsExist(solution.slug, "comparisons", solution.comparisons, new Set(validatedComparisons.map((c) => c.slug)));
+  assertSlugsExist(solution.slug, "comparisons", solution.comparisons, comparisonSlugs);
 }
 
 for (const comparison of validatedComparisons) {
@@ -201,6 +220,10 @@ export function getComparison(slug: string): Comparison | undefined {
   return validatedComparisons.find((c) => c.slug === slug);
 }
 
+export function getGuide(slug: string): Guide | undefined {
+  return validatedGuides.find((g) => g.slug === slug);
+}
+
 export function getGlossaryTerm(slug: string): GlossaryTerm | undefined {
   return validatedGlossaryTerms.find((t) => t.slug === slug);
 }
@@ -245,6 +268,14 @@ export function getAllComparisons(): Comparison[] {
   return validatedComparisons;
 }
 
+export function getAllGuides(): Guide[] {
+  return validatedGuides;
+}
+
+export function getLiveGuides(): Guide[] {
+  return validatedGuides.filter((g) => !g.draft);
+}
+
 export function getAllIndustrialZones(): IndustrialZone[] {
   return validatedIndustrialZones;
 }
@@ -261,6 +292,23 @@ export function getSharedFaqs(): FaqItem[] {
   return validatedSharedFaqs;
 }
 
+export function getFaqCategories(): FaqCategory[] {
+  return validatedFaqCategories;
+}
+
+export function getAllCategorizedFaqs(): FaqItem[] {
+  const seen = new Set<string>();
+  const all: FaqItem[] = [];
+  for (const category of validatedFaqCategories) {
+    for (const faq of category.faqs) {
+      if (seen.has(faq.question)) continue;
+      seen.add(faq.question);
+      all.push(faq);
+    }
+  }
+  return all;
+}
+
 export {
   validatedProducts as products,
   validatedSolutions as solutions,
@@ -269,7 +317,9 @@ export {
   validatedCities as cities,
   validatedIndustrialZones as industrialZones,
   validatedComparisons as comparisons,
+  validatedGuides as guides,
   validatedCertifications as certifications,
   validatedGlossaryTerms as glossaryTerms,
   validatedSharedFaqs as sharedFaqs,
+  validatedFaqCategories as faqCategories,
 };

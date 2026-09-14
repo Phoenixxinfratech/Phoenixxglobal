@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { comparisons, glossaryTerms } from "@/content";
+import { comparisons, getLiveGuides, glossaryTerms } from "@/content";
 import { pages } from "@/content/pages";
 import { sitemapEntry } from "@/lib/sitemap";
 
@@ -21,6 +21,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       sitemapEntry(`/resources/glossary/${term.slug}/`, {
         priority: 0.6,
         changeFrequency: "yearly",
+      }),
+    );
+  }
+
+  for (const guide of getLiveGuides()) {
+    entries.push(
+      sitemapEntry(`/resources/guides/${guide.slug}/`, {
+        lastModified: guide.updatedAt,
+        priority: 0.6,
+        changeFrequency: "monthly",
       }),
     );
   }

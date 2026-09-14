@@ -7,6 +7,7 @@ import {
   getSolution,
   getCountry,
   getComparison,
+  getGuide,
   getApplication,
   getCity,
   getGlossaryTerm,
@@ -143,6 +144,9 @@ export function isDraftPath(path: string): boolean {
 
   const comparisonSlug = extractSlug(normalized, "/resources/comparisons/");
   if (comparisonSlug) return getComparison(comparisonSlug)?.draft ?? false;
+
+  const guideSlug = extractSlug(normalized, "/resources/guides/");
+  if (guideSlug) return getGuide(guideSlug)?.draft ?? false;
 
   const applicationSlug = extractSlug(normalized, "/applications/");
   if (applicationSlug) return getApplication(applicationSlug)?.draft ?? false;

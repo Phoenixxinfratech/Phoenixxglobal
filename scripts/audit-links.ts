@@ -15,6 +15,7 @@ import {
   getAllSolutions,
   getAllCountries,
   getAllCities,
+  getAllGuides,
 } from "../src/content";
 import { getFooterData, footerPopularSearches } from "../src/content/footer";
 import { pages } from "../src/content/pages";
@@ -33,6 +34,7 @@ const cityByPath = new Set(
   getAllCities().map((c) => `/export/${c.countrySlug}/${c.slug}/`),
 );
 const comparisonSlugs = new Set(getAllComparisons().map((c) => c.slug));
+const guideSlugs = new Set(getAllGuides().map((g) => g.slug));
 const pagePaths = new Set(pages.map((p) => p.path));
 
 /** Live pages exempt from the ≥8 in-body link rule (legal / utility). */
@@ -271,6 +273,15 @@ function resolveHref(href: string): { ok: boolean; reason?: string } {
     const slug = comparisonMatch[1]!;
     if (!comparisonSlugs.has(slug)) {
       return { ok: false, reason: `unknown comparison slug "${slug}"` };
+    }
+    return { ok: true };
+  }
+
+  const guideMatch = pathNorm.match(/^\/resources\/guides\/([^/]+)\/$/);
+  if (guideMatch) {
+    const slug = guideMatch[1]!;
+    if (!guideSlugs.has(slug)) {
+      return { ok: false, reason: `unknown guide slug "${slug}"` };
     }
     return { ok: true };
   }

@@ -1,5 +1,8 @@
-import { HoldingPage } from "@/components/blocks";
+import { InlineLink } from "@/components/blocks";
+import { PanelSelectionPageClient } from "@/components/tools/PanelSelectionPageClient";
+import { Breadcrumbs } from "@/components/layout";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { Container, Heading, Section } from "@/components/ui";
 import { requirePageByPath } from "@/content/pages";
 import { buildMetadata } from "@/lib/metadata";
 import { routes } from "@/lib/links";
@@ -7,7 +10,6 @@ import { breadcrumbSchema } from "@/lib/schema";
 
 const PATH = "/resources/panel-selection/";
 const page = requirePageByPath(PATH);
-
 
 export const metadata = buildMetadata({
   title: page.title,
@@ -26,26 +28,105 @@ export default function PanelSelectionPage() {
           { name: "Panel selection", path: PATH },
         ])}
       />
-      <HoldingPage
-        h1={page.h1}
-        holdingCopy={page.holdingCopy}
-        breadcrumbs={[
-          { label: "Home", href: routes.home },
-          { label: "Resources", href: routes.resources },
-          { label: "Panel selection" },
-        ]}
-        relatedLinks={[
-          { slug: "puf-vs-pir", name: "PUF vs PIR comparison", href: routes.comparison("puf-vs-pir-panels") },
-          { slug: "puf-vs-rockwool", name: "PUF vs Rockwool for fire rating", href: routes.comparison("puf-vs-rockwool-panels") },
-          { slug: "pir-vs-rockwool", name: "PIR vs Rockwool comparison", href: routes.comparison("pir-vs-rockwool-panels") },
-          { slug: "puf-panels", name: "PUF panel page", href: routes.product("puf-panels") },
-          { slug: "pir-panels", name: "PIR panel page", href: routes.product("pir-panels") },
-          { slug: "cold-storage", name: "Cold storage thickness guidance", href: routes.solution("cold-storage") },
-          { slug: "glossary", name: "U-value and cam-lock definitions", href: routes.glossary },
-          { slug: "faqs", name: "Thickness and core FAQs", href: routes.faqs },
-          { slug: "request-quote", name: "Get a core recommendation with your quote", href: routes.requestQuote },
-        ]}
-      />
+      <Section background="white" className="py-12 md:py-20">
+        <Container>
+          <Breadcrumbs
+            items={[
+              { name: "Home", href: routes.home },
+              { name: "Resources", href: routes.resources },
+              { name: "Panel selection", href: PATH },
+            ]}
+            className="mb-6"
+          />
+
+          <Heading as="h1">{page.h1}</Heading>
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-steel">
+            Match core type, thickness band and facing to your application. The
+            tool below runs in your browser — no account required. If JavaScript
+            is disabled, use the static guidance and{" "}
+            <InlineLink href={routes.comparisons}>comparison pages</InlineLink>{" "}
+            instead.
+          </p>
+
+          <noscript>
+            <div className="mt-8 rounded-[2px] border border-line bg-paper p-6">
+              <h2 className="text-lg font-semibold text-ink">
+                Static selection guidance
+              </h2>
+              <ul className="mt-4 list-disc space-y-2 pl-5 text-base text-steel">
+                <li>
+                  Chillers (+0 °C to +8 °C): 80–100 mm PUF cam-lock panels — see{" "}
+                  <InlineLink href={routes.product("cold-room-panels")}>
+                    cold room panels
+                  </InlineLink>
+                  .
+                </li>
+                <li>
+                  Freezers (−18 °C to −25 °C): 120–150 mm PUF or 100–120 mm PIR —{" "}
+                  <InlineLink href={routes.comparison("puf-vs-pir-cold-storage")}>
+                    cold storage comparison
+                  </InlineLink>
+                  .
+                </li>
+                <li>
+                  Fire-rated walls: rockwool or fire-rated systems —{" "}
+                  <InlineLink href={routes.comparison("pir-vs-rockwool-panels")}>
+                    PIR vs Rockwool
+                  </InlineLink>
+                  .
+                </li>
+                <li>
+                  Coastal sites: specify PPGL facings —{" "}
+                  <InlineLink href={routes.glossaryTerm("ppgl")}>PPGL glossary</InlineLink>
+                  .
+                </li>
+              </ul>
+            </div>
+          </noscript>
+
+          <div className="mt-10">
+            <PanelSelectionPageClient />
+          </div>
+
+          <div className="mt-12">
+            <h2 className="text-xl font-semibold text-ink">Related pages</h2>
+            <ul className="mt-3 space-y-2">
+              <li>
+                <InlineLink href={routes.comparison("puf-vs-pir-panels")}>
+                  PUF vs PIR comparison
+                </InlineLink>
+              </li>
+              <li>
+                <InlineLink href={routes.comparison("puf-vs-pir-cold-storage")}>
+                  PUF vs PIR for cold storage
+                </InlineLink>
+              </li>
+              <li>
+                <InlineLink href={routes.comparison("pir-vs-rockwool-panels")}>
+                  PIR vs Rockwool comparison
+                </InlineLink>
+              </li>
+              <li>
+                <InlineLink href={routes.product("puf-panels")}>PUF panels</InlineLink>
+              </li>
+              <li>
+                <InlineLink href={routes.product("pir-panels")}>PIR panels</InlineLink>
+              </li>
+              <li>
+                <InlineLink href={routes.solution("cold-storage")}>
+                  Cold storage solutions
+                </InlineLink>
+              </li>
+              <li>
+                <InlineLink href={routes.glossary}>Glossary</InlineLink>
+              </li>
+              <li>
+                <InlineLink href={routes.faqs}>FAQs</InlineLink>
+              </li>
+            </ul>
+          </div>
+        </Container>
+      </Section>
     </>
   );
 }

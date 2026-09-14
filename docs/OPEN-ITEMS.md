@@ -88,4 +88,5 @@ Then merge any new fields into the category sections below.
 | --- | --- | --- |
 | Product spec verification | Client + Engineering | All seed specs marked `verified: false` until datasheets issued |
 | Datasheet PDFs | Client | Link in `product.datasheet` only when file exists in `public/documents/` |
-| Guide and comparison content | Engineering | Phase 3 — entities stubbed `draft: true` |
+| Guide content | Engineering | Phase 3 — guide entities still owned by guides agent |
+| Datasheet PDF files in `public/documents/` | Client | Folder empty at Batch E ship — hub shows email request + LeadForm datasheet variant only |

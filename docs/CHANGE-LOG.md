@@ -2,6 +2,95 @@
 
 Additive Phase 1 touches made during later phases. Prefer extension over modification.
 
+## 2026-09-14 Phase 3 Batch E (part 1 — guides)
+
+### File: `scripts/audit-links.ts`
+**Change:** Resolve `/resources/guides/[slug]/` against `getAllGuides()` so live guide hub links pass the HTML link audit.
+**Reason:** Guide routes were unrecognised path patterns after Batch E.
+**Backwards compatible:** yes
+
+### File: `src/components/conversion/LeadForm.tsx`, `src/components/blocks/LeadFormSection.tsx`
+**Change:** Optional `defaultMessage` prop for Panel Selection Tool handoff into the lead form message field.
+**Reason:** Selection tool must pre-fill engineer request without new dependencies.
+**Backwards compatible:** yes — optional prop
+
+### File: `src/app/products/[slug]/page.tsx`
+**Change:** Rockwool contextual overview link retargeted from removed `puf-vs-rockwool-panels` to `rockwool-vs-glasswool-panels`.
+**Reason:** Comparison slug set changed in Batch E; keep product page links live.
+**Backwards compatible:** yes — link target only
+
+### File: `src/content/guides.ts`
+**Change:** Twelve publishable technical guides (`draft: false`, `updatedAt: 2026-09-14`) with `quickAnswer`, `bodySections`, `limitations`, and cross-links to products, solutions, and comparisons.
+**Reason:** Phase 3 Batch E programmatic guide content for specification long-tail queries.
+**Backwards compatible:** yes — new module
+
+### File: `src/content/types.ts`
+**Change:** Added `GuideInput` type alias (`z.input<typeof GuideSchema>`).
+**Reason:** Typed guide seed arrays without forcing defaulted fields.
+**Backwards compatible:** yes — additive export
+
+### File: `src/content/index.ts`
+**Change:** Import and validate guides; `assertUniqueSlugs`; cross-ref checks for related slugs; export `getGuide`, `getAllGuides`, `getLiveGuides`, re-export `guides`.
+**Reason:** Wire guide entities into content layer following products/countries pattern.
+**Backwards compatible:** yes
+
+### File: `src/app/resources/guides/[slug]/page.tsx`, `page.tsx`
+**Change:** Full guide template — PageHero, QuickAnswer, body sections, limitations, ProductGrid, SolutionGrid, related links (≥8), CtaBand, LeadFormSection; hub lists live guides; breadcrumb JSON-LD only.
+**Reason:** Ship individual guide pages and hub as indexable programmatic content.
+**Backwards compatible:** yes — replaces stubs
+
+### File: `src/lib/links.ts`, `src/app/resources/sitemap.ts`
+**Change:** `isDraftPath` for guide slugs; sitemap entries for live guides.
+**Reason:** Metadata and discovery for guide URLs.
+**Backwards compatible:** yes
+
+### File: `docs/URL-MAP.md`
+**Change:** Marked guides hub and 12 guide slugs phase-3 live.
+**Reason:** Reflect Batch E part 1 ship state.
+**Backwards compatible:** n/a (docs)
+
+## 2026-09-14 Phase 3 Batch E (parts 2–3)
+
+### File: `src/content/comparisons.ts`
+**Change:** Eight live comparisons (`draft: false`) with decision tables, verdict copy, cost notes and FAQs.
+**Reason:** Phase 3 Batch E comparison hub and detail pages.
+**Backwards compatible:** yes — replaced stubs; product comparison slug refs updated
+
+### File: `src/app/resources/comparisons/[slug]/page.tsx`, `page.tsx`
+**Change:** Full comparison template — QuickAnswer, ComparisonTable, verdict, cost notes, FAQ schema, LeadForm.
+**Reason:** Ship comparison pages with ≥8 internal links per detail page.
+**Backwards compatible:** yes — replaces HoldingPage on live comparisons
+
+### File: `src/content/faqs.ts`, `src/components/resources/FaqHubClient.tsx`, `src/app/resources/faqs/page.tsx`
+**Change:** Categorised FAQs (product, technical, export, commercial, installation) with search/filter; FAQPage schema for visible items only.
+**Reason:** Batch E FAQ hub expansion.
+**Backwards compatible:** yes — `sharedFaqs` retained
+
+### File: `src/content/glossary.ts`, `src/app/resources/glossary/page.tsx`
+**Change:** Expanded to 56 terms; letter-index anchors and related product links.
+**Reason:** Batch E glossary requirement (50+ terms).
+**Backwards compatible:** yes — content only
+
+### File: `src/lib/datasheets.ts`, `src/app/resources/datasheets/page.tsx`
+**Change:** Lists only files in `public/documents/`; empty-state copy + LeadForm datasheet variant.
+**Reason:** Batch E datasheets hub — no fake download buttons.
+**Backwards compatible:** yes
+
+### File: `src/lib/selection-rules.ts`, `src/components/tools/PanelSelectionTool.tsx`, panel-selection page
+**Change:** Pure selection rules + client tool with aria-live, keyboard operable inputs, quote pre-fill via LeadForm.
+**Reason:** Batch E panel selection at `/resources/panel-selection/`.
+**Backwards compatible:** yes — URL unchanged
+
+### File: `src/content/types.ts`, `src/content/index.ts`
+**Change:** `FaqCategorySchema`, optional FAQ link fields; `getFaqCategories` / `getAllCategorizedFaqs` exports.
+**Reason:** Wire categorised FAQs without breaking existing validation.
+**Backwards compatible:** yes — additive
+
+### File: `docs/URL-MAP.md`, `docs/OPEN-ITEMS.md`
+**Change:** Batch E resource routes marked phase-3 live; empty documents folder logged.
+**Reason:** Docs reflect ship state.
+**Backwards compatible:** n/a (docs)
+
 ## 2026-09-14 Phase 3 Batch D
 
 ### File: `src/content/cities.ts`
