@@ -1,0 +1,68 @@
+import type { Application } from "./types";
+
+export const applications: Application[] = [
+  {
+    slug: "cold-room-construction",
+    name: "Cold Room Construction",
+    summary: "Modular and custom cold rooms for chiller, freezer and blast-freezer applications.",
+    relatedProducts: ["puf-panels", "pir-panels", "cold-room-panels", "industrial-doors"],
+    relatedSolutions: ["cold-storage", "food-processing", "dairy"],
+    draft: true,
+  },
+  {
+    slug: "controlled-temperature-storage",
+    name: "Controlled Temperature Storage",
+    summary: "Insulated enclosures for temperature-sensitive goods — food, pharma and horticulture.",
+    relatedProducts: ["puf-panels", "pir-panels", "cold-room-panels"],
+    relatedSolutions: ["cold-storage", "pharmaceutical-cleanroom"],
+    draft: true,
+  },
+  {
+    slug: "warehouse-insulation",
+    name: "Warehouse Insulation",
+    summary: "Insulated roof and wall panels for warehouses and distribution centres.",
+    relatedProducts: ["puf-panels", "roofing-panels", "wall-panels"],
+    relatedSolutions: ["warehousing-logistics", "manufacturing-plants"],
+    draft: true,
+  },
+  {
+    slug: "food-processing-envelope",
+    name: "Food Processing Envelope",
+    summary: "Insulated walls and ceilings for food processing halls and hygiene zones.",
+    relatedProducts: ["puf-panels", "wall-panels", "cleanroom-panels"],
+    relatedSolutions: ["food-processing", "dairy", "poultry-meat-processing"],
+    draft: true,
+  },
+  {
+    slug: "cleanroom-fitout",
+    name: "Cleanroom Fitout",
+    summary: "Smooth-faced panels for cleanroom walls and ceilings in controlled environments.",
+    relatedProducts: ["cleanroom-panels", "pir-panels", "wall-panels"],
+    relatedSolutions: ["pharmaceutical-cleanroom"],
+    draft: true,
+  },
+  {
+    slug: "pharmaceutical-cold-chain",
+    name: "Pharmaceutical Cold Chain",
+    summary: "Temperature-controlled rooms for vaccine storage and pharmaceutical cold chain.",
+    relatedProducts: ["pir-panels", "cold-room-panels", "cleanroom-panels"],
+    relatedSolutions: ["pharmaceutical-cleanroom", "cold-storage"],
+    draft: true,
+  },
+  {
+    slug: "industrial-envelope",
+    name: "Industrial Building Envelope",
+    summary: "Roof and wall cladding for factories, workshops and industrial buildings.",
+    relatedProducts: ["puf-panels", "roofing-panels", "wall-panels", "fire-rated-panels"],
+    relatedSolutions: ["manufacturing-plants", "warehousing-logistics"],
+    draft: true,
+  },
+  {
+    slug: "poultry-house-construction",
+    name: "Poultry House Construction",
+    summary: "Insulated panels for controlled-environment poultry and livestock housing.",
+    relatedProducts: ["puf-panels", "wall-panels", "roofing-panels"],
+    relatedSolutions: ["poultry-meat-processing"],
+    draft: true,
+  },
+];

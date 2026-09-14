@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #0b0f12;
+  --graphite: #161c21;
+  --steel: #2c3a44;
+  --zinc: #5e6e78;
+  --line: #d6dbde;
+  --paper: #f4f5f6;
+  --white: #ffffff;
+  --ember: #e8481f;
+  --ember-deep: #b8320f;
+  --signal: #ffb100;
+  --verify: #2e7d5b;
+
+  --radius-input: 2px;
+  --radius-button: 2px;
+  --radius-card: 4px;
+
+  --container-max: 1280px;
+  --gutter: 24px;
+  --section-pad-y: 64px;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --gutter: 48px;
+    --section-pad-y: 112px;
+  }
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-graphite: var(--graphite);
+  --color-steel: var(--steel);
+  --color-zinc: var(--zinc);
+  --color-line: var(--line);
+  --color-paper: var(--paper);
+  --color-white: var(--white);
+  --color-ember: var(--ember);
+  --color-ember-deep: var(--ember-deep);
+  --color-signal: var(--signal);
+  --color-verify: var(--verify);
+
+  --font-display: var(--font-archivo);
+  --font-sans: var(--font-ibm-plex-sans);
+  --font-mono: var(--font-ibm-plex-mono);
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  --text-7xl: 4.5rem;
+
+  --shadow-sticky: 0 1px 0 rgba(11, 15, 18, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-ibm-plex-sans), system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ember);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--ember);
+  color: var(--white);
+  padding: 0.75rem 1.25rem;
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  left: var(--gutter);
+  top: 0.75rem;
+}
+
+.prose-body {
+  max-width: 72ch;
+}
+
+.font-display {
+  font-family: var(--font-archivo), system-ui, sans-serif;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.font-spec {
+  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}

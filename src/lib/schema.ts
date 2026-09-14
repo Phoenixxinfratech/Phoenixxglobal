@@ -1,0 +1,145 @@
+import { site } from "@/config/site";
+import { confirmed, isConfirmed } from "@/lib/confirmed";
+
+type JsonLd = Record<string, unknown>;
+
+export function organizationSchema(): JsonLd {
+  const sameAs = [
+    confirmed(site.social.linkedin),
+    confirmed(site.social.youtube),
+    confirmed(site.social.instagram),
+    confirmed(site.social.facebook),
+    confirmed(site.social.indiamart),
+  ].filter(Boolean) as string[];
+
+  const identifiers: JsonLd[] = [];
+  if (isConfirmed(site.registrations.gstin)) {
+    identifiers.push({
+      "@type": "PropertyValue",
+      name: "GSTIN",
+      value: site.registrations.gstin,
+    });
+  }
+  if (isConfirmed(site.registrations.iec)) {
+    identifiers.push({
+      "@type": "PropertyValue",
+      name: "IEC",
+      value: site.registrations.iec,
+    });
+  }
+
+  const address: JsonLd = {
+    "@type": "PostalAddress",
+    addressLocality: site.address.city,
+    addressRegion: site.address.state,
+    addressCountry: site.address.countryCode,
+  };
+  if (isConfirmed(site.address.line1)) address.streetAddress = site.address.line1;
+  if (isConfirmed(site.address.postalCode)) address.postalCode = site.address.postalCode;
+
+  const contactPoints: JsonLd[] = [];
+  if (isConfirmed(site.contact.salesEmail) || isConfirmed(site.contact.phonePrimary)) {
+    contactPoints.push({
+      "@type": "ContactPoint",
+      contactType: "sales",
+      ...(isConfirmed(site.contact.salesEmail)
+        ? { email: site.contact.salesEmail }
+        : {}),
+      ...(isConfirmed(site.contact.phonePrimary)
+        ? { telephone: site.contact.phonePrimary }
+        : {}),
+      availableLanguage: ["English", "Hindi"],
+      areaServed: "Worldwide",
+    });
+  }
+  if (isConfirmed(site.contact.exportEmail)) {
+    contactPoints.push({
+      "@type": "ContactPoint",
+      contactType: "export sales",
+      email: site.contact.exportEmail,
+      availableLanguage: ["English"],
+      areaServed: ["AF", "IN", "AE"],
+    });
+  }
+
+  const schema: JsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: site.brand,
+    legalName: site.legalName,
+    url: site.domain,
+    logo: `${site.domain}/images/icons/logo.svg`,
+    description: site.tagline,
+    address,
+    areaServed: "Worldwide",
+  };
+
+  if (sameAs.length) schema.sameAs = sameAs;
+  if (identifiers.length) schema.identifier = identifiers;
+  if (contactPoints.length) schema.contactPoint = contactPoints;
+
+  return schema;
+}
+
+export function websiteSchema(): JsonLd {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: site.brand,
+    url: site.domain,
+    publisher: {
+      "@type": "Organization",
+      name: site.legalName,
+    },
+  };
+}
+
+export function breadcrumbSchema(
+  items: Array<{ name: string; path: string }>,
+): JsonLd {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `${site.domain}${item.path.startsWith("/") ? item.path : `/${item.path}`}`,
+    })),
+  };
+}
+
+export function faqPageSchema(
+  faqs: Array<{ question: string; answer: string }>,
+): JsonLd | null {
+  if (!faqs.length) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: f.answer,
+      },
+    })),
+  };
+}
+
+export function itemListSchema(
+  name: string,
+  items: Array<{ name: string; path: string }>,
+): JsonLd {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name,
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      url: `${site.domain}${item.path}`,
+    })),
+  };
+}

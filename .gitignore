@@ -39,3 +39,20 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local lead capture (dev only)
+leads.json
+/data/leads.json
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+Thumbs.db
+
+# lighthouse
+.lighthouseci/
+lh-report*
+.cursor/
