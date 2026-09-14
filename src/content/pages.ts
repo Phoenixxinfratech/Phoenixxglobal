@@ -104,13 +104,13 @@ export const pages: PageMeta[] = [
     path: "/export/",
     title: "Export of Sandwich Panels from India",
     description:
-      "How PHOENIXX SMARTBUILD packs, documents and ships insulated panels to African and international ports.",
+      "How PHOENIXX SMARTBUILD packs, documents and ships insulated panels from Ahmedabad to African and international ports — process, lead times and country pages.",
     h1: "Export from India",
     holdingCopy:
       "We manufacture in Ahmedabad and ship through Indian ports with packing suited to long ocean voyages. This hub covers process, documentation and country pages. Kenya is the first fully written market page; others are being completed with port and documentation notes specific to each destination.",
     draft: false,
     section: "export",
-    updatedAt: "2026-04-13",
+    updatedAt: "2026-09-14",
   },
   {
     path: "/export/africa/",
@@ -125,36 +125,63 @@ export const pages: PageMeta[] = [
   },
   {
     path: "/export/process/",
-    title: "Export Process — Enquiry to Loading",
+    title: "Export Process — Enquiry to Installation",
     description:
-      "Step-by-step export process for sandwich panel orders: enquiry, quotation, production, packing and vessel booking.",
+      "Step-by-step export process for sandwich panel orders from enquiry and quotation through production, packing, vessel booking and site installation.",
     h1: "Export process",
     holdingCopy:
       "From first enquiry to container gate-in, the sequence is fixed so nothing hangs on one person's memory. This page will spell out each stage, typical durations and what we need from you at every step. Until then, use the RFQ form — we reply with a dated quotation and a clear list of missing inputs.",
-    draft: true,
+    draft: false,
     section: "export",
+    updatedAt: "2026-09-14",
   },
   {
     path: "/export/documentation/",
     title: "Export Documentation for Panel Shipments",
     description:
-      "Commercial invoice, packing list, certificate of origin and destination-specific paperwork for panel exports.",
+      "Commercial invoice, packing list, certificate of origin and what your clearing agent must file — panel export documents from India.",
     h1: "Shipping and documentation",
     holdingCopy:
       "Wrong paperwork delays cargo more often than wrong foam density. We'll publish the document set we prepare as standard and the extras certain destinations ask for. Share your buyer's clearing agent requirements early — that is usually where delays hide.",
-    draft: true,
+    draft: false,
     section: "export",
+    updatedAt: "2026-09-14",
   },
   {
     path: "/export/packaging-and-container-loading/",
     title: "Panel Packaging & Container Loading",
     description:
-      "How insulated sandwich panels are packed and loaded into 40-foot HC containers for ocean export.",
+      "How insulated sandwich panels are packed and loaded into 20-foot, 40-foot and 40-foot HC containers for ocean export.",
     h1: "Packaging and container loading",
     holdingCopy:
       "Panels travel better when edge protectors, banding and dunnage are chosen for the voyage, not for the factory floor photo. This page will cover stacking practice for 40-foot HC containers and the damage modes we design packing against. Ask for our packing note with your quotation if you need it now.",
-    draft: true,
+    draft: false,
     section: "export",
+    updatedAt: "2026-09-14",
+  },
+  {
+    path: "/export/incoterms-and-payment-terms/",
+    title: "Incoterms & Payment Terms for Panel Export",
+    description:
+      "EXW, FOB, CFR, CIF and DAP explained for sandwich panel export from India — plus typical payment structures agreed per order.",
+    h1: "Incoterms and payment terms",
+    holdingCopy:
+      "Commercial terms are agreed per order and confirmed in the proforma invoice. This page explains common Incoterms and payment patterns — not legal advice.",
+    draft: false,
+    section: "export",
+    updatedAt: "2026-09-14",
+  },
+  {
+    path: "/export/lead-time-and-freight/",
+    title: "Lead Time & Freight for Panel Export",
+    description:
+      "Production lead drivers, indicative ocean transit to African ports and what delays sandwich panel export orders from India.",
+    h1: "Lead time and freight",
+    holdingCopy:
+      "Lead time is manufacturing plus ocean transit plus destination clearance — not a single website number. Indicative ranges only; your proforma carries the dates for your order.",
+    draft: false,
+    section: "export",
+    updatedAt: "2026-09-14",
   },
   {
     path: "/resources/",

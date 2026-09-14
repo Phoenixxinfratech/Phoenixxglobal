@@ -2,6 +2,38 @@
 
 Additive Phase 1 touches made during later phases. Prefer extension over modification.
 
+## 2026-09-14 Phase 3 Batch B
+
+### File: `src/content/export.ts`
+**Change:** New structured copy module for export hub and five support pages (process, documentation, packaging, incoterms, lead time).
+**Reason:** Phase 3 Batch B full export page rewrites with shared content pattern matching `company.ts`.
+**Backwards compatible:** yes — new module
+
+### File: `src/content/pages.ts`
+**Change:** Set `draft: false` on `/export/process/`, `/export/documentation/`, `/export/packaging-and-container-loading/`; added registry entries for `/export/incoterms-and-payment-terms/` and `/export/lead-time-and-freight/`.
+**Reason:** Ship full export support pages in sitemap and search index.
+**Backwards compatible:** yes
+
+### File: `src/lib/links.ts`
+**Change:** Added `exportIncoterms` and `exportLeadTime` routes; extended `isDraftPath` export support slug set.
+**Reason:** New export support routes must not be treated as country draft shells.
+**Backwards compatible:** yes
+
+### File: `src/content/navigation.ts`
+**Change:** Export Process column — added Incoterms & Payment and Lead Time & Freight links.
+**Reason:** Discoverability for new support pages from primary nav.
+**Backwards compatible:** yes
+
+### File: `src/content/footer.ts`
+**Change:** `countryLinks` — added Packaging & Loading, Incoterms & Payment, Lead Time & Freight.
+**Reason:** Footer export column parity with nav support pages.
+**Backwards compatible:** yes
+
+### File: `docs/URL-MAP.md`
+**Change:** Updated export hub and support page statuses to phase-3 live; added incoterms and lead-time URLs.
+**Reason:** URL map reflects Batch B ship state.
+**Backwards compatible:** n/a (docs)
+
 ## 2026-09-14 Phase 3 Batch A
 
 ### File: `src/content/types.ts`

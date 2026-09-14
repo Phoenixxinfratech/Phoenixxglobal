@@ -29,6 +29,8 @@ export const routes = {
   exportProcess: "/export/process/",
   exportDocumentation: "/export/documentation/",
   exportPackaging: "/export/packaging-and-container-loading/",
+  exportIncoterms: "/export/incoterms-and-payment-terms/",
+  exportLeadTime: "/export/lead-time-and-freight/",
   resources: "/resources/",
   guides: "/resources/guides/",
   guide: (slug: string) => `/resources/guides/${slug}/`,
@@ -127,7 +129,15 @@ export function isDraftPath(path: string): boolean {
   if (solutionSlug) return getSolution(solutionSlug)?.draft ?? false;
 
   const exportSlug = extractSlug(normalized, "/export/");
-  if (exportSlug && exportSlug !== "africa" && exportSlug !== "process" && exportSlug !== "documentation" && exportSlug !== "packaging-and-container-loading") {
+  const exportSupportSlugs = new Set([
+    "africa",
+    "process",
+    "documentation",
+    "packaging-and-container-loading",
+    "incoterms-and-payment-terms",
+    "lead-time-and-freight",
+  ]);
+  if (exportSlug && !exportSupportSlugs.has(exportSlug)) {
     return getCountry(exportSlug)?.draft ?? false;
   }
 

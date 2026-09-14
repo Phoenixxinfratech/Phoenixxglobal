@@ -47,6 +47,9 @@ export function getFooterData() {
     })),
     { label: "Export Process", href: "/export/process/" },
     { label: "Shipping & Documentation", href: "/export/documentation/" },
+    { label: "Packaging & Loading", href: "/export/packaging-and-container-loading/" },
+    { label: "Incoterms & Payment", href: "/export/incoterms-and-payment-terms/" },
+    { label: "Lead Time & Freight", href: "/export/lead-time-and-freight/" },
   ];
 
   const resourceLinks: FooterLink[] = [

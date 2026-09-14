@@ -66,11 +66,13 @@ All URLs use lowercase hyphenated slugs and a trailing slash (`trailingSlash: tr
 
 | URL | Status | Notes |
 | --- | --- | --- |
-| `/export/` | phase-1 live | Hub indexable |
+| `/export/` | phase-3 live | Full hub — QuickAnswer, support links, country list, FAQ |
 | `/export/africa/` | phase-1 shell | Regional overview |
-| `/export/process/` | phase-1 shell | |
-| `/export/documentation/` | phase-1 shell | |
-| `/export/packaging-and-container-loading/` | phase-1 shell | |
+| `/export/process/` | phase-3 live | ProcessTimeline enquiry → installation |
+| `/export/documentation/` | phase-3 live | Commercial docs; agent caveat |
+| `/export/packaging-and-container-loading/` | phase-3 live | Bundles, 20/40/40HC, stock images |
+| `/export/incoterms-and-payment-terms/` | phase-3 live | EXW FOB CFR CIF DAP + payment framing |
+| `/export/lead-time-and-freight/` | phase-3 live | Production drivers, indicative transit |
 | `/export/kenya/` | phase-1 live | Reference country page |
 | `/export/tanzania/` | phase-1 shell | |
 | `/export/uganda/` | phase-1 shell | |

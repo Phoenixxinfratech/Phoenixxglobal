@@ -231,6 +231,16 @@ export const primaryNav: NavGroup[] = [
             href: "/export/packaging-and-container-loading/",
             description: "40-foot HC packing practice",
           },
+          {
+            label: "Incoterms & Payment",
+            href: "/export/incoterms-and-payment-terms/",
+            description: "EXW, FOB, CFR, CIF, DAP",
+          },
+          {
+            label: "Lead Time & Freight",
+            href: "/export/lead-time-and-freight/",
+            description: "Production and indicative transit",
+          },
         ],
       },
     ],
