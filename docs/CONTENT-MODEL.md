@@ -226,7 +226,7 @@ All live product specs are marked `verified: false` until client confirms produc
 | `draft` | boolean | Engineering | |
 | `updatedAt` | string? | Engineering | |
 
-**Seed status:** 3 comparisons (`puf-vs-pir-panels`, `pir-vs-rockwool-panels`, `puf-vs-rockwool-panels`), all **draft**.
+**Seed status:** 8 comparisons live (`puf-vs-pir-panels`, `pir-vs-rockwool-panels`, `puf-vs-eps-panels`, `rockwool-vs-glasswool-panels`, `sandwich-panel-vs-masonry`, `puf-vs-pir-cold-storage`, `panel-roof-vs-conventional-roof`, `peb-vs-rcc`) as of Phase 3 Batch E.
 
 ---
 
