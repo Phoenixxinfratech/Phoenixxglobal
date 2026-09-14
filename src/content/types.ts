@@ -104,6 +104,15 @@ export const SolutionSchema = z.object({
   failurePoints: z.array(FailurePointSchema).optional(),
   estimatingGuidance: z.string().optional(),
   productRationale: z.array(ProductRationaleSchema).optional(),
+  processSteps: z
+    .array(
+      z.object({
+        title: z.string().min(1),
+        body: z.string().min(1),
+        duration: z.string().optional(),
+      }),
+    )
+    .optional(),
   draft: z.boolean(),
   updatedAt: z.string().optional(),
 });

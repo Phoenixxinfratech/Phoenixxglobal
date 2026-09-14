@@ -49,16 +49,16 @@ All URLs use lowercase hyphenated slugs and a trailing slash (`trailingSlash: tr
 
 | URL | Status | Notes |
 | --- | --- | --- |
-| `/solutions/` | phase-1 live | Hub indexable |
-| `/solutions/cold-storage/` | phase-1 live | Reference solution page |
-| `/solutions/food-processing/` | phase-1 shell | |
-| `/solutions/pharmaceutical-cleanroom/` | phase-1 shell | |
-| `/solutions/warehousing-logistics/` | phase-1 shell | |
-| `/solutions/dairy/` | phase-1 shell | |
-| `/solutions/poultry-meat-processing/` | phase-1 shell | |
-| `/solutions/hospitals/` | phase-1 shell | |
-| `/solutions/data-centres/` | phase-1 shell | |
-| `/solutions/manufacturing-plants/` | phase-1 shell | |
+| `/solutions/` | phase-2 live | Hub with SolutionGrid, selection guidance, FAQ |
+| `/solutions/cold-storage/` | phase-2 live | Full block template; condensation and door bridging |
+| `/solutions/food-processing/` | phase-2 live | Washdown zones and cold docks |
+| `/solutions/pharmaceutical-cleanroom/` | phase-2 live | ISO class guidance; verify local regs |
+| `/solutions/warehousing-logistics/` | phase-2 live | Fast-erect PEB sheds |
+| `/solutions/dairy/` | phase-2 live | Milk chilling rooms |
+| `/solutions/poultry-meat-processing/` | phase-2 live | Processing halls and cold holding |
+| `/solutions/hospitals/` | phase-2 live | OT/pharmacy partitions; fire regs qualified |
+| `/solutions/data-centres/` | phase-2 live | Fire-rated envelope; no Tier claims |
+| `/solutions/manufacturing-plants/` | phase-2 live | Factory walls and roofs |
 
 ---
 

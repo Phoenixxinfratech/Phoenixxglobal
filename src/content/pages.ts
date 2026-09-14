@@ -88,13 +88,13 @@ export const pages: PageMeta[] = [
     path: "/solutions/",
     title: "Industry Solutions for Insulated Buildings",
     description:
-      "Panel and PEB solutions for cold storage, food processing, pharma cleanrooms, warehousing, dairy and more.",
+      "Panel and PEB solutions for cold storage, food processing, pharma cleanrooms, warehousing, dairy, healthcare, data centres and manufacturing.",
     h1: "Solutions by industry",
     holdingCopy:
-      "Each solution page maps products, joint types and thickness ranges to a real application. Cold storage is live; other industries follow with the same engineer-led structure. Tell us your process temperature and hygiene class if you need a shortlist before the page is ready.",
+      "Nine industry pages map panel thickness, joint types, failure modes and product shortlists to real applications — cold chain, food hygiene, pharma classification, logistics sheds, healthcare partitions and factory fire lines. Pick the closest match to your process temperature and hygiene class, then send a layout for a zone-by-zone quotation.",
     draft: false,
     section: "solutions",
-    updatedAt: "2026-04-13",
+    updatedAt: "2026-09-14",
   },
   {
     path: "/export/",
