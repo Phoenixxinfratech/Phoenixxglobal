@@ -10,6 +10,8 @@
     "typecheck": "tsc --noEmit",
     "audit:links": "tsx scripts/audit-links.ts",
     "audit:copy": "tsx scripts/audit-copy.ts",
+    "audit:unique": "tsx scripts/audit-unique.ts",
+    "audit:schema": "tsx scripts/audit-schema.ts",
     "audit:open-items": "tsx scripts/generate-open-items.ts"
   },
   "dependencies": {

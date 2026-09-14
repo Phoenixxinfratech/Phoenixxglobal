@@ -13,6 +13,8 @@ export const site = {
   domain: "https://phoenixxglobal.com",
   tagline:
     "Africa's trusted engineering and export partner for industrial building solutions",
+  /** 55-word entity description for schema / AI consistency — set when client confirms. */
+  canonicalDescription: "" as string,
   foundedYear: "[CONFIRM]",
   entityType: "LLP",
 

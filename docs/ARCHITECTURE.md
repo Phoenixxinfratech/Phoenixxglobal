@@ -36,7 +36,8 @@ Technical decisions for PHOENIXX SMARTBUILD Phase 1. Harmless implementation cho
 - **`draft: true`** on any entity or page entry triggers:
   - `robots: noindex,follow` via `buildMetadata({ draft: true })`
   - Exclusion from section sitemaps and the core sitemap filter
-- **Articles:** MDX planned for Phase 3 blog; not wired in Phase 1.
+- **Articles:** Typed TS content (`ArticleSchema`, `AuthorSchema` in `types.ts`) — no MDX. Blog entities land in Batch E.
+- **Publishability:** `src/lib/publishable.ts` — `isPublishableCountry()` / `isPublishableCity()` gate indexation (data points, copy depth, FAQs, word count). Used by templates and sitemaps in later batches.
 
 ---
 
@@ -67,7 +68,7 @@ Sentinel values must never reach the DOM. Components call `confirmed()` or `isCo
 ## Linting and quality
 
 - **`next lint` removed in Next 16.** Use `npm run lint` → `eslint .` with `eslint-config-next`.
-- Audit scripts: `audit:links`, `audit:copy`, `audit:open-items` (see `package.json`).
+- Audit scripts: `audit:links`, `audit:copy`, `audit:unique`, `audit:schema`, `audit:open-items` (see `package.json`).
 
 ---
 
@@ -105,7 +106,7 @@ src/
 ├── lib/           # metadata, schema, links, slug, confirmed, sitemap
 └── styles/        # globals.css (@theme)
 docs/              # Project documentation (this folder)
-scripts/           # audit:links, audit:copy, generate-open-items
+scripts/           # audit:links, audit:copy, audit:unique, audit:schema, generate-open-items
 ```
 
 ---

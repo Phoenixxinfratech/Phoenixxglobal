@@ -146,10 +146,26 @@ export const CountrySchema = z.object({
   documentationNotes: z.string().default(""),
   faqs: z.array(FaqItemSchema).default([]),
   holdingCopy: z.string().optional(),
+  climateNotes: z.string().optional(),
+  temperatureRange: z.string().optional(),
+  coastal: z.boolean().optional(),
+  keyPorts: z.array(z.string()).default([]),
+  inlandRoutes: z.array(z.string()).default([]),
+  demandSectors: z.array(z.string()).default([]),
+  typicalProjectTypes: z.array(z.string()).default([]),
+  importConsiderations: z.string().optional(),
+  localInstallationNotes: z.string().optional(),
+  researchSources: z.array(z.string()).default([]),
+  quickAnswer: z.string().optional(),
+  marketContext: z.string().optional(),
+  specificationNotes: z.string().optional(),
+  sectionOrder: z.array(z.string()).optional(),
+  wordCountHint: z.number().int().positive().optional(),
   draft: z.boolean(),
   updatedAt: z.string().optional(),
 });
 export type Country = z.infer<typeof CountrySchema>;
+export type CountryInput = z.input<typeof CountrySchema>;
 
 export const CitySchema = z.object({
   slug: z.string().min(1),
@@ -159,10 +175,22 @@ export const CitySchema = z.object({
   relevantProducts: z.array(z.string()).default([]),
   relevantIndustries: z.array(z.string()).default([]),
   holdingCopy: z.string().optional(),
+  industrialEstates: z.array(z.string()).default([]),
+  localIndustries: z.array(z.string()).default([]),
+  roadAccessNotes: z.string().optional(),
+  projectProfiles: z.array(z.string()).default([]),
+  specificationNotes: z.string().optional(),
+  quickAnswer: z.string().optional(),
+  marketContext: z.string().optional(),
+  faqs: z.array(FaqItemSchema).default([]),
+  sectionOrder: z.array(z.string()).optional(),
+  climateNotes: z.string().optional(),
+  portRelevance: z.string().optional(),
   draft: z.boolean(),
   updatedAt: z.string().optional(),
 });
 export type City = z.infer<typeof CitySchema>;
+export type CityInput = z.input<typeof CitySchema>;
 
 export const IndustrialZoneSchema = z.object({
   slug: z.string().min(1),
@@ -188,6 +216,12 @@ export const ComparisonSchema = z.object({
 });
 export type Comparison = z.infer<typeof ComparisonSchema>;
 
+export const BodySectionSchema = z.object({
+  h2: z.string().min(1),
+  content: z.string().min(1),
+});
+export type BodySection = z.infer<typeof BodySectionSchema>;
+
 export const GuideSchema = z.object({
   slug: z.string().min(1),
   name: z.string().min(1),
@@ -198,10 +232,46 @@ export const GuideSchema = z.object({
   relatedSolutions: z.array(z.string()).default([]),
   relatedComparisons: z.array(z.string()).default([]),
   holdingCopy: z.string().optional(),
+  quickAnswer: z.string().optional(),
+  bodySections: z.array(BodySectionSchema).default([]),
+  limitations: z.string().optional(),
   draft: z.boolean(),
   updatedAt: z.string().optional(),
 });
 export type Guide = z.infer<typeof GuideSchema>;
+
+export const AuthorSchema = z.object({
+  slug: z.string().min(1),
+  name: z.string().min(1),
+  role: z.string().min(1),
+  credentials: z.string().optional(),
+  bio: z.string().min(1),
+  photo: z.string().optional(),
+  linkedin: z.string().optional(),
+  draft: z.boolean(),
+});
+export type Author = z.infer<typeof AuthorSchema>;
+
+export const ArticleSchema = z.object({
+  slug: z.string().min(1),
+  title: z.string().min(1),
+  h1: z.string().min(1),
+  seoTitle: z.string().min(1).max(70),
+  metaDescription: z.string().min(1).max(170),
+  category: z.string().min(1),
+  authorSlug: z.string().min(1),
+  excerpt: z.string().min(1),
+  quickAnswer: z.string().min(1),
+  bodySections: z.array(BodySectionSchema).default([]),
+  datePublished: z.string().min(1),
+  dateModified: z.string().min(1),
+  relatedProducts: z.array(z.string()).default([]),
+  relatedSolutions: z.array(z.string()).default([]),
+  relatedGuides: z.array(z.string()).default([]),
+  draft: z.boolean(),
+  updatedAt: z.string().optional(),
+});
+export type Article = z.infer<typeof ArticleSchema>;
 
 export const CertificationSchema = z.object({
   slug: z.string().min(1),

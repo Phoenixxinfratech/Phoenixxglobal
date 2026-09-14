@@ -1,6 +1,6 @@
-import type { City } from "./types";
+import type { CityInput } from "./types";
 
-export const cities: City[] = [
+export const cities: CityInput[] = [
   {
     slug: "nairobi",
     name: "Nairobi",

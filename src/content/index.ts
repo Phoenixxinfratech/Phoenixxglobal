@@ -33,11 +33,11 @@ import type {
   Solution,
 } from "./types";
 
-function validateContent<T>(
+function validateContent<TInput, TOutput>(
   label: string,
-  items: T[],
-  schema: { parse: (item: T) => T },
-): T[] {
+  items: TInput[],
+  schema: { parse: (item: TInput) => TOutput },
+): TOutput[] {
   return items.map((item, index) => {
     try {
       return schema.parse(item);

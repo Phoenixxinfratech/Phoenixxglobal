@@ -1,6 +1,6 @@
-import type { Country } from "./types";
+import type { CountryInput } from "./types";
 
-export const countries: Country[] = [
+export const countries: CountryInput[] = [
   {
     slug: "kenya",
     name: "Kenya",
