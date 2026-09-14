@@ -73,18 +73,18 @@ All URLs use lowercase hyphenated slugs and a trailing slash (`trailingSlash: tr
 | `/export/packaging-and-container-loading/` | phase-3 live | Bundles, 20/40/40HC, stock images |
 | `/export/incoterms-and-payment-terms/` | phase-3 live | EXW FOB CFR CIF DAP + payment framing |
 | `/export/lead-time-and-freight/` | phase-3 live | Production drivers, indicative transit |
-| `/export/kenya/` | phase-1 live | Reference country page |
-| `/export/tanzania/` | phase-1 shell | |
-| `/export/uganda/` | phase-1 shell | |
-| `/export/rwanda/` | phase-1 shell | |
-| `/export/ghana/` | phase-1 shell | |
-| `/export/zambia/` | phase-1 shell | |
-| `/export/mozambique/` | phase-1 shell | |
-| `/export/namibia/` | phase-1 shell | |
-| `/export/botswana/` | phase-1 shell | |
-| `/export/angola/` | phase-1 shell | |
-| `/export/ethiopia/` | phase-1 shell | |
-| `/export/nigeria/` | phase-1 shell | |
+| `/export/kenya/` | phase-3 live | Full country template — Mombasa port, coastal/inland specs |
+| `/export/tanzania/` | phase-3 live | Full country template — Dar es Salaam port |
+| `/export/uganda/` | phase-3 live | Full country template — landlocked via Mombasa/Dar |
+| `/export/rwanda/` | phase-3 live | Full country template — landlocked via Mombasa transit |
+| `/export/ghana/` | phase-3 live | Full country template — Tema/Takoradi ports, Accra industrial |
+| `/export/zambia/` | phase-3 live | Full country template — landlocked via Durban/Dar/Beira transit |
+| `/export/mozambique/` | phase-3 live | Full country template — Maputo and Beira ports |
+| `/export/namibia/` | phase-3 live | Full country template — Walvis Bay port, Windhoek inland |
+| `/export/botswana/` | phase-3 live | Full country template — landlocked via Durban/Walvis Bay transit |
+| `/export/angola/` | phase-3 live | Full country template — Luanda port, Portuguese docs caveat |
+| `/export/ethiopia/` | phase-3 live | Full country template — landlocked via Djibouti corridor |
+| `/export/nigeria/` | phase-3 live | Full country template — Lagos Apapa/Tin Can, coastal/inland specs |
 | `/export/south-africa/` | phase-1 shell | |
 | `/export/zimbabwe/` | phase-1 shell | |
 | `/export/mauritius/` | phase-1 shell | |

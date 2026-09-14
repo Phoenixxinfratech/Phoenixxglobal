@@ -2,6 +2,23 @@
 
 Additive Phase 1 touches made during later phases. Prefer extension over modification.
 
+## 2026-09-14 Phase 3 Batch C
+
+### File: `src/content/countries.ts`
+**Change:** Full publishable content for 12 launch countries (Kenya, Tanzania, Uganda, Rwanda, Ghana, Zambia, Mozambique, Namibia, Botswana, Angola, Ethiopia, Nigeria); SA/Zimbabwe/Mauritius/DRC remain draft stubs.
+**Reason:** Phase 3 Batch C country architecture with ≥12 data points and ≥900 words each.
+**Backwards compatible:** yes — content only
+
+### File: `src/app/export/[country]/page.tsx`
+**Change:** Gated full country template via `isPublishableCountry`; PageHero, QuickAnswer, SpecTable, ProductGrid, SolutionGrid, FAQ, CTA; JSON-LD breadcrumb + FAQ only (no LocalBusiness).
+**Reason:** Assemble Phase 2 blocks for researched country pages.
+**Backwards compatible:** yes — HoldingPage retained for non-publishable
+
+### File: `docs/URL-MAP.md`
+**Change:** Marked 12 country routes phase-3 live.
+**Reason:** Reflect Batch C ship state.
+**Backwards compatible:** n/a (docs)
+
 ## 2026-09-14 Phase 3 Batch B
 
 ### File: `src/content/export.ts`
