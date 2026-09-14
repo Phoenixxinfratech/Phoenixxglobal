@@ -17,6 +17,8 @@ const TARGET_FILES = [
   "src/content/solutions.ts",
   "src/content/countries.ts",
   "src/content/cities.ts",
+  "src/content/guides.ts",
+  "src/content/articles.ts",
 ] as const;
 
 /** Phase 3 stub pages share holding copy — only audit when full content fields exist. */

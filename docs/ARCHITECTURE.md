@@ -36,7 +36,7 @@ Technical decisions for PHOENIXX SMARTBUILD Phase 1. Harmless implementation cho
 - **`draft: true`** on any entity or page entry triggers:
   - `robots: noindex,follow` via `buildMetadata({ draft: true })`
   - Exclusion from section sitemaps and the core sitemap filter
-- **Articles:** Typed TS content (`ArticleSchema`, `AuthorSchema` in `types.ts`) — no MDX. Blog entities land in Batch E.
+- **Articles:** Typed TS content (`ArticleSchema`, `AuthorSchema` in `types.ts`) — no MDX. 12 live articles + company author (Batch F).
 - **Publishability:** `src/lib/publishable.ts` — `isPublishableCountry()` / `isPublishableCity()` gate indexation (data points, copy depth, FAQs, word count). Used by templates and sitemaps in later batches.
 
 ---
@@ -59,9 +59,10 @@ Sentinel values must never reach the DOM. Components call `confirmed()` or `isCo
 
 - **`src/lib/metadata.ts`** — `buildMetadata()` sets title, description, canonical, hreflang scaffold (`en`, `x-default`), Open Graph, Twitter card, and draft/noindex.
 - **`src/lib/schema.ts`** — JSON-LD helpers; only emit data visible on the page.
-- **Sitemaps:** nested route sitemaps under `/products/`, `/solutions/`, `/export/`, `/resources/`, `/blog/` plus root `/sitemap.xml` for core/legal/conversion pages.
+- **Sitemaps:** grouped index at `/sitemap-index.xml` — core (`/sitemap.xml`), products, solutions, export hubs, countries (`/sitemap-countries.xml`), cities (`/sitemap-cities.xml`), resources, guides (`/sitemap-guides.xml`), comparisons (`/sitemap-comparisons.xml`), blog. Country/city entries filtered by `isPublishableCountry` / `isPublishableCity`.
 - **`/sitemap-index.xml`** — custom route handler (`src/app/sitemap-index.xml/route.ts`) because Next 16 `generateSitemaps` emits nested sitemaps without an index document in the shape this project needs.
-- **`robots.ts`** — allows `/`, disallows `/api/` and `/_next/`, points to sitemap index.
+- **`robots.ts`** — allows `/` for `*` and named AI/search bots (GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot, Bingbot); disallows `/api/` and `/_next/`; points to sitemap index.
+- **`public/llms.txt`** — generated via `npm run generate:llms` from `src/lib/llms.ts`.
 
 ---
 

@@ -53,8 +53,10 @@ export function getFooterData() {
   ];
 
   const resourceLinks: FooterLink[] = [
+    { label: "Blog", href: "/blog/" },
     { label: "Technical Guides", href: "/resources/guides/" },
     { label: "Comparisons", href: "/resources/comparisons/" },
+    { label: "Panel Selection Tool", href: "/resources/panel-selection/" },
     { label: "FAQs", href: "/resources/faqs/" },
     { label: "Datasheets", href: "/resources/datasheets/" },
     { label: "Glossary", href: "/resources/glossary/" },

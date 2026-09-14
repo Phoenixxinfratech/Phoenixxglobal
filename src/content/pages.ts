@@ -273,9 +273,10 @@ export const pages: PageMeta[] = [
       "Notes on panel specification, export logistics and industrial building practice from PHOENIXX SMARTBUILD.",
     h1: "Blog",
     holdingCopy:
-      "Articles will cover field problems — condensation, joint leaks, packing damage — not generic industry news. Nothing publishes until it has a named technical reviewer. Subscribe is not available yet; check back or follow our LinkedIn once confirmed.",
-    draft: true,
+      "Articles cover field problems — condensation, joint leaks, packing damage — not generic industry news. Browse by category or start with technical guides and export process notes linked from each post.",
+    draft: false,
     section: "blog",
+    updatedAt: "2026-09-14",
   },
   {
     path: "/privacy-policy/",

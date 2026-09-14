@@ -33,7 +33,8 @@ Run this checklist before setting `draft: false` on any page or entity. A page t
 - [ ] **FAQPage** only where FAQs are visible in the DOM.
 - [ ] **Product / Service** schema only on pages with full product content (Phase 2+).
 - [ ] **No LocalBusiness** on export country pages.
-- [ ] **Organization** in root layout — GSTIN/IEC identifiers only when confirmed in `site.ts`.
+- [ ] **Organization** in root layout — uses `site.canonicalDescription`; GSTIN/IEC identifiers only when confirmed in `site.ts`.
+- [ ] **BlogPosting** on article pages — `datePublished`, `dateModified`, company `Person` author, publisher `Organization`.
 
 ---
 
@@ -58,7 +59,7 @@ Run this checklist before setting `draft: false` on any page or entity. A page t
 
 ## Sitemap and robots
 
-- [ ] Page appears in the correct section sitemap when `draft: false`.
+- [ ] Page appears in the correct section sitemap when `draft: false` (see sitemap index groups: core, products, solutions, export, countries, cities, resources, guides, comparisons, blog).
 - [ ] `updatedAt` set on the content entity or pages registry entry for accurate `lastModified`.
 - [ ] Draft pages **excluded** from sitemaps and carry `noindex`.
 

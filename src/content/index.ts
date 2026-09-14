@@ -1,4 +1,6 @@
 import { applications } from "./applications";
+import { articles } from "./articles";
+import { authors } from "./authors";
 import { certifications } from "./certifications";
 import { cities } from "./cities";
 import { comparisons } from "./comparisons";
@@ -11,6 +13,8 @@ import { products } from "./products";
 import { solutions } from "./solutions";
 import {
   ApplicationSchema,
+  ArticleSchema,
+  AuthorSchema,
   CertificationSchema,
   CitySchema,
   ComparisonSchema,
@@ -25,6 +29,8 @@ import {
 } from "./types";
 import type {
   Application,
+  Article,
+  Author,
   Certification,
   City,
   Comparison,
@@ -76,6 +82,8 @@ const validatedComparisons = validateContent(
   ComparisonSchema,
 );
 const validatedGuides = validateContent("guides", guides, GuideSchema);
+const validatedAuthors = validateContent("authors", authors, AuthorSchema);
+const validatedArticles = validateContent("articles", articles, ArticleSchema);
 const validatedCertifications = validateContent(
   "certifications",
   certifications,
@@ -114,11 +122,15 @@ assertUniqueSlugs("cities", validatedCities);
 assertUniqueSlugs("industrialZones", validatedIndustrialZones);
 assertUniqueSlugs("comparisons", validatedComparisons);
 assertUniqueSlugs("guides", validatedGuides);
+assertUniqueSlugs("authors", validatedAuthors);
+assertUniqueSlugs("articles", validatedArticles);
 assertUniqueSlugs("glossaryTerms", validatedGlossaryTerms);
 
 const productSlugs = new Set(validatedProducts.map((p) => p.slug));
 const solutionSlugs = new Set(validatedSolutions.map((s) => s.slug));
 const comparisonSlugs = new Set(validatedComparisons.map((c) => c.slug));
+const guideSlugs = new Set(validatedGuides.map((g) => g.slug));
+const authorSlugs = new Set(validatedAuthors.map((a) => a.slug));
 const applicationSlugs = new Set(validatedApplications.map((a) => a.slug));
 const countrySlugs = new Set(validatedCountries.map((c) => c.slug));
 const citySlugs = new Set(validatedCities.map((c) => c.slug));
@@ -189,6 +201,13 @@ for (const term of validatedGlossaryTerms) {
   assertSlugsExist(term.slug, "relatedProducts", term.relatedProducts, productSlugs);
 }
 
+for (const article of validatedArticles) {
+  assertSlugsExist(article.slug, "authorSlug", [article.authorSlug], authorSlugs);
+  assertSlugsExist(article.slug, "relatedProducts", article.relatedProducts, productSlugs);
+  assertSlugsExist(article.slug, "relatedSolutions", article.relatedSolutions, solutionSlugs);
+  assertSlugsExist(article.slug, "relatedGuides", article.relatedGuides, guideSlugs);
+}
+
 for (const city of validatedCities) {
   assertSlugsExist(city.slug, "relevantProducts", city.relevantProducts, productSlugs);
   assertSlugsExist(city.slug, "relevantIndustries", city.relevantIndustries, solutionSlugs);
@@ -222,6 +241,14 @@ export function getComparison(slug: string): Comparison | undefined {
 
 export function getGuide(slug: string): Guide | undefined {
   return validatedGuides.find((g) => g.slug === slug);
+}
+
+export function getAuthor(slug: string): Author | undefined {
+  return validatedAuthors.find((a) => a.slug === slug);
+}
+
+export function getArticle(slug: string): Article | undefined {
+  return validatedArticles.find((a) => a.slug === slug);
 }
 
 export function getGlossaryTerm(slug: string): GlossaryTerm | undefined {
@@ -276,6 +303,18 @@ export function getLiveGuides(): Guide[] {
   return validatedGuides.filter((g) => !g.draft);
 }
 
+export function getAllArticles(): Article[] {
+  return validatedArticles;
+}
+
+export function getLiveArticles(): Article[] {
+  return validatedArticles.filter((a) => !a.draft);
+}
+
+export function getArticlesByCategory(category: string): Article[] {
+  return getLiveArticles().filter((a) => a.category === category);
+}
+
 export function getAllIndustrialZones(): IndustrialZone[] {
   return validatedIndustrialZones;
 }
@@ -318,6 +357,8 @@ export {
   validatedIndustrialZones as industrialZones,
   validatedComparisons as comparisons,
   validatedGuides as guides,
+  validatedAuthors as authors,
+  validatedArticles as articles,
   validatedCertifications as certifications,
   validatedGlossaryTerms as glossaryTerms,
   validatedSharedFaqs as sharedFaqs,

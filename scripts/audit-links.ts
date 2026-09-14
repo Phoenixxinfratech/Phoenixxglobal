@@ -16,6 +16,7 @@ import {
   getAllCountries,
   getAllCities,
   getAllGuides,
+  getAllArticles,
 } from "../src/content";
 import { getFooterData, footerPopularSearches } from "../src/content/footer";
 import { pages } from "../src/content/pages";
@@ -35,6 +36,7 @@ const cityByPath = new Set(
 );
 const comparisonSlugs = new Set(getAllComparisons().map((c) => c.slug));
 const guideSlugs = new Set(getAllGuides().map((g) => g.slug));
+const articleSlugs = new Set(getAllArticles().map((a) => a.slug));
 const pagePaths = new Set(pages.map((p) => p.path));
 
 /** Live pages exempt from the ≥8 in-body link rule (legal / utility). */
@@ -221,6 +223,15 @@ function buildKnownRoutes(): Set<string> {
   for (const cityPath of cityByPath) {
     routes.add(cityPath);
   }
+  for (const slug of comparisonSlugs) {
+    routes.add(`/resources/comparisons/${slug}/`);
+  }
+  for (const slug of guideSlugs) {
+    routes.add(`/resources/guides/${slug}/`);
+  }
+  for (const slug of articleSlugs) {
+    routes.add(`/blog/${slug}/`);
+  }
 
   return routes;
 }
@@ -290,7 +301,12 @@ function resolveHref(href: string): { ok: boolean; reason?: string } {
     return { ok: true };
   }
 
-  if (pathNorm.match(/^\/blog\/([^/]+)\/$/)) {
+  const blogMatch = pathNorm.match(/^\/blog\/([^/]+)\/$/);
+  if (blogMatch) {
+    const slug = blogMatch[1]!;
+    if (!articleSlugs.has(slug)) {
+      return { ok: false, reason: `unknown article slug "${slug}"` };
+    }
     return { ok: true };
   }
 

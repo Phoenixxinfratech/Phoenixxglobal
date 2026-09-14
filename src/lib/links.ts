@@ -11,6 +11,7 @@ import {
   getApplication,
   getCity,
   getGlossaryTerm,
+  getArticle,
 } from "@/content";
 import type { Product } from "@/content/types";
 import { withTrailingSlash } from "@/lib/slug";
@@ -156,6 +157,9 @@ export function isDraftPath(path: string): boolean {
 
   const glossarySlug = extractSlug(normalized, "/resources/glossary/");
   if (glossarySlug) return getGlossaryTerm(glossarySlug)?.draft ?? false;
+
+  const blogSlug = extractSlug(normalized, "/blog/");
+  if (blogSlug) return getArticle(blogSlug)?.draft ?? false;
 
   return false;
 }

@@ -295,10 +295,12 @@ export const ArticleSchema = z.object({
   relatedProducts: z.array(z.string()).default([]),
   relatedSolutions: z.array(z.string()).default([]),
   relatedGuides: z.array(z.string()).default([]),
+  keyTakeaways: z.array(z.string()).default([]),
   draft: z.boolean(),
   updatedAt: z.string().optional(),
 });
 export type Article = z.infer<typeof ArticleSchema>;
+export type ArticleInput = z.input<typeof ArticleSchema>;
 
 export const CertificationSchema = z.object({
   slug: z.string().min(1),

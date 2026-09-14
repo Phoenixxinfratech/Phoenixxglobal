@@ -2,15 +2,23 @@ import { InlineLink } from "@/components/blocks";
 import { Breadcrumbs } from "@/components/layout";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Container, Heading, Section } from "@/components/ui";
-import { countries, products, solutions } from "@/content";
+import {
+  comparisons,
+  getLiveArticles,
+  getLiveCities,
+  getLiveCountries,
+  getLiveGuides,
+  products,
+  solutions,
+} from "@/content";
 import { pages, requirePageByPath } from "@/content/pages";
 import { buildMetadata } from "@/lib/metadata";
 import { routes } from "@/lib/links";
+import { isPublishableCity, isPublishableCountry } from "@/lib/publishable";
 import { breadcrumbSchema } from "@/lib/schema";
 
 const PATH = "/sitemap/";
 const page = requirePageByPath(PATH);
-
 
 export const metadata = buildMetadata({
   title: page.title,
@@ -21,9 +29,14 @@ export const metadata = buildMetadata({
 
 export default function HtmlSitemapPage() {
   const corePages = pages.filter((p) => p.section === "core");
-  const resourcePages = pages.filter((p) => p.section === "resources");
-  const exportPages = pages.filter((p) => p.section === "export");
+  const resourcePages = pages.filter((p) => p.section === "resources" && !p.draft);
+  const exportPages = pages.filter((p) => p.section === "export" && !p.draft);
   const legalPages = pages.filter((p) => p.section === "legal");
+  const liveCountries = getLiveCountries().filter(isPublishableCountry);
+  const liveCities = getLiveCities().filter(isPublishableCity);
+  const liveGuides = getLiveGuides();
+  const liveComparisons = comparisons.filter((c) => !c.draft);
+  const liveArticles = getLiveArticles();
 
   return (
     <>
@@ -112,10 +125,23 @@ export default function HtmlSitemapPage() {
                     <InlineLink href={entry.path}>{entry.h1}</InlineLink>
                   </li>
                 ))}
-                {countries.map((country) => (
+                {liveCountries.map((country) => (
                   <li key={country.slug}>
                     <InlineLink href={routes.exportCountry(country.slug)}>
                       {country.name}
+                    </InlineLink>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="text-lg font-semibold text-ink">Cities</h2>
+              <ul className="mt-3 space-y-2">
+                {liveCities.map((city) => (
+                  <li key={`${city.countrySlug}-${city.slug}`}>
+                    <InlineLink href={`/export/${city.countrySlug}/${city.slug}/`}>
+                      {city.name}
                     </InlineLink>
                   </li>
                 ))}
@@ -130,15 +156,52 @@ export default function HtmlSitemapPage() {
                     <InlineLink href={entry.path}>{entry.h1}</InlineLink>
                   </li>
                 ))}
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="text-lg font-semibold text-ink">Guides</h2>
+              <ul className="mt-3 space-y-2">
                 <li>
-                  <InlineLink href={routes.guides}>Technical guides</InlineLink>
+                  <InlineLink href={routes.guides}>Guides hub</InlineLink>
                 </li>
+                {liveGuides.map((guide) => (
+                  <li key={guide.slug}>
+                    <InlineLink href={routes.guide(guide.slug)}>{guide.name}</InlineLink>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="text-lg font-semibold text-ink">Comparisons</h2>
+              <ul className="mt-3 space-y-2">
                 <li>
-                  <InlineLink href={routes.comparisons}>Comparisons</InlineLink>
+                  <InlineLink href={routes.comparisons}>Comparisons hub</InlineLink>
                 </li>
+                {liveComparisons.map((comparison) => (
+                  <li key={comparison.slug}>
+                    <InlineLink href={routes.comparison(comparison.slug)}>
+                      {comparison.name}
+                    </InlineLink>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <section>
+              <h2 className="text-lg font-semibold text-ink">Blog</h2>
+              <ul className="mt-3 space-y-2">
                 <li>
-                  <InlineLink href={routes.blog}>Blog</InlineLink>
+                  <InlineLink href={routes.blog}>Blog hub</InlineLink>
                 </li>
+                {liveArticles.map((article) => (
+                  <li key={article.slug}>
+                    <InlineLink href={routes.blogPost(article.slug)}>
+                      {article.title}
+                    </InlineLink>
+                  </li>
+                ))}
               </ul>
             </section>
 

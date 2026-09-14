@@ -49,6 +49,8 @@ Wraps the UI `Link` component. In development, logs a console warning when `href
 | **City** | Its country, nearest port, 2+ products, 1 industry, RFQ |
 | **Guide** | 2+ products, 1 comparison, 1 solution |
 | **Comparison** | Both products compared, application where each wins, RFQ |
+| **Blog article** | 2+ products, 1+ solutions, 1+ guides, export/resources hubs, RFQ |
+| **Blog hub** | All live articles, guides, comparisons, export process |
 
 ### Global rules
 

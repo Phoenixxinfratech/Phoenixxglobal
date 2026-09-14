@@ -151,8 +151,19 @@ Pattern: `/export/[country]/[city]/`
 
 | URL | Status | Notes |
 | --- | --- | --- |
-| `/blog/` | phase-1 shell | |
-| `/blog/[slug]/` | phase-3 | MDX articles |
+| `/blog/` | phase-3 live | Hub with category filter |
+| `/blog/cold-room-panel-specification-mistakes/` | phase-3 live | Technical |
+| `/blog/coastal-humidity-coating-east-africa/` | phase-3 live | Export & Logistics |
+| `/blog/what-delays-export-shipments/` | phase-3 live | Export & Logistics |
+| `/blog/reading-a-panel-quotation/` | phase-3 live | Technical |
+| `/blog/cheapest-quote-rarely-cheapest-project/` | phase-3 live | Project Insights |
+| `/blog/container-loading-damage-mistakes/` | phase-3 live | Export & Logistics |
+| `/blog/doors-for-blast-freezers/` | phase-3 live | Technical |
+| `/blog/handling-a-site-complaint/` | phase-3 live | Project Insights |
+| `/blog/when-to-specify-pir-over-puf/` | phase-3 live | Technical |
+| `/blog/how-long-panel-quotes-stay-valid/` | phase-3 live | Export & Logistics |
+| `/blog/dairy-chill-room-specification/` | phase-3 live | Industry Applications |
+| `/blog/pre-shipment-inspection-checklist/` | phase-3 live | Company News |
 
 ---
 
@@ -182,13 +193,18 @@ Pattern: `/applications/[slug]/` — link registry exists; app routes not yet cr
 | --- | --- | --- |
 | `/api/lead` | phase-1 live | POST stub; provider Phase 4 |
 | `/sitemap.xml` | phase-1 live | Core sitemap |
-| `/sitemap-index.xml` | phase-1 live | Custom index |
+| `/sitemap-index.xml` | phase-3 live | Index — core, products, solutions, export, countries, cities, resources, guides, comparisons, blog |
+| `/sitemap-countries.xml` | phase-3 live | Publishable country pages only |
+| `/sitemap-cities.xml` | phase-3 live | Publishable city pages only |
+| `/sitemap-guides.xml` | phase-3 live | Live guides |
+| `/sitemap-comparisons.xml` | phase-3 live | Live comparisons |
 | `/products/sitemap.xml` | phase-1 live | |
 | `/solutions/sitemap.xml` | phase-1 live | |
-| `/export/sitemap.xml` | phase-1 live | |
-| `/resources/sitemap.xml` | phase-1 live | |
-| `/blog/sitemap.xml` | phase-1 live | Empty until posts exist |
-| `/robots.txt` | phase-1 live | |
+| `/export/sitemap.xml` | phase-3 live | Export hub pages only |
+| `/resources/sitemap.xml` | phase-3 live | Resource hubs + glossary |
+| `/blog/sitemap.xml` | phase-3 live | Hub + 12 articles |
+| `/llms.txt` | phase-3 live | Static file in `/public/` |
+| `/robots.txt` | phase-3 live | AI crawlers explicitly allowed |
 | `/opengraph-image` | phase-1 live | Dynamic OG |
 
 ---

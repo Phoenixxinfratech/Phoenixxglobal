@@ -23,6 +23,17 @@ All current photos are **Pexels stock**. Alt text describes what is visible. Non
 
 Create labelled placeholders if missing: cam-lock joint, tongue-and-groove profile, roofing trapezoidal profile, door frame detail, container dunnage packing. Log each in OPEN-ITEMS when placeholders are added.
 
+## Blog (Phase 3 Batch F)
+
+Blog articles ship without hero images — text-first template. Optional future additions:
+
+| Need | Used on | Replacement shot required |
+| --- | --- | --- |
+| Container edge crush (educational) | `/blog/container-loading-damage-mistakes/` | Damaged corner with intact label — staging only, not client project |
+| Cam-lock misfit (educational) | `/blog/cold-room-panel-specification-mistakes/` | Joint gap frost line — with permission on training mock-up |
+
+Do not add stock photos to blog until art direction aligns with homepage Phase 4 refresh.
+
 ## Credit source
 
 See `src/content/imageCredits.ts` for Pexels IDs and URLs.

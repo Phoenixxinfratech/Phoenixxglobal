@@ -246,7 +246,51 @@ All live product specs are marked `verified: false` until client confirms produc
 | `draft` | boolean | Engineering | |
 | `updatedAt` | string? | Engineering | |
 
-**Seed status:** No guide entities yet. Route stub exists; content Phase 3.
+**Seed status:** 12 guides live (Batch D/E).
+
+---
+
+## `Author`
+
+| Field | Type | Owner | Notes |
+| --- | --- | --- | --- |
+| `slug` | string | Engineering | URL-safe id |
+| `name` | string | Marketing | Company name or approved byline |
+| `role` | string | Marketing | e.g. Engineering & Export Team |
+| `credentials` | string? | Marketing | Optional — omit if unverified |
+| `bio` | string | Marketing | Short; no invented person |
+| `photo` | string? | Assets | Optional |
+| `linkedin` | string? | Marketing | Optional |
+| `draft` | boolean | Engineering | |
+
+**Seed status:** 1 company author — `phoenixx-smartbuild` (Batch F). Never invent named individuals.
+
+---
+
+## `Article`
+
+| Field | Type | Owner | Notes |
+| --- | --- | --- | --- |
+| `slug` | string | Engineering | |
+| `title` | string | Marketing | Card / schema headline |
+| `h1` | string | Marketing | Visible heading |
+| `seoTitle` | string | Marketing | Max 70 |
+| `metaDescription` | string | Marketing | Max 170 |
+| `category` | string | Marketing | Editorial category |
+| `authorSlug` | string | Engineering | → `Author` |
+| `excerpt` | string | Marketing | Hub teaser |
+| `quickAnswer` | string | Marketing / Engineering | Answer-first paragraph |
+| `bodySections` | BodySection[] | Marketing / Engineering | Question-led H2s |
+| `keyTakeaways` | string[] | Marketing | Optional bullet list (default `[]`) |
+| `datePublished` | string | Engineering | ISO date — not before site build |
+| `dateModified` | string | Engineering | ISO date |
+| `relatedProducts` | string[] | Engineering | Live product slugs |
+| `relatedSolutions` | string[] | Engineering | Live solution slugs |
+| `relatedGuides` | string[] | Engineering | Live guide slugs |
+| `draft` | boolean | Engineering | |
+| `updatedAt` | string? | Engineering | Sitemap `lastModified` |
+
+**Seed status:** 12 articles live (Batch F). Typed TS — no MDX.
 
 ---
 

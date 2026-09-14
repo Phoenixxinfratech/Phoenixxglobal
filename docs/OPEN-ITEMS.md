@@ -88,5 +88,7 @@ Then merge any new fields into the category sections below.
 | --- | --- | --- |
 | Product spec verification | Client + Engineering | All seed specs marked `verified: false` until datasheets issued |
 | Datasheet PDFs | Client | Link in `product.datasheet` only when file exists in `public/documents/` |
-| Guide content | Engineering | Phase 3 — guide entities still owned by guides agent |
-| Datasheet PDF files in `public/documents/` | Client | Folder empty at Batch E ship — hub shows email request + LeadForm datasheet variant only |
+| Datasheet PDF files in `public/documents/` | Client | Folder empty — hub shows email request + LeadForm datasheet variant only |
+| Lighthouse mobile scores | Engineering | Chrome binary unavailable at Batch F ship — see `docs/LIGHTHOUSE-PHASE3.md` |
+| `site.canonicalDescription` | Done (Batch F) | Client may refine wording; currently feeds schema and `llms.txt` |
+| Blog author bylines | Client | Company author only until named reviewers approved |

@@ -1,5 +1,5 @@
 import { site } from "@/config/site";
-import type { Product, Solution } from "@/content/types";
+import type { Article, Author, Product, Solution } from "@/content/types";
 import { confirmed, isConfirmed } from "@/lib/confirmed";
 import { routes } from "@/lib/links";
 
@@ -71,7 +71,7 @@ export function organizationSchema(): JsonLd {
     legalName: site.legalName,
     url: site.domain,
     logo: `${site.domain}/images/icons/logo.svg`,
-    description: site.tagline,
+    description: site.canonicalDescription || site.tagline,
     address,
     areaServed: "Worldwide",
   };
@@ -192,4 +192,51 @@ export function serviceSchema(solution: Solution): JsonLd {
   }
 
   return schema;
+}
+
+export function personSchema(author: Author): JsonLd {
+  const schema: JsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: author.name,
+    jobTitle: author.role,
+    description: author.bio,
+    worksFor: {
+      "@type": "Organization",
+      name: site.legalName,
+      url: site.domain,
+    },
+  };
+
+  if (author.linkedin) {
+    schema.sameAs = [author.linkedin];
+  }
+
+  return schema;
+}
+
+export function blogPostingSchema(article: Article, author: Author): JsonLd {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: article.title,
+    description: article.excerpt,
+    datePublished: article.datePublished,
+    dateModified: article.dateModified,
+    author: personSchema(author),
+    publisher: {
+      "@type": "Organization",
+      name: site.legalName,
+      url: site.domain,
+      logo: {
+        "@type": "ImageObject",
+        url: `${site.domain}/images/icons/logo.svg`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${site.domain}${routes.blogPost(article.slug)}`,
+    },
+    url: `${site.domain}${routes.blogPost(article.slug)}`,
+  };
 }

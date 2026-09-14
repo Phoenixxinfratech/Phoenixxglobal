@@ -13,8 +13,9 @@ export const site = {
   domain: "https://phoenixxglobal.com",
   tagline:
     "Africa's trusted engineering and export partner for industrial building solutions",
-  /** 55-word entity description for schema / AI consistency — set when client confirms. */
-  canonicalDescription: "" as string,
+  /** 55-word entity description for schema / AI consistency. */
+  canonicalDescription:
+    "PHOENIXX SMARTBUILD manufactures insulated sandwich panels and pre-engineered building systems in Ahmedabad, India. We supply PUF, PIR and Rockwool panels, cold room systems, industrial doors and PEB structures to project buyers in Africa and other export markets. Enquiries include technical specification support, export documentation and container-ready packing from our Gujarat plant.",
   foundedYear: "[CONFIRM]",
   entityType: "LLP",
 

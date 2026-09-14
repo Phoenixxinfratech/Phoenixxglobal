@@ -2,6 +2,48 @@
 
 Additive Phase 1 touches made during later phases. Prefer extension over modification.
 
+## 2026-09-14 Phase 3 Batch F (blog, AI layer, sitemaps)
+
+### File: `src/content/authors.ts`, `src/content/articles.ts`
+**Change:** Company author (`phoenixx-smartbuild`) and 12 live typed blog articles with QuickAnswer, bodySections, keyTakeaways, and cross-links.
+**Reason:** Phase 3 Batch F — blog without MDX.
+**Backwards compatible:** yes — new modules
+
+### File: `src/content/index.ts`, `src/content/types.ts`
+**Change:** Author/Article validation, getters (`getAuthor`, `getLiveArticles`, `getArticlesByCategory`), optional `keyTakeaways` on `ArticleSchema`.
+**Reason:** Wire blog into content engine.
+**Backwards compatible:** yes — additive
+
+### File: `src/app/blog/page.tsx`, `src/app/blog/[slug]/page.tsx`
+**Change:** Live blog hub with category filter; article template with BlogPosting JSON-LD, author box, related grids, CTA, LeadForm.
+**Reason:** Replace holding stubs.
+**Backwards compatible:** yes — route replacement
+
+### File: `src/config/site.ts`, `src/lib/schema.ts`, `src/lib/llms.ts`, `public/llms.txt`
+**Change:** `canonicalDescription` set; Organization schema uses it; llms.txt generator and static file.
+**Reason:** AI-search entity consistency.
+**Backwards compatible:** yes
+
+### File: `src/app/robots.ts`
+**Change:** Explicit allow rules for GPTBot, ClaudeBot, PerplexityBot, Google-Extended, CCBot, Bingbot.
+**Reason:** Batch F crawler policy.
+**Backwards compatible:** yes — additive rules
+
+### File: sitemap routes (`sitemap-index.xml`, `sitemap-countries.xml`, `sitemap-cities.xml`, `sitemap-guides.xml`, `sitemap-comparisons.xml`, `export/sitemap.ts`, `resources/sitemap.ts`, `blog/sitemap.ts`)
+**Change:** Split sitemap groups; publishable filters for countries/cities; live blog URLs.
+**Reason:** Batch F sitemap architecture.
+**Backwards compatible:** yes — index extended
+
+### File: `scripts/audit-links.ts`, `scripts/audit-unique.ts`
+**Change:** Blog slug resolution; uniqueness audit includes guides and articles.
+**Reason:** Verification coverage for new content types.
+**Backwards compatible:** yes
+
+### File: `docs/PHASE-3-REPORT.md`, `docs/EDITORIAL-CALENDAR.md`, `docs/LIGHTHOUSE-PHASE3.md`
+**Change:** Phase 3 completion report, 24-topic editorial calendar, Lighthouse placeholder.
+**Reason:** Batch F documentation deliverables.
+**Backwards compatible:** yes
+
 ## 2026-09-14 Phase 3 Batch E (part 1 — guides)
 
 ### File: `scripts/audit-links.ts`
