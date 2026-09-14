@@ -15,8 +15,8 @@ import { cn } from "@/lib/cn";
 
 const AUTOPLAY_MS = 6500;
 const SWIPE_THRESHOLD = 50;
-const HERO_WIDTH = 1920;
-const HERO_HEIGHT = 760;
+const HERO_WIDTH = 1600;
+const HERO_HEIGHT = 900;
 
 const focalPointClass = {
   left: "object-left",
@@ -207,6 +207,7 @@ export function HeroSlider({ slides, className }: HeroSliderProps) {
                   priority={index === 0}
                   fetchPriority={index === 0 ? "high" : "auto"}
                   loading={index === 0 ? undefined : "lazy"}
+                  quality={70}
                   className={cn(
                     "h-full w-full object-cover",
                     focalPointClass[slide.image.focalPoint],
@@ -217,44 +218,46 @@ export function HeroSlider({ slides, className }: HeroSliderProps) {
               </div>
 
               <div
-                className="absolute inset-0 bg-gradient-to-r from-graphite/80 to-transparent"
+                className="absolute inset-0 bg-gradient-to-r from-graphite/90 via-graphite/55 to-transparent"
                 aria-hidden="true"
               />
 
               <div className="absolute inset-0 flex items-end">
                 <div className="w-full px-6 pb-16 pt-24 md:px-12 md:pb-20 lg:max-w-3xl">
                   {slide.eyebrow ? (
-                    <p className="text-sm text-zinc">{slide.eyebrow}</p>
+                    <p className="text-sm font-medium text-white/80">{slide.eyebrow}</p>
                   ) : null}
                   <h2 className="font-display text-3xl font-semibold text-white md:text-5xl lg:text-6xl">
                     {slide.headline}
                   </h2>
-                  <p className="mt-4 max-w-xl text-base text-zinc md:text-lg">{slide.subline}</p>
+                  <p className="mt-4 max-w-xl text-base text-white/90 md:text-lg">{slide.subline}</p>
 
                   {slide.stat ? (
                     <dl className="mt-6">
                       <dt className="font-display text-2xl font-semibold text-white">
                         {slide.stat.value}
                       </dt>
-                      <dd className="text-sm text-zinc">{slide.stat.label}</dd>
+                      <dd className="text-sm text-white/80">{slide.stat.label}</dd>
                     </dl>
                   ) : null}
 
-                  <div className="mt-8 flex flex-wrap gap-3">
-                    <Button href={slide.primaryCta.href} variant="primary" size="lg">
-                      {slide.primaryCta.label}
-                    </Button>
-                    {slide.secondaryCta ? (
-                      <Button
-                        href={slide.secondaryCta.href}
-                        variant="secondary"
-                        size="lg"
-                        className="border-white/40 text-white hover:border-white hover:text-white"
-                      >
-                        {slide.secondaryCta.label}
+                  {isActive ? (
+                    <div className="mt-8 flex flex-wrap gap-3">
+                      <Button href={slide.primaryCta.href} variant="primary" size="lg">
+                        {slide.primaryCta.label}
                       </Button>
-                    ) : null}
-                  </div>
+                      {slide.secondaryCta ? (
+                        <Button
+                          href={slide.secondaryCta.href}
+                          variant="secondary"
+                          size="lg"
+                          className="border-white bg-transparent text-white hover:border-white hover:bg-white/10"
+                        >
+                          {slide.secondaryCta.label}
+                        </Button>
+                      ) : null}
+                    </div>
+                  ) : null}
                 </div>
               </div>
             </article>

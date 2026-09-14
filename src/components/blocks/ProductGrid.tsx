@@ -57,7 +57,7 @@ export function ProductGrid({ products, heading, className }: ProductGridProps) 
                   ) : null}
                   <div className="flex flex-1 flex-col p-6">
                     <h3 className="text-lg font-semibold text-ink">
-                      <Link href={product.href} className="no-underline hover:text-ember">
+                      <Link href={product.href} className="text-ink no-underline hover:text-ember-deep">
                         {product.shortName}
                       </Link>
                     </h3>

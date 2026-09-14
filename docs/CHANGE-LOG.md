@@ -20,7 +20,16 @@ Additive Phase 1 touches made during later phases. Prefer extension over modific
 **Reason:** Phase 2 Section 12.4 AI-tell detector requirements.
 **Backwards compatible:** yes for banned-word path
 
-### File: `src/components/blocks/SpecTable.tsx`
-**Change:** Added optional `caption` prop and clearer verified/indicative footer note.
-**Reason:** Product pages need a table caption and dispatch-confirmation line when rows are unverified.
+## 2026-09-14 Phase 2 (Batch B)
+
+### File: `src/components/ui/Button.tsx`
+**Change:** Primary variant now uses `ember-deep` as default background (hover to `ember`).
+**Reason:** White text on `#E8481F` failed WCAG AA contrast in Lighthouse; `#B8320F` passes. Tokens unchanged.
+**Backwards compatible:** yes (API unchanged)
+**Files affected:** all primary Buttons
+
+
+### File: `scripts/audit-links.ts`
+**Change:** Anchor-overuse check now counts only links inside `<p>` tags on live pages; city routes recognised; legal/FAQ underlink exemptions; chrome CTA allowlist.
+**Reason:** Product grids and related lists inevitably repeat product names; prose is where money-keyword overuse matters.
 **Backwards compatible:** yes

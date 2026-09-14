@@ -56,10 +56,15 @@ const ANCHOR_ALLOWLIST = new Set([
   "about",
   "request a quote",
   "get quote",
+  "get a quote",
+  "request a quotation",
+  "book a consultation",
   "whatsapp",
   "request datasheet",
   "download datasheet",
   "read more",
+  "view products",
+  "explore panel range",
 ]);
 
 const STATIC_PATHS = new Set([
@@ -450,6 +455,9 @@ async function runPhase2(navFooterHrefs: Set<string>): Promise<boolean> {
     const route = htmlFileToRoute(file, HTML_APP_DIR);
     const mainHtml = extractMainHtml(html);
     const mainLinks = extractLinks(mainHtml, route);
+    // Anchor-overuse applies to in-body prose only — not product grids / related lists
+    const proseHtml = (mainHtml.match(/<p\b[^>]*>[\s\S]*?<\/p>/gi) || []).join("\n");
+    const proseLinks = extractLinks(proseHtml, route);
     const uniqueMainTargets = new Set<string>();
     const routeIsLive = isLivePage(route);
 
@@ -460,8 +468,9 @@ async function runPhase2(navFooterHrefs: Set<string>): Promise<boolean> {
       if (!isKnownRoute(link.href, knownRoutes)) {
         brokenHtml.push({ from: route, href: link.href, anchor: link.anchor });
       }
+    }
 
-      // Only enforce anchor diversity on live pages — draft stubs share HoldingPage labels
+    for (const link of proseLinks) {
       if (routeIsLive && link.anchor) {
         const key = link.anchor.toLowerCase().trim();
         if (!ANCHOR_ALLOWLIST.has(key)) {

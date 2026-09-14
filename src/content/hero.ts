@@ -66,7 +66,7 @@ export const heroSlides: HeroSlide[] = HeroSlideSchema.array().parse([
     headline: "Cold rooms built as full envelopes",
     subline:
       "Panels through to doors for chillers, freezers and hygiene zones. Send room size and temperature target — we reply with thickness and joint recommendations.",
-    primaryCta: { label: "Cold storage solutions", href: "/solutions/cold-storage/" },
+    primaryCta: { label: "Cold storage envelopes", href: "/solutions/cold-storage/" },
     secondaryCta: { label: "Get a panel recommendation", href: "/request-a-quote/?product=cold-room-panels" },
     image: {
       src: "/images/hero/hero-cold-storage-hvac.jpg",

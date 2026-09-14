@@ -4,7 +4,7 @@ import { cn } from "@/lib/cn";
 
 const variantStyles = {
   primary:
-    "bg-ember text-white border border-ember hover:bg-ember-deep hover:border-ember-deep",
+    "bg-ember-deep text-white border border-ember-deep hover:bg-ember hover:border-ember",
   secondary:
     "bg-transparent text-ink border border-line hover:border-steel hover:text-steel",
   ghost:

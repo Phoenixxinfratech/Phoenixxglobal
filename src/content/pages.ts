@@ -7,14 +7,15 @@ import type { PageMeta } from "./types";
 export const pages: PageMeta[] = [
   {
     path: "/",
-    title: "Insulated Panels & PEB Export from India",
+    title: "Insulated Sandwich Panels & PEB Export from India",
     description:
-      "PUF, PIR and Rockwool sandwich panels and pre-engineered buildings from Ahmedabad — quoted for cold storage, warehouses and industrial plants across Africa.",
+      "Ahmedabad-made PUF, PIR and Rockwool panels with PEB cladding packages for cold chain and industrial sheds — export-ready packing and drawings with every quote.",
     h1: "Insulated panels and PEB systems built for export",
     holdingCopy:
       "This homepage shell is live while we finish the full visual system and project photography. Browse products, solutions and export markets below, or send drawings now — our engineers reply with a clear quotation pack, not a brochure dump.",
-    draft: true,
+    draft: false,
     section: "core",
+    updatedAt: "2026-09-14",
   },
   {
     path: "/about/",

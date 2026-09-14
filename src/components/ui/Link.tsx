@@ -17,7 +17,7 @@ export function Link({
   ...rest
 }: LinkProps) {
   const classes = cn(
-    "text-ink underline-offset-4 transition-colors hover:text-ember hover:underline",
+    "text-ember-deep underline underline-offset-4 transition-colors hover:text-ember",
     className,
   );
 
