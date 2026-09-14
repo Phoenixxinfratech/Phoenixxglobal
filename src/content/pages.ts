@@ -79,10 +79,10 @@ export const pages: PageMeta[] = [
       "PUF, PIR, Rockwool, roofing and wall panels, cold room and cleanroom systems, industrial doors and PEB structures.",
     h1: "Products",
     holdingCopy:
-      "This hub lists every panel and structure we manufacture. Two product pages — PUF and PIR — already carry full technical content; the rest publish shortly with the same level of detail. Start with the core that matches your fire and thermal brief, then request a quote with drawings attached.",
+      "This hub lists every panel and structure we manufacture. Five product families — PUF, PIR, Rockwool, roofing and wall panels — carry full technical pages today; cold room kits, cleanroom systems, fire-rated builds, doors and PEB structures follow in the next batch. Start with the core that matches your fire and thermal brief, then request a quote with drawings attached.",
     draft: false,
     section: "products",
-    updatedAt: "2026-04-13",
+    updatedAt: "2026-09-14",
   },
   {
     path: "/solutions/",

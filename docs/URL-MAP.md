@@ -31,12 +31,12 @@ All URLs use lowercase hyphenated slugs and a trailing slash (`trailingSlash: tr
 
 | URL | Status | Notes |
 | --- | --- | --- |
-| `/products/` | phase-1 live | Hub indexable |
-| `/products/puf-panels/` | phase-1 live | Reference product page |
-| `/products/pir-panels/` | phase-1 live | Reference product page |
-| `/products/rockwool-panels/` | phase-1 shell | Draft entity |
-| `/products/roofing-panels/` | phase-1 shell | |
-| `/products/wall-panels/` | phase-1 shell | |
+| `/products/` | phase-2 live | Hub with ProductGrid, comparison table, FAQ |
+| `/products/puf-panels/` | phase-2 live | Full block template; cold-room intent |
+| `/products/pir-panels/` | phase-2 live | Full block template; PIR premium vs PUF |
+| `/products/rockwool-panels/` | phase-2 live | Full block template; fire-rated walls |
+| `/products/roofing-panels/` | phase-2 live | Full block template; trapezoidal roof |
+| `/products/wall-panels/` | phase-2 live | Full block template; exterior/partition |
 | `/products/cold-room-panels/` | phase-1 shell | |
 | `/products/cleanroom-panels/` | phase-1 shell | |
 | `/products/fire-rated-panels/` | phase-1 shell | |
