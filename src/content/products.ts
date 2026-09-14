@@ -749,114 +749,729 @@ export const products: Product[] = [
     name: "Cold Room Panels",
     shortName: "Cold Room Panels",
     category: "panel",
-    h1: "Cold Room Sandwich Panels — Modular and Custom Build",
-    seoTitle: "Cold Room Panels — Export from India | PHOENIXX",
+    h1: "Cam-Lock Cold Room Panels — Modular Chiller and Freezer Kits",
+    seoTitle: "Cold Room Panels — Cam-Lock Export | PHOENIXX",
     metaDescription:
-      "Cam-lock cold room panels for chiller and freezer rooms. Modular kits and custom sizes. Full page coming soon.",
+      "Modular cam-lock cold room panels for chiller and freezer rooms. Door jamb bridging and floor coving detail for export projects.",
     summary:
-      "Purpose-built cold room panels with cam-lock joints for chiller, freezer and blast-freezer applications.",
+      "Cam-lock sandwich panels sized as complete cold room kits — chiller, freezer and blast-freezer boxes with corner pieces, coving and door frame interfaces. We engineer the floor-to-wall and jamb transitions because that is where most African installs lose temperature, not at the panel face.",
+    quickAnswer:
+      "Cold room panels use cam-lock hooks at vertical joints so a box room can ship flat-packed and assemble without site welding. Typical cores are PUF or PIR between 80–150 mm depending on target temperature. Heat bridging at the door frame and an unsealed floor coving junction are the two details buyers skip — we include jamb profiles and floor interface drawings in every kit quotation.",
+    overview:
+      "A modular cold room is a box assembled from cam-lock sandwich panels — not a random wall panel order with corners cut on site. Each vertical joint rotates into a gasketed hook; horizontal laps and ceiling pieces complete the envelope. We supply chiller rooms (+2 to +8 °C), standard freezers (−18 °C) and lower-temperature blast zones when your load calculation supports it. Core type follows the same logic as our PUF and PIR ranges; cam-lock geometry is the differentiator here. The caveat we raise on every enquiry: door frame heat bridging and floor junctions cause more callbacks than panel thickness mistakes. A 120 mm wall with a bare steel door frame and no coving at the floor is a thermal short circuit — warm air tracks the frame while your compressor runs flat out. We quote jamb profiles, floor coving sections and threshold interfaces with the panel schedule so your installer is not improvising with angle iron on the day of assembly.",
+    construction:
+      "Cam-lock panels pair a hook-and-rotate vertical joint with tongue-and-groove horizontal laps where the profile requires it. Core is injected PUF or PIR between 0.45–0.60 mm pre-painted steel facings; food-facing side can be upgraded on request. Standard module width is approximately 1000 mm effective cover. Corner pieces, H-post connectors, ceiling panels and coving extrusions ship in labelled crates within the same container. Door openings are factory-framed where possible — field-cut openings need our jamb supplement kit to recover the thermal break.",
+    benefits: [
+      "Flat-packed modular kits — often 800–1,200 m² panel area per 40 ft HC container at 100 mm thickness",
+      "Cam-lock assembly without welding — suited to sites with limited crane access",
+      "Complete corner, coving and jamb accessory schedule quoted with the room, not as afterthoughts",
+      "PUF or PIR core options matched to chiller versus freezer duty",
+      "Room layouts can expand with additional panel modules when production grows",
+      "Export packing with edge protection and labelled joint hardware reduces site confusion",
+    ],
+    selectionGuidance:
+      "Send internal dimensions, target temperature, ambient design condition and door size/position. A −18 °C freezer in humid coastal East Africa typically starts at 100–120 mm PUF before door losses; blast freezers need a proper load calc, not a catalogue guess. Specify how many door openings and whether forklifts need a rated floor coving detail. If the room sits inside an existing shell, tell us what the external walls are — we may recommend a thinner internal box with its own vapour control layer.",
+    thermalPerformance: [
+      { thickness: "80 mm", uValue: "0.28", indicative: true },
+      { thickness: "100 mm", uValue: "0.22", indicative: true },
+      { thickness: "120 mm", uValue: "0.18", indicative: true },
+      { thickness: "150 mm", uValue: "0.15", indicative: true },
+    ],
+    installationNotes:
+      "Sequence matters: floor coving or floor panel interface first, then wall panels from a corner, ceiling last. Cam-lock engagement needs even pressure along the joint — never force a panel with a crowbar against the foam lip. Door jambs must be installed with the supplied thermal break gaskets before the door leaf is hung; retrofitting gaskets after the frame is fixed rarely achieves full compression. At the floor junction, continuous coving without gaps is non-negotiable in freezers — mop water and warm air enter any open corner. Allow the room to pull down under supervision before you load product; joint leaks show as frost trails at bridging points within 48 hours.",
+    comparisonNotes:
+      "Versus site-built masonry cold stores: modular cam-lock rooms install in days and can relocate if lease terms change. Versus tongue-and-groove wall panels on a fixed building: cam-lock suits box rooms; continuous cladding suits large envelope walls — do not specify cam-lock for a 200 m long warehouse wall. Versus thicker panels alone: if door frames and floors are not detailed, extra thickness does not fix the bridge.",
+    keySpec: "Cam-lock modular · PUF/PIR core · jamb + coving kit",
     coreOfType: "polyurethane foam (PUF) or polyisocyanurate (PIR)",
-    specs: [],
-    comparisons: [],
-    images: [],
-    applications: ["cold-room-construction", "controlled-temperature-storage"],
-    industries: ["cold-storage", "food-processing", "dairy"],
+    specs: [
+      { label: "Joint system", value: "Cam-lock hook-and-rotate", verified: false, note: SPEC_NOTE },
+      { label: "Core options", value: "PUF or PIR", verified: false, note: SPEC_NOTE },
+      { label: "Typical panel thickness (freezer)", value: "100–120", unit: "mm", verified: false, note: SPEC_NOTE },
+      { label: "Cover width (effective)", value: "~1000", unit: "mm", verified: false, note: SPEC_NOTE },
+      { label: "Facing options", value: "PPGI / PPGL, 0.45–0.60 mm", verified: false, note: SPEC_NOTE },
+      { label: "Accessories", value: "Corners, coving, jamb profiles, ceiling panels", verified: false, note: SPEC_NOTE },
+      { label: "Operating temperature range", value: "−40 to +15", unit: "°C typical", verified: false, note: SPEC_NOTE },
+      { label: "Assembly", value: "Mechanical cam-lock — no site welding", verified: false, note: SPEC_NOTE },
+    ],
+    thicknessOptions: ["80 mm", "100 mm", "120 mm", "150 mm", "180 mm", "200 mm"],
+    coverWidth: "~1000 mm",
+    facings: ["PPGI (pre-painted galvanized iron)", "PPGL (pre-painted galvalume)", "food-grade facing on request"],
+    jointTypes: ["cam-lock"],
+    finishes: ["standard RAL colours", "white internal typical for food plants"],
+    applications: [
+      "cold-room-construction",
+      "controlled-temperature-storage",
+      "food-processing-envelope",
+    ],
+    industries: ["cold-storage", "food-processing", "dairy", "warehousing-logistics"],
+    comparisons: ["puf-vs-pir-panels"],
     relatedProducts: ["puf-panels", "pir-panels", "industrial-doors"],
-    faqs: [],
-    holdingCopy:
-      "Cam-lock cold room panels publish next — corner profiles, floor coving and door jamb interfaces included. Until then, size your room with our live PUF and PIR panel pages and note cam-lock in the quotation request.",
-    draft: true,
+    faqs: [
+      {
+        question: "Why does frost appear on the door frame before anywhere else?",
+        answer:
+          "The door frame is a steel bridge through the insulation line. Without thermal break gaskets and a correctly detailed jamb profile, the frame stays warmer than the panel field and condenses first. We supply jamb kits matched to your wall thickness — do not substitute generic steel angle.",
+      },
+      {
+        question: "How do you detail the floor-to-wall junction in a freezer?",
+        answer:
+          "Continuous floor coving or an insulated floor panel interface with sealed laps — no open corner. The drawing shows coving radius, sealant type and fixings. Cutting coving short to save cost is the most common floor junction failure we see on site.",
+      },
+      {
+        question: "Can I order cold room panels without the accessory kit?",
+        answer:
+          "We strongly advise against it. Corners, coving and jambs are part of the thermal system. Panels-only quotes are available for experienced contractors who already hold compatible profiles — state that explicitly in your enquiry.",
+      },
+      {
+        question: "What is the difference between a cold room kit and standard PUF wall panels?",
+        answer:
+          "Cold room kits use cam-lock joints and include box-room accessories sized to your internal dimensions. Standard tongue-and-groove wall panels clad building envelopes — different joint, different accessory set.",
+      },
+      {
+        question: "How long to assemble a modular cold room on site?",
+        answer:
+          "A trained crew often completes a 50–100 m³ chiller box in two to four days excluding refrigeration commissioning. Freezer rooms need longer pull-down and joint inspection time before sign-off.",
+      },
+      {
+        question: "Do cam-lock panels need silicone on every joint?",
+        answer:
+          "Gaskets and cam-lock compression provide the primary seal. Supplementary sealant is used only where the detail calls for it — excess silicone on the cold face cracks and traps moisture.",
+      },
+      {
+        question: "Can the room be extended later?",
+        answer:
+          "Yes if you plan an expansion wall during the first order. We can leave a removable end panel or schedule compatible cam-lock modules for a future bay — tell us at quotation stage.",
+      },
+      {
+        question: "What door size should I allow in the panel schedule?",
+        answer:
+          "Share forklift pallet dimensions and traffic direction. Undersized doors increase open time and load; oversized openings add bridge area. We coordinate leaf thickness with the industrial doors page spec.",
+      },
+      {
+        question: "How are cold room kits packed for export?",
+        answer:
+          "Panels flat-stacked; corners, coving and hardware in labelled crates within the same container. We issue a packing list that maps crate numbers to assembly sequence.",
+      },
+      {
+        question: "Is PIR worth it inside a cam-lock freezer box?",
+        answer:
+          "When internal volume is tight or the client spec names improved fire behaviour over PUF, yes. For a large simple −18 °C box with generous dimensions, PUF usually meets the load at lower cost — we quote both when asked.",
+      },
+    ],
+    exportNotes:
+      "Cold room kits ship as panel stacks plus accessory crates in 40 ft HC containers. Door jamb and coving profiles are nested between panel faces with edge protection. Hardware bags are labelled by room elevation to reduce customs unpacking errors on first-time African sites.",
+    images: [
+      {
+        src: "/images/solutions/freezer-boxes.jpg",
+        alt: "Stacked insulated freezer boxes in a warehouse yard — stock reference, not a Phoenixx install",
+        width: 1600,
+        height: 1067,
+        caption: "Stock reference — modular cold box form factor.",
+        isStock: true,
+      },
+      {
+        src: "/images/hero/hero-cold-storage-hvac.jpg",
+        alt: "Refrigeration condenser units on an exterior plant wall — stock reference",
+        width: 1600,
+        height: 1067,
+        isStock: true,
+      },
+      {
+        src: "/images/solutions/cold-storage-exterior-hvac.jpg",
+        alt: "Packaged HVAC units mounted on a cold storage building — stock reference",
+        width: 1600,
+        height: 1067,
+        isStock: true,
+      },
+      {
+        src: "/images/products/warehouse-interior-product.jpg",
+        alt: "Temperature-controlled warehouse interior aisle — stock reference",
+        width: 1600,
+        height: 1067,
+        isStock: true,
+      },
+    ],
+    draft: false,
+    updatedAt: "2026-09-14",
   },
   {
     slug: "cleanroom-panels",
     name: "Cleanroom Sandwich Panels",
     shortName: "Cleanroom Panels",
     category: "panel",
-    h1: "Cleanroom Sandwich Panels for Controlled Environments",
-    seoTitle: "Cleanroom Panels — Export from India | PHOENIXX",
+    h1: "Cleanroom Wall and Ceiling Panels — Smooth Hygiene Facings",
+    seoTitle: "Cleanroom Panels — Hygiene Export | PHOENIXX",
     metaDescription:
-      "Cleanroom wall and ceiling panels for pharmaceutical and food processing facilities. Full page coming soon.",
+      "Smooth-faced cleanroom panels for pharma and food plants. Coved joints and washdown-safe detailing for controlled environments.",
     summary:
-      "Smooth-faced sandwich panels for cleanroom walls and ceilings — pharmaceutical, food and electronics applications.",
+      "Smooth-faced sandwich panels for cleanroom walls and ceilings — PIR or PUF core with hygiene-grade coatings where specified. Joint geometry and coved bases are engineered for washdown regimes, because bio-burden collects at panel laps long before the facing itself fails.",
+    quickAnswer:
+      "Cleanroom panels use flat or lightly micro-rib inner facings with tight tongue-and-groove or concealed joints, plus coved skirting at floor lines. ISO class is achieved by the full system — HVAC, gowning, cleaning protocol and joint detail — not by panel marketing claims alone. Washdown pressure at unsealed horizontal laps is the contamination path we design out first.",
+    overview:
+      "Cleanroom fit-out panels must present a wipeable, non-shedding surface and survive repeated disinfection cycles without chalking or joint opening. We supply wall and ceiling modules with smooth inner facings — typically white coated steel or upgraded hygiene finishes on request — over PIR or PUF cores depending on temperature and fire notes in your URS. Pharmaceutical suites often specify PIR for a thinner partition when HVAC plenum space is tight; food processing areas may accept PUF when the room is not classified but still needs hose-down surfaces. Our honest caveat on every pharma enquiry: washdown water and chemical residue migrate into open joints and behind poorly terminated coving — that is where contamination audits fail, not on the flat field of the panel. We detail coved bases, sealed horizontal laps and penetration collars in the drawing set. We do not publish generic ISO class numbers on a panel SKU; your validation consultant maps the installed system to the class you target.",
+    construction:
+      "Inner facing is smooth PPGI or specified hygiene coating; outer facing follows the plant envelope requirement. Core is PIR or PUF laminated on a continuous line with density held to project spec. Wall panels interlock vertically with factory-applied gasket bead or sealant channel; ceiling panels use concealed-fix or flush grid interfaces. Coving pieces are radius extrusions or formed steel at wall-floor and wall-ceiling transitions. Window and pass-through openings receive framed trim with silicone-free options where your SOP bans certain sealant chemistry.",
+    benefits: [
+      "Smooth inner facing suited to wipe-down and fogging disinfection cycles",
+      "Coved skirting and ceiling cornice profiles reduce ledges where residue collects",
+      "PIR option recovers plenum height in classified suites with tight floor-to-deck dimensions",
+      "Concealed-fix facades available for corridors visible to auditors",
+      "Panel modules coordinate with common cleanroom door frame sections",
+      "Export packing with facing interleaves protects coating gloss during long sea transits",
+    ],
+    selectionGuidance:
+      "Send target cleanliness class reference (if any), washdown method — low-pressure wipe versus high-pressure hose — temperature range and whether the room is part of a cold chain suite. Classified pharma work needs your HVAC and pressurisation scheme alongside panel enquiry; we respond with joint and coving detail, not a class badge. For food hygiene zones without formal classification, specify chemical exposure (peracetic, quat, chlorine) so we confirm coating compatibility.",
+    thermalPerformance: [
+      { thickness: "50 mm", uValue: "0.38", indicative: true },
+      { thickness: "80 mm", uValue: "0.26", indicative: true },
+      { thickness: "100 mm", uValue: "0.21", indicative: true },
+      { thickness: "120 mm", uValue: "0.17", indicative: true },
+    ],
+    installationNotes:
+      "Install coving before the final wall panel course at floor level — retrofit coving after panels are fixed leaves a hidden crevice. Horizontal joints on washdown walls need the specified gasket tape continuous through corners; cutting tape short at intersections is an audit finding. Penetrations for sockets and pipes get collar trim with sealant type named on the drawing — mixed chemistry on site voids coating warranties. Ceiling panels must be fixed to a grid or purlin layout that allows removal for filter changes without levering against foam edges. Do not use abrasive pads on coated facings during construction cleanup — scratches harbour biofilm later.",
+    comparisonNotes:
+      "Versus standard industrial wall panels: cleanroom modules use smoother facings and tighter joint accessories; micro-rib warehouse walls are cheaper but harder to sanitise. Versus post-finished drywall: sandwich panels install faster and avoid plaster dust during fit-out, but joint discipline during install is stricter. Versus cold-room cam-lock: cleanrooms need coved hygiene geometry, not freezer floor bridging — different accessory families.",
+    keySpec: "Smooth hygiene facing · coved joints · PIR/PUF core",
     coreOfType: "polyisocyanurate (PIR) or polyurethane (PUF)",
-    specs: [],
-    comparisons: [],
-    images: [],
-    applications: ["cleanroom-fitout", "pharmaceutical-cold-chain"],
-    industries: ["pharmaceutical-cleanroom", "food-processing"],
-    relatedProducts: ["pir-panels", "puf-panels", "wall-panels"],
-    faqs: [],
-    holdingCopy:
-      "Cleanroom panel finishes, coved joints and ISO-class considerations publish in the next batch. For active tenders, reference our PIR page for core performance and flag hygiene-class facing in your datasheet request.",
-    draft: true,
+    specs: [
+      { label: "Inner facing", value: "Smooth PPGI or hygiene-grade coating", verified: false, note: SPEC_NOTE },
+      { label: "Core options", value: "PIR or PUF", verified: false, note: SPEC_NOTE },
+      { label: "Typical wall thickness", value: "50–120", unit: "mm", verified: false, note: SPEC_NOTE },
+      { label: "Joint system", value: "Tongue-and-groove or concealed-fix", verified: false, note: SPEC_NOTE },
+      { label: "Coving", value: "Radius wall-floor and wall-ceiling profiles", verified: false, note: SPEC_NOTE },
+      { label: "Cover width (effective)", value: "~1000", unit: "mm", verified: false, note: SPEC_NOTE },
+      { label: "Ceiling interface", value: "Flush grid or concealed-fix", verified: false, note: SPEC_NOTE },
+      { label: "Coating compatibility", value: "Confirm against cleaning agents in URS", verified: false, note: SPEC_NOTE },
+    ],
+    thicknessOptions: ["50 mm", "60 mm", "80 mm", "100 mm", "120 mm"],
+    coverWidth: "~1000 mm",
+    facings: ["smooth PPGI inner", "PPGI/PPGL outer", "hygiene-grade coating on request"],
+    jointTypes: ["tongue-and-groove", "concealed-fix"],
+    finishes: ["white smooth inner standard", "RAL outer on plant envelope"],
+    applications: ["cleanroom-fitout", "pharmaceutical-cold-chain", "food-processing-envelope"],
+    industries: ["pharmaceutical-cleanroom", "food-processing", "cold-storage"],
+    comparisons: ["pir-vs-rockwool-panels"],
+    relatedProducts: ["pir-panels", "wall-panels", "industrial-doors"],
+    faqs: [
+      {
+        question: "Do your panels achieve ISO 7 or ISO 8 on their own?",
+        answer:
+          "No panel SKU carries an ISO class by itself. Classification depends on airflow, filtration, pressurisation, procedures and joint integrity after install. We supply surfaces and joint details that support your validated system — your consultant maps the outcome.",
+      },
+      {
+        question: "Can cleanroom panels withstand daily hose-down?",
+        answer:
+          "Yes when joints and coving are installed per the hygiene detail. High-pressure nozzles aimed directly at open laps will force water behind the facing — that is an installation gap, not a facing defect.",
+      },
+      {
+        question: "What causes contamination findings at panel joints?",
+        answer:
+          "Incomplete gasket continuity, missing coving at floor lines, or sealant incompatible with your disinfectant. Residue wicks into capillary gaps and survives visual inspection until swab testing.",
+      },
+      {
+        question: "PIR or PUF for a classified suite?",
+        answer:
+          "PIR when plenum space is tight or the spec names improved fire behaviour. PUF when the room is hygiene-critical but not formally classified and cost sensitivity is high. Send your URS and we align without upselling.",
+      },
+      {
+        question: "Are concealed-fix joints better for pharma corridors?",
+        answer:
+          "Often yes — fewer exposed screw heads and cleaner lines for auditor walk-through. Rear plant walls may still use tongue-and-groove for speed and access.",
+      },
+      {
+        question: "How do you handle pipe and cable penetrations?",
+        answer:
+          "Framed collars with named sealant or gasket systems on the drawing. Site-drilled holes without trim are not acceptable in washdown zones.",
+      },
+      {
+        question: "Can cleanroom ceilings support HEPA housings?",
+        answer:
+          "Ceiling panels integrate with common grid systems when load paths are shown on the structural note. Heavy housings need dedicated support steel — share equipment weights early.",
+      },
+      {
+        question: "Do you supply windows and viewing panels?",
+        answer:
+          "Yes as framed modules with flush inner glazing and sealed perimeters. Vision panel size affects cleaning SOP — oversized glazing adds edge length to maintain.",
+      },
+      {
+        question: "How are panels protected during export?",
+        answer:
+          "Facing interleaves and edge boards on flat stacks. Long sea transits to East Africa need intact coating on arrival — unpacking damage before install is treated as site handling, so we pack accordingly.",
+      },
+      {
+        question: "Can cleanroom panels be used in cold chain suites?",
+        answer:
+          "Yes where hygiene and temperature control overlap — coordinate core thickness with cold load and vapour control through floors and ceilings. Mixed cold and classified zones need transition details at the boundary.",
+      },
+    ],
+    exportNotes:
+      "Cleanroom panels ship flat with facing protection between each sheet. Coving and trim lengths are bundled separately with colour-coded labels matching elevation drawings. Chemical compatibility notes for coatings travel with the packing list for QA file inclusion.",
+    images: [
+      {
+        src: "/images/details/metal-siding-detail.jpg",
+        alt: "Close view of smooth metal panel siding joints — stock reference",
+        width: 1600,
+        height: 1067,
+        caption: "Stock reference — smooth facing and joint line appearance.",
+        isStock: true,
+      },
+      {
+        src: "/images/hero/hero-manufacturing-panels.jpg",
+        alt: "Clean industrial building with metal panel cladding — stock reference",
+        width: 1600,
+        height: 1067,
+        isStock: true,
+      },
+      {
+        src: "/images/solutions/warehouse-interior.jpg",
+        alt: "Bright industrial interior suitable for controlled environment fit-out — stock reference",
+        width: 1600,
+        height: 1067,
+        isStock: true,
+      },
+      {
+        src: "/images/products/metal-cladding-exterior.jpg",
+        alt: "Industrial facade with flat metal sandwich panels — stock reference",
+        width: 1600,
+        height: 1067,
+        isStock: true,
+      },
+    ],
+    draft: false,
+    updatedAt: "2026-09-14",
   },
   {
     slug: "fire-rated-panels",
     name: "Fire-Rated Sandwich Panels",
     shortName: "Fire-Rated Panels",
     category: "panel",
-    h1: "Fire-Rated Sandwich Panels for Compartment Walls",
-    seoTitle: "Fire-Rated Sandwich Panels — Export | PHOENIXX",
+    h1: "Fire-Rated Sandwich Panel Systems — Mineral Wool Compartmentation",
+    seoTitle: "Fire-Rated Panels — System Export | PHOENIXX",
     metaDescription:
-      "Mineral wool core fire-rated panels for industrial fire compartmentation. Full page coming soon.",
+      "Fire-rated mineral wool panel systems for compartment walls. Ratings confirmed against your project test standard — not catalogue guesses.",
     summary:
-      "Fire-rated sandwich panels with mineral wool cores for walls and roofs where building codes require non-combustible insulation.",
+      "Fire-rated sandwich panel systems with mineral wool cores, matched joints and trim for compartment walls and roofs. We quote against the fire period and test standard on your drawings — we do not invent certification labels or imply PIR foam equals rated fire separation.",
+    quickAnswer:
+      "A fire-rated panel system is the tested assembly — panel, joint, fixings and trim together — not the core marketing name alone. Mineral wool cores are non-combustible; PIR and PUF improve fire behaviour versus basic foam but do not replace a certified compartment build-up unless your project documents say so. Send the required fire period and standard reference; we map an approved system before dispatch.",
+    overview:
+      "Fire-rated sandwich panels address compartmentation where your insurer, authority or process safety brief names a fire period on a wall or roof element. The mineral wool core does not melt or drip in fire exposure; facings and joint hardware complete a system that must match a test report your engineer accepts. We supply wall and roof profiles with tongue-and-groove joints, fire-stop trims and fixing patterns documented on the approval drawing. Two objections we answer upfront on export enquiries: first, we will not publish a generic two-hour label on this page — every rating is confirmed against the project-specified test standard and build-up before we release material. Second, buyers often specify PIR sandwich panels expecting certified fire compartmentation; PIR is a better-behaving foam than standard PUF but it is not interchangeable with a mineral wool fire-rated system unless a matched test report explicitly covers that build-up. Mixing foam envelope panels with rockwool fire walls without a detailed transition is a common inspection failure — we detail those junctions or flag the risk in writing.",
+    construction:
+      "Mineral wool slabs are factory-laminated or inserted between steel facings, typically 0.50–0.70 mm on fire specs. Core density runs higher than foam panels — commonly 100–140 kg/m³ — to meet the system report. Joint lines include fire-stop beads, intumescent trim or approved steel covers per the tested detail; site substitutions void the intended period. Cover width is approximately 1000 mm. Roof and wall profiles are not interchangeable on the same rating — each orientation has its own approval when one exists.",
+    benefits: [
+      "Non-combustible mineral wool core for compartment walls and rated roof elements",
+      "System quotation includes joint trim and fire-stop accessories — not panels alone",
+      "Ratings referenced to project documents before manufacturing release",
+      "Acoustic mass as a secondary benefit on plant-to-office separations",
+      "Compatible flashings and penetration kits when part of the approved build-up",
+      "Export packing that protects core edges — compression damages fire performance",
+    ],
+    selectionGuidance:
+      "Send the fire period, test standard reference (as listed on your drawing or insurer letter), wall height and whether the element is wall, roof or partition. Include adjacent envelope types — foam-cored panels, masonry, steel frame — so we can quote transition details. If your brief only says non-combustible insulation without a period, rockwool panels may suffice without a formal fire-rated system — we clarify that distinction to avoid overspecifying.",
+    thermalPerformance: [
+      { thickness: "80 mm", uValue: "0.45", indicative: true },
+      { thickness: "100 mm", uValue: "0.38", indicative: true },
+      { thickness: "120 mm", uValue: "0.32", indicative: true },
+      { thickness: "150 mm", uValue: "0.26", indicative: true },
+    ],
+    installationNotes:
+      "Fixing density follows the fire test note — never copy foam panel screw spacing. Fire-stops at horizontal and vertical joints must be continuous before the next panel is closed in. Penetrations for ducts and cables use approved collar systems from the same system family; raw holes with generic foam filler fail inspection. Where a foam envelope meets a fire-rated wall, install the detailed transition profile before either side is signed off. Store panels dry — wet mineral fibre must be replaced, not dried in place.",
+    comparisonNotes:
+      "Versus PIR panels: PIR improves foam fire behaviour but is not a substitute for mineral wool compartmentation unless a specific tested build-up says otherwise. Versus generic rockwool panels: fire-rated systems add matched trim and documented periods; rockwool without a system report is insulation, not a rated compartment. Versus fire board on steel frame: sandwich panels install faster when crane access exists; board systems suit retrofit tight sites.",
+    keySpec: "Mineral wool system · rating per project docs · matched trim",
     coreOfType: "mineral wool (rockwool)",
-    specs: [],
-    comparisons: [],
-    images: [],
-    applications: ["industrial-envelope", "warehouse-insulation"],
-    industries: ["manufacturing-plants", "warehousing-logistics"],
+    specs: [
+      { label: "Core material", value: "Mineral wool (rockwool)", verified: false, note: SPEC_NOTE },
+      { label: "Fire period", value: "Per project test standard — confirmed before dispatch", verified: false, note: SPEC_NOTE },
+      { label: "Typical core density", value: "100–140", unit: "kg/m³", verified: false, note: SPEC_NOTE },
+      { label: "Thermal conductivity (λ)", value: "0.035–0.040", unit: "W/m·K", verified: false, note: SPEC_NOTE },
+      { label: "Joint system", value: "Tongue-and-groove with fire-stop trim", verified: false, note: SPEC_NOTE },
+      { label: "Facing thickness", value: "0.50–0.70", unit: "mm typical", verified: false, note: SPEC_NOTE },
+      { label: "Cover width (effective)", value: "~1000", unit: "mm", verified: false, note: SPEC_NOTE },
+      { label: "Combustibility", value: "Non-combustible mineral fibre core", verified: false, note: SPEC_NOTE },
+    ],
+    thicknessOptions: ["50 mm", "80 mm", "100 mm", "120 mm", "150 mm", "200 mm"],
+    coverWidth: "~1000 mm",
+    facings: ["PPGI (pre-painted galvanized iron)", "PPGL (pre-painted galvalume)"],
+    jointTypes: ["tongue-and-groove with fire-stop", "concealed-fix where approved"],
+    finishes: ["standard RAL colours on request"],
+    applications: ["industrial-envelope", "warehouse-insulation", "food-processing-envelope"],
+    industries: ["manufacturing-plants", "warehousing-logistics", "food-processing"],
+    comparisons: ["pir-vs-rockwool-panels", "puf-vs-rockwool-panels"],
     relatedProducts: ["rockwool-panels", "wall-panels", "roofing-panels"],
-    faqs: [],
-    holdingCopy:
-      "Fire-rated system pages will tie test reports to joint and trim details — not generic marketing ratings. Until then, use the live Rockwool panel page for mineral wool build-ups and send your required fire period with the enquiry.",
-    draft: true,
+    faqs: [
+      {
+        question: "Can you confirm a two-hour fire rating on this page?",
+        answer:
+          "No generic period is published here. The rating belongs to a named test system matched to your project documents. Send the period and standard reference and we confirm feasibility before quoting.",
+      },
+      {
+        question: "Are PIR panels acceptable for fire compartment walls?",
+        answer:
+          "Not unless your project’s approved test report covers that exact PIR build-up. PIR improves fire behaviour versus standard PUF foam but does not automatically satisfy compartmentation requirements. Mineral wool systems are the usual path when a period is specified.",
+      },
+      {
+        question: "What documents do you need to quote a fire-rated system?",
+        answer:
+          "Drawing extracts showing the rated element, required fire period, test standard reference if listed, wall or roof orientation and heights. Insurer or authority letters help when the drawing is incomplete.",
+      },
+      {
+        question: "Can foam panels meet a rockwool fire wall at a corner?",
+        answer:
+          "Only with an approved transition detail — intumescent trim, steel closure or listed junction system. Un detailed mixing fails inspections.",
+      },
+      {
+        question: "Do fire-rated roof panels use the same system as walls?",
+        answer:
+          "Often different approvals by orientation. Share whether the rated element is roof, wall or both — we quote matched profiles separately when required.",
+      },
+      {
+        question: "Why are fire-rated panels heavier than PUF?",
+        answer:
+          "Mineral wool density is higher and facings may be thicker. Structure and fixings must follow the fire system note, not a foam shed drawing.",
+      },
+      {
+        question: "Can I use rockwool panels without a formal fire rating?",
+        answer:
+          "Yes when the brief asks for non-combustible insulation only. A fire-rated system adds documented period and trim — specify which you actually need to avoid overpaying.",
+      },
+      {
+        question: "How are fire-stop accessories shipped?",
+        answer:
+          "Labelled crates with trim lengths matched to panel schedule and elevation marks. Missing a fire-stop batch on site delays close-in — we pack by install sequence.",
+      },
+      {
+        question: "Does cutting panels on site affect the fire period?",
+        answer:
+          "Uncontrolled field cuts at rated joints can void the system intent. Use framed openings from the drawing; cap cut edges per the method statement.",
+      },
+      {
+        question: "Are test certificates included in export shipments?",
+        answer:
+          "System documentation is issued against the approved build-up in your project file — not a generic marketing certificate. Confirm document requirements at order stage for customs and consultant review.",
+      },
+    ],
+    exportNotes:
+      "Fire-rated panels add weight and need edge protection to prevent core crushing. Trim and fire-stop lengths ship in marked bundles aligned to container unload order. Documentation references the project-matched system — request copies for QA files before sail date.",
+    images: [
+      {
+        src: "/images/hero/hero-peb-steel-frame.jpg",
+        alt: "Steel frame industrial hall under construction — stock reference for fire-rated envelope context",
+        width: 1600,
+        height: 1067,
+        isStock: true,
+      },
+      {
+        src: "/images/plant/industrial-warehouse-exterior.jpg",
+        alt: "Large industrial warehouse with metal cladding — stock reference",
+        width: 1600,
+        height: 1067,
+        isStock: true,
+      },
+      {
+        src: "/images/solutions/steel-sheet-storage.jpg",
+        alt: "Stacked steel sheet coils in a factory yard — stock reference",
+        width: 1600,
+        height: 1067,
+        isStock: true,
+      },
+      {
+        src: "/images/products/metal-cladding-exterior.jpg",
+        alt: "Factory building with sandwich panel facade — stock reference",
+        width: 1600,
+        height: 1067,
+        isStock: true,
+      },
+    ],
+    draft: false,
+    updatedAt: "2026-09-14",
   },
   {
     slug: "industrial-doors",
     name: "Industrial Cold Room Doors",
     shortName: "Industrial Doors",
     category: "door",
-    h1: "Industrial and Cold Room Doors for Temperature-Controlled Facilities",
+    h1: "Cold Room and Cleanroom Doors — Insulated Leaves and Frames",
     seoTitle: "Industrial Cold Room Doors — Export | PHOENIXX",
     metaDescription:
-      "Hinged, sliding and high-speed doors for cold rooms and industrial buildings. Full page coming soon.",
+      "Hinged and sliding cold room doors with gasketed frames. Threshold and seal detailing for chiller and freezer export projects.",
     summary:
-      "Cold room doors, industrial sliding doors and high-speed doors matched to panel systems and temperature requirements.",
+      "Insulated industrial doors for cold rooms, cleanrooms and high-traffic plant openings — hinged, sliding and rapid-roll options matched to panel wall thickness. Seal compression and threshold detailing determine energy loss more than leaf thickness alone.",
+    quickAnswer:
+      "Cold room doors pair an insulated leaf (typically 80–120 mm PUF or PIR) with a heated or thermal-break frame, floor threshold plate and perimeter gaskets. Seal failure at the sill and jamb bottom — not the panel field — causes most energy and frost complaints. We quote frame, leaf and threshold as one interface set aligned to your wall build-up.",
+    overview:
+      "Doors are the highest-cycle thermal breach in any cold store or hygiene suite. We supply hinged and sliding insulated doors for chiller and freezer rooms, plus rapid-roll options where forklift traffic demands short open times. Leaf core matches wall insulation — PUF or PIR between steel skins — with thickness coordinated to the panel schedule on the same order. Cleanroom doors add flush surfaces and gasket profiles suited to washdown, without the floor heating elements a freezer needs. The field objection we document on every quotation: seal failure and threshold detailing. A correctly sized leaf with a generic sill plate and no heated threshold will ice up in a −18 °C room within weeks; warm-side jamb gaskets that are never adjusted after install leak audible air within a month. We specify threshold heaters or ramp details, jamb gasket type and maintenance clearance in the door schedule — not as optional extras discovered on site.",
+    construction:
+      "Door leaf is insulated sandwich construction — steel skins over foam core — sized to opening width and room classification. Frame sections are anodised aluminium or stainless steel options depending on washdown level; thermal-break inserts sit between inner and outer frame faces on freezer specs. Gaskets are replaceable magnetic or PVC profiles seated in continuous grooves. Sliding doors run on tracked head members with safety interlocks; hinged doors use adjustable hinges for post-install compression tuning. Threshold plates may include low-voltage heating circuits on freezer openings — electrical scope is noted on the drawing for your MEP contractor.",
+    benefits: [
+      "Leaf thickness matched to adjacent panel wall build-up on the same order",
+      "Thermal-break frames reduce jamb condensation in freezer duty",
+      "Replaceable gasket profiles — maintenance without replacing the whole leaf",
+      "Threshold options for heated sill, ramp plate or hygiene coved base at cleanrooms",
+      "Sliding and hinged formats for forklift versus personnel traffic patterns",
+      "Safety interlocks and release hardware available per local practice",
+    ],
+    selectionGuidance:
+      "Send opening width and height, room temperature, traffic type — pedestrian, pallet jack or forklift — and whether the door faces an unconditioned corridor. Freezer doors need threshold strategy decided at quote stage: heated sill, air curtain coordination or rapid-roll cycle time. Cleanroom doors need facing finish and washdown chemical compatibility. Quote doors with the panel order so jamb depth matches wall thickness exactly.",
+    thermalPerformance: [
+      { thickness: "80 mm leaf", uValue: "0.35", indicative: true },
+      { thickness: "100 mm leaf", uValue: "0.28", indicative: true },
+      { thickness: "120 mm leaf", uValue: "0.22", indicative: true },
+    ],
+    installationNotes:
+      "Set frame plumb before foam packing — twisted frames twist gaskets. Adjust hinge or track alignment until gasket compression is even at all four edges; a business card should drag consistently around the perimeter on hinged units. Connect threshold heat only after the refrigeration pull-down schedule allows — energising too early wastes energy, too late ices the sill. Sliding doors need level track and periodic roller greasing per the manual; grit in tracks is a common seal bypass on African sites near unpaved yards. Never fix a door leaf before wall panels are complete — jamb interfaces depend on final panel face position.",
+    comparisonNotes:
+      "Versus strip curtains alone: curtains are cheap for moderate traffic but leak more on high-cycle freezer openings — many projects use both with the door as primary seal. Versus uninsulated industrial doors: metal roll-up doors without insulation belong outside the cold envelope, not on a −18 °C room. Versus larger openings than needed: oversizing increases infiltration area — size for actual pallet plus margin, not maximum theoretical load.",
+    keySpec: "Insulated leaf · thermal-break frame · gasket + threshold kit",
     coreOfType: "insulated door leaf with PUF/PIR core",
-    specs: [],
+    specs: [
+      { label: "Leaf construction", value: "Steel skins over PUF/PIR core", verified: false, note: SPEC_NOTE },
+      { label: "Typical leaf thickness", value: "80–120", unit: "mm", verified: false, note: SPEC_NOTE },
+      { label: "Frame material", value: "Aluminium thermal-break or stainless on request", verified: false, note: SPEC_NOTE },
+      { label: "Door types", value: "Hinged, sliding, rapid-roll (application-dependent)", verified: false, note: SPEC_NOTE },
+      { label: "Gaskets", value: "Replaceable magnetic or PVC profile", verified: false, note: SPEC_NOTE },
+      { label: "Threshold", value: "Heated sill, ramp plate or hygiene detail per room", verified: false, note: SPEC_NOTE },
+      { label: "Indicative leaf U-value", value: "0.22–0.35", unit: "W/m²K at 80–120 mm", verified: false, note: SPEC_NOTE },
+      { label: "Interlock options", value: "Per traffic and safety brief", verified: false, note: SPEC_NOTE },
+    ],
+    thicknessOptions: ["80 mm leaf", "100 mm leaf", "120 mm leaf"],
+    facings: ["PPGI door skins", "stainless or hygiene finish on request"],
+    jointTypes: ["gasketed frame rebate"],
+    finishes: ["white or RAL leaf colour", "stainless frame for washdown zones"],
+    applications: ["cold-room-construction", "cleanroom-fitout", "warehouse-insulation"],
+    industries: ["cold-storage", "food-processing", "pharmaceutical-cleanroom", "warehousing-logistics"],
     comparisons: [],
-    images: [],
-    applications: ["cold-room-construction", "warehouse-insulation"],
-    industries: ["cold-storage", "food-processing", "warehousing-logistics"],
-    relatedProducts: ["cold-room-panels", "puf-panels", "pir-panels"],
-    faqs: [],
-    holdingCopy:
-      "Industrial door types, frame interfaces and gasket specifications publish shortly. Quote door openings with your panel order now — we will match leaf thickness to the wall build-up on the live PUF and PIR pages.",
-    draft: true,
+    relatedProducts: ["cold-room-panels", "cleanroom-panels", "puf-panels"],
+    faqs: [
+      {
+        question: "Why does ice build up at the door threshold first?",
+        answer:
+          "The sill is where warm moist air meets the coldest path during every open cycle. Without a heated threshold, ramp detail or adequate close speed, condensation freezes into a ridge that prevents gasket contact — a feedback loop. Specify threshold strategy at order stage.",
+      },
+      {
+        question: "How often should door gaskets be replaced?",
+        answer:
+          "Inspect quarterly on high-cycle freezer doors — sooner if forklift impact marks appear. Gaskets are consumables; running with compressed or torn sections increases energy cost and frost trails on adjacent panels.",
+      },
+      {
+        question: "Hinged or sliding for a forklift freezer opening?",
+        answer:
+          "Sliding doors suit wide pallet openings with side clearance; hinged doors suit personnel and narrow lanes. Rapid-roll may beat both on very high cycle counts if your refrigeration engineer accepts the infiltration profile.",
+      },
+      {
+        question: "Do cleanroom doors need heated thresholds?",
+        answer:
+          "Usually no — hygiene suites are not held at −18 °C. Focus on flush gaskets, coved floor interface and chemical-compatible coatings instead.",
+      },
+      {
+        question: "Can you match door jamb depth to cam-lock cold room panels?",
+        answer:
+          "Yes when doors are quoted on the same schedule as the cold room kit. Send wall thickness and facing type so frames are not shimmed on site.",
+      },
+      {
+        question: "What electrical supply do heated thresholds need?",
+        answer:
+          "Low-voltage heated sills are typical — exact wattage and control are on the door drawing for your MEP contractor. We do not commission electrical work on export supply.",
+      },
+      {
+        question: "Are safety release handles included for personnel doors?",
+        answer:
+          "Panic or internal release hardware is specified per local practice and your safety brief. Confirm requirements before manufacturing.",
+      },
+      {
+        question: "How are doors packed for export?",
+        answer:
+          "Leaves crated upright or flat with frame sections and hardware in separate labelled boxes. Gaskets may ship rolled — acclimatise before install per the manual.",
+      },
+      {
+        question: "Can I add a door to an existing cold room later?",
+        answer:
+          "Possible with a framed opening cut and jamb retrofit, but thermal performance rarely matches factory-planned openings. Plan door positions in the first panel schedule when you can.",
+      },
+      {
+        question: "Do rapid-roll doors replace insulated sliding doors entirely?",
+        answer:
+          "Not always — rapid-roll fabric has a different infiltration and washdown profile. Cold store engineers often specify insulated doors for primary separation and rapid-roll at high-traffic internal zones.",
+      },
+    ],
+    exportNotes:
+      "Doors ship in crates separate from flat panel stacks to prevent frame bending. Hardware kits are labelled by opening mark matching the elevation drawing. Threshold heaters include wiring diagrams only — local electrician connects on site.",
+    images: [
+      {
+        src: "/images/solutions/logistics-warehouse.jpg",
+        alt: "Warehouse loading area with industrial door opening — stock reference",
+        width: 1600,
+        height: 1067,
+        caption: "Stock reference — high-traffic industrial opening context.",
+        isStock: true,
+      },
+      {
+        src: "/images/solutions/freezer-boxes.jpg",
+        alt: "Insulated cold storage boxes in a yard — stock reference",
+        width: 1600,
+        height: 1067,
+        isStock: true,
+      },
+      {
+        src: "/images/solutions/cold-storage-exterior-hvac.jpg",
+        alt: "Cold storage building exterior with plant equipment — stock reference",
+        width: 1600,
+        height: 1067,
+        isStock: true,
+      },
+      {
+        src: "/images/solutions/warehouse-racks.jpg",
+        alt: "Warehouse interior with rack aisles — stock reference",
+        width: 1600,
+        height: 1067,
+        isStock: true,
+      },
+    ],
+    draft: false,
+    updatedAt: "2026-09-14",
   },
   {
     slug: "peb-prefabricated-buildings",
     name: "PEB and Prefabricated Buildings",
     shortName: "PEB Structures",
     category: "structure",
-    h1: "Pre-Engineered Buildings with Insulated Panel Cladding",
-    seoTitle: "PEB Prefabricated Buildings — Export | PHOENIXX",
+    h1: "Pre-Engineered Steel Buildings with Insulated Panel Cladding",
+    seoTitle: "PEB Buildings — Steel + Panels Export | PHOENIXX",
     metaDescription:
-      "Pre-engineered steel buildings with sandwich panel cladding for warehouses and factories. Full page coming soon.",
+      "Pre-engineered steel buildings with sandwich panel walls and roofs. Foundation and span tables coordinated — not ignored.",
     summary:
-      "Pre-engineered building (PEB) steel structures with insulated sandwich panel walls and roofs for warehouses, factories and distribution centres.",
+      "Pre-engineered building packages — primary steel frame, secondary purlins and girts, plus insulated wall and roof sandwich panels for warehouses and factories. We coordinate foundation reactions and span tables with the cladding spec so the envelope is not designed in isolation from the structure.",
+    quickAnswer:
+      "A PEB package is primary steel (columns, rafters, bracing) and secondary members sized to a bay grid, clad with insulated sandwich panels on walls and roof. Cladding span ratings and frame span tables must agree — widening bay spacing to save steel without rechecking panel span limits causes roof sag and fastener pull-through. Foundation anchor bolt templates issue with the steel shop drawings before you pour.",
+    overview:
+      "Pre-engineered buildings combine a fabricated steel frame with insulated sandwich panel cladding for fast enclosure of warehouses, distribution centres and light industrial plants. We supply the structural package — main frames, secondary purlins and girts, bracing, anchor bolt settings — alongside wall and roof panels selected from our PUF, PIR or rockwool ranges depending on thermal and fire brief. Bay width, eave height and roof slope drive steel tonnage; purlin spacing drives which panel profile and thickness satisfy deflection limits. The objection we tackle on every combined quote: foundation interface and span tables treated separately. If your civil engineer pours a footing template from an old drawing while the steel design moved bay spacing, anchor bolts miss columns. If the frame designer widened purlin spacing without checking the roof panel structural table, the roof dips between supports within a year. We issue coordinated steel and cladding notes on one project schedule — anchor bolt plan, reaction loads for foundations, and purlin spacing matched to the panel span table in the same revision.",
+    construction:
+      "Primary frames are built-up or rolled sections designed to the bay module and design code reference on the project. Secondary members attach at spacing that matches the approved roof and wall panel tables. Base plates sit on civil foundations with grouted anchor bolts — template dimensions are released before concrete pour on export jobs where rework is costly. Cladding attaches through the inner liner to girts and purlins with patterns from wind load notes. Mezzanine options, crane brackets and future expansion bays can be allowed for in the frame when flagged at enquiry.",
+    benefits: [
+      "Single supplier path for steel frame and insulated cladding — aligned purlin spacing",
+      "Anchor bolt templates and reaction summaries for civil foundation design",
+      "Bay grids optimised for common warehouse clear spans without ad hoc panel overrides",
+      "Wall and roof panel cores selected for thermal, fire or cost brief on the same building",
+      "Phased shipment possible — steel first, panels follow when site is ready",
+      "Export crating for steel members with member marks matching erection drawings",
+    ],
+    selectionGuidance:
+      "Send building width, length, eave height, design wind region reference, desired clear span and internal use — storage, production, cold store envelope. Include soil or foundation type if known so we flag anchor bolt embedment assumptions. If you already have a civil engineer, request reaction loads early; if not, we note typical footing sizes as indicative only, not stamped civil design. Choose panel cores after fire and thermal brief — do not default to thin PUF on a roof without checking spacing.",
+    thermalPerformance: [
+      { thickness: "Roof 80 mm PUF", uValue: "0.28", indicative: true },
+      { thickness: "Roof 100 mm PUF", uValue: "0.23", indicative: true },
+      { thickness: "Wall 80 mm PUF", uValue: "0.28", indicative: true },
+      { thickness: "Wall 100 mm PUF", uValue: "0.22", indicative: true },
+    ],
+    installationNotes:
+      "Verify anchor bolt projection and template alignment before steel erection — heat straightening columns with mis-set bolts is expensive on remote sites. Erect primary frames, install bracing, then secondary members to the spacing on the cladding note — not an improvised wider grid. Panel install follows roof slope direction and lap rules from the roofing page detail. Do not cut purlins on site to fit a panel mistake; reorder the correct length. Grout base plates after final plumb check; envelope leak paths often start at poorly seated base flashings against out-of-level concrete.",
+    comparisonNotes:
+      "Versus conventional hot-rolled steel: PEB is lighter and faster for standard portal warehouses when the bay module fits. Versus cladding-only supply on someone else's frame: we reduce the spacing mismatch risk when both come from one schedule. Versus site-built masonry: PEB with panels encloses quicker but needs accurate anchor bolt placement — masonry is more forgiving of dimension drift at the cost of time.",
+    keySpec: "Portal frame · coordinated purlin spacing · panel cladding",
     coreOfType: "steel frame with insulated panel envelope",
-    specs: [],
+    specs: [
+      { label: "Structure type", value: "Pre-engineered portal steel frame", verified: false, note: SPEC_NOTE },
+      { label: "Cladding", value: "Insulated sandwich wall and roof panels", verified: false, note: SPEC_NOTE },
+      { label: "Panel core options", value: "PUF / PIR / rockwool per brief", verified: false, note: SPEC_NOTE },
+      { label: "Purlin spacing", value: "Matched to panel span table on drawing", verified: false, note: SPEC_NOTE },
+      { label: "Foundation interface", value: "Anchor bolt template + reaction summary", verified: false, note: SPEC_NOTE },
+      { label: "Design code", value: "Per project specification", verified: false, note: SPEC_NOTE },
+      { label: "Typical bay width", value: "Project-specific — commonly 6–12", unit: "m", verified: false, note: SPEC_NOTE },
+      { label: "Erection", value: "Bolted site assembly — crane required", verified: false, note: SPEC_NOTE },
+    ],
+    thicknessOptions: ["Roof/wall panels per thermal brief — typically 50–150 mm"],
+    facings: ["PPGI wall and roof profiles per panel pages"],
+    jointTypes: ["panel side-lap and end-lap per roofing/wall details"],
+    finishes: ["RAL cladding colours coordinated wall and roof"],
+    applications: ["warehouse-insulation", "industrial-envelope", "cold-room-construction"],
+    industries: ["warehousing-logistics", "manufacturing-plants", "food-processing"],
     comparisons: [],
-    images: [],
-    applications: ["warehouse-insulation", "industrial-envelope"],
-    industries: ["warehousing-logistics", "manufacturing-plants"],
-    relatedProducts: ["puf-panels", "roofing-panels", "wall-panels"],
-    faqs: [],
-    holdingCopy:
-      "PEB frame and cladding packages publish in the next batch — bay spacing, bracing and panel interfaces included. Until then, send building width, length and eave height with panel types from our live roofing and wall pages.",
-    draft: true,
+    relatedProducts: ["roofing-panels", "wall-panels", "puf-panels"],
+    faqs: [
+      {
+        question: "Do you supply foundation drawings?",
+        answer:
+          "We issue anchor bolt templates, reaction summaries and typical footing sketches for your civil engineer. Stamped foundation design remains with your local civil consultant who knows soil conditions.",
+      },
+      {
+        question: "What happens if anchor bolts are cast in the wrong position?",
+        answer:
+          "Field correction is slow and costly on export sites. We release bolt templates before pour specifically to avoid this — hold concrete until template check is signed off.",
+      },
+      {
+        question: "Can purlin spacing be widened to save secondary steel?",
+        answer:
+          "Only within the roof panel span table for your profile, thickness and load case. Wider spacing without that check causes visible sag and screw fatigue — we push back when spacing requests exceed the table.",
+      },
+      {
+        question: "Is steel shipped in the same container as panels?",
+        answer:
+          "Often separate: steel in open-top or bulk containers, panels flat-packed in HC boxes. Phased delivery matches erection sequence when the site pad is not ready for everything at once.",
+      },
+      {
+        question: "Can the building expand later with another bay?",
+        answer:
+          "Yes if expansion bays and bracing locations are flagged in the first design. Retrofit expansion without planned bracing is structurally messy — plan early.",
+      },
+      {
+        question: "Which panel core is typical on a standard warehouse PEB?",
+        answer:
+          "PUF on roof and walls for general storage. PIR when a lower U-value is needed without extra thickness; rockwool when a boundary wall must be fire-rated.",
+      },
+      {
+        question: "Do you include gutters and downpipes?",
+        answer:
+          "Formed metal accessories can be quoted with the cladding schedule. Confirm rainfall intensity reference for sizing on tropical sites.",
+      },
+      {
+        question: "Is erection included in export supply?",
+        answer:
+          "Supply is FOB/CIF per your Incoterm — erection is by your contractor or a partner we can introduce regionally. Member marks and erection drawings support bolt-up assembly.",
+      },
+      {
+        question: "What design wind load do you assume?",
+        answer:
+          "We use the code and return period on your project brief — not a generic default. Send the region and reference standard so spacing and sheet gauge are not under-designed.",
+      },
+      {
+        question: "Can a PEB host an internal cold room box?",
+        answer:
+          "Yes — the outer PEB envelope is often ambient while an internal cam-lock cold room sits inside. Coordinate floor loads and vapour paths between outer cladding and inner box with us on one enquiry.",
+      },
+    ],
+    exportNotes:
+      "Steel members are marked, bundled by erection sequence and protected against salt air in transit. Panel containers may sail on a later vessel to match site readiness. Anchor bolt templates travel with the first steel shipment — email copies go to your civil engineer simultaneously.",
+    images: [
+      {
+        src: "/images/hero/hero-peb-steel-frame.jpg",
+        alt: "Portal steel frame inside an industrial building shell — stock reference",
+        width: 1600,
+        height: 1067,
+        caption: "Stock reference — PEB primary frame during erection.",
+        isStock: true,
+      },
+      {
+        src: "/images/hero/hero-export-containers.jpg",
+        alt: "Shipping containers at a port yard — stock reference for export logistics",
+        width: 1600,
+        height: 1067,
+        isStock: true,
+      },
+      {
+        src: "/images/hero/hero-warehouse-ceiling.jpg",
+        alt: "Warehouse interior showing roof structure and liner — stock reference",
+        width: 1600,
+        height: 1067,
+        isStock: true,
+      },
+      {
+        src: "/images/plant/industrial-warehouse-exterior.jpg",
+        alt: "Completed industrial warehouse with metal cladding — stock reference",
+        width: 1600,
+        height: 1067,
+        isStock: true,
+      },
+    ],
+    draft: false,
+    updatedAt: "2026-09-14",
   },
 ];

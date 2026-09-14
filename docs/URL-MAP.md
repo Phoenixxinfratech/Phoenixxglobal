@@ -37,11 +37,11 @@ All URLs use lowercase hyphenated slugs and a trailing slash (`trailingSlash: tr
 | `/products/rockwool-panels/` | phase-2 live | Full block template; fire-rated walls |
 | `/products/roofing-panels/` | phase-2 live | Full block template; trapezoidal roof |
 | `/products/wall-panels/` | phase-2 live | Full block template; exterior/partition |
-| `/products/cold-room-panels/` | phase-1 shell | |
-| `/products/cleanroom-panels/` | phase-1 shell | |
-| `/products/fire-rated-panels/` | phase-1 shell | |
-| `/products/industrial-doors/` | phase-1 shell | |
-| `/products/peb-prefabricated-buildings/` | phase-1 shell | |
+| `/products/cold-room-panels/` | phase-2 live | Full block template; cam-lock kits |
+| `/products/cleanroom-panels/` | phase-2 live | Full block template; hygiene joints |
+| `/products/fire-rated-panels/` | phase-2 live | Full block template; system ratings |
+| `/products/industrial-doors/` | phase-2 live | Full block template; cold room doors |
+| `/products/peb-prefabricated-buildings/` | phase-2 live | Full block template; PEB + cladding |
 
 ---
 
