@@ -96,19 +96,19 @@ Pattern: `/export/[country]/[city]/`
 
 | URL | Status | Notes |
 | --- | --- | --- |
-| `/export/kenya/nairobi/` | phase-3 | Draft city entity |
-| `/export/kenya/athi-river/` | phase-3 | |
-| `/export/kenya/mombasa/` | phase-3 | |
-| `/export/tanzania/dar-es-salaam/` | phase-3 | |
-| `/export/rwanda/kigali/` | phase-3 | |
-| `/export/ghana/accra/` | phase-3 | |
-| `/export/ghana/tema/` | phase-3 | |
-| `/export/uganda/kampala/` | phase-3 | |
-| `/export/zambia/lusaka/` | phase-3 | |
-| `/export/mozambique/maputo/` | phase-3 | |
-| `/export/namibia/windhoek/` | phase-3 | |
-| `/export/botswana/gaborone/` | phase-3 | |
-| `/export/angola/luanda/` | phase-3 | |
+| `/export/kenya/nairobi/` | phase-3 live | Full city — Industrial Area, Embakasi, Tatu City |
+| `/export/kenya/athi-river/` | phase-3 live | Full city — EPZ / industrial parks, Mombasa–Nairobi corridor |
+| `/export/kenya/mombasa/` | phase-3 live | Full city — Kilindini port-side, salt-air specs |
+| `/export/tanzania/dar-es-salaam/` | phase-3 live | Full city — port industrial zones |
+| `/export/rwanda/kigali/` | phase-3 live | Full city — SEZ, inland via Mombasa |
+| `/export/ghana/accra/` | phase-3 live | Full city — Greater Accra industrial, Tema haulage |
+| `/export/ghana/tema/` | phase-3 live | Full city — free zone and port-side cold chain |
+| `/export/uganda/kampala/` | phase-3 live | Full city — Namanve / Jinja road, Mombasa transit |
+| `/export/zambia/lusaka/` | phase-3 live | Full city — capital industrial + Copperbelt link |
+| `/export/mozambique/maputo/` | phase-3 live | Full city — port, humidity/cyclone notes |
+| `/export/namibia/windhoek/` | phase-3 live | Full city — arid UV, Walvis Bay inland haul |
+| `/export/botswana/gaborone/` | phase-3 live | Full city — landlocked corridors, beef/mining cold chain |
+| `/export/angola/luanda/` | phase-3 live | Full city — Luanda port, Portuguese docs caveat |
 
 ---
 

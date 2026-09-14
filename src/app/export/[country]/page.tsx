@@ -16,6 +16,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Container, Heading, Link, Section } from "@/components/ui";
 import {
   countries,
+  getAllCities,
   getAllIndustrialZones,
   getCountry,
   getProduct,
@@ -23,7 +24,7 @@ import {
 } from "@/content";
 import { buildMetadata } from "@/lib/metadata";
 import { routes } from "@/lib/links";
-import { isPublishableCountry } from "@/lib/publishable";
+import { isPublishableCity, isPublishableCountry } from "@/lib/publishable";
 import { breadcrumbSchema, faqPageSchema } from "@/lib/schema";
 import type { SpecRow } from "@/content/types";
 
@@ -347,6 +348,29 @@ export default async function ExportCountryPage({ params }: PageProps) {
                 </ul>
               </div>
             ) : null}
+
+            {(() => {
+              const publishableCities = getAllCities().filter(
+                (c) => c.countrySlug === country.slug && isPublishableCity(c),
+              );
+              if (publishableCities.length === 0) return null;
+              return (
+                <div className="mt-10">
+                  <Heading as="h3" className="text-xl md:text-2xl">
+                    City export pages
+                  </Heading>
+                  <ul className="mt-4 list-disc space-y-2 pl-5 text-base text-steel">
+                    {publishableCities.map((c) => (
+                      <li key={c.slug}>
+                        <Link href={`${routes.exportCountry(country.slug)}${c.slug}/`}>
+                          {c.name}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              );
+            })()}
           </Container>
         </Section>
       )}

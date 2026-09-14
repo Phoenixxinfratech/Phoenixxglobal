@@ -1,6 +1,6 @@
-import type { Comparison } from "./types";
+import type { ComparisonInput } from "./types";
 
-export const comparisons: Comparison[] = [
+export const comparisons: ComparisonInput[] = [
   {
     slug: "puf-vs-pir-panels",
     name: "PUF vs PIR Panels",

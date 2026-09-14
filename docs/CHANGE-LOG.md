@@ -2,6 +2,33 @@
 
 Additive Phase 1 touches made during later phases. Prefer extension over modification.
 
+## 2026-09-14 Phase 3 Batch D
+
+### File: `src/content/cities.ts`
+**Change:** Full publishable content for 13 launch cities (Nairobi through Luanda) clearing `isPublishableCity` gates.
+**Reason:** Phase 3 Batch D city / industrial-zone architecture with local industrial substance.
+**Backwards compatible:** yes — content only
+
+### File: `src/app/export/[country]/[city]/page.tsx`
+**Change:** Gated full city template via `isPublishableCity`; Phase 2 blocks; breadcrumb + FAQ schema only.
+**Reason:** Assemble city pages without LocalBusiness or doorway patterns.
+**Backwards compatible:** yes — HoldingPage retained for non-publishable
+
+### File: `src/app/export/[country]/page.tsx`
+**Change:** Added publishable city links section per country.
+**Reason:** Country → city internal linking once cities clear the gate.
+**Backwards compatible:** yes — section renders only when cities exist
+
+### File: `docs/URL-MAP.md`
+**Change:** Marked 13 city routes phase-3 live.
+**Reason:** Reflect Batch D ship state.
+**Backwards compatible:** n/a (docs)
+
+### File: `src/content/types.ts`
+**Change:** Extended `ComparisonSchema` additively with `quickAnswer`, `decisionTable`, `chooseAWhen`, `chooseBWhen`, `costNotes`, related arrays and FAQs; added `ComparisonRowSchema`.
+**Reason:** Prep for Batch E comparison pages without breaking existing stubs.
+**Backwards compatible:** yes — all new fields optional/defaulted
+
 ## 2026-09-14 Phase 3 Batch C
 
 ### File: `src/content/countries.ts`

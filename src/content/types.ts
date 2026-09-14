@@ -201,6 +201,14 @@ export const IndustrialZoneSchema = z.object({
 });
 export type IndustrialZone = z.infer<typeof IndustrialZoneSchema>;
 
+export const ComparisonRowSchema = z.object({
+  criterion: z.string().min(1),
+  optionA: z.string().min(1),
+  optionB: z.string().min(1),
+  cheaperWins: z.boolean().optional(),
+});
+export type ComparisonRow = z.infer<typeof ComparisonRowSchema>;
+
 export const ComparisonSchema = z.object({
   slug: z.string().min(1),
   name: z.string().min(1),
@@ -211,10 +219,19 @@ export const ComparisonSchema = z.object({
   productB: z.string().min(1),
   summary: z.string().optional(),
   holdingCopy: z.string().optional(),
+  quickAnswer: z.string().optional(),
+  decisionTable: z.array(ComparisonRowSchema).default([]),
+  chooseAWhen: z.string().optional(),
+  chooseBWhen: z.string().optional(),
+  costNotes: z.string().optional(),
+  relatedSolutions: z.array(z.string()).default([]),
+  relatedGuides: z.array(z.string()).default([]),
+  faqs: z.array(FaqItemSchema).default([]),
   draft: z.boolean(),
   updatedAt: z.string().optional(),
 });
 export type Comparison = z.infer<typeof ComparisonSchema>;
+export type ComparisonInput = z.input<typeof ComparisonSchema>;
 
 export const BodySectionSchema = z.object({
   h2: z.string().min(1),
