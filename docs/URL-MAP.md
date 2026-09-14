@@ -17,10 +17,10 @@ All URLs use lowercase hyphenated slugs and a trailing slash (`trailingSlash: tr
 | URL | Status | Notes |
 | --- | --- | --- |
 | `/` | phase-1 shell | Homepage shell; hero and sections in Phase 2 |
-| `/about/` | phase-1 shell | Holding copy |
-| `/manufacturing/` | phase-1 shell | |
-| `/quality-and-testing/` | phase-1 shell | |
-| `/projects/` | phase-1 shell | No case studies until client approval |
+| `/about/` | phase-2 live | Company story, positioning, FAQs — stock hero image |
+| `/manufacturing/` | phase-2 live | Process timeline, raw materials, in-process checks — stock photos |
+| `/quality-and-testing/` | phase-2 live | In-house checks; no published third-party certs yet |
+| `/projects/` | phase-2 live | No portfolio — references on request with client consent |
 | `/contact/` | phase-1 live | Full page; contact fields hidden until `[CONFIRM]` values supplied |
 | `/request-a-quote/` | phase-1 live | Full page + LeadForm |
 | `/careers/` | phase-1 shell | |

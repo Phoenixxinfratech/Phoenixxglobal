@@ -1,13 +1,20 @@
-import { HoldingPage } from "@/components/blocks";
+import {
+  CtaBand,
+  FaqAccordion,
+  LeadFormSection,
+  PageHero,
+} from "@/components/blocks";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { Container, Heading, Link, Section } from "@/components/ui";
+import { qualityContent } from "@/content/company";
 import { requirePageByPath } from "@/content/pages";
 import { buildMetadata } from "@/lib/metadata";
 import { routes } from "@/lib/links";
-import { breadcrumbSchema } from "@/lib/schema";
+import { breadcrumbSchema, faqPageSchema } from "@/lib/schema";
 
 const PATH = "/quality-and-testing/";
 const page = requirePageByPath(PATH);
-
+const content = qualityContent;
 
 export const metadata = buildMetadata({
   title: page.title,
@@ -17,32 +24,145 @@ export const metadata = buildMetadata({
 });
 
 export default function QualityAndTestingPage() {
+  const breadcrumbs = [
+    { name: "Home", href: routes.home },
+    { name: "Quality and testing", href: PATH },
+  ];
+
+  const faqSchema = faqPageSchema(content.faqs);
+
   return (
     <>
       <JsonLd
-        data={breadcrumbSchema([
-          { name: "Home", path: routes.home },
-          { name: "Quality and testing", path: PATH },
-        ])}
+        data={[
+          breadcrumbSchema(
+            breadcrumbs.map((item) => ({ name: item.name, path: item.href })),
+          ),
+          ...(faqSchema ? [faqSchema] : []),
+        ]}
       />
-      <HoldingPage
+
+      <PageHero
+        breadcrumbs={breadcrumbs}
         h1={page.h1}
-        holdingCopy={page.holdingCopy}
-        breadcrumbs={[
-          { label: "Home", href: routes.home },
-          { label: "Quality and testing" },
-        ]}
-        relatedLinks={[
-          { slug: "manufacturing", name: "Manufacturing process overview", href: routes.manufacturing },
-          { slug: "puf-panels", name: "PUF panel technical data", href: routes.product("puf-panels") },
-          { slug: "pir-panels", name: "PIR panel technical data", href: routes.product("pir-panels") },
-          { slug: "puf-vs-pir", name: "Compare PUF and PIR cores", href: routes.comparison("puf-vs-pir-panels") },
-          { slug: "datasheets", name: "Request panel datasheets", href: routes.datasheets },
-          { slug: "export-docs", name: "Export documentation we provide", href: routes.exportDocumentation },
-          { slug: "faqs", name: "FAQs on specifications and lead times", href: routes.faqs },
-          { slug: "contact", name: "Send your QA checklist", href: routes.contact },
-          { slug: "request-quote", name: "Request a project quotation", href: routes.requestQuote },
-        ]}
+        intro={content.intro}
+        primaryCta={{ label: "Send QA checklist", href: routes.contact }}
+        secondaryCta={{ label: "Request a quotation", href: routes.requestQuote }}
+      />
+
+      {content.sections.map((section, index) => (
+        <Section
+          key={section.heading}
+          background={index % 2 === 0 ? "white" : "paper"}
+        >
+          <Container>
+            <Heading as="h2" className="text-2xl md:text-3xl">
+              {section.heading}
+            </Heading>
+            {section.paragraphs.map((paragraph) => (
+              <p
+                key={paragraph.slice(0, 48)}
+                className="prose-body mt-4 max-w-3xl text-base text-steel"
+              >
+                {paragraph}
+              </p>
+            ))}
+            {section.heading === "What we check before dispatch" ? (
+              <p className="prose-body mt-4 max-w-3xl text-base text-steel">
+                These checks run on the{" "}
+                <Link href={routes.manufacturing}>manufacturing line</Link>{" "}
+                before bundles are labelled for{" "}
+                <Link href={routes.export}>export dispatch</Link>.
+              </p>
+            ) : null}
+          </Container>
+        </Section>
+      ))}
+
+      <Section background="white">
+        <Container>
+          <Heading as="h2" className="text-2xl md:text-3xl">
+            In-house check summary
+          </Heading>
+          <p className="prose-body mt-4 max-w-3xl text-base text-steel">
+            {content.certificationNote}
+          </p>
+          <div className="mt-8 overflow-x-auto">
+            <table className="w-full min-w-[640px] border-collapse text-left text-sm">
+              <thead>
+                <tr className="border-b border-line">
+                  <th className="py-3 pr-4 font-semibold text-ink">Check</th>
+                  <th className="py-3 pr-4 font-semibold text-ink">Method</th>
+                  <th className="py-3 font-semibold text-ink">Criteria</th>
+                </tr>
+              </thead>
+              <tbody>
+                {content.checks.map((check) => (
+                  <tr key={check.name} className="border-b border-line">
+                    <td className="py-3 pr-4 text-steel">{check.name}</td>
+                    <td className="py-3 pr-4 text-steel">{check.method}</td>
+                    <td className="py-3 text-steel">{check.criteria}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="prose-body mt-6 max-w-3xl text-base text-steel">
+            Product-specific guidance:{" "}
+            <Link href={routes.product("puf-panels")}>PUF panels</Link>,{" "}
+            <Link href={routes.product("pir-panels")}>PIR panels</Link>,{" "}
+            <Link href={routes.product("fire-rated-panels")}>
+              fire-rated panels
+            </Link>
+            . Term definitions on the{" "}
+            <Link href={routes.glossary}>panel glossary</Link>.
+          </p>
+        </Container>
+      </Section>
+
+      {content.faqs.length > 0 ? (
+        <FaqAccordion
+          faqs={content.faqs}
+          heading="Questions on testing and certificates"
+        />
+      ) : null}
+
+      <Section background="paper">
+        <Container>
+          <Heading as="h2" className="text-2xl md:text-3xl">
+            Related pages
+          </Heading>
+          <ul className="mt-4 space-y-2 text-base text-steel">
+            <li>
+              <Link href={routes.manufacturing}>Manufacturing process</Link>
+            </li>
+            <li>
+              <Link href={routes.exportDocumentation}>
+                Export documentation
+              </Link>
+            </li>
+            <li>
+              <Link href={routes.datasheets}>Request datasheets</Link>
+            </li>
+            <li>
+              <Link href={routes.comparison("puf-vs-pir-panels")}>
+                PUF vs PIR comparison
+              </Link>
+            </li>
+            <li>
+              <Link href={routes.about}>About us</Link>
+            </li>
+          </ul>
+        </Container>
+      </Section>
+
+      <CtaBand heading={content.ctaHeading} copy={content.ctaCopy} />
+
+      <LeadFormSection
+        variant="quote"
+        heading="Request a project quotation"
+        background="white"
+        className="pb-16 md:pb-24"
       />
     </>
   );

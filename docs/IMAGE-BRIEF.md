@@ -13,7 +13,11 @@ All current photos are **Pexels stock**. Alt text describes what is visible. Non
 | `solutions/cold-storage-exterior-hvac.jpg` | 3:2 | Cold storage pages | Project cold store exterior (with client consent) |
 | `solutions/port-cargo.jpg` | landscape | Export band | Mundra or other Indian port loading of Phoenixx packs |
 | `products/metal-cladding-exterior.jpg` | portrait | Product grids | Close-up of PPGI facing and joint |
-| `plant/industrial-warehouse-exterior.jpg` | landscape | Manufacturing FeatureSplit | Actual plant exterior / gate / line bay |
+| `plant/industrial-warehouse-exterior.jpg` | landscape | Manufacturing FeatureSplit, `/manufacturing/` PageHero | Actual plant exterior / gate / line bay |
+| `hero/hero-manufacturing-panels.jpg` | ~16:9 | `/about/` PageHero | Continuous panel line or stacked finished panels at Ahmedabad plant |
+| `products/metal-cladding-exterior.jpg` | portrait | `/manufacturing/` ImageDetailGrid | Close-up of PPGI facing from Phoenixx production run |
+| `hero/hero-peb-steel-frame.jpg` | portrait | `/manufacturing/` ImageDetailGrid | PEB frame with Phoenixx cladding in progress |
+| `hero/hero-export-containers.jpg` | ~16:9 | `/manufacturing/` ImageDetailGrid | Panel bundles being loaded into 40 ft HC container |
 
 ## Detail shots still needed (placeholders until shot)
 

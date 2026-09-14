@@ -25,8 +25,9 @@ export const pages: PageMeta[] = [
     h1: "About PHOENIXX SMARTBUILD",
     holdingCopy:
       "We're an Ahmedabad-based LLP manufacturing insulated sandwich panels and PEB systems for buyers who need drawings, packing lists and on-time containers — not vague promises. The full company story, plant photos and process walkthrough publish in the next phase. Meanwhile, ask for our company profile and current production lead times.",
-    draft: true,
+    draft: false,
     section: "core",
+    updatedAt: "2026-09-14",
   },
   {
     path: "/manufacturing/",
@@ -36,8 +37,9 @@ export const pages: PageMeta[] = [
     h1: "Manufacturing",
     holdingCopy:
       "The manufacturing page will cover line layout, foam systems, facing coils and the checks we run before a pack list is signed. If you need plant capacity or process notes for a tender today, email your BOQ and we'll respond with what we can confirm in writing.",
-    draft: true,
+    draft: false,
     section: "core",
+    updatedAt: "2026-09-14",
   },
   {
     path: "/quality-and-testing/",
@@ -47,8 +49,9 @@ export const pages: PageMeta[] = [
     h1: "Quality and testing",
     holdingCopy:
       "We do not publish test certificates we have not issued. This page will list the checks we run on density, dimensions and finish, plus how third-party tests are handled when a project specifies them. Send your QA checklist with the enquiry if you need a mapped response.",
-    draft: true,
+    draft: false,
     section: "core",
+    updatedAt: "2026-09-14",
   },
   {
     path: "/projects/",
@@ -58,8 +61,9 @@ export const pages: PageMeta[] = [
     h1: "Projects",
     holdingCopy:
       "We will not invent case studies. Project pages go live only with confirmed scope, location and photographs we are cleared to show. If you need a reference for a similar application, tell us the temperature band and panel type and we'll share what we can.",
-    draft: true,
+    draft: false,
     section: "core",
+    updatedAt: "2026-09-14",
   },
   {
     path: "/careers/",

@@ -71,7 +71,16 @@ Then merge any new fields into the category sections below.
 | Path | Value | Owner | Notes |
 | --- | --- | --- | --- |
 | `assets.logo` | pending | Client | Final brand logo not yet placed in public/images/icons/ |
-| `assets.photography` | pending | Client | Product and project photos pending — placeholders in use |
+| `assets.photography` | pending | Client | Product and project photos pending — Pexels stock on company pages (about, manufacturing) until plant photography is shot |
+| `company pages stock images` | pending | Client | Replace stock heroes and FeatureSplit on `/about/` and `/manufacturing/` with Ahmedabad plant photography — see `docs/IMAGE-BRIEF.md` |
+
+## Content gaps (Phase 2 Batch E)
+
+| Item | Owner | Notes |
+| --- | --- | --- |
+| Project references | Client | `/projects/` publishes no case studies — references shared only with written client consent |
+| Third-party certifications | Client | `certifications.ts` empty — quality page lists in-house checks only; formal certs shared when documents exist |
+| Contact details + logo | Client | Still `[CONFIRM]` in `site.ts` — header/footer hide unconfirmed fields |
 
 ## Engineering follow-up (not client blockers)
 
