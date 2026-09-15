@@ -2,7 +2,7 @@
 
 Date: 2026-09-15
 
-## Scope completed
+## Pass 1 — Commercial core (commit `f20d371`)
 
 | Batch | Result |
 | --- | --- |
@@ -10,34 +10,36 @@ Date: 2026-09-15
 | About / Manufacturing / Quality | About ~1,892; Manufacturing ~1,306; Quality ~1,174 |
 | Products freshness + exportNotes geo (10) | All ≥900; multi-port export notes + price/RFQ FAQs |
 | Export hub + support pages | Multi-port India logistics; all ≥700 |
-| Africa hub | India-origin multi-port sentence added |
-| Standards | `docs/CONTENT-QUALITY.md`, `npm run audit:depth`, COPY-GUIDE pointer |
+| Africa hub | India multi-port sentence added |
+| Standards | `docs/CONTENT-QUALITY.md`, `npm run audit:depth` |
 
-## Automated audits
+## Pass 2 — Residual informational pages
+
+| Batch | Result |
+| --- | --- |
+| 7 thin commercial guides | Deepened to ≥700 (RFQ, landed cost, FM education, custom, PEB+PUF, buyers guide, import mistakes) |
+| 9 thin pairwise comparisons | Deepened to ≥700 (verdicts, cost notes, FAQs) |
+| `audit:depth` | Extended to live guides (≥700) and comparisons (≥700) — **60 entities, 0 warnings** |
+
+## Automated audits (pass 2)
 
 | Audit | Result |
 | --- | --- |
-| `audit:depth` | PASS — 28/28 entities meet soft floors |
-| `audit:copy` | PASS — no banned words; country opener warnings only (non-fatal) |
+| `audit:depth` | PASS — 60/60 |
+| `audit:copy` | PASS — no banned words; country opener warnings only |
 | `audit:unique` | PASS |
 | `audit:schema` | PASS |
 | `audit:links` | PASS |
-| `audit:a11y` | PASS — home has non-blocking h1 warn (hero pattern) |
 | `npm run build` | PASS |
 | `generate:llms` | PASS |
 
 ## Perf notes (not content regressions)
 
-`audit:perf` reports LCP above the aggressive 2.0s target on several routes and home performance 78 / LCP ~5.3s. These align with prior Phase 3/4 image/hero baseline issues — **out of scope for this content pass** (no redesign). Track separately if launch requires LCP hardening.
+LCP / home performance warnings from prior Phase 3/4 baselines remain out of scope for content passes. Document only — no redesign in this work.
 
 ## Port / location check
 
-Natural multi-port language present in company, export, products, solutions, Africa hub:
-
-- Mundra, Deendayal (Kandla), Pipavav, Hazira, Nhava Sheva / JNPT
-- Gujarat clusters: Sanand, Changodar, Bavla, Dahej, Bharuch, Ankleshwar, Surat, Morbi, Vadodara, Gandhinagar (with industrial context)
-
-No keyword-stuff laundry lists found in spot check.
+Natural multi-port language on commercial + export-related guides. No keyword-stuff laundry lists in spot check.
 
 ## Intentional remaining drafts / empty
 

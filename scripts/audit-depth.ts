@@ -4,6 +4,7 @@
  * Soft under-floor counts print as warnings (exit 0).
  */
 import { aboutContent, manufacturingContent, qualityContent } from "../src/content/company";
+import { comparisons } from "../src/content/comparisons";
 import {
   exportDocumentationContent,
   exportHubContent,
@@ -12,6 +13,7 @@ import {
   exportPackagingContent,
   exportProcessContent,
 } from "../src/content/export";
+import { guides } from "../src/content/guides";
 import { products } from "../src/content/products";
 import { solutions } from "../src/content/solutions";
 
@@ -132,6 +134,22 @@ rows.push({
   floor: 700,
   words: companyWords(exportLeadTimeContent),
 });
+
+for (const g of guides.filter((x) => !x.draft)) {
+  rows.push({
+    id: `guide:${g.slug}`,
+    floor: 700,
+    words: companyWords(g),
+  });
+}
+
+for (const c of comparisons.filter((x) => !x.draft)) {
+  rows.push({
+    id: `comparison:${c.slug}`,
+    floor: 700,
+    words: companyWords(c),
+  });
+}
 
 console.log("=== Content depth audit ===\n");
 console.log("Floor rules: docs/CONTENT-QUALITY.md\n");

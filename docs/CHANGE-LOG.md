@@ -2,6 +2,13 @@
 
 Additive Phase 1 touches made during later phases. Prefer extension over modification.
 
+## 2026-09-15 Residual content depth — guides and comparisons
+
+### Files: `src/content/guides.ts`, `src/content/comparisons.ts`, `scripts/audit-depth.ts`, `docs/CONTENT-QUALITY.md`, `docs/CONTENT-QA-REPORT.md`
+**Change:** Deepened 7 commercial guides and 9 pairwise comparisons to ≥700 useful words. Extended `audit:depth` to guides and comparisons.
+**Reason:** Close informational soft-floor gaps after commercial-core pass.
+**Backwards compatible:** URLs unchanged
+
 ## 2026-09-15 Content depth, freshness, port/location SEO
 
 ### Docs

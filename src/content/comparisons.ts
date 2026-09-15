@@ -11,9 +11,9 @@ export const comparisons: ComparisonInput[] = [
     productA: "puf-panels",
     productB: "pir-panels",
     summary:
-      "Both are rigid foam cores in metal facings. PIR has lower thermal conductivity; PUF is typically lower cost per m² for the same facing gauge.",
+      "Both are rigid foam cores in metal facings on the same production line. PIR has lower thermal conductivity and tolerates higher service temperatures; PUF is typically lower cost per m² for the same facing gauge and remains the default on most export cold stores.",
     quickAnswer:
-      "Choose PUF when budget per square metre matters and room temperatures stay in standard chiller or freezer ranges. Choose PIR when you need a thinner wall for the same U-value, higher continuous service temperature, or slightly better long-term thermal stability. Neither replaces a fire-rated mineral wool core where non-combustibility is specified.",
+      "Choose PUF when budget per square metre matters and room temperatures stay in standard chiller or freezer ranges (+2 °C to −25 °C). Choose PIR when you need a thinner wall for the same U-value, higher continuous service temperature near plant equipment, or slightly better long-term thermal stability at negative setpoints. Neither replaces a fire-rated mineral wool core where non-combustibility is specified — that is a separate decision from foam chemistry.",
     decisionTable: [
       {
         criterion: "Typical core λ (indicative)",
@@ -46,13 +46,18 @@ export const comparisons: ComparisonInput[] = [
         optionA: "Full thickness range — standard line item",
         optionB: "Full range — lead time similar to PUF at volume",
       },
+      {
+        criterion: "Dimensional stability after years in service",
+        optionA: "Good when envelope sealed — watch joint torque on freezers",
+        optionB: "Better at deep negative temps — less thickness creep tendency",
+      },
     ],
     chooseAWhen:
-      "Specify PUF when the project is cost-sensitive, room temperatures are in normal cold storage bands (+2 °C to −25 °C), and the extra 10–20 mm of wall thickness is acceptable. PUF is the default on most chiller rooms, food processing walls and warehouse cladding where fire regulations allow a combustible core inside a protected envelope.",
+      "Specify PUF when the project is cost-sensitive, room temperatures are in normal cold storage bands (+2 °C to −25 °C), and the extra 10–20 mm of wall thickness is acceptable. PUF is the default on most chiller rooms, food processing walls and warehouse cladding where fire regulations allow a combustible core inside a protected envelope. On repeat roll-outs across Kenya, Tanzania or Uganda, buyers often standardise on PUF for chillers and reserve PIR for the one freezer bay where clearance is tight — that keeps spare panels and cam-lock profiles interchangeable on site.",
     chooseBWhen:
-      "Specify PIR when floor area is tight and every millimetre of insulation counts — walk-in freezers, plant rooms with limited clearance, or roofs where dead load and purlin height are constrained. PIR also suits applications where the envelope may see higher ambient or process-side temperatures than a standard cold room.",
+      "Specify PIR when floor area is tight and every millimetre of insulation counts — walk-in freezers, plant rooms with limited clearance, or roofs where dead load and purlin height are constrained. PIR also suits applications where the envelope may see higher ambient or process-side temperatures than a standard cold room, such as a compressor room wall facing a +35 °C plant hall. If your refrigeration consultant sized plant assuming 100 mm PUF walls and you can drop to 80 mm PIR at the same U-value, the freed aisle width often matters more than the core premium on high-turnover cold stores.",
     costNotes:
-      "On like-for-like facing gauge and thickness, PUF is usually 8–15% lower in ex-works panel cost. PIR can offset part of that premium by allowing a thinner panel to hit the same U-value, which reduces steel in facings and sometimes freight volume. Always compare total installed cost: thinner PIR may need the same number of fixings and joint detail as thicker PUF.",
+      "On like-for-like facing gauge and thickness, PUF is usually 8–15% lower in ex-works panel cost. PIR can offset part of that premium by allowing a thinner panel to hit the same U-value, which reduces steel in facings and sometimes freight volume per TEU. Always compare total installed cost: thinner PIR may need the same number of fixings and joint detail as thicker PUF, and door frame thermal breaks do not shrink just because the wall is thinner. Running-cost savings from lower refrigeration load appear only after the envelope U-value is confirmed on the test report for the thickness you will buy — not from brochure λ alone.",
     relatedSolutions: ["cold-storage", "food-processing", "warehousing-logistics"],
     relatedGuides: [],
     faqs: [
@@ -76,9 +81,24 @@ export const comparisons: ComparisonInput[] = [
         answer:
           "No — values on product pages are indicative until confirmed on the test report and datasheet issued with your order. Request the current datasheet before structural or refrigeration load calculations are frozen.",
       },
+      {
+        question: "Does PIR improve fire rating over PUF on the same facing?",
+        answer:
+          "Both are combustible foam cores — reaction class depends on the complete system test, not the PUR vs PIR label alone. Some PIR formulations achieve B-s1,d0 in declared systems, but that does not replace rockwool where A1 or a rated fire wall is specified. Ask for the fire test scope that matches your thickness and joint detail.",
+      },
+      {
+        question: "What happens if I substitute PIR for PUF after the frame is designed?",
+        answer:
+          "Thinner PIR may change girt spacing assumptions, door jamb depth and cam-lock stack height. Send revised panel thickness to your steel supplier before panels ship — we have seen crews forced to pack out frames because someone swapped core type without updating shop drawings.",
+      },
+      {
+        question: "Which core handles panel damage in transit better?",
+        answer:
+          "Both foam types chip at corners if bundles are poorly strapped. PIR is slightly denser and can resist minor edge crush, but packing method matters more than core name. Inspect bundles at port and photograph damage before customs release so replacement panels can match batch colour.",
+      },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     slug: "pir-vs-rockwool-panels",
@@ -90,9 +110,9 @@ export const comparisons: ComparisonInput[] = [
     productA: "pir-panels",
     productB: "rockwool-panels",
     summary:
-      "PIR delivers the best thermal performance in a foam core. Rockwool is non-combustible and suits fire-rated walls where foam cores are excluded.",
+      "PIR delivers the best thermal performance per millimetre in a foam core. Rockwool is non-combustible and suits fire-rated walls where foam cores are excluded — the trade-off is thickness, weight and panel cost, not a simple swap on the same drawings.",
     quickAnswer:
-      "PIR wins on thermal performance per millimetre of thickness and is the default for cold storage where fire codes allow a foam core. Rockwool wins where non-combustibility, fire compartmentation or higher fire ratings are specified — even though you need a thicker panel for the same insulation value and pay more per m².",
+      "PIR wins on thermal performance per millimetre of thickness and is the default for cold storage where fire codes allow a foam core. Rockwool wins where non-combustibility, fire compartmentation or 60–120 minute rated walls are specified — even though you need a thicker panel for the same insulation value, pay more per m², and detail vapour control differently on cold-side applications. Treat this as a compliance and load decision first, then compare U-value.",
     decisionTable: [
       {
         criterion: "Typical core λ (indicative)",
@@ -125,13 +145,18 @@ export const comparisons: ComparisonInput[] = [
         optionA: "Closed-cell — low absorption if sealed",
         optionB: "Open-fibre — needs vapour control on cold side",
       },
+      {
+        criterion: "Insurer / authority questionnaire",
+        optionA: "May need justification where foam is permitted",
+        optionB: "Straightforward answer on non-combustible core",
+      },
     ],
     chooseAWhen:
-      "Choose PIR for refrigerated envelopes, processing halls with wash-down facings, and roofs where you need maximum insulation in minimum depth. PIR is appropriate when your fire consultant and local authority accept a combustible core inside a complete system test or when the room is not a fire compartment boundary.",
+      "Choose PIR for refrigerated envelopes, processing halls with wash-down facings, and roofs where you need maximum insulation in minimum depth. PIR is appropriate when your fire consultant and local authority accept a combustible core inside a complete system test or when the room is not a fire compartment boundary. On a typical export cold store at Mombasa or Dar es Salaam, PIR walls and roof inside the insulated box with rockwool only on escape corridors is a common split — do not pay for rockwool everywhere unless the spec demands it.",
     chooseBWhen:
-      "Choose rockwool when the drawing calls for A1 or non-combustible core, fire-rated partition between occupancies, or separation between production and storage in a multi-tenant facility. Hospitals, data centre boundaries and some pharmaceutical projects push toward mineral wool even where foam would insulate better.",
+      "Choose rockwool when the drawing calls for A1 or non-combustible core, fire-rated partition between occupancies, or separation between production and storage in a multi-tenant facility. Hospitals, data centre boundaries and some pharmaceutical projects push toward mineral wool even where foam would insulate better. If the insurer asks whether foam is present on escape routes, rockwool on those walls closes the conversation faster than arguing system test scope for PIR.",
     costNotes:
-      "Rockwool panels cost more per m² at equal thickness — often 25–40% above PIR on export quotes — and you typically need 30–50% greater thickness to approach the same U-value. The cheaper option on thermal grounds is PIR; the cheaper option on fire compliance may still be rockwool if it avoids a secondary fire-rated layer.",
+      "Rockwool panels cost more per m² at equal thickness — often 25–40% above PIR on export quotes — and you typically need 30–50% greater thickness to approach the same U-value. The cheaper option on thermal grounds is PIR; the cheaper option on fire compliance may still be rockwool if it avoids a secondary fire-rated layer or a rejected occupancy certificate. Frame design must absorb extra panel weight on rockwool roofs — purlin tables do not transfer from PIR without recalculation. Freight per m² can rise because fewer panels fit per container at 120–150 mm rockwool versus 100 mm PIR.",
     relatedSolutions: ["cold-storage", "hospitals", "data-centres"],
     relatedGuides: [],
     faqs: [
@@ -155,9 +180,24 @@ export const comparisons: ComparisonInput[] = [
         answer:
           "Reference the test report or classification for the complete panel system, not the core marketing name. We supply test summaries with export orders when available — request them at quotation stage.",
       },
+      {
+        question: "Can PIR and rockwool share the same wall profile?",
+        answer:
+          "Joint geometry is often similar, but fire-rated rockwool systems may require fire stops, intumescent mastic and closer screw spacing. Do not assume one erection method sheet covers both — request the system-specific detail for each wall type on the drawing.",
+      },
+      {
+        question: "Which panel type sags on long roof spans?",
+        answer:
+          "Both need purlin spacing per manufacturer tables. Rockwool at 120 mm on a 12 m span feels heavier during lift and may need more intermediate supports than PIR at 100 mm for the same U-value. Check deflection limits before crane day.",
+      },
+      {
+        question: "Is rockwool mandatory for food factories?",
+        answer:
+          "Not automatically — many food plants use PIR or PUF on process halls and rockwool only on fire boundaries. Hygiene audits focus on wash-down compatibility of facings and joints, not wool type alone. Match the consultant's fire strategy document, not generic 'food grade' marketing.",
+      },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     slug: "puf-vs-eps-panels",
@@ -169,9 +209,9 @@ export const comparisons: ComparisonInput[] = [
     productA: "puf-panels",
     productB: "wall-panels",
     summary:
-      "PUF sandwich panels are factory-bonded steel-faced units with closed-cell foam. EPS is typically site-fixed board insulation — we compare PUF panels against EPS-based build-ups, not a separate EPS product line.",
+      "PUF sandwich panels are factory-bonded steel-faced units with closed-cell foam. EPS is typically site-fixed board insulation behind separate cladding — we compare PUF panels against EPS-based build-ups, not a separate EPS product line from PHOENIXX SMARTBUILD.",
     quickAnswer:
-      "PUF sandwich panels beat EPS board build-ups on air tightness, erection speed and structural composite action in industrial envelopes. EPS can win on raw insulation material cost for simple non-refrigerated shells where you already have a masonry or steel frame and manual labour is cheap — but vapour control and joint continuity are harder to guarantee on site.",
+      "PUF sandwich panels beat EPS board build-ups on air tightness, erection speed and structural composite action in industrial envelopes. EPS can win on raw insulation material cost for simple non-refrigerated shells where you already have a masonry or steel frame and manual labour is cheap — but vapour control, joint continuity and quality variance between crews are harder to guarantee on site. For any room below +5 °C or with wash-down, factory PUF is the safer default.",
     decisionTable: [
       {
         criterion: "Typical λ — insulation layer only",
@@ -204,13 +244,18 @@ export const comparisons: ComparisonInput[] = [
         optionA: "Containerised panels — designed for export",
         optionB: "Bulk EPS ships separately — more site work abroad",
       },
+      {
+        criterion: "Condensation / icing at board joints",
+        optionA: "Low when laps sealed and vapour barrier continuous",
+        optionB: "Higher risk — gaps at board edges common in field fixes",
+      },
     ],
     chooseAWhen:
-      "Choose PUF sandwich panels when you need a weathertight industrial or cold storage envelope in weeks not months, when quality must be repeatable across multiple sites in Africa, or when a single supplier should warrant the composite. PUF is the rational default for cam-lock cold rooms, food plants and prefabricated warehouses.",
+      "Choose PUF sandwich panels when you need a weathertight industrial or cold storage envelope in weeks not months, when quality must be repeatable across multiple sites in Africa, or when a single supplier should warrant the composite. PUF is the rational default for cam-lock cold rooms, food plants and prefabricated warehouses. If your investor expects documented U-values and a single warranty path from India to site, a factory panel removes the argument about who failed the insulation layer when condensation appears at year two.",
     chooseBWhen:
-      "EPS board can make sense for non-critical temperature buildings where a block or steel frame already exists and local labour will fix cladding over board insulation. Treat EPS as a budget site-built path — not as a direct substitute for exported cold room panels.",
+      "EPS board can make sense for non-critical temperature buildings where a block or steel frame already exists and local labour will fix cladding over board insulation. Treat EPS as a budget site-built path — not as a direct substitute for exported cold room panels. We see EPS on ancillary stores and farm sheds inland; it rarely survives scrutiny on a −18 °C freezer BOQ where the consultant models vapour drive through board joints.",
     costNotes:
-      "EPS board material is cheaper per m² of insulation than a finished PUF panel, but total project cost often favours PUF when you include frame, cladding labour, scaffolding and rework. For export projects, prefabricated PUF reduces foreign-site labour and weather risk — that saving rarely appears in a line-item insulation comparison.",
+      "EPS board material is cheaper per m² of insulation than a finished PUF panel, but total project cost often favours PUF when you include frame, cladding labour, scaffolding, tape, mastic and rework after failed blower-door tests. For export projects, prefabricated PUF reduces foreign-site labour and weather risk during monsoon or rainy season — that saving rarely appears in a line-item insulation comparison. Container efficiency favours finished panels: EPS bulk for equivalent R-value occupies more cubic metres and still needs steel cladding shipped or sourced locally.",
     relatedSolutions: ["warehousing-logistics", "cold-storage", "manufacturing-plants"],
     relatedGuides: [],
     faqs: [
@@ -234,9 +279,24 @@ export const comparisons: ComparisonInput[] = [
         answer:
           "Neither EPS nor PUF is non-combustible. Fire-rated boundaries still need mineral wool or a tested fire-rated system. Do not select EPS expecting rockwool-equivalent fire performance.",
       },
+      {
+        question: "Why do cold room tenders still mention EPS?",
+        answer:
+          "Local suppliers in some markets promote EPS cam-lock kits at low upfront price. Buyers discover joint icing and compressor overload later. If a tender names EPS for a commercial freezer, ask for the hygrothermal calculation and compare against a PUF panel quote at declared U-value.",
+      },
+      {
+        question: "Can EPS be upgraded to PUF later without rebuilding?",
+        answer:
+          "Rarely economical — you strip cladding, remove boards, and often replace framing. Starting with PUF on the primary envelope avoids a second capex cycle. EPS retrofits make sense only on small ambient rooms.",
+      },
+      {
+        question: "How does site supervision differ between the two?",
+        answer:
+          "PUF needs trained panel crews, crane access and torque-controlled fixings. EPS needs multiple trades sequenced correctly — insulator, cladder, vapour barrier installer. The failure mode on EPS is usually a missed tape line, not visible until the room is running.",
+      },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     slug: "rockwool-vs-glasswool-panels",
@@ -248,9 +308,9 @@ export const comparisons: ComparisonInput[] = [
     productA: "rockwool-panels",
     productB: "fire-rated-panels",
     summary:
-      "Both are mineral fibre insulants. Rockwool (stone wool) is what we manufacture for export panels; glass wool appears in other suppliers' fire-rated systems — compare on tested system performance, not fibre name alone.",
+      "Both are mineral fibre insulants with non-combustible credentials. Rockwool (stone wool) is what PHOENIXX SMARTBUILD manufactures for export panels; glass wool appears in other suppliers' fire-rated systems — compare on tested system performance, density and moisture handling, not fibre name alone.",
     quickAnswer:
-      "Rockwool sandwich panels use stone wool with higher density and better moisture tolerance than typical glass wool slabs. Glass wool systems can be lighter and cheaper in some markets but are less common on exported industrial panels. Specify the fire test and classification for the complete panel, not the wool marketing label.",
+      "Rockwool sandwich panels use stone wool with higher density and better moisture tolerance than typical glass wool slabs used in site-fixed insulation. Glass wool panel systems can be lighter and cheaper in some markets but are less common on exported industrial panels bound for humid or wash-down environments. Specify the fire test report and classification for the complete panel build-up, not the wool marketing label on a brochure.",
     decisionTable: [
       {
         criterion: "Typical core density",
@@ -283,13 +343,18 @@ export const comparisons: ComparisonInput[] = [
         optionA: "Good — higher density helps",
         optionB: "Good at equal density — depends on build-up",
       },
+      {
+        criterion: "Wash-down / humidity cycles",
+        optionA: "Stone wool recovers after drying if envelope vented",
+        optionB: "Performance can drop if fibres stay wet at cuts",
+      },
     ],
     chooseAWhen:
-      "Choose rockwool-faced sandwich panels when you need a non-combustible core for fire walls, acoustic separation or humid industrial environments. Our rockwool export line targets partitions, external fire-rated walls and corridors where stone wool's moisture behaviour is an advantage.",
+      "Choose rockwool-faced sandwich panels when you need a non-combustible core for fire walls, acoustic separation or humid industrial environments. Our rockwool export line targets partitions, external fire-rated walls and corridors where stone wool's moisture behaviour is an advantage. If panels face periodic steam or external humidity in coastal industrial parks, stone wool tolerates the cycle better than lightweight glass wool that sags when fibres absorb moisture at unsealed edges.",
     chooseBWhen:
-      "Fire-rated panel systems — including some glass wool cores — fit when a specific fire test report or insurer schedule names a tested system classification. Match the system ID on the drawing; we will confirm whether our fire-rated build-up satisfies it or propose an equivalent tested configuration.",
+      "Fire-rated panel systems — including some glass wool cores — fit when a specific fire test report or insurer schedule names a tested system classification that your consultant will accept. Match the system ID on the drawing; we will confirm whether our fire-rated build-up satisfies it or propose an equivalent tested configuration. Glass wool can be appropriate on dry internal partitions where weight savings matter and the specifier has prior approval history with that system in your jurisdiction.",
     costNotes:
-      "At similar fire performance, glass wool systems in some regions undercut rockwool on material cost. Rockwool panels may cost slightly more per m² but reduce replacement risk in humid or wash-down areas. Compare warranted system performance and local approval — not per-kg wool price alone.",
+      "At similar fire performance, glass wool systems in some regions undercut rockwool on material cost. Rockwool panels may cost slightly more per m² but reduce replacement risk in humid or wash-down areas where wet wool loses λ and invites mould behind facings. Compare warranted system performance and local approval — not per-kg wool price alone. Export freight difference is usually secondary to whether the authority accepts the test report; swapping wool type to save substrate cost fails if the occupancy certificate is withheld.",
     relatedSolutions: ["hospitals", "data-centres", "manufacturing-plants"],
     relatedGuides: [],
     faqs: [
@@ -313,9 +378,24 @@ export const comparisons: ComparisonInput[] = [
         answer:
           "Higher-density rockwool cores weigh more than lightweight glass wool slabs at the same thickness. Structural fixings and purlin spacing must be checked against the panel weight table on the datasheet.",
       },
+      {
+        question: "Does either wool type need a vapour barrier on cold rooms?",
+        answer:
+          "Mineral wool is open-fibre — vapour control on the warm side is mandatory if wool faces a cold environment. Neither rockwool nor glass wool replaces PUF or PIR on the primary freezer envelope unless a qualified hygrothermal model explicitly allows it.",
+      },
+      {
+        question: "Can I substitute rockwool for glass wool on an approved system?",
+        answer:
+          "Only if the fire test report covers the substitution or your consultant issues an equivalence letter accepted locally. Fire classification attaches to the tested build-up — fibre swap without engineering review is a common certificate rejection reason.",
+      },
+      {
+        question: "Which wool type do acoustic consultants prefer?",
+        answer:
+          "At equal thickness and density, performance is similar. Rockwool at 100–140 kg/m³ is often specified where both STC and fire rating matter. Share the target dB rating — we map it to panel thickness and core density, not wool brand alone.",
+      },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     slug: "sandwich-panel-vs-masonry",
@@ -327,9 +407,9 @@ export const comparisons: ComparisonInput[] = [
     productA: "wall-panels",
     productB: "peb-prefabricated-buildings",
     summary:
-      "Sandwich panels deliver structure, weathering and insulation in one prefabricated layer. Masonry needs separate insulation, more wet trades and longer programmes — but may suit sites with abundant local block and strict permanence norms.",
+      "Sandwich panels deliver weathering, insulation and cladding in one prefabricated layer on a steel frame. Masonry needs separate insulation, more wet trades and longer programmes — but may suit ancillary buildings where local block is cheap and thermal specs are loose.",
     quickAnswer:
-      "Sandwich panels win on programme length, predictable thermal performance and export prefabrication from India. Masonry can win on local material cost where block and labour are inexpensive and insulation standards are modest — but cold storage and food plants rarely accept uninsulated block without a heavy build-up.",
+      "Sandwich panels win on programme length, predictable thermal performance and export prefabrication from India to East or West Africa. Masonry can win on local material cost where block and labour are inexpensive and insulation standards are modest — but cold storage, food plants and institutional logistics leases rarely accept uninsulated block without a heavy, slow insulation build-up that closes the cost gap.",
     decisionTable: [
       {
         criterion: "Typical erection speed (warehouse shell)",
@@ -362,13 +442,18 @@ export const comparisons: ComparisonInput[] = [
         optionA: "Demountable options with PEB frames",
         optionB: "Permanent — harder to modify openings",
       },
+      {
+        criterion: "Thermal bridge at structure",
+        optionA: "Girts and thermal break details published by panel maker",
+        optionB: "Columns and bond beams — breaks need separate design",
+      },
     ],
     chooseAWhen:
-      "Choose sandwich panels on steel or PEB frames when the programme must finish before rainy season, when insulation values are specified on drawings, or when the same envelope detail will repeat across multiple regional sites. Food, pharma and logistics investors typically expect panelised industrial shells.",
+      "Choose sandwich panels on steel or PEB frames when the programme must finish before rainy season, when insulation values are specified on drawings, or when the same envelope detail will repeat across multiple regional sites. Food, pharma and logistics investors typically expect panelised industrial shells with declared U-values. A 40-foot container of nested wall panels from Gujarat can weathertight a 2,000 m² shed shell in weeks; masonry on the same footprint often runs through two wet seasons before the roof is on.",
     chooseBWhen:
-      "Masonry remains viable for small ancillary buildings, boundary walls, or regions where import duty on steel panels is prohibitive and local block is cheap. For primary refrigerated or high-bay logistics buildings, masonry rarely competes on total cost once insulation and programme are included.",
+      "Masonry remains viable for small ancillary buildings, boundary walls, guard houses, or regions where import duty on steel panels is prohibitive and local block is cheap. For primary refrigerated or high-bay logistics buildings, masonry rarely competes on total cost once insulation, vapour barriers, programme finance and tenant fit-out delays are included. If the brief is a single-storey ambient store with no insulation spec, block plus metal sheet may still be the local norm.",
     costNotes:
-      "Block work looks cheaper on BOQ line items until you add insulation, plaster, cladding, scaffolding and extra weeks of site overhead. Panel quotes are higher upfront but often lower on total installed cost for insulated industrial buildings — especially when panels are shipped ready to fix from India.",
+      "Block work looks cheaper on BOQ line items until you add insulation, plaster, cladding, scaffolding and extra weeks of site overhead. Panel quotes are higher upfront but often lower on total installed cost for insulated industrial buildings — especially when panels ship ready to fix from India and foreign labour rates are high. Hidden masonry costs include curing time, rework after shrinkage cracks, and a second tender for insulation that panel buyers avoid. Compare IRR on the operational date, not civil BOQ alone.",
     relatedSolutions: ["warehousing-logistics", "food-processing", "manufacturing-plants"],
     relatedGuides: [],
     faqs: [
@@ -392,9 +477,24 @@ export const comparisons: ComparisonInput[] = [
         answer:
           "Dense masonry can outperform thin panel walls on airborne sound if untreated. Add mass layers or specify rockwool-cored panels for noisy process areas — compare on the actual STC requirement, not wall type alone.",
       },
+      {
+        question: "Does masonry handle panel fixings for a cold store retrofit?",
+        answer:
+          "Retrofit brackets onto cured block are possible but thermal bridges at every anchor need detailing. New cold stores on greenfield sites usually get a PEB frame sized for panel spans — cheaper than engineering block to carry 100 mm insulated panels at freezer loads.",
+      },
+      {
+        question: "Which envelope copes better with foundation movement?",
+        answer:
+          "Steel-framed panel buildings tolerate some differential settlement if connections are slotted. Masonry cracks at corners and lets moisture into insulation cavities. In expansive clay soils common in parts of East Africa, flexible frame systems reduce patch-repair cycles.",
+      },
+      {
+        question: "How do import duties affect the comparison?",
+        answer:
+          "Duty on prefabricated panels and steel frames varies by HS code and destination. Local block avoids import duty but not the cost of achieving the same U-value. Model landed panel cost against local block plus insulation plus programme delay before assuming masonry wins.",
+      },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     slug: "puf-vs-pir-cold-storage",
@@ -406,9 +506,9 @@ export const comparisons: ComparisonInput[] = [
     productA: "cold-room-panels",
     productB: "pir-panels",
     summary:
-      "Cold room kits default to PUF cam-lock panels for cost-effective chillers and freezers. PIR suits deeper negative temperatures, tighter floor plates and rooms where thinner walls free operational space.",
+      "Cold room kits default to PUF cam-lock panels for cost-effective chillers and moderate freezers. PIR suits deeper negative temperatures, tighter floor plates and rooms where thinner walls free operational space or reduce refrigeration load at the same envelope area.",
     quickAnswer:
-      "For standard chillers (+0 °C to +5 °C) and moderate freezers (−18 °C to −25 °C), PUF cam-lock panels are the economical default. Move to PIR when the room targets −30 °C and below, ceiling height is fixed, or the consultant asks for lower λ to reduce wall thickness at door openings and corners.",
+      "For standard chillers (+0 °C to +5 °C) and moderate freezers (−18 °C to −25 °C), PUF cam-lock panels are the economical default on export orders from India. Move to PIR when the room targets −30 °C and below, ceiling height is fixed, or the consultant asks for lower λ to reduce wall thickness at door openings, corners and dock interfaces where air infiltration is highest.",
     decisionTable: [
       {
         criterion: "Typical chiller room (+2 °C to +5 °C)",
@@ -441,13 +541,18 @@ export const comparisons: ComparisonInput[] = [
         optionA: "Same — warm-side continuity required",
         optionB: "Same — core type does not remove vapour design",
       },
+      {
+        criterion: "Spare panel matching years later",
+        optionA: "High volume — easy colour and cam profile match",
+        optionB: "Available — confirm density and cam height on RFQ",
+      },
     ],
     chooseAWhen:
-      "Choose PUF cold room panels for distribution chillers, meat holding rooms, floral storage and most export cold room kits where cam-lock speed matters and thickness is acceptable. PUF is what most African cold chain operators quote first — it is proven and service parts are easy to match.",
+      "Choose PUF cold room panels for distribution chillers, meat holding rooms, floral storage and most export cold room kits where cam-lock speed matters and thickness is acceptable. PUF is what most African cold chain operators quote first — it is proven and service parts are easy to match. On a two-room site with a +4 °C chiller and −20 °C freezer, PUF at 100 mm and 120 mm respectively is a common split that keeps one core type for spare panels and erection training.",
     chooseBWhen:
-      "Choose PIR when the room is a blast freezer, when existing building clearance limits panel thickness at doors, or when the refrigeration engineer sized equipment assuming a thinner envelope. PIR also helps multi-deck cold stores where every centimetre of aisle width affects racking layout.",
+      "Choose PIR when the room is a blast freezer, when existing building clearance limits panel thickness at doors, or when the refrigeration engineer sized equipment assuming a thinner envelope. PIR also helps multi-deck cold stores where every centimetre of aisle width affects racking layout. Blast freezers pulling down product at −35 °C see higher vapour drive — the lower λ at 100 mm PIR versus 120 mm PUF can mean one fewer refrigeration stage if load calc supports it.",
     costNotes:
-      "PUF cold room panels usually cost less per m² than PIR at the same thickness. A PIR downgrade in thickness may save enough panel area and refrigeration load to justify the core premium — run the calculation with your refrigeration supplier before deciding on price alone.",
+      "PUF cold room panels usually cost less per m² than PIR at the same thickness. A PIR downgrade in thickness may save enough panel area and refrigeration load to justify the core premium — run the calculation with your refrigeration supplier before deciding on price alone. Door sets, floor insulation and refrigeration plant dominate capex on small rooms; core savings matter more on multi-room logistics hubs above 500 m². Freight per cam-lock panel is similar between cores at equal thickness — savings come from shipping fewer millimetres per bundle when PIR hits U-value in a thinner section.",
     relatedSolutions: ["cold-storage", "dairy", "poultry-meat-processing"],
     relatedGuides: [],
     faqs: [
@@ -471,9 +576,24 @@ export const comparisons: ComparisonInput[] = [
         answer:
           "Yes — common on multi-temperature sites. Label bundles clearly on site to avoid installing the wrong thickness at each room. We mark packages by room reference when you supply a room schedule with the PO.",
       },
+      {
+        question: "Does core type change cam-lock gasket material?",
+        answer:
+          "Gasket compound is usually the same PVC or silicone profile — compatibility is with panel thickness and cam depth, not PUF vs PIR chemistry. Confirm gasket spec if rooms see aggressive wash-down chemicals.",
+      },
+      {
+        question: "How often should cam-lock torque be checked after commissioning?",
+        answer:
+          "Re-torque after the first full freeze cycle and again at six months on busy rooms. Foam settles slightly at joints regardless of core type; loose cams are the main cause of icing at corners we see on service calls.",
+      },
+      {
+        question: "Will PIR reduce my electricity bill noticeably?",
+        answer:
+          "Only if thickness drops enough to change declared U-value and your consultant models lower transmission load. Swapping 120 mm PUF for 100 mm PIR at the same λ band may save space but not kWh — compare declared U-values on the order datasheet.",
+      },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     slug: "panel-roof-vs-conventional-roof",
@@ -485,9 +605,9 @@ export const comparisons: ComparisonInput[] = [
     productA: "roofing-panels",
     productB: "peb-prefabricated-buildings",
     summary:
-      "Insulated roof panels combine profiled steel, insulation and liner in one lift. Conventional roofs use purlins, single-skin sheets and site-fixed insulation — lower sheet cost, more trades and more leak paths.",
+      "Insulated roof panels combine profiled steel, insulation and liner in one factory-controlled lift. Conventional roofs use purlins, single-skin sheets and site-fixed insulation — lower sheet cost, more trades, more penetration paths and more dependence on installer skill in rain and wind.",
     quickAnswer:
-      "Insulated roofing panels win when you need a weathertight, insulated roof in one operation — cold stores, food plants and high-bay warehouses. Conventional single-skin roofs with blanket or board insulation can cost less on simple sheds in dry inland climates if local installers are skilled and maintenance is accepted.",
+      "Insulated roofing panels win when you need a weathertight, insulated roof in one operation — cold stores, food plants and high-bay warehouses where downtime from leaks is expensive. Conventional single-skin roofs with blanket or board insulation can cost less on simple sheds in dry inland climates if local installers are skilled and annual lap maintenance is accepted. On coastal exports, panel roofs reduce the number of exposed insulation layers that saturate in driving rain.",
     decisionTable: [
       {
         criterion: "Number of weathertight layers at install",
@@ -520,13 +640,18 @@ export const comparisons: ComparisonInput[] = [
         optionA: "Panels nested in containers",
         optionB: "PEB frame export + mixed local roof fix",
       },
+      {
+        criterion: "Internal condensation control",
+        optionA: "Factory-bonded liner — fewer gaps at purlin lines",
+        optionB: "Blanket compression common — cold spots at purlins",
+      },
     ],
     chooseAWhen:
-      "Specify insulated roof panels for refrigerated buildings, food-grade plants, coastal ports and anywhere downtime from roof leaks is expensive. Long single spans reduce purlin count when the frame is designed for panel loading.",
+      "Specify insulated roof panels for refrigerated buildings, food-grade plants, coastal ports and anywhere downtime from roof leaks is expensive. Long single spans up to manufacturer limits reduce purlin count when the frame is designed for panel loading from day one. If your lease requires a documented roof U-value and a single warranty path, a composite panel beats arguing which trade failed after water marks appear on the ceiling liner.",
     chooseBWhen:
-      "Conventional roofs fit open-sided cattle sheds, temporary covers, or inland sites where insulation is minimal and skilled roofers maintain laps annually. Pair a PEB steel frame with site-built roof if panel freight is constrained — accept the programme and quality risk.",
+      "Conventional roofs fit open-sided cattle sheds, temporary covers, or inland sites where insulation is minimal and skilled roofers maintain laps annually. Pair a PEB steel frame with site-built roof if panel freight is constrained — accept the programme and quality risk. In markets with deep local roofing labour pools and mild climates, single-skin plus glass wool blanket still appears on ambient factories — plan for hot aisles and higher HVAC load.",
     costNotes:
-      "Single-skin roofing sheet is cheaper per m² than an insulated sandwich roof panel. The gap closes when you add insulation, liner, fasteners and labour — and widens again if leak callbacks occur. For exported industrial projects, panel roofs usually win on lifecycle cost despite higher FOB price.",
+      "Single-skin roofing sheet is cheaper per m² than an insulated sandwich roof panel. The gap closes when you add insulation, liner, fasteners, safety nets and labour — and widens again if leak callbacks occur after the first monsoon. For exported industrial projects, panel roofs usually win on lifecycle cost despite higher FOB price because foreign-site roofing crews are expensive and weather windows are narrow. Thermal bridging at purlins on conventional builds often underperforms the calculated U-value — buyers discover this in summer roof surface temperatures, not on paper.",
     relatedSolutions: ["warehousing-logistics", "cold-storage", "manufacturing-plants"],
     relatedGuides: [],
     faqs: [
@@ -550,9 +675,24 @@ export const comparisons: ComparisonInput[] = [
         answer:
           "Yes when installed correctly — fewer exposed insulation layers and fewer penetration paths. Annual inspection of fasteners, gutters and curb flashings is still required, especially after storm seasons.",
       },
+      {
+        question: "Can roof panels carry rooftop HVAC or solar loads?",
+        answer:
+          "Yes with curbs and spreader details designed into the panel layout — share equipment weights at RFQ. Conventional roofs also carry loads but penetrations through site-fixed insulation are a common leak point on both systems if flashings are rushed.",
+      },
+      {
+        question: "What is the typical minimum pitch for export panel roofs?",
+        answer:
+          "Most trapezoidal profiles need 5–10% slope depending on rainfall intensity at site. Flat-looking industrial roofs often still have hidden fall. Send location and span — we confirm profile and drainage before production.",
+      },
+      {
+        question: "Do panel roofs need a separate vapour barrier?",
+        answer:
+          "Closed-cell cores in composite panels act as the insulation layer; vapour control still needs continuity at laps, penetrations and wall junctions. Cold stores need the warm-side strategy documented — panel type does not remove that design step.",
+      },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     slug: "peb-vs-rcc",
@@ -564,9 +704,9 @@ export const comparisons: ComparisonInput[] = [
     productA: "peb-prefabricated-buildings",
     productB: "wall-panels",
     summary:
-      "PEB is a prefabricated steel frame with cladding — fast to erect and easy to extend. RCC is cast-in-place concrete — heavy, slow, but familiar where steel supply or skills are limited.",
+      "PEB is a prefabricated steel frame designed to receive sandwich panel cladding — fast to erect and straightforward to extend with bolt-on bays. RCC is cast-in-place concrete — heavy, slow, familiar where steel supply or erection skills are limited, but harder to match panel spans without extra steel sub-framing.",
     quickAnswer:
-      "PEB with sandwich panel cladding wins on speed, weight and future expansion for warehouses, factories and logistics hubs exported from India. RCC wins where local codes favour concrete, crane access is limited for steel, or the building needs heavy point loads on few columns — but programme and formwork cost are higher.",
+      "PEB with sandwich panel cladding wins on speed, weight and future expansion for warehouses, factories and logistics hubs exported from India. RCC wins where local codes favour concrete, crane access is limited for steel erection, or the building needs heavy point loads on few columns — but programme, formwork cost and cladding integration are usually higher than a panel-ready steel frame.",
     decisionTable: [
       {
         criterion: "Typical programme to weathertight shell",
@@ -599,13 +739,18 @@ export const comparisons: ComparisonInput[] = [
         optionA: "Steel + panels containerised together",
         optionB: "Mostly local build — limited prefab export",
       },
+      {
+        criterion: "Column footprint in racked warehouse",
+        optionA: "Slender columns — clear span layouts",
+        optionB: "Bulkier columns — racking aisles may shrink",
+      },
     ],
     chooseAWhen:
-      "Choose PEB when investors want the building operational this season, when clear spans over 25 m are needed for racking or cranes, or when the same shed design will roll out in multiple African countries. We supply steel designed to receive our wall and roof panels directly.",
+      "Choose PEB when investors want the building operational this season, when clear spans over 25 m are needed for racking or cranes, or when the same shed design will roll out in multiple African countries. We supply steel designed to receive our wall and roof panels directly — purlins, girts and bracing coordinated with panel cover width and fixings. A typical export package leaves Mundra or Nhava Sheva as nested steel and panels with one engineering contact, which matters when the site team abroad has never built a cold store before.",
     chooseBWhen:
-      "RCC remains appropriate for multi-storey structures, heavy process equipment on few supports, or municipalities that restrict imported steel frames. Cladding can still be sandwich panels on a concrete frame — but thermal bridges at columns need explicit detail.",
+      "RCC remains appropriate for multi-storey structures, heavy process equipment on few supports, or municipalities that restrict imported steel frames. Cladding can still be sandwich panels on a concrete frame — but thermal bridges at columns need explicit detail and bracket schedules. If local banks only finance concrete industrial shells in your market, RCC with imported panels is a workable hybrid — just budget for the sub-girt layer and longer civil programme.",
     costNotes:
-      "RCC superstructure material can appear cheaper in markets with low cement cost, but formwork, curing and labour extend finance cost. PEB has higher steel import cost but shorter site months — compare on total project IRR, not civil BOQ alone. Panel-ready PEB avoids a second cladding tender.",
+      "RCC superstructure material can appear cheaper in markets with low cement cost, but formwork, curing, labour and finance during idle months extend total cost. PEB has higher steel import cost but shorter site months — compare on total project IRR, not civil BOQ alone. Panel-ready PEB avoids a second cladding tender and the coordination risk between a separate steel erector and panel supplier. Foundation cost favours PEB: lighter superstructure means smaller footings, which can offset part of the imported steel premium on poor soils.",
     relatedSolutions: ["warehousing-logistics", "manufacturing-plants", "food-processing"],
     relatedGuides: [],
     faqs: [
@@ -629,9 +774,24 @@ export const comparisons: ComparisonInput[] = [
         answer:
           "No — panels fix to RCC via steel sub-girts, but PEB is optimised for panel spans and fixings. If you already committed to RCC, we can still supply panels with bracket details.",
       },
+      {
+        question: "Which system handles future mezzanine or crane additions better?",
+        answer:
+          "PEB bays are often designed for bolt-on extensions and crane brackets at enquiry stage. RCC can carry cranes and mezzanines but retrofits mean formwork, propping and longer downtime. Decide floor and crane loads in the first drawing set either way.",
+      },
+      {
+        question: "How does seismic design compare?",
+        answer:
+          "Both can meet local codes when engineered properly — steel frames are lighter with defined ductility; RCC relies on mass and detailing. Share the seismic zone and soil report at RFQ; do not assume one system is automatically cheaper to certify.",
+      },
+      {
+        question: "Can PHOENIXX SMARTBUILD supply PEB and panels in one order?",
+        answer:
+          "Yes — coordinated steel and panel packages are our default on export industrial sheds. One shop drawing set for frame and cladding reduces the gap we often see when a local civil contractor finishes columns before panel spans are confirmed.",
+      },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     slug: "puf-vs-pir-vs-rockwool",
@@ -943,9 +1103,9 @@ export const comparisons: ComparisonInput[] = [
     optionALabel: "PPGI facing",
     optionBLabel: "PPGL facing",
     summary:
-      "PPGI uses galvanised steel (GI). PPGL uses galvalume (Al-Zn alloy). Both are pre-painted. PPGL tends to win on coastal and high-UV roofs; PPGI is common on inland walls and standard industrial rooms.",
+      "PPGI uses galvanised steel (GI). PPGL uses galvalume (Al-Zn alloy). Both are pre-painted coil before lamination. PPGL tends to win on coastal and high-UV roofs; PPGI is common on inland walls, internal cold room faces and standard industrial rooms where salt exposure is limited.",
     quickAnswer:
-      "Specify PPGL facings on coastal roofs, heavy-rain ports and high-UV sites where you want longer coating life before maintenance. PPGI with adequate zinc mass (Z275 typical) and 25–28 µm polyester topcoat fits many inland walls and chillers. Match topcoat system — SMP or PVDF — to environment, not only substrate.",
+      "Specify PPGL facings on coastal roofs, heavy-rain ports and high-UV sites where you want longer coating life before maintenance repaint. PPGI with adequate zinc mass (Z275 typical) and 25–28 µm polyester topcoat fits many inland walls and chillers. Match topcoat system — SMP or PVDF — to environment, not only substrate; a premium galvalume base with thin PE topcoat still chalks in tropical sun.",
     decisionTable: [
       {
         criterion: "Substrate",
@@ -978,13 +1138,18 @@ export const comparisons: ComparisonInput[] = [
         optionA: "Inland warehouses, internal faces, moderate climate walls",
         optionB: "Coastal roofs, port logistics, high-UV industrial roofs",
       },
+      {
+        criterion: "Cut-edge exposure after site trimming",
+        optionA: "Zinc sacrificial protection — touch-up recommended",
+        optionB: "Al-Zn alloy — better cut-edge hold in salt air",
+      },
     ],
     chooseAWhen:
-      "Choose PPGI when the building sits inland, the facing sees limited direct UV, or the wall is inside a conditioned envelope. Food and pharma internal faces often use standard polyester on Z275 GI when wash-down chemicals are compatible with the topcoat datasheet.",
+      "Choose PPGI when the building sits inland, the facing sees limited direct UV, or the wall is inside a conditioned envelope. Food and pharma internal faces often use standard polyester on Z275 GI when wash-down chemicals are compatible with the topcoat datasheet. Ambient warehouse walls at Athi River or inland Nigeria rarely justify galvalume premium on all four elevations — specify PPGL on the roof and PPGI on walls if budget is tight but coastal rain hits the roof hardest.",
     chooseBWhen:
-      "Choose PPGL on roof panels facing open sky within 5–10 km of salt water, on sheds in tropical UV with long warranty expectations, or when the buyer's O&M plan cannot repaint at year eight. Pair with stainless or coated fixings on coastal exports.",
+      "Choose PPGL on roof panels facing open sky within 5–10 km of salt water, on sheds in tropical UV with long warranty expectations, or when the buyer's O&M plan cannot repaint at year eight. Pair with stainless or coated fixings on coastal exports — we have seen GI screws fail before the facing on Mombasa roof jobs where the sheet still looked fine. External walls within splash zone of sea spray also deserve PPGL or heavier coating systems.",
     costNotes:
-      "PPGL coil carries a substrate premium over PPGI — often single-digit percent on total panel price, not double. The cost of one premature roof repaint or edge rust repair at a port warehouse exceeds that premium on most projects. Compare warranty years and topcoat system together; a cheap polyester on PPGL still chalks fast in harsh UV.",
+      "PPGL coil carries a substrate premium over PPGI — often single-digit percent on total panel price, not double. The cost of one premature roof repaint or edge rust repair at a port warehouse exceeds that premium on most projects. Compare warranty years and topcoat system together; a cheap polyester on PPGL still chalks fast in harsh UV. Colour fade in tropical sun is a topcoat issue — upgrading SMP or PVDF on either substrate often matters more than GI vs GL alone for walls that face equatorial afternoon sun.",
     relatedSolutions: ["warehousing-logistics", "food-processing"],
     relatedGuides: ["ppgi-coating-selection"],
     faqs: [
@@ -1017,6 +1182,21 @@ export const comparisons: ComparisonInput[] = [
         question: "How do I document facing choice for customs?",
         answer:
           "Commercial invoice and packing list should state substrate (GI vs GL), coating type and colour code. Mismatch with clearance documents delays port release.",
+      },
+      {
+        question: "Does facing choice affect panel lamination bond?",
+        answer:
+          "Both substrates bond in our PUR lamination process when coil is prepared to spec. Bond failure in transit is rare and usually traceable to moisture ingress at open bundle ends — not GI vs GL chemistry. Store panels under cover at port regardless of facing.",
+      },
+      {
+        question: "Can I specify different colours on PPGI vs PPGL in one order?",
+        answer:
+          "Yes — colour is applied before lamination. State external and internal colour codes separately on the RFQ. Lead time may differ if PPGL coil for a special colour is not on mill stock.",
+      },
+      {
+        question: "What maintenance schedule should O&M teams plan?",
+        answer:
+          "Annual wash on coastal roofs, inspect cut edges and fastener heads after storms, and plan repaint or recoat per topcoat datasheet — typically earlier for PE, later for SMP/PVDF. Inland PPGI walls may run longer between cosmetic maintenance cycles if drainage keeps facings dry.",
       },
     ],
     draft: false,

@@ -13,6 +13,8 @@ Use enough useful prose to answer the buyer. Do not pad.
 | High-value manufacturer pages (About, Manufacturing) | ≥ 1,200 |
 | Quality / export support pages | ≥ 700 |
 | Product / solutions hub intros | Useful navigational copy; not thin stubs |
+| Technical / commercial guides | ≥ 700 |
+| Comparison pages | ≥ 700 |
 
 If intent needs more, write more. Never add empty paragraphs to hit a number.
 
