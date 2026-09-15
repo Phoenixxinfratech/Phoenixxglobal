@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { raiseInternalAlert } from "@/lib/integrations/alert";
+import { checkRateLimit } from "@/lib/leads/spam";
 import {
   buildDailyDigest,
   buildWeeklyDigest,
@@ -82,7 +83,24 @@ async function run(job: CronJob, body: Record<string, unknown> | null) {
   }
 }
 
+function clientIp(request: Request): string {
+  const forwarded = request.headers.get("x-forwarded-for");
+  if (forwarded) return forwarded.split(",")[0]!.trim();
+  return request.headers.get("x-real-ip") ?? "unknown";
+}
+
 async function handle(request: Request) {
+  const rate = checkRateLimit(`cron:${clientIp(request)}`, Date.now(), {
+    max: 30,
+    windowMs: 10 * 60 * 1000,
+  });
+  if (!rate.allowed) {
+    return NextResponse.json(
+      { ok: false, error: "Too many requests" },
+      { status: 429, headers: { "Retry-After": String(rate.retryAfterSeconds) } },
+    );
+  }
+
   if (!authorised(request)) {
     return NextResponse.json({ ok: false, error: "Unauthorised" }, { status: 401 });
   }

@@ -81,12 +81,13 @@ export function AnalyticsRoot() {
       {analyticsAllowed(consent) ? <Scripts /> : null}
       {consent === "unknown" ? (
         <div
-          role="dialog"
+          role="region"
           aria-label="Cookie preferences"
+          aria-describedby="cookie-consent-copy"
           className="fixed inset-x-0 bottom-0 z-[60] border-t border-line bg-white/95 p-4 shadow-[0_-4px_24px_rgba(0,0,0,0.08)] backdrop-blur"
         >
           <div className="mx-auto flex max-w-[1280px] flex-col gap-3 md:flex-row md:items-center md:justify-between">
-            <p className="text-sm text-steel">
+            <p id="cookie-consent-copy" className="text-sm text-steel">
               We use optional analytics cookies (Google Analytics, Tag Manager, Clarity) to see which
               specification pages help buyers. Forms work without them.{" "}
               <a href="/privacy-policy/" className="font-medium text-ember-deep underline underline-offset-4">

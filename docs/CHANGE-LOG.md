@@ -2,6 +2,63 @@
 
 Additive Phase 1 touches made during later phases. Prefer extension over modification.
 
+## 2026-09-15 Phase 4 (Batch E)
+
+### File: `next.config.ts`
+**Change:** CSP moved from Report-Only to enforce; allowlisted GTM, GA4 and Clarity origins.
+**Reason:** Phase 4 Section 13 — ship with an enforced policy after the report-only period.
+**Backwards compatible:** yes for first-party assets; third-party scripts already gated on consent
+
+### File: `src/app/privacy-policy/page.tsx`
+**Change:** Storage (Sheets/CRM/email/WhatsApp), 24-month retention, deletion procedure, DPDP + GDPR-style rights, third-party list, analytics cookies.
+**Reason:** Phase 4 Section 13. Still marked pending legal review.
+**Backwards compatible:** yes — copy only on the legal page
+
+### File: `src/components/analytics/AnalyticsRoot.tsx`
+**Change:** Consent bar is a `region`, not a `dialog` (no focus trap); labelled and described for keyboard/screen readers.
+**Reason:** Phase 4 Section 14.
+**Backwards compatible:** yes
+
+### File: `src/app/api/cron/route.ts`, `src/lib/leads/spam.ts`
+**Change:** Rate limit on cron (30 / 10 min). `checkRateLimit` accepts per-key max/window.
+**Reason:** Phase 4 Section 13 — rate limit every API route.
+**Backwards compatible:** yes — lead route still 5 / 10 min
+
+### File: `src/app/api/lead/route.ts`
+**Change:** Local ledger also writes when `LEAD_LOCAL_LEDGER=true`.
+**Reason:** Playwright needs a row under `next start`.
+**Backwards compatible:** yes — production default unchanged
+
+### File: `src/lib/integrations/failTest.ts`, `index.ts`
+**Change:** Optional QA adapter that always fails, so dead-letter can be proven without a live provider.
+**Reason:** Phase 4 Section 15. Off unless `INTEGRATION_FAIL_TEST=true`.
+**Backwards compatible:** yes
+
+### File: `src/components/conversion/LeadForm.tsx`
+**Change:** Optional "project details" control uses `text-ember-deep` (same token as `Link` / success WhatsApp).
+**Reason:** axe color-contrast on `text-ember` (#E8481F on white is below 4.5:1). No new colour.
+**Backwards compatible:** yes for behaviour; link is slightly darker
+
+### File: `src/components/ui/Table.tsx`, guide and quality table wrappers
+**Change:** Scrollable tables are keyboard-focusable regions (`tabIndex={0}`).
+**Reason:** axe `scrollable-region-focusable`.
+**Backwards compatible:** yes — visual output unchanged
+
+### File: `src/components/blocks/HeroSlider.tsx`
+**Change:** Only the active slide (plus slide 1) mounts `<Image>`. Off-slide photos were in-viewport stacked layers, so `loading="lazy"` never applied and they competed with LCP.
+**Reason:** Home mobile Lighthouse was 76 / 5.7s LCP with every slide downloading.
+**Backwards compatible:** yes for slide 1; later slides load when they become active
+
+### File: `scripts/audit-a11y.ts`
+**Change:** axe-core against eight templates. Footer excluded: zinc-on-graphite contrast is a Phase 1 token, not restyled here.
+**Reason:** Phase 4 Section 14 vs Section 0.2 (do not change Footer).
+**Backwards compatible:** n/a
+
+### File: `docs/ARCHITECTURE.md`, `docs/ANALYTICS.md`
+**Change:** Caching/revalidation; third-party 90KB budget (drop Clarity first).
+**Reason:** Phase 4 Section 11.
+**Backwards compatible:** n/a (docs)
+
 ## 2026-09-15 Phase 4 (Batch D)
 
 ### File: `src/lib/analytics/*`, `src/components/analytics/AnalyticsRoot.tsx`, `src/app/layout.tsx`

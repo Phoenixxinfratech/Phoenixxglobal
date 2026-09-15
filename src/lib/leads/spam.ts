@@ -76,16 +76,22 @@ function sweep(now: number): void {
   }
 }
 
-export function checkRateLimit(ip: string, now = Date.now()): { allowed: boolean; retryAfterSeconds: number } {
+export function checkRateLimit(
+  key: string,
+  now = Date.now(),
+  options: { max?: number; windowMs?: number } = {},
+): { allowed: boolean; retryAfterSeconds: number } {
   sweep(now);
-  const bucket = rateBuckets.get(ip);
+  const max = options.max ?? ANTI_SPAM.rateLimitMax;
+  const windowMs = options.windowMs ?? ANTI_SPAM.rateLimitWindowMs;
+  const bucket = rateBuckets.get(key);
 
   if (!bucket || bucket.resetAt <= now) {
-    rateBuckets.set(ip, { count: 1, resetAt: now + ANTI_SPAM.rateLimitWindowMs });
+    rateBuckets.set(key, { count: 1, resetAt: now + windowMs });
     return { allowed: true, retryAfterSeconds: 0 };
   }
 
-  if (bucket.count >= ANTI_SPAM.rateLimitMax) {
+  if (bucket.count >= max) {
     return {
       allowed: false,
       retryAfterSeconds: Math.max(1, Math.ceil((bucket.resetAt - now) / 1000)),

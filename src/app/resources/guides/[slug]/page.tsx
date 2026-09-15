@@ -49,7 +49,13 @@ function renderContentBlock(block: string, key: string) {
     const bodyRows = rows.slice(2).map(parseRow);
 
     return (
-      <div key={key} className="mt-6 max-w-3xl overflow-x-auto">
+      <div
+        key={key}
+        className="mt-6 max-w-3xl overflow-x-auto"
+        tabIndex={0}
+        role="region"
+        aria-label="Scrollable comparison table"
+      >
         <table className="w-full border-collapse text-left text-sm text-steel">
           <thead>
             <tr className="border-b border-line bg-paper">

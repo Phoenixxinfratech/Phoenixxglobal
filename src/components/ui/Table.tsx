@@ -7,7 +7,12 @@ type TableProps = HTMLAttributes<HTMLTableElement> & {
 
 export function Table({ className, children, ...rest }: TableProps) {
   return (
-    <div className="w-full overflow-x-auto">
+    <div
+      className="w-full overflow-x-auto"
+      tabIndex={0}
+      role="region"
+      aria-label="Scrollable data table"
+    >
       <table
         className={cn("w-full border-collapse rounded-none text-left", className)}
         {...rest}

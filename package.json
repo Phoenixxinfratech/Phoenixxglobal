@@ -13,6 +13,8 @@
     "audit:unique": "tsx scripts/audit-unique.ts",
     "audit:schema": "tsx scripts/audit-schema.ts",
     "audit:open-items": "tsx scripts/generate-open-items.ts",
+    "audit:a11y": "tsx scripts/audit-a11y.ts",
+    "audit:perf": "tsx scripts/audit-perf.ts",
     "generate:llms": "tsx scripts/generate-llms-txt.ts"
   },
   "dependencies": {
@@ -29,10 +31,12 @@
     "zod": "^4.1.12"
   },
   "devDependencies": {
+    "@playwright/test": "^1.63.0",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "axe-core": "^4.13.0",
     "eslint": "^9",
     "eslint-config-next": "16.3.5",
     "eslint-config-prettier": "^10.1.8",

@@ -87,7 +87,12 @@ export default function QualityAndTestingPage() {
           <p className="prose-body mt-4 max-w-3xl text-base text-steel">
             {content.certificationNote}
           </p>
-          <div className="mt-8 overflow-x-auto">
+          <div
+            className="mt-8 overflow-x-auto"
+            tabIndex={0}
+            role="region"
+            aria-label="Scrollable testing checks table"
+          >
             <table className="w-full min-w-[640px] border-collapse text-left text-sm">
               <thead>
                 <tr className="border-b border-line">

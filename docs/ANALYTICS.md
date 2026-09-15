@@ -78,3 +78,11 @@ Connect GA4 + Search Console. One page, Monday morning:
 5. SEO overlay: impressions, clicks, average position by page group (products, export, guides, blog).
 
 If a row in (1) is zero for 48 hours while traffic is normal, that is the silent-failure alert in `docs/RUNBOOK.md`.
+
+## Third-party script budget
+
+GTM + GA4 + Clarity combined must stay under **90KB transferred**. Measure in DevTools → Network after accepting cookies on a production build.
+
+- If the budget breaks, **drop Clarity first**. Do not drop GTM/GA4 — conversion reporting depends on them.
+- Scripts load `afterInteractive` and only after consent, so they must not compete with LCP.
+- Staging default: IDs empty, so this site's first paint has **0KB** of analytics. Turn IDs on in production after Search Console verification, then re-run `npm run audit:perf`.

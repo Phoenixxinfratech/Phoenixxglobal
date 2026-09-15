@@ -199,22 +199,24 @@ export function HeroSlider({ slides, className }: HeroSliderProps) {
               aria-label={`Slide ${index + 1} of ${slideCount}: ${slide.headline}`}
             >
               <div className="absolute inset-0 overflow-hidden">
-                <Image
-                  src={slide.image.src}
-                  alt={slide.image.alt}
-                  width={HERO_WIDTH}
-                  height={HERO_HEIGHT}
-                  priority={index === 0}
-                  fetchPriority={index === 0 ? "high" : "auto"}
-                  loading={index === 0 ? undefined : "lazy"}
-                  quality={70}
-                  className={cn(
-                    "h-full w-full object-cover",
-                    focalPointClass[slide.image.focalPoint],
-                    !reducedMotion && isActive && "animate-hero-scale",
-                  )}
-                  sizes="100vw"
-                />
+                {isActive || index === 0 ? (
+                  <Image
+                    src={slide.image.src}
+                    alt={slide.image.alt}
+                    width={HERO_WIDTH}
+                    height={HERO_HEIGHT}
+                    priority={index === 0}
+                    fetchPriority={index === 0 ? "high" : "auto"}
+                    loading={index === 0 ? undefined : "lazy"}
+                    quality={70}
+                    className={cn(
+                      "h-full w-full object-cover",
+                      focalPointClass[slide.image.focalPoint],
+                      !reducedMotion && isActive && "animate-hero-scale",
+                    )}
+                    sizes="100vw"
+                  />
+                ) : null}
               </div>
 
               <div

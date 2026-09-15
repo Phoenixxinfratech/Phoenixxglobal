@@ -8,6 +8,7 @@ import { alertIntegration } from "./alert";
 import { crmIntegration } from "./crm";
 import { recordDeadLetter } from "./deadLetter";
 import { emailIntegration } from "./email";
+import { failTestIntegration } from "./failTest";
 import { sheetsIntegration } from "./sheets";
 import { webhookIntegration } from "./webhook";
 import { whatsappIntegration } from "./whatsapp";
@@ -26,6 +27,7 @@ export function allIntegrations(): LeadIntegration[] {
     whatsappIntegration,
     crmIntegration,
     webhookIntegration,
+    failTestIntegration,
   ];
 }
 
@@ -61,6 +63,9 @@ export async function dispatchLead(lead: Lead): Promise<DispatchSummary> {
     if (lead.band === "spam" && integration.name !== "sheets") {
       summary.skipped.push(integration.name);
       return false;
+    }
+    if (integration.name === "fail-test") {
+      return true;
     }
     if (!lead.routing.channel.includes(integration.name)) {
       summary.skipped.push(integration.name);

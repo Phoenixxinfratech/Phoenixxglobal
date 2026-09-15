@@ -190,7 +190,9 @@ export async function POST(request: Request) {
     }),
   );
 
-  if (process.env.NODE_ENV === "development") {
+  const writeLocalLedger =
+    process.env.NODE_ENV === "development" || process.env.LEAD_LOCAL_LEDGER === "true";
+  if (writeLocalLedger) {
     try {
       await appendLeadToDevFile(lead);
     } catch (error) {

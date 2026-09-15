@@ -59,3 +59,9 @@ Thumbs.db
 .lighthouseci/
 lh-report*
 .cursor/
+
+# playwright
+/playwright-report/
+/test-results/
+/blob-report/
+/playwright/.cache/

@@ -376,7 +376,7 @@ export function LeadForm({
       <div>
         <button
           type="button"
-          className="text-sm font-medium text-ember underline-offset-4 hover:underline"
+          className="text-sm font-medium text-ember-deep underline-offset-4 hover:underline"
           onClick={() => setShowProjectDetails((open) => !open)}
           aria-expanded={showProjectDetails}
         >

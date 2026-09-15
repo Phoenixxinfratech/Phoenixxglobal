@@ -82,21 +82,51 @@ export default function PrivacyPolicyPage() {
               to coordinate shipping and documentation for an active order.
             </p>
 
-            <h2 className="mt-8 text-xl font-semibold text-ink">Retention</h2>
+            <h2 className="mt-8 text-xl font-semibold text-ink">Where enquiry data is stored</h2>
             <p>
-              Enquiry records are kept for as long as needed to manage active quotations
-              and export orders, and for a reasonable period afterward for audit and
-              repeat-order context. You may ask us to delete enquiry data that is no
-              longer needed for an active business relationship.
+              Form submissions are processed by our hosting provider and then written to a
+              Google Sheet that our export team uses as the lead ledger. Copies may also be
+              sent by email (Resend) to you and to our sales inbox, and — once configured —
+              to a CRM (Zoho or HubSpot) or an automation webhook. WhatsApp Cloud API
+              templates, when approved, send an acknowledgement to the number you gave us.
+            </p>
+            <p>
+              Retention: lead records are kept for 24 months in the live ledger, then
+              archived. To request deletion, use the contact page and quote the enquiry
+              reference if you have one. We verify identity before deleting the sheet row
+              and any CRM record, and we reply within 30 days. This is our working procedure
+              under India&apos;s Digital Personal Data Protection Act, 2023; visitors in the
+              EEA/UK may also request access, correction, deletion or restriction along
+              GDPR-style lines through the same contact path.
             </p>
 
             <h2 className="mt-8 text-xl font-semibold text-ink">Cookies and analytics</h2>
             <p>
-              This site may use essential cookies for form security and, in a later phase,
-              analytics cookies to understand which technical pages are most useful. We
-              will update this section when analytics tooling is enabled and provide
-              appropriate consent controls where required by law.
+              Essential cookies store first-touch attribution (no personal data) and your
+              analytics choice. Optional analytics cookies (Google Analytics 4, Google Tag
+              Manager, Microsoft Clarity) load only after you accept the bottom-bar consent
+              notice. Reject is a real reject — those scripts do not load. We honour Do Not
+              Track. Clarity is configured to mask form fields. You can change your choice
+              by clearing site cookies.
             </p>
+
+            <h2 className="mt-8 text-xl font-semibold text-ink">Third parties</h2>
+            <p>Processors we use, only when the matching integration is switched on:</p>
+            <ul className="mt-3 list-disc space-y-2 pl-5">
+              <li>Google (Sheets ledger; Analytics 4 and Tag Manager after you accept cookies)</li>
+              <li>Microsoft Clarity (session replay after consent; form fields masked)</li>
+              <li>Resend (buyer auto-reply and internal lead brief)</li>
+              <li>Meta WhatsApp Cloud API (acknowledgement templates, once approved)</li>
+              <li>Zoho or HubSpot, only if a CRM is configured later</li>
+              <li>An automation webhook (n8n / Make / Zapier) only if you enable one</li>
+            </ul>
+
+            <h2 className="mt-8 text-xl font-semibold text-ink">How to request deletion</h2>
+            <ol className="mt-3 list-decimal space-y-2 pl-5">
+              <li>Write to us from the email used on the enquiry, via the contact page.</li>
+              <li>Quote the enquiry reference (PSB-…) if you have it.</li>
+              <li>We confirm identity, delete the ledger row and any CRM record, and reply within 30 days.</li>
+            </ol>
 
             <h2 className="mt-8 text-xl font-semibold text-ink">Your rights</h2>
             <p>

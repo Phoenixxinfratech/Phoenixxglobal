@@ -63,7 +63,7 @@ Then merge any new fields into the category sections below.
 
 | Path | Value | Owner | Notes |
 | --- | --- | --- | --- |
-| `pages./privacy-policy/` | draft legal copy | Client | Pending legal review before treating as final |
+| `pages./privacy-policy/` | draft legal copy | Client | Phase 4 expanded the draft (forms, Sheets/CRM/email, retention, DPDP/GDPR-style rights). Still pending lawyer review before treating as final. |
 | `pages./terms/` | draft legal copy | Client | Pending legal review before treating as final |
 
 ## Assets
@@ -89,7 +89,8 @@ Then merge any new fields into the category sections below.
 | Product spec verification | Client + Engineering | All seed specs marked `verified: false` until datasheets issued |
 | Datasheet PDFs | Client | Link in `product.datasheet` only when file exists in `public/documents/` |
 | Datasheet PDF files in `public/documents/` | Client | Folder empty — hub shows email request + LeadForm datasheet variant only |
-| Lighthouse mobile scores | Engineering | Chrome binary unavailable at Batch F ship — see `docs/LIGHTHOUSE-PHASE3.md` |
+| Footer link contrast | Engineering | axe flags `text-zinc` on graphite footer (~3:1). Not restyled in Phase 4 — Footer is locked. Revisit with a token review, not a one-off CSS override. |
+| Lighthouse mobile LCP | Engineering | Phase 3 mobile LCP 2.4–2.7s vs 2.0s target. `audit:perf` warns 2.0–3.0s and fails above 3.0s. Re-run after analytics IDs go live. |
 | `site.canonicalDescription` | Done (Batch F) | Client may refine wording; currently feeds schema and `llms.txt` |
 | Blog author bylines | Client | Company author only until named reviewers approved |
 

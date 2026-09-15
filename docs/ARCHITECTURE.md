@@ -24,7 +24,7 @@ Technical decisions for PHOENIXX SMARTBUILD Phase 1. Harmless implementation cho
 - **`trailingSlash: true`** in `next.config.ts` — all internal links and canonicals use trailing slashes.
 - Lowercase, hyphenated slugs; no dates in paths; no `/index` URLs.
 - `redirects()` scaffold in `next.config.ts` for legacy paths (e.g. `/products/puf` → `/products/puf-panels/`).
-- Route handlers: `POST /api/lead` (Phase 1 stub — validate, log, no provider).
+- Route handlers: `POST /api/lead` (hardened capture + dispatch) and `/api/cron` (follow-up, SLA, digests).
 
 ---
 
@@ -69,7 +69,8 @@ Sentinel values must never reach the DOM. Components call `confirmed()` or `isCo
 ## Linting and quality
 
 - **`next lint` removed in Next 16.** Use `npm run lint` → `eslint .` with `eslint-config-next`.
-- Audit scripts: `audit:links`, `audit:copy`, `audit:unique`, `audit:schema`, `audit:open-items` (see `package.json`).
+- Audit scripts: `audit:links`, `audit:copy`, `audit:unique`, `audit:schema`, `audit:open-items`, `audit:a11y`, `audit:perf` (see `package.json`).
+- E2E: `npm run test:e2e` (Playwright).
 
 ---
 
@@ -82,17 +83,26 @@ Sentinel values must never reach the DOM. Components call `confirmed()` or `isCo
 
 ---
 
-## Lead capture (Phase 1 vs Phase 4)
+## Lead capture (Phase 4)
 
-- `LeadForm` + `POST /api/lead` validate and log submissions in dev.
-- Provider integration (email webhook, Resend, CRM) deferred to **Phase 4** — env vars stubbed in `.env.example`.
+- `LeadForm` + `POST /api/lead` validate, score, write the Sheets ledger when enabled, then dispatch adapters. A failing adapter never surfaces to the buyer.
+- Local `leads.json` is written in development, or when `LEAD_LOCAL_LEDGER=true` (Playwright).
 - `QuoteButton` and WhatsApp CTAs pre-fill context from the current page.
 
 ---
 
 ## Security baseline
 
-Security headers in `next.config.ts`: CSP (report-only), HSTS, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`, `X-Frame-Options`.
+Security headers in `next.config.ts`: **CSP (enforced)**, HSTS, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`, `frame-ancestors` / `X-Frame-Options`. CSP allowlists Google Tag Manager, GA4 and Clarity; those scripts still load only after consent.
+
+## Caching and revalidation
+
+- **Default:** static generation from typed content in `src/content/`. A content change ships on the next deploy. There is no CMS and no ISR clock.
+- **ISR:** not used. Do not add `revalidate` unless a page starts reading a live data source.
+- **Dynamic only:** `POST /api/lead` and `/api/cron` (`force-dynamic`). Everything else should stay static.
+- **Images:** `next/image` AVIF/WebP, sized via `sizes`. Lazy-load every image except hero slide 1 (`priority` + `fetchPriority="high"`).
+- **Scripts:** GTM / GA4 / Clarity load `afterInteractive` and only after analytics consent. Combined third-party budget is 90KB transferred — drop Clarity first if the budget breaks (see `docs/ANALYTICS.md`).
+- **CDN:** Netlify caches the static HTML and `_next/static` assets. HTML cache is invalidated by deploy.
 
 ---
 
@@ -107,7 +117,7 @@ src/
 ├── lib/           # metadata, schema, links, slug, confirmed, sitemap
 └── styles/        # globals.css (@theme)
 docs/              # Project documentation (this folder)
-scripts/           # audit:links, audit:copy, audit:unique, audit:schema, generate-open-items
+scripts/           # audit:links, audit:copy, audit:unique, audit:schema, audit:a11y, audit:perf, generate-open-items
 ```
 
 ---
