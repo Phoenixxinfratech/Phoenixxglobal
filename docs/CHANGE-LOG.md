@@ -2,6 +2,25 @@
 
 Additive Phase 1 touches made during later phases. Prefer extension over modification.
 
+## 2026-09-15 Content depth, freshness, port/location SEO
+
+### Docs
+**Change:** Added `docs/CONTENT-QUALITY.md`, `docs/CONTENT-QA-REPORT.md`. Updated `docs/COPY-GUIDE.md` (depth audit + port rules). Updated this change log.
+**Reason:** Mandatory quality floors and QA record.
+**Backwards compatible:** yes
+
+### Scripts
+**File:** `scripts/audit-depth.ts`, `package.json` (`audit:depth`)
+**Change:** Soft word-floor audit for products, solutions, company, export content.
+**Reason:** Measure useful depth without encouraging padding.
+**Backwards compatible:** yes
+
+### Solutions / products / company / export
+**Files:** `src/content/solutions.ts`, `products.ts`, `company.ts`, `export.ts`, `pages.ts`, `src/app/export/africa/page.tsx`
+**Change:** Deepened thin solutions and company pages; refreshed product exportNotes with multi-port Gujarat logistics; expanded export support pages; natural Sanand/Changodar/Dahej/etc. industrial context on About/Manufacturing.
+**Reason:** Content depth + freshness + local/port SEO without redesign or invented claims.
+**Backwards compatible:** URLs and templates unchanged
+
 ## 2026-09-15 Prompt 5 — Content, SEO & GEO authority
 
 ### Docs

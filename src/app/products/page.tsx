@@ -105,13 +105,15 @@ export default function ProductsHubPage() {
             Five panel families carry full technical pages today — PUF, PIR,
             Rockwool, roofing and wall systems. Cold room kits, cleanroom
             panels, fire-rated builds, doors and PEB structures follow in the
-            next batch. Start from the{" "}
+            next batch. If you are sizing a chiller or freezer, start from the{" "}
             <Link href={routes.solution("cold-storage")}>
               cold storage solution overview
             </Link>{" "}
-            if you are sizing a chiller or freezer, or jump to{" "}
-            <Link href={routes.export}>export packing and ports</Link> when the
-            BOQ is already fixed.
+            for thickness guidance, then open the core product page for joint
+            detail. When the BOQ is fixed, review{" "}
+            <Link href={routes.export}>export packing and ports</Link> for
+            container counts and documentation — port is confirmed per shipment,
+            not assumed on a first quote.
           </p>
         </Container>
       </Section>

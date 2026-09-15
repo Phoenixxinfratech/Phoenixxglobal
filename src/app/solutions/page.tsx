@@ -93,10 +93,13 @@ export default function SolutionsHubPage() {
           <p className="prose-body mt-4 max-w-3xl text-base text-steel">
             Each page maps panel thickness, joint type and door detail to a real
             industry — cold chain, food hygiene, pharma classification, warehouse
-            programme or factory fire separation. Start from your process
-            temperature, then open the closest match or browse{" "}
-            <Link href={routes.products}>all panel products</Link> if you already
-            know the core type.
+            programme or factory fire separation. Start from process temperature
+            and hygiene class, not from a panel name. Open the closest industry
+            page, then the linked{" "}
+            <Link href={routes.products}>product spec</Link> for core and joint
+            geometry. Mixed-zone sites — ambient shell plus internal cold room —
+            send one layout with rooms marked; we quote by zone on a single
+            schedule.
           </p>
         </Container>
       </Section>

@@ -21,37 +21,37 @@ export const pages: PageMeta[] = [
     path: "/about/",
     title: "About PHOENIXX SMARTBUILD",
     description:
-      "Who we are, how we manufacture insulated panels in Ahmedabad, and how export enquiries are handled from first email to container loading.",
+      "Ahmedabad manufacturing base, Gujarat industrial supply context, export port options from Mundra to Nhava Sheva, and how buyers engage with RFQ, drawings and BOQ — from NXT Phoenixx SmartBuild LLP.",
     h1: "About PHOENIXX SMARTBUILD",
     holdingCopy:
-      "We're an Ahmedabad-based LLP manufacturing insulated sandwich panels and PEB systems for buyers who need drawings, packing lists and on-time containers — not vague promises. The full company story, plant photos and process walkthrough publish in the next phase. Meanwhile, ask for our company profile and current production lead times.",
+      "PHOENIXX SMARTBUILD manufactures insulated sandwich panels, cold room kits, doors and PEB cladding in Ahmedabad — one roof for forming, foam and export packing. This page covers who we are, how Gujarat industrial belts use our panels, which Indian ports we evaluate per shipment, and what we need for a written quotation. Send a BOQ with port and temperature band if you are comparing suppliers.",
     draft: false,
     section: "core",
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     path: "/manufacturing/",
     title: "Panel Manufacturing in Ahmedabad",
     description:
-      "How PHOENIXX SMARTBUILD forms, foams and finishes insulated sandwich panels for domestic and export projects.",
+      "Continuous line forming, cut-to-length, QC holds, export packing and multi-port dispatch from Ahmedabad — for domestic Gujarat sites and ocean freight orders.",
     h1: "Manufacturing",
     holdingCopy:
-      "The manufacturing page will cover line layout, foam systems, facing coils and the checks we run before a pack list is signed. If you need plant capacity or process notes for a tender today, email your BOQ and we'll respond with what we can confirm in writing.",
+      "Panels are decoiled, foamed, cut to order length and packed on a continuous line in Ahmedabad — the same process for a Sanand factory shed or a 40-foot HC container to Mombasa. This page walks through materials, in-process checks, ocean packing and how we choose between Mundra, Kandla, Pipavav, Hazira or Nhava Sheva per shipment. Email your BOQ with thickness and joint type for tender-ready process notes.",
     draft: false,
     section: "core",
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     path: "/quality-and-testing/",
     title: "Quality & Testing",
     description:
-      "Dimensional checks, density sampling and documentation practices for insulated panels before dispatch from Ahmedabad.",
+      "Pre-dispatch checks, buyer-arranged inspection, documents we share with shipments, and an honest position on certifications — no invented ISO or test report numbers.",
     h1: "Quality and testing",
     holdingCopy:
-      "We do not publish test certificates we have not issued. This page will list the checks we run on density, dimensions and finish, plus how third-party tests are handled when a project specifies them. Send your QA checklist with the enquiry if you need a mapped response.",
+      "We check thickness, dimensions, foam density and facing finish in-house before any bundle leaves the plant — against your approved quotation, not a generic catalogue. Third-party lab tests and buyer-side inspection are arranged when your tender names them. We share certificates and test reports only when they exist; send your QA checklist with the RFQ for a mapped reply.",
     draft: false,
     section: "core",
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     path: "/projects/",
@@ -80,25 +80,25 @@ export const pages: PageMeta[] = [
     path: "/products/",
     title: "Insulated Sandwich Panels & PEB Products",
     description:
-      "PUF, PIR, Rockwool, roofing and wall panels, cold room and cleanroom systems, industrial doors and PEB structures.",
+      "PUF, PIR and Rockwool cores, roofing and wall cladding, cold room and cleanroom kits, fire-rated build-ups, industrial doors and PEB structures — specification pages with thickness, joints and export notes.",
     h1: "Products",
     holdingCopy:
-      "This hub lists every panel, door and structure we manufacture. All ten product families — PUF, PIR, Rockwool, roofing, wall, cold room, cleanroom, fire-rated, industrial doors and PEB — carry full technical pages. Start with the core that matches your fire and thermal brief, then request a quote with drawings attached.",
+      "Ten product families cover the insulated envelope from cold store cam-lock walls to long-span PEB roof sheets. Start from your temperature band and fire line — PUF for most −18 °C rooms, PIR when thickness must shrink, Rockwool when the wall must be non-combustible. Live pages carry joint types, indicative thickness tables and packing notes; draft pages accept datasheet requests by email. Send elevations with port and Incoterm when you are ready to freeze the schedule.",
     draft: false,
     section: "products",
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     path: "/solutions/",
     title: "Industry Solutions for Insulated Buildings",
     description:
-      "Panel and PEB solutions for cold storage, food processing, pharma cleanrooms, warehousing, dairy, healthcare, data centres and manufacturing.",
+      "Industry-specific panel and PEB guidance for cold storage, food and dairy processing, pharma cleanrooms, warehousing, healthcare, data centres and manufacturing plants.",
     h1: "Solutions by industry",
     holdingCopy:
-      "Nine industry pages map panel thickness, joint types, failure modes and product shortlists to real applications — cold chain, food hygiene, pharma classification, logistics sheds, healthcare partitions and factory fire lines. Pick the closest match to your process temperature and hygiene class, then send a layout for a zone-by-zone quotation.",
+      "Each industry page ties process temperature, hygiene class and fire separation to a panel shortlist — not a generic catalogue browse. Cold storage and dairy cover chilled envelopes; food and poultry cover washdown zoning; pharma and hospital pages cover classified partitions; warehousing and manufacturing cover long-span shells and fire lines. Pick the closest match, read the linked product page for joint detail, then send a zoned layout PDF for a quotation that lists thickness by room.",
     draft: false,
     section: "solutions",
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     path: "/export/",

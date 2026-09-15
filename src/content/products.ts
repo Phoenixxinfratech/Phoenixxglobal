@@ -29,7 +29,7 @@ export const products: Product[] = [
       "Facing options in PPGI/PPGL allow colour coordination with existing plant buildings",
     ],
     selectionGuidance:
-      "Start with your target internal temperature, ambient design condition and largest single wall dimension. Chiller rooms at +2 to +8 °C often land at 80–100 mm; freezer rooms at −18 °C commonly need 100–120 mm before door losses and defrost cycles are added. High-traffic doorways and long external walls in humid coastal climates may need one step thicker or a PIR core if headroom is fixed. Choose cam-lock when the room is modular and may expand; choose tongue-and-groove for fixed industrial envelopes. Send us the room plan — we will not quote a thickness from a single temperature number alone.",
+      "Begin with target internal temperature, ambient design condition and the longest single wall or roof run. Chiller rooms at +2 to +8 °C often land at 80–100 mm; freezer rooms at −18 °C commonly need 100–120 mm before door losses and defrost cycles are added. High-traffic doorways and long external walls in humid coastal climates may need one step thicker or a PIR core if headroom is fixed. Choose cam-lock when the room is modular and may expand; choose tongue-and-groove for fixed industrial envelopes. Send us the room plan — we will not quote a thickness from a single temperature number alone.",
     thermalPerformance: [
       { thickness: "80 mm", uValue: "0.28", indicative: true },
       { thickness: "100 mm", uValue: "0.22", indicative: true },
@@ -122,9 +122,19 @@ export const products: Product[] = [
         answer:
           "Follow the joint detail on the drawing. Excess silicone on the cold face can crack and trap moisture. Gaskets and vapor-barrier tape at the joint line are the primary seal; sealant is supplementary where the detail calls for it.",
       },
+      {
+        question: "What affects the quoted price of PUF sandwich panels?",
+        answer:
+          "Panel thickness and foam density, steel gauge and facing coat, joint profile (cam-lock versus tongue-and-groove), accessory scope, order volume, destination port, freight arrangement and Incoterm all move the line items. We do not publish live prices on this page — your dated quotation breaks down m², accessories and export charges against your layout.",
+      },
+      {
+        question: "What should I send for a PUF panel export quotation?",
+        answer:
+          "Room layout PDF or BOQ with internal dimensions, target temperature band, ambient design condition if known, joint type preference, facing colour, destination port and preferred Incoterm. Flag food-grade facing or coastal coating needs early — missing inputs delay thickness confirmation.",
+      },
     ],
     exportNotes:
-      "PUF panels ship flat-stacked in 40 ft or 20 ft containers. Thicker panels (150 mm and above) reduce m² per container — we provide a loading schedule with your quotation. Corner profiles, flashings and cam-lock accessories are packed separately in the same container where possible.",
+      "PUF panels ship flat-stacked on timber pallets in 40 ft HC or 20 ft containers from our Ahmedabad line. Export containers gate in at west-coast ports — Mundra, Deendayal (Kandla), Pipavav, Hazira or Nhava Sheva/JNPT — depending on destination, vessel schedule and freight; we confirm the port of loading on your proforma. Thicker panels (150 mm and above) reduce m² per container — your quotation includes a loading schedule with indicative m² per 40 ft HC at your thickness. Corner profiles, flashings and cam-lock accessories are packed separately in the same container where possible.",
     buyerChecklist: [
       "Confirm target room temperature band and ambient design condition for each zone",
       "Specify cam-lock versus tongue-and-groove joint type on the enquiry",
@@ -192,7 +202,7 @@ export const products: Product[] = [
     quickAnswer:
       "PIR panels use a polyisocyanurate foam core with λ 0.019–0.022 W/m·K — roughly one thickness step less than PUF for the same U-value. The premium is justified when headroom is fixed, footprint is limited, or the spec asks for better fire behaviour than standard polyurethane. Not on cost alone for a large simple chiller.",
     overview:
-      "PIR (polyisocyanurate) sandwich panels share the same metal-facing construction as our PUF range but use a modified isocyanurate foam formulation. The result is lower thermal conductivity and improved fire behaviour compared with standard polyurethane — not a replacement for mineral wool on fire-rated compartment walls, but a meaningful step up on many project specifications. In practice, an 80 mm PIR wall often approximates the U-value of 100 mm PUF, which matters when ceiling height is capped or when you are retrofitting inside an existing shell. PIR foam is slightly denser (40–45 kg/m³ typical) and the raw material cost is higher — expect roughly 15–25 % more per m² than equivalent-thickness PUF depending on volume and facing. We quote both on the same enquiry when you ask; we will tell you plainly if PUF meets the load and PIR is discretionary. One caveat we see in the field: buyers specify PIR for fire reasons alone without checking the actual test report their insurer wants — PIR improves fire behaviour versus PUF but does not automatically satisfy a named fire period. Send the required standard and we will map it honestly.",
+      "PIR (polyisocyanurate) sandwich panels from our Ahmedabad line share the same metal-facing construction as PUF but use a modified isocyanurate foam formulation. The result is lower thermal conductivity and improved fire behaviour compared with standard polyurethane — not a replacement for mineral wool on fire-rated compartment walls, but a meaningful step up on many project specifications. In practice, an 80 mm PIR wall often approximates the U-value of 100 mm PUF, which matters when ceiling height is capped or when you are retrofitting inside an existing shell. PIR foam is slightly denser (40–45 kg/m³ typical) and the raw material cost is higher — expect roughly 15–25 % more per m² than equivalent-thickness PUF depending on volume and facing. We quote both on the same enquiry when you ask; we will tell you plainly if PUF meets the load and PIR is discretionary. One caveat we see in the field: buyers specify PIR for fire reasons alone without checking the actual test report their insurer wants — PIR improves fire behaviour versus PUF but does not automatically satisfy a named fire period. Send the required standard and we will map it honestly.",
     construction:
       "PIR core is laminated between PPGI or PPGL facings on the same continuous line as PUF, with foam chemistry adjusted for the isocyanurate index. Facing thickness, joint profiles and cover width (~1000 mm effective) follow the same families as PUF — cam-lock for modular cold rooms, tongue-and-groove for industrial cladding. Do not mix PIR and PUF panels on the same continuous envelope; expansion and joint geometry differ enough to cause alignment issues at corners.",
     benefits: [
@@ -292,9 +302,19 @@ export const products: Product[] = [
         answer:
           "The foam core is protected by the outer metal facing. Facing colour fade is a coating issue on the steel — we specify UV-stable pre-painted coil where the project is exposed to strong sun. Inner cold-face appearance is unaffected.",
       },
+      {
+        question: "What affects the quoted price of PIR panels versus PUF?",
+        answer:
+          "PIR raw material cost is higher than standard PUF at the same thickness — expect the premium on your quotation line items. Price also shifts with steel gauge and facing, joint profile, accessory scope, volume, destination port, freight and Incoterm. Thinner PIR may reduce container count versus an equivalent U-value in PUF, which can partially offset the core premium — we show both on one schedule when you ask.",
+      },
+      {
+        question: "What should I send for a PIR panel export quotation?",
+        answer:
+          "Same inputs as PUF: layout or BOQ, temperature band, room dimensions, joint type, facing colour, destination port and Incoterm. Note if headroom is capped or if an insurer fire note applies — we map PIR against PUF honestly rather than defaulting to the costlier core.",
+      },
     ],
     exportNotes:
-      "PIR panels follow the same container loading approach as PUF. Because PIR achieves lower λ, projects often use thinner panels — this can increase m² per container compared to an equivalent PUF specification. Accessories and flashings packed in the same shipment where possible.",
+      "PIR panels follow the same flat-stack packing as PUF — timber pallets in 40 ft HC or 20 ft containers from Ahmedabad. Because PIR achieves lower λ, projects often use thinner panels, which can increase m² per container compared with an equivalent U-value in PUF; your quotation states indicative loading either way. Export gate-in is arranged through Mundra, Deendayal (Kandla), Pipavav, Hazira or Nhava Sheva/JNPT depending on destination, vessel schedule and freight — confirm on the proforma. Accessories and flashings ship in the same container where possible.",
     buyerChecklist: [
       "State whether headroom or external wall thickness is capped — the usual reason to step up from PUF",
       "Send any fire-performance note from the insurer or consultant — PIR is not automatic compartmentation",
@@ -459,9 +479,19 @@ export const products: Product[] = [
         answer:
           "Yes for fire-rated roof specs on industrial buildings. Roof spans are shorter than foam roofs due to weight — purlin spacing must follow the structural note on the drawing.",
       },
+      {
+        question: "What affects the quoted price of rockwool sandwich panels?",
+        answer:
+          "Core density, panel thickness, steel gauge, fire-stop accessory scope, order volume, destination port, freight and Incoterm all move the numbers. Heavier panels mean fewer m² per container than foam — freight cost per m² is often higher even when panel price per m² is acceptable. We do not publish live rates here; your quotation shows loading and line items against your drawing.",
+      },
+      {
+        question: "What should I send for a rockwool panel export quotation?",
+        answer:
+          "Drawing extracts with fire period or non-combustible requirement, wall or roof orientation, heights, purlin or girt spacing, destination port and Incoterm. If the wall also holds cold temperature, state both briefs — thermal and fire requirements can conflict and affect thickness.",
+      },
     ],
     exportNotes:
-      "Rockwool panels add significant weight per container. We load to axle and port handling limits, often reducing m² per 40 ft HC versus foam. Edge protection is critical — core compression damages fire performance. Fire-stop accessories ship in labelled crates within the same container.",
+      "Rockwool panels ship flat-stacked from Ahmedabad in 40 ft HC containers, but mineral wool density adds significant weight — we load to axle and port handling limits, often reducing m² per 40 ft HC versus foam at the same thickness. Edge protection is critical; core compression in transit damages fire performance. Fire-stop accessories ship in labelled crates within the same container. West-coast gate-in — Mundra, Deendayal (Kandla), Pipavav, Hazira or Nhava Sheva/JNPT — follows destination, vessel schedule and freight; confirm on your proforma. Indicative m² per container is on the quotation, not assumed from a foam project.",
     buyerChecklist: [
       "Send the fire period or non-combustible requirement from the drawing — not a generic 'fire rated' note",
       "Confirm purlin spacing and fixing density against panel weight — do not copy foam shed tables",
@@ -527,7 +557,7 @@ export const products: Product[] = [
     quickAnswer:
       "Roofing sandwich panels combine a structural outer profile, insulation core and inner liner in one liftable unit — typically trapezoidal outer ribs over PUF or PIR foam for warehouse roofs. Span capability depends on purlin spacing and core density; sagging beyond the structural table and outer-coat chalking in UV are the two field issues we address in quotations.",
     overview:
-      "Insulated roofing panels turn a warehouse roof into a single fixed-up operation — outer weather sheet, insulation and inner liner arrive as one element screwed to purlins. We supply trapezoidal profiles for exposed-fastener industrial roofs and concealed-fix options where the architectural brief demands it. Core type follows the same logic as walls: PUF for general insulated sheds, PIR when a lower U-value is needed without adding thickness, rockwool when the roof must be part of a fire-rated separation. Span tables are not guesswork — a 0.70 mm outer profile on 100 mm PUF might be rated to 1.8 m purlin spacing while a 1.2 m spacing on the same sheet will show visible deflection within a season. Tropical UV is the other honest caveat: pre-painted outer sheets in strong equatorial sun can chalk or fade on the weather face even when the coating is UV-stable — this is cosmetic, not structural, but clients who specify bright colours on roof tops should expect faster appearance change than on wall panels. We quote fixing centres, screw type and drip-edge detail with the panel schedule.",
+      "Insulated roofing panels turn a warehouse roof into one lift-and-fix operation — outer weather sheet, insulation and inner liner arrive as a single element screwed to purlins. We supply trapezoidal profiles for exposed-fastener industrial roofs and concealed-fix options where the architectural brief demands it. Core type follows the same logic as walls: PUF for general insulated sheds, PIR when a lower U-value is needed without adding thickness, rockwool when the roof must be part of a fire-rated separation. Span tables are not guesswork — a 0.70 mm outer profile on 100 mm PUF might be rated to 1.8 m purlin spacing while a 1.2 m spacing on the same sheet will show visible deflection within a season. Tropical UV is the other honest caveat: pre-painted outer sheets in strong equatorial sun can chalk or fade on the weather face even when the coating is UV-stable — this is cosmetic, not structural, but clients who specify bright colours on roof tops should expect faster appearance change than on wall panels. We quote fixing centres, screw type and drip-edge detail with the panel schedule.",
     construction:
       "Outer profile is formed galvanised or galvalume sheet, typically 0.50–0.70 mm, with trapezoidal ribs for bending stiffness. Core is injected foam or inserted mineral wool depending on specification. Inner liner is flat or micro-rib white sheet, often 0.40 mm, that completes the vapour control layer when joints are taped correctly. Panels are supplied in lengths up to 12 m — longer than 11 m needs site access checks for delivery and lift. Side laps interlock with foam-backed beads or factory-applied sealant; end laps sit over purlins with butyl tape and screw clusters per the detail.",
     benefits: [
@@ -622,9 +652,19 @@ export const products: Product[] = [
         answer:
           "Yes for architectural industrial projects. They need tighter tolerances on purlin alignment and usually cost more than exposed-fastener trapezoidal systems.",
       },
+      {
+        question: "What affects the quoted price of insulated roofing panels?",
+        answer:
+          "Profile depth, outer sheet gauge, core type (PUF, PIR or rockwool), panel length, purlin spacing confirmation, flashings scope, volume, destination port, freight and Incoterm. Long lengths above 11 m may need split panels or special handling that changes freight. Live prices are not published here — your quotation ties m² rates to the structural table for your spacing.",
+      },
+      {
+        question: "What should I send for a roofing panel export quotation?",
+        answer:
+          "Roof plan with purlin spacing, design wind load reference, longest panel length, core type, outer colour, ridge and eave flashing requirements, destination port and Incoterm. Site access constraints for delivery above 11 m help us decide whether to split lengths before dispatch.",
+      },
     ],
     exportNotes:
-      "Long roof panels dominate container geometry — we nest accessories in the gaps and may split lengths for port handling if access is tight. Outer sheets are protected with film where the coil supplier provides it. Weight limits apply sooner on rockwool roofs than foam.",
+      "Roof panels ship flat-stacked from Ahmedabad — long lengths dominate container geometry, so we nest ridge and eave accessories in the gaps and may split lengths for port handling if site access is tight. Outer sheets carry protective film where the coil supplier provides it. Rockwool roof cores hit weight limits sooner than foam. Your quotation includes indicative m² per 40 ft HC at your profile and thickness. Export loading gates through Mundra, Deendayal (Kandla), Pipavav, Hazira or Nhava Sheva/JNPT depending on destination, vessel schedule and freight — confirm on the proforma.",
     buyerChecklist: [
       "Send purlin spacing and design wind load reference — span tables are profile-specific",
       "State longest panel length and site access for delivery above 11 m",
@@ -785,9 +825,19 @@ export const products: Product[] = [
         answer:
           "Up to available panel length — often 12 m. Taller walls need horizontal joints with designed expansion gaps and trim covers.",
       },
+      {
+        question: "What affects the quoted price of wall sandwich panels?",
+        answer:
+          "Thickness, core type, steel gauge and facing coat, joint profile, wind-load fixing density, opening trim scope, volume, destination port, freight and Incoterm. Exterior walls with rockwool cores cost more to ship per m² than foam because of weight. Your quotation states line items and indicative container loading — we do not publish live prices on this page.",
+      },
+      {
+        question: "What should I send for a wall panel export quotation?",
+        answer:
+          "Elevation drawings with opening sizes, girt spacing, wind load reference, core type per wall, outer RAL colour, destination port and Incoterm. Say whether walls are exterior cladding, internal partitions or cold-store interfaces — accessory sets differ.",
+      },
     ],
     exportNotes:
-      "Wall panels pack efficiently flat — often higher m² per container than roof lengths of the same thickness. Colour-facing must be confirmed before coil allocation; changes after order entry delay production. Flashings and cill sections are nested between panel faces with protective interleaving.",
+      "Wall panels pack efficiently flat from our Ahmedabad line — often higher m² per 40 ft HC than roof lengths of the same thickness because bundles stack lower. Colour-facing must be confirmed before coil allocation; changes after order entry delay production. Flashings and cill sections nest between panel faces with protective interleaving. West-coast port of loading — Mundra, Deendayal (Kandla), Pipavav, Hazira or Nhava Sheva/JNPT — is confirmed on your proforma against vessel schedule and freight. Indicative m² per container is attached to the quotation.",
     buyerChecklist: [
       "Confirm girt spacing and wind load reference on the structural note",
       "State core type per wall — foam for general envelope, rockwool for fire or acoustic partitions",
@@ -853,7 +903,7 @@ export const products: Product[] = [
     quickAnswer:
       "Cold room panels use cam-lock hooks at vertical joints so a box room can ship flat-packed and assemble without site welding. Typical cores are PUF or PIR between 80–150 mm depending on target temperature. Heat bridging at the door frame and an unsealed floor coving junction are the two details buyers skip — we include jamb profiles and floor interface drawings in every kit quotation.",
     overview:
-      "A modular cold room is a box assembled from cam-lock sandwich panels — not a random wall panel order with corners cut on site. Each vertical joint rotates into a gasketed hook; horizontal laps and ceiling pieces complete the envelope. We supply chiller rooms (+2 to +8 °C), standard freezers (−18 °C) and lower-temperature blast zones when your load calculation supports it. Core type follows the same logic as our PUF and PIR ranges; cam-lock geometry is the differentiator here. The caveat we raise on every enquiry: door frame heat bridging and floor junctions cause more callbacks than panel thickness mistakes. A 120 mm wall with a bare steel door frame and no coving at the floor is a thermal short circuit — warm air tracks the frame while your compressor runs flat out. We quote jamb profiles, floor coving sections and threshold interfaces with the panel schedule so your installer is not improvising with angle iron on the day of assembly.",
+      "A modular cold room is a complete box from cam-lock sandwich panels — not a wall panel order with corners cut on site. Each vertical joint rotates into a gasketed hook; horizontal laps and ceiling pieces complete the envelope. We supply chiller rooms (+2 to +8 °C), standard freezers (−18 °C) and lower-temperature blast zones when your load calculation supports it. Core type follows the same logic as our PUF and PIR ranges; cam-lock geometry is the differentiator here. The caveat we raise on every enquiry: door frame heat bridging and floor junctions cause more callbacks than panel thickness mistakes. A 120 mm wall with a bare steel door frame and no coving at the floor is a thermal short circuit — warm air tracks the frame while your compressor runs flat out. We quote jamb profiles, floor coving sections and threshold interfaces with the panel schedule so your installer is not improvising with angle iron on the day of assembly.",
     construction:
       "Cam-lock panels pair a hook-and-rotate vertical joint with tongue-and-groove horizontal laps where the profile requires it. Core is injected PUF or PIR between 0.45–0.60 mm pre-painted steel facings; food-facing side can be upgraded on request. Standard module width is approximately 1000 mm effective cover. Corner pieces, H-post connectors, ceiling panels and coving extrusions ship in labelled crates within the same container. Door openings are factory-framed where possible — field-cut openings need our jamb supplement kit to recover the thermal break.",
     benefits: [
@@ -952,9 +1002,19 @@ export const products: Product[] = [
         answer:
           "When internal volume is tight or the client spec names improved fire behaviour over PUF, yes. For a large simple −18 °C box with generous dimensions, PUF usually meets the load at lower cost — we quote both when asked.",
       },
+      {
+        question: "What affects the quoted price of a cam-lock cold room kit?",
+        answer:
+          "Room volume, core type and thickness, number of door openings, accessory scope (corners, coving, jambs, ceiling panels), hardware grade, destination port, freight and Incoterm. Panels-only quotes without accessories are cheaper on paper but rarely perform thermally on site. We do not publish live kit prices — your quotation maps crate contents to assembly sequence.",
+      },
+      {
+        question: "What should I send for a cold room kit export quotation?",
+        answer:
+          "Internal L × W × H, target temperature, ambient design condition, door size and position, daily traffic cycle, destination port and Incoterm. Coordinate door orders on the same schedule so jamb depth matches wall thickness — split enquiries often miss thermal break detail.",
+      },
     ],
     exportNotes:
-      "Cold room kits ship as panel stacks plus accessory crates in 40 ft HC containers. Door jamb and coving profiles are nested between panel faces with edge protection. Hardware bags are labelled by room elevation to reduce customs unpacking errors on first-time African sites.",
+      "Cold room kits ship from Ahmedabad as flat panel stacks plus labelled accessory crates in 40 ft HC containers — often 800–1,200 m² panel area at 100 mm thickness before crate volume is added. Door jamb and coving profiles nest between panel faces with edge protection; hardware bags are marked by room elevation to reduce customs unpacking errors on first-time African sites. West-coast gate-in at Mundra, Deendayal (Kandla), Pipavav, Hazira or Nhava Sheva/JNPT follows destination, vessel schedule and freight — confirm on your proforma. Indicative m² per container and crate list are on the quotation.",
     buyerChecklist: [
       "Send internal L × W × H and target temperature per room — not external building shell dimensions alone",
       "Include door size, position and daily traffic cycle in the enquiry",
@@ -1115,9 +1175,19 @@ export const products: Product[] = [
         answer:
           "Yes where hygiene and temperature control overlap — coordinate core thickness with cold load and vapour control through floors and ceilings. Mixed cold and classified zones need transition details at the boundary.",
       },
+      {
+        question: "What affects the quoted price of cleanroom sandwich panels?",
+        answer:
+          "Facing grade (standard smooth PPGI versus hygiene coating), core type, joint profile (concealed-fix costs more than tongue-and-groove), coving and trim scope, ceiling grid interface, volume, destination port, freight and Incoterm. Validation-grade detailing adds accessory line items that standard warehouse walls skip. Live prices are not on this page — your quotation lists panels and hygiene accessories separately.",
+      },
+      {
+        question: "What should I send for a cleanroom panel export quotation?",
+        answer:
+          "Room elevations, target class reference if any, washdown method and chemical list, pressure cascade direction, penetration schedule, core and thickness preference, destination port and Incoterm. HVAC and pressurisation drawings help us respond with joint detail rather than generic panel counts.",
+      },
     ],
     exportNotes:
-      "Cleanroom panels ship flat with facing protection between each sheet. Coving and trim lengths are bundled separately with colour-coded labels matching elevation drawings. Chemical compatibility notes for coatings travel with the packing list for QA file inclusion.",
+      "Cleanroom panels ship flat from Ahmedabad with facing interleaves between each sheet — coating gloss must survive long sea transits to East Africa and the Gulf. Coving and trim lengths bundle separately with colour-coded labels matching elevation drawings; chemical compatibility notes for coatings travel with the packing list for QA file inclusion. Loading m² per 40 ft HC is on your quotation — concealed-fix profiles and extra trim reduce stack density versus standard wall panels. Export containers gate in at Mundra, Deendayal (Kandla), Pipavav, Hazira or Nhava Sheva/JNPT depending on destination, vessel schedule and freight; confirm on the proforma.",
     buyerChecklist: [
       "State target ISO or GMP class and pressure cascade direction relative to adjacent rooms",
       "Send disinfectant and cleaning chemical list for sealant and coating compatibility",
@@ -1278,9 +1348,14 @@ export const products: Product[] = [
         answer:
           "System documentation is issued against the approved build-up in your project file — not a generic marketing certificate. Confirm document requirements at order stage for customs and consultant review.",
       },
+      {
+        question: "What affects the quoted price of a fire-rated panel system?",
+        answer:
+          "Fire period and matched system scope (panels alone are not the full price), core density, steel gauge, fire-stop trim quantity, wall versus roof orientation, volume, destination port, freight and Incoterm. Heavier mineral wool systems load fewer m² per container than foam — freight per m² matters. We do not publish generic fire-rated rates; your quotation references the project-matched build-up.",
+      },
     ],
     exportNotes:
-      "Fire-rated panels add weight and need edge protection to prevent core crushing. Trim and fire-stop lengths ship in marked bundles aligned to container unload order. Documentation references the project-matched system — request copies for QA files before sail date.",
+      "Fire-rated panels ship flat-stacked from Ahmedabad in 40 ft HC containers. Mineral wool density adds weight and needs edge protection to prevent core crushing in transit — indicative m² per container is lower than foam and sits on your quotation. Trim and fire-stop lengths ship in marked bundles aligned to container unload order; documentation references the project-matched system — request copies for QA files before sail date. West-coast port of loading — Mundra, Deendayal (Kandla), Pipavav, Hazira or Nhava Sheva/JNPT — is confirmed on your proforma against vessel schedule and freight.",
     buyerChecklist: [
       "Send fire period and test standard reference from the drawing or insurer letter",
       "Confirm wall versus roof orientation — approvals often differ by element",
@@ -1431,9 +1506,19 @@ export const products: Product[] = [
         answer:
           "Not always — rapid-roll fabric has a different infiltration and washdown profile. Cold store engineers often specify insulated doors for primary separation and rapid-roll at high-traffic internal zones.",
       },
+      {
+        question: "What affects the quoted price of industrial cold room doors?",
+        answer:
+          "Clear opening size, leaf thickness and core type, frame material (aluminium thermal-break versus stainless), door format (hinged, sliding or rapid-roll), threshold heating scope, hardware grade, volume, destination port, freight and Incoterm. Doors ship in separate crates from panels — freight is per opening, not per m². We do not publish live door prices here.",
+      },
+      {
+        question: "What should I send for an industrial door export quotation?",
+        answer:
+          "Opening width and height, room temperature, traffic type (pedestrian, pallet jack or forklift), daily cycle count, adjacent wall thickness from the panel schedule, threshold preference, destination port and Incoterm. Quote doors on the same order as panels so jamb depth is not shimmed on site.",
+      },
     ],
     exportNotes:
-      "Doors ship in crates separate from flat panel stacks to prevent frame bending. Hardware kits are labelled by opening mark matching the elevation drawing. Threshold heaters include wiring diagrams only — local electrician connects on site.",
+      "Industrial doors ship from Ahmedabad in upright or flat crates separate from flat panel stacks — frame bending in mixed loads is the reason we keep them apart. Hardware kits are labelled by opening mark matching the elevation drawing; threshold heaters include wiring diagrams only — your local electrician connects on site. Door count and crate dimensions affect container planning when bundled with a cold room order — we state freight line items on the proforma. Export gate-in at Mundra, Deendayal (Kandla), Pipavav, Hazira or Nhava Sheva/JNPT follows destination, vessel schedule and freight; confirm before payment release.",
     buyerChecklist: [
       "Quote doors on the same order as wall or cold room panels so jamb depth matches thickness",
       "State room temperature and daily door cycle count — freezer openings need threshold strategy",
@@ -1504,7 +1589,7 @@ export const products: Product[] = [
       "Export crating for steel members with member marks matching erection drawings",
     ],
     selectionGuidance:
-      "Send building width, length, eave height, design wind region reference, desired clear span and internal use — storage, production, cold store envelope. Include soil or foundation type if known so we flag anchor bolt embedment assumptions. If you already have a civil engineer, request reaction loads early; if not, we note typical footing sizes as indicative only, not stamped civil design. Choose panel cores after fire and thermal brief — do not default to thin PUF on a roof without checking spacing.",
+      "Send building width, length, eave height, design wind region reference, desired clear span and internal use — storage, production or cold store envelope. Include soil or foundation type if known so we flag anchor bolt embedment assumptions. If you already have a civil engineer, request reaction loads early; if not, we note typical footing sizes as indicative only, not stamped civil design. Choose panel cores after fire and thermal brief — do not default to thin PUF on a roof without checking spacing.",
     thermalPerformance: [
       { thickness: "Roof 80 mm PUF", uValue: "0.28", indicative: true },
       { thickness: "Roof 100 mm PUF", uValue: "0.23", indicative: true },
@@ -1586,9 +1671,19 @@ export const products: Product[] = [
         answer:
           "Yes — the outer PEB envelope is often ambient while an internal cam-lock cold room sits inside. Coordinate floor loads and vapour paths between outer cladding and inner box with us on one enquiry.",
       },
+      {
+        question: "What affects the quoted price of a PEB and panel package?",
+        answer:
+          "Bay width and eave height drive steel tonnage; purlin spacing and panel profile drive cladding cost; core type, accessory scope, crane requirements, phased versus single shipment, destination port, freight and Incoterm all move the total. Steel and panels often sail separately — your quotation shows both schedules. We do not publish turnkey PEB prices on this page.",
+      },
+      {
+        question: "What should I send for a PEB export quotation?",
+        answer:
+          "Building footprint, eave height, design wind region reference, clear span requirement, internal use, panel core preference, foundation type if known, destination port, Incoterm and whether steel and panels ship together or phased. Civil engineer contact helps us issue reaction loads alongside anchor bolt templates.",
+      },
     ],
     exportNotes:
-      "Steel members are marked, bundled by erection sequence and protected against salt air in transit. Panel containers may sail on a later vessel to match site readiness. Anchor bolt templates travel with the first steel shipment — email copies go to your civil engineer simultaneously.",
+      "PEB steel members leave Ahmedabad marked and bundled by erection sequence, with salt-air protection in transit — often in open-top or bulk containers separate from flat-packed panel HC boxes. Panel containers may sail on a later vessel to match site readiness; anchor bolt templates travel with the first steel shipment and email copies go to your civil engineer simultaneously. Port of loading among Mundra, Deendayal (Kandla), Pipavav, Hazira or Nhava Sheva/JNPT is confirmed on the proforma once production dates and forwarder booking align. Indicative m² per panel container and steel tonnage sit on the quotation — do not copy another project's split shipment plan.",
     buyerChecklist: [
       "Send bay width, eave height, design wind region and crane hook requirement if any",
       "Request anchor bolt template before concrete pour — field correction is costly on remote sites",

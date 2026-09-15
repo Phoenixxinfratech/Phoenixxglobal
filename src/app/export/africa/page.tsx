@@ -101,9 +101,11 @@ export default function ExportAfricaPage() {
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-steel">
             African projects span hot arid interiors, humid Indian Ocean coasts and
             cooler highland corridors — each shifts panel thickness, facing choice
-            and how aggressively you detail joints against condensation. We ship
+            and how aggressively you detail joints against condensation.             We ship
             PUF and PIR cold room kits, warehouse roofing and PEB shells from
-            Ahmedabad through Indian ports; country pages below add port names and
+            Ahmedabad through Indian west-coast ports such as Mundra, Deendayal
+            (Kandla), Pipavav, Hazira or Nhava Sheva — confirm per shipment on
+            proforma; country pages below add destination port names and
             documentation notes where we have enough verified detail to publish.
           </p>
         </Container>

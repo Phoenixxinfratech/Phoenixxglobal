@@ -83,9 +83,18 @@ Before committing copy, ask: **would a Kingspan engineer or a Nairobi procuremen
 
 ```bash
 npm run audit:copy
+npm run audit:depth
 ```
 
-Scans `src/content/` and `src/app/` for banned words. Exit 1 on any match. The `docs/` folder is excluded from the scan — still avoid banned words in documentation.
+`audit:copy` scans `src/content/` and `src/app/` for banned words. Exit 1 on any match. The `docs/` folder is excluded from the scan — still avoid banned words in documentation.
+
+`audit:depth` checks soft word floors for products, solutions, company and export pages — see [`docs/CONTENT-QUALITY.md`](CONTENT-QUALITY.md).
+
+---
+
+## Ports and locations
+
+Geographic relevance must be natural and useful. Do not keyword-stuff city or port names. Full rules: [`docs/CONTENT-QUALITY.md`](CONTENT-QUALITY.md).
 
 ---
 

@@ -15,7 +15,7 @@ export const solutions: Solution[] = [
     quickAnswer:
       "Cold storage envelopes are sized from target internal temperature, ambient design condition and door schedule — not from a catalogue thickness alone. Chiller rooms at +2 to +8 °C often start at 80–100 mm PUF; freezers at −18 °C commonly need 100–120 mm before door losses. Condensation at joints, the floor-to-wall junction and door frame heat bridging cause more callbacks than wrong foam density.",
     engineeringRequirement:
-      "Define the coldest room first, then ambient peak (often +35 to +45 °C external for East African coastal sites), door size and cycle frequency. Chiller rooms hold +2 to +8 °C; standard freezers target −18 to −25 °C; blast zones may reach −30 to −40 °C with a proper load calculation. Relative humidity above 75 % at the door plane increases defrost demand — specify vapor-barrier continuity at every horizontal lap. Food safety and cold chain regulations vary by country; verify HACCP and local cold store licensing against your authority before you fix panel facing and coving detail.",
+      "Cold storage buyers are typically cold chain contractors, food distributors, fruit packhouses, pharma warehouse operators and project EPCs quoting a turnkey store. The envelope sits inside an existing shed or stands as a modular box room on a new slab — both need different joint and floor detail. Define the coldest room first, then ambient peak (often +35 to +45 °C external for East African coastal sites), door size and cycle frequency. Chiller rooms hold +2 to +8 °C; standard freezers target −18 to −25 °C; blast zones may reach −30 to −40 °C with a proper load calculation. Relative humidity above 75 % at the door plane increases defrost demand — specify vapor-barrier continuity at every horizontal lap. Modular cam-lock kits suit box rooms under roughly 500 m² where flat-pack export and field assembly without welding matter. Fixed wall build-ups on a PEB or masonry shell suit larger multi-room distribution centres where long wall runs and fewer joints reduce maintenance. Floor options: insulated floor panels with sealed laps for freezers; screed on vapour barrier over existing slab where civil works are already cast; raised coving only where product sits on pallets and floor insulation is handled separately. Door options: hinged for personnel, sliding for pallet traffic, strip curtains only as a supplement — not a substitute for a thermal break frame. Facing: standard PPGI for internal food stores; AZ150 or equivalent where coastal salt air reaches the plant exterior. Food safety and cold chain regulations vary by country; verify HACCP and local cold store licensing against your authority before you fix panel facing and coving detail.",
     recommendedSpec: [
       { label: "Chiller room target", value: "+2 to +8", unit: "°C", verified: false, note: SPEC_NOTE },
       { label: "Standard freezer target", value: "−18 to −25", unit: "°C", verified: false, note: SPEC_NOTE },
@@ -45,7 +45,7 @@ export const solutions: Solution[] = [
       },
     ],
     estimatingGuidance:
-      "Send internal dimensions (L × W × H), target temperature per room, ambient design temperature, number and size of doors, and delivery port. A simple PDF sketch is enough for a first panel schedule. We quote wall and ceiling square metres separately, list cam-lock accessories and door interfaces, and state indicative m² per 40 ft HC container at your thickness. Refrigeration plant is excluded — we can comment on envelope heat gain but do not supply compressors or evaporators.",
+      "Send internal dimensions (L × W × H), target temperature per room, ambient design temperature, number and size of doors, floor type (insulated panel versus screed on slab), and delivery port. A simple PDF sketch is enough for a first panel schedule. We quote wall and ceiling square metres separately, list cam-lock accessories, coving, jamb profiles and door interfaces, and state indicative m² per 40 ft HC container at your thickness. Price moves with panel thickness (80 mm versus 120 mm), core type (PUF versus PIR), facing grade, joint system, door count and size, freight lane and Incoterm — we do not publish fixed m² rates because each room geometry changes accessory counts. A 40 ft HC typically holds 800–1,200 m² of 80–100 mm wall sheet depending on profile and packing method; thicker freezer panels reduce m² per container and may need a second vessel for large multi-room jobs. Export from Gujarat west-coast ports (Mundra, Kandla/Deendayal, Pipavav, Hazira, JNPT) is common for cold room kit orders — confirm vessel schedule and CIF cost per shipment with your freight forwarder. Refrigeration plant is excluded — we can comment on envelope heat gain but do not supply compressors or evaporators.",
     productRationale: [
       {
         slug: "cold-room-panels",
@@ -83,7 +83,7 @@ export const solutions: Solution[] = [
     ],
     relevantProducts: ["cold-room-panels", "puf-panels", "pir-panels", "industrial-doors"],
     applications: ["cold-room-construction", "controlled-temperature-storage"],
-    comparisons: ["puf-vs-pir-panels"],
+    comparisons: ["puf-vs-pir-panels", "puf-vs-pir-cold-storage", "puf-vs-pir-vs-rockwool"],
     faqs: [
       {
         question: "What temperature bands do you cover?",
@@ -120,16 +120,41 @@ export const solutions: Solution[] = [
         answer:
           "The door frame is a steel bridge through the insulation line. Without thermal break gaskets and a correctly detailed jamb profile, the frame stays warmer than the panel field and condenses first. We supply jamb kits matched to your wall thickness.",
       },
+      {
+        question: "What drives the price difference between two cold room quotes?",
+        answer:
+          "Thickness, core type (PUF versus PIR), door count and size, floor insulation detail, facing grade and freight Incoterm. A quote that omits coving, jamb profiles or vapor-barrier tape at horizontal laps is not comparable — ask for a line-item panel schedule.",
+      },
+      {
+        question: "Can I mix PUF chiller walls with PIR freezer walls on one order?",
+        answer:
+          "Yes — zone-by-zone specification is normal on multi-room stores. Each room appears separately on the panel schedule with its own thickness and accessory list. Joint profiles must match across the partition between zones.",
+      },
     ],
     buyerChecklist: [
       "Define coldest room temperature and ambient design peak before fixing thickness",
       "Send door count, size and daily cycle frequency — door losses often force a step up",
       "Confirm whether refrigeration plant is in scope elsewhere — we supply envelope only",
       "Specify cam-lock modular versus fixed wall build-up per room",
+      "State floor type — insulated floor panel, screed on vapour barrier or coving-only interface",
       "Name destination port and Incoterm for export kit planning",
+      "Ask for indicative m² per 40 ft HC at your thickness on the quotation",
+      "Confirm facing grade if the plant is within 5 km of a salt-air coast",
     ],
     limitations:
-      "Condensation at joints and door frames causes more field issues than wrong foam density alone. We do not supply compressors, evaporators or site erection labour as part of a panel order.",
+      "Condensation at joints and door frames causes more field issues than wrong foam density alone. Cam-lock rooms need a level slab and square corners — out-of-tolerance civil work shows up as gasket gaps at pull-down. We do not supply compressors, evaporators, refrigerant piping or site erection labour as part of a panel order. Blast freezer pull-down performance depends on product load and refrigeration capacity — panel thickness alone does not guarantee hold time.",
+    buyerScenarios: [
+      {
+        question: "I am quoting a −18 °C freezer for a distributor in Nairobi — where do I start?",
+        answer:
+          "Send internal box dimensions, one main door size, expected daily open cycles and ambient design (+35 °C external is a common coastal starting point). We return a panel schedule with 100–120 mm thickness recommendation, cam-lock accessory list and door jamb detail. Refrigeration plant stays with your MEP supplier — we flag envelope heat gain so their load calc is not based on guesswork.",
+      },
+      {
+        question: "Can cold room panels ship inside a mixed container with doors and accessories?",
+        answer:
+          "Yes — we nest wall sheets and pack doors, coving and cam-lock hardware in the same 40 ft HC where geometry allows. Crate labels follow room zone so your site crew opens the chill room bundle first without sorting the full container on the apron.",
+      },
+    ],
     images: [
       {
         src: "/images/solutions/cold-storage-exterior-hvac.jpg",
@@ -155,7 +180,7 @@ export const solutions: Solution[] = [
     quickAnswer:
       "Food plants need zone-by-zone panel specification: ambient halls at 40–80 mm PUF or PIR on tongue-and-groove joints; washdown areas need smooth facings, sealed horizontal laps and coving at floor junctions; cold docks at +0 to +4 °C need cam-lock or gasketed joints with vapor control. FSSAI, FDA-style and local food hygiene rules differ — verify washdown chemical compatibility and audit requirements against your local authority.",
     engineeringRequirement:
-      "Map each room to process temperature, cleaning regime (low-pressure rinse versus daily caustic washdown) and traffic type. Ambient processing halls typically hold +15 to +25 °C with 40–100 mm insulated cladding. High-care zones may need food-grade facing and flush joints without exposed fixings. Cold docks and raw stores run +0 to +4 °C or lower — treat them as cold rooms with door cycle losses included. Relative humidity in washdown areas accelerates corrosion at cut edges if facings are not sealed. Noise and condensation at cold dock openings affect HACCP monitoring — specify air curtain or vestibule detail separately.",
+      "Food processing panel buyers include plant owners, hygiene consultants, cold chain contractors and EPC firms building greenfield abattoirs, bakeries, ready-meal lines and beverage plants. The envelope wraps production halls, high-care rooms, raw material stores, blast chillers and dispatch cold docks — each zone carries a different facing, joint and thickness requirement. Map each room to process temperature, cleaning regime (low-pressure rinse versus daily caustic washdown) and traffic type. Ambient processing halls typically hold +15 to +25 °C with 40–100 mm insulated cladding on tongue-and-groove joints. High-care zones may need food-grade facing and flush joints without exposed fixings — auditors flag dirt traps at through-fasteners within the first walk-through. Cold docks and raw stores run +0 to +4 °C or lower — treat them as cold rooms with door cycle losses included, not as thin-clad dispatch bays. Blast chillers at −2 to −40 °C need cam-lock geometry with vapor-barrier continuity at every horizontal lap. Options: standard PPGI/PPGL facing for dry halls; smooth washdown facing with sealed laps for wet zones; cleanroom-style concealed fixing for high-care; cam-lock kits for any temperature-controlled box room inside the hall shell. Relative humidity in washdown areas accelerates corrosion at cut edges if facings are not sealed. Noise and condensation at cold dock openings affect HACCP monitoring — specify air curtain or vestibule detail separately. FSSAI, FDA-style and local food hygiene rules differ — verify washdown chemical compatibility and audit requirements against your local authority.",
     recommendedSpec: [
       { label: "Ambient processing hall", value: "+15 to +25", unit: "°C typical", verified: false, note: SPEC_NOTE },
       { label: "Cold dock / raw store", value: "+0 to +4", unit: "°C", verified: false, note: SPEC_NOTE },
@@ -185,7 +210,7 @@ export const solutions: Solution[] = [
       },
     ],
     estimatingGuidance:
-      "Send a zone layout with temperatures, cleaning method per area and door positions. Quote wall and ceiling m² by zone — ambient hall, washdown, cold dock and any blast chiller box separately. List facing colour, joint type and whether food-grade facing is required. Include delivery port; we state packing and lead time on the quotation. Structural steel and refrigeration plant are excluded unless quoted as a separate line.",
+      "Send a zone layout with temperatures, cleaning method per area, door positions and peak production hours (dispatch door cycles matter). Quote wall and ceiling m² by zone — ambient hall, washdown, cold dock and any blast chiller box separately. List facing colour, joint type and whether food-grade facing is required. Price varies with thickness per zone, facing grade, cleanroom profile premium on high-care walls, cold dock door count, coving detail and freight Incoterm — a single m² rate across the whole plant is misleading. Container planning: ambient hall cladding packs efficiently at 40–60 mm; cold dock kits include doors and coving that reduce m² per 40 ft HC. We state indicative container count at quotation stage. Export dispatch from Gujarat west-coast ports (Mundra, Kandla/Deendayal, Pipavav, Hazira, JNPT) is typical for East African food plant orders — confirm vessel and CIF cost per shipment with your forwarder. Structural steel and refrigeration plant are excluded unless quoted as a separate line.",
     productRationale: [
       {
         slug: "wall-panels",
@@ -223,7 +248,7 @@ export const solutions: Solution[] = [
     ],
     relevantProducts: ["wall-panels", "cleanroom-panels", "cold-room-panels", "puf-panels"],
     applications: ["food-processing-envelope", "cold-room-construction"],
-    comparisons: [],
+    comparisons: ["puf-vs-pir-panels", "sandwich-panel-vs-masonry"],
     faqs: [
       {
         question: "Can one panel type cover the whole food plant?",
@@ -260,16 +285,41 @@ export const solutions: Solution[] = [
         answer:
           "Your hygiene consultant and local food authority — we supply material declarations and facing specifications; you verify them against your HACCP plan and local rules.",
       },
+      {
+        question: "Why does one food plant quote cost more than another at the same m²?",
+        answer:
+          "Zone mix drives it — a plant with three cold docks, two blast chillers and high-care cleanroom walls costs more per total m² than a single ambient hall. Door count, coving detail and facing grade move the line items more than wall area alone.",
+      },
+      {
+        question: "Should I use masonry or sandwich panels for a new food hall?",
+        answer:
+          "Sandwich panels on PEB steel give faster enclosure and easier washdown detailing on internal faces. Masonry with internal insulated lining suits sites where local code mandates block construction — see our sandwich-panel-versus-masonry comparison for programme and joint trade-offs.",
+      },
     ],
     buyerChecklist: [
       "Map hygiene zones — raw, clean and washdown areas need different facing and joint detail",
       "Send HACCP or consultant notes on washable surfaces and coving requirements",
       "List cold dock and chill room temperatures separately from ambient processing halls",
       "Confirm fire boundaries between plant and storage with local authority if required",
-      "Name destination port for export scheduling",
+      "State CIP or washdown chemical list for sealant compatibility check",
+      "Send dispatch door cycle estimate during peak production hours",
+      "Name destination port and Incoterm for export scheduling",
+      "Ask for zone-by-zone panel schedule — not a single blended m² rate",
     ],
     limitations:
-      "HACCP and local food safety approval sit with your consultant — we supply material declarations and panel specs, not regulatory sign-off. Washdown joints fail audits when exposed fixings trap residue.",
+      "HACCP and local food safety approval sit with your consultant — we supply material declarations and panel specs, not regulatory sign-off. Washdown joints fail audits when exposed fixings trap residue. Sandwich panels do not replace a drainage design — floor falls and drain positions are civil scope. Blast chiller pull-down depends on product load and refrigeration plant, not panel thickness alone.",
+    buyerScenarios: [
+      {
+        question: "We are building a ready-meal plant with a −2 °C dispatch dock — how should panels split?",
+        answer:
+          "Ambient production hall at 40–80 mm tongue-and-groove; washdown zones with smooth facing and radius coving; dispatch dock as a cam-lock cold room kit with thermal break door and vestibule if traffic is high. Send zone layout and we return one quotation with separate line items per area so you do not over-specify cleanroom profiles on dry storage walls.",
+      },
+      {
+        question: "Can hall cladding and cold dock kits ship on different vessels?",
+        answer:
+          "Yes — phased dispatch is common when your programme needs the cold dock commissioned before ambient hall cladding arrives. Crates are labelled by zone; order acknowledgement states gate-in dates per shipment.",
+      },
+    ],
     images: [
       {
         src: "/images/hero/hero-manufacturing-panels.jpg",
@@ -295,7 +345,7 @@ export const solutions: Solution[] = [
     quickAnswer:
       "Cleanroom panels for pharma use flush tongue-and-groove profiles with smooth facings and gasketed joints — not standard industrial cladding. ISO Class 7–8 areas often use 40–60 mm panels; Class 5–6 may need dedicated cleanroom profiles with concealed fixings. Temperature-controlled storage (+2 to +8 °C or −20 °C for certain APIs) sits alongside classified rooms — specify each zone separately. WHO, EU GMP and national drug rules differ; verify cleanliness class and validation requirements against your local authority.",
     engineeringRequirement:
-      "Define ISO or GMP cleanliness class per room, pressure cascade direction, temperature and humidity setpoints, and whether the room is washdown or dry serviced. Classified zones need smooth, non-shedding facings and joints that survive repeated disinfection — typically 40–80 mm panels with cleanroom profile geometry. Material airlocks bridge classified and unclassified areas; detail returns and coving to avoid particle traps. Cold chain rooms for vaccines or APIs follow pharmaceutical cold storage limits (+2 to +8 °C common; −20 °C for some products) with continuous temperature mapping points at panel joints. Fire compartmentation may be required between production and storage — verify fire period with local building and drug regulators.",
+      "Pharmaceutical panel buyers are API manufacturers, formulation plants, vaccine storage operators, CMO/CDMO fit-out contractors and validation consultants specifying ISO or GMP classified rooms. The envelope covers sterile production, filling lines, material airlocks, quarantine stores and cold chain hold rooms — each with different joint geometry, facing and documentation needs. Define ISO or GMP cleanliness class per room, pressure cascade direction, temperature and humidity setpoints, and whether the room is washdown or dry serviced. Classified zones need smooth, non-shedding facings and joints that survive repeated disinfection — typically 40–80 mm panels with cleanroom profile geometry and concealed fixings where auditors inspect for particle traps. Material airlocks bridge classified and unclassified areas; detail returns and coving to avoid gaps at floor junctions. ISO Class 7–8 areas often use 40–60 mm panels; Class 5–6 may need dedicated profiles with gasket replacement schedules in your SOP. Cold chain rooms for vaccines or APIs follow pharmaceutical cold storage limits (+2 to +8 °C common; −20 °C for some products) with continuous temperature mapping points at panel joints and door seals. Options: cleanroom panels for classified zones; cam-lock cold stores for finished goods; PIR where headroom limits thickness step-up; mineral wool fire-rated walls where compartmentation is mandated. Fire compartmentation may be required between production and storage — verify fire period with local building and drug regulators. WHO, EU GMP and national drug rules differ — verify cleanliness class and validation requirements against your local authority.",
     recommendedSpec: [
       { label: "Typical ISO Class 7–8 wall", value: "40–60", unit: "mm cleanroom panel", verified: false, note: SPEC_NOTE },
       { label: "ISO Class 5–6 wall", value: "50–80", unit: "mm, concealed fixing", verified: false, note: SPEC_NOTE },
@@ -325,7 +375,7 @@ export const solutions: Solution[] = [
       },
     ],
     estimatingGuidance:
-      "Send room list with ISO or GMP class, dimensions, temperature, humidity target and pressure relationship to adjacent rooms. Quote cleanroom m² separately from cold chain m². Include door count, pass-through hatch positions and facing finish. Validation documentation support (joint diagrams, material declarations) is listed on the quotation — third-party IQ/OQ is by your validator. Destination port and required fire rating note if known.",
+      "Send room list with ISO or GMP class, dimensions, temperature, humidity target and pressure relationship to adjacent rooms. Quote cleanroom m² separately from cold chain m². Include door count, pass-through hatch positions, penetration list and facing finish. Price moves with cleanliness class (concealed-fixing profiles cost more than standard tongue-and-groove), panel thickness, gasket type, fire-rated wall line metres, door count and freight Incoterm. Validation documentation support (joint diagrams, material declarations) is listed on the quotation — third-party IQ/OQ is by your validator. A 40 ft HC holds fewer m² when cleanroom profiles and cold store doors pack together — we state indicative container count per shipment. Export from Gujarat west-coast ports (Mundra, Kandla/Deendayal, Pipavav, Hazira, JNPT) is common for African pharma projects — confirm vessel schedule per shipment with your forwarder. Destination port and required fire rating note if known.",
     productRationale: [
       {
         slug: "cleanroom-panels",
@@ -363,7 +413,7 @@ export const solutions: Solution[] = [
     ],
     relevantProducts: ["cleanroom-panels", "cold-room-panels", "pir-panels", "fire-rated-panels"],
     applications: ["cleanroom-fitout", "pharmaceutical-cold-chain"],
-    comparisons: [],
+    comparisons: ["pir-vs-rockwool-panels", "puf-vs-pir-vs-rockwool"],
     faqs: [
       {
         question: "Which ISO class do your cleanroom panels achieve?",
@@ -400,16 +450,41 @@ export const solutions: Solution[] = [
         answer:
           "Yes — send existing wall dimensions and services layout. Retrofits need careful penetration planning; factory-cut openings reduce validation risk versus site cutting.",
       },
+      {
+        question: "What should an RFQ for pharma panels include?",
+        answer:
+          "Room matrix with ISO class, dimensions, setpoints, pressure cascade, penetration list, cold store temperatures, fire line locations and destination port. A consultant PDF layout is enough for a first schedule — do not wait for final HVAC drawings if you need budgetary pricing.",
+      },
+      {
+        question: "When is Rockwool preferred over PIR in a pharma plant?",
+        answer:
+          "Where local code or insurer requires non-combustible separation between production and warehouse, or on escape routes — verify fire period with your authority. PIR remains common for cold chain rooms where fire rating is not mandated on that wall line.",
+      },
     ],
     buyerChecklist: [
       "Send room matrix with ISO or GMP class, setpoints and pressure cascade per room",
       "List cold chain zones (+2 to +8 °C or lower) separately from classified production areas",
       "Confirm validation documentation needs — joint diagrams and material declarations only",
       "State fire compartment lines between production and warehouse if known",
+      "Provide penetration list for HVAC, gas and electrical services before production release",
+      "Send disinfectant chemical list for sealant compatibility review",
       "Name destination port and phased delivery requirements if site sequence demands it",
+      "Ask for separate line items for cleanroom, cold chain and fire-rated walls",
     ],
     limitations:
-      "IQ/OQ/PQ execution is your validator's scope — we do not sign validation protocols. ISO class is a system outcome; panels alone do not certify the room.",
+      "IQ/OQ/PQ execution is your validator's scope — we do not sign validation protocols. ISO class is a system outcome; panels alone do not certify the room. Pressure cascade and particle counts depend on HVAC design and operation — weak airlock sealing shows up at PQ, not at panel delivery. Retrofit penetrations cut on site without collars are the most common root cause of cold store temperature excursions.",
+    buyerScenarios: [
+      {
+        question: "We need ISO Class 7 filling room plus a +2 to +8 °C vaccine store on one order — is that normal?",
+        answer:
+          "Yes — most pharma enquiries combine classified production and cold chain on one panel schedule. Each zone has its own thickness, joint type and accessory list. Send room matrix and we flag where cleanroom profile is mandatory versus standard insulated wall.",
+      },
+      {
+        question: "Our validator asked for joint diagrams before PO — can you issue those?",
+        answer:
+          "We supply joint diagrams and material declarations with the quotation or on drawing approval — enough for your validation protocol draft. IQ/OQ execution remains your validator's scope.",
+      },
+    ],
     images: [
       {
         src: "/images/products/metal-cladding-exterior.jpg",
@@ -435,7 +510,7 @@ export const solutions: Solution[] = [
     quickAnswer:
       "Warehouse envelopes pair PEB primary steel with 40–80 mm PUF or PIR roof and wall panels on tongue-and-groove joints. Roof profile and purlin spacing drive span capability — send bay width and eave height, not just total m². Fast-erect sheds suit greenfield logistics parks where programme beats custom masonry. Fire and insurance rules for large single-storey stores vary — verify with local building authority.",
     engineeringRequirement:
-      "Define clear height, bay spacing, roof slope and whether the store is ambient, temperature-controlled or mixed. Ambient warehouses target +25 to +35 °C internal with 40–60 mm roof and wall panels for condensation control on metal decks in humid climates. Add insulated partitions or a cam-lock cold chamber if perishable SKUs need +2 to +8 °C. Roof live load, wind speed and seismic zone feed the PEB design — we coordinate panel fixings to the steel supplier's purlin layout. Fire spread requirements for single-storey warehouses differ by country — verify whether mineral wool walls or sprinklers are mandated instead of foam-cored panels on boundary walls.",
+      "Warehouse panel buyers include logistics developers, 3PL operators, cold chain distributors adding ambient sheds with chilled chambers, and EPC firms building distribution parks. The envelope is a long-span PEB shell with insulated roof and wall cladding — sometimes with an internal cam-lock cold room for perishable SKUs. Define clear height, bay spacing, roof slope and whether the store is ambient, temperature-controlled or mixed. Ambient warehouses target +25 to +35 °C internal with 40–60 mm roof and wall panels for condensation control on metal decks in humid climates. Eave height above 8 m and bay widths above 30 m drive purlin spacing and roof profile selection — send grid dimensions, not just total floor area. Add insulated partitions or a cam-lock cold chamber if perishable SKUs need +2 to +8 °C. Roof live load, wind speed and seismic zone feed the PEB design — we coordinate panel fixings to the steel supplier's purlin layout. Options: PUF for cost-sensitive ambient sheds; PIR where roof solar load is high; mineral wool fire-rated walls on boundaries where code restricts foam cores; standing-seam or trapezoidal roof profiles at ~1000 mm cover width. Fire spread requirements for single-storey warehouses differ by country — verify whether mineral wool walls or sprinklers are mandated instead of foam-cored panels on boundary walls.",
     recommendedSpec: [
       { label: "Ambient warehouse internal", value: "+25 to +35", unit: "°C typical", verified: false, note: SPEC_NOTE },
       { label: "Roof panel thickness", value: "40–80", unit: "mm PUF/PIR", verified: false, note: SPEC_NOTE },
@@ -465,7 +540,7 @@ export const solutions: Solution[] = [
       },
     ],
     estimatingGuidance:
-      "Send plan dimensions, eave height, bay width, roof slope and whether PEB steel is in scope. Quote roof m², wall m² per facade and flashings separately. State destination port — a 40 ft HC container holds roughly 800–1,200 m² of 50 mm roof sheet depending on profile. Include colour, facing type and any cold chamber box as a separate line. Structural design submission to local engineer is your scope unless agreed otherwise.",
+      "Send plan dimensions, eave height, bay width, roof slope, design wind speed and whether PEB steel is in scope. Quote roof m², wall m² per facade, ridge or endlap flashings and fire-rated wall line metres separately. Price varies with panel thickness, core type, roof profile, facing colour, steel tonnage (if in scope), cold chamber box, freight lane and Incoterm. A 40 ft HC container holds roughly 800–1,200 m² of 50 mm roof sheet depending on profile and nesting — thicker PIR roof sheets reduce m² per container. Wall crates pack by facade zone so site teams close long walls first. Export from Gujarat west-coast ports (Mundra, Kandla/Deendayal, Pipavav, Hazira, JNPT) is typical for East African warehouse orders — confirm CIF cost per shipment with your forwarder. Include colour, facing type and any cold chamber box as a separate line. Structural design submission to local engineer is your scope unless agreed otherwise.",
     productRationale: [
       {
         slug: "peb-prefabricated-buildings",
@@ -503,7 +578,7 @@ export const solutions: Solution[] = [
     ],
     relevantProducts: ["peb-prefabricated-buildings", "roofing-panels", "wall-panels", "puf-panels"],
     applications: ["warehouse-insulation", "industrial-envelope"],
-    comparisons: [],
+    comparisons: ["peb-vs-rcc", "panel-roof-vs-conventional-roof", "puf-vs-pir-panels"],
     faqs: [
       {
         question: "How fast can a warehouse envelope be erected?",
@@ -540,6 +615,16 @@ export const solutions: Solution[] = [
         answer:
           "Rules vary — some jurisdictions require non-combustible cladding on fire boundaries. Verify with your local building authority; we supply mineral wool fire-rated walls where specified.",
       },
+      {
+        question: "PEB plus panels versus cast-in-place concrete — which programmes faster?",
+        answer:
+          "PEB with sandwich cladding usually reaches weathertight in fewer site weeks than RCC shell plus separate insulation — see our PEB-versus-RCC comparison for foundation and procurement trade-offs. Local code may still mandate block on certain boundaries.",
+      },
+      {
+        question: "What inputs change a warehouse panel quote most?",
+        answer:
+          "Eave height and bay width (steel tonnage), roof thickness and profile, fire-rated wall line metres, facing colour, whether PEB is included, and CIF versus FOB Incoterm. Total floor m² alone is not enough for a fixed price.",
+      },
     ],
     buyerChecklist: [
       "Send plan dimensions, eave height, bay width and roof slope — not total m² alone",
@@ -547,10 +632,24 @@ export const solutions: Solution[] = [
       "Confirm ambient versus chilled zones inside the shed",
       "Verify local fire rules for foam-cored panels on boundary walls",
       "Align steel and panel dispatch dates to site erection programme",
-      "Name destination port for container load estimates",
+      "Provide design wind speed for fixing pattern and endlap detail",
+      "Name destination port and Incoterm for container load estimates",
+      "Ask for roof and wall m² split plus flashing line items on the quotation",
     ],
     limitations:
-      "Structural design submission to local engineer is buyer scope unless agreed otherwise. Roof endlap leaks in monsoon usually trace to fixings or missing closure strips, not panel thickness alone.",
+      "Structural design submission to local engineer is buyer scope unless agreed otherwise. Roof endlap leaks in monsoon usually trace to fixings or missing closure strips, not panel thickness alone. Internal condensation in humid coastal sheds needs ventilation coordination — insulation thickness alone does not stop soffit drips if dew point is wrong. Cold chambers inside ambient shells still need refrigeration plant and floor detail from your MEP and civil trades.",
+    buyerScenarios: [
+      {
+        question: "We need a 40 × 80 m ambient shed with a +4 °C chamber for produce — one quote or two?",
+        answer:
+          "One quotation with separate line items: PEB steel (if in scope), roof and wall m² for the ambient shell, and cam-lock cold chamber kit with door and coving. Send bay grid and chamber box dimensions — we align panel dispatch so the cold room can commission inside the weathertight shell.",
+      },
+      {
+        question: "Panels arrived before steel frames — how do we avoid site damage?",
+        answer:
+          "We label crates by wall zone and recommend aligned gate-in dates with your steel fabricator. If panels must sit on site early, store crates off ground on dunnage under cover — tropical humidity damages unprotected cut edges within weeks.",
+      },
+    ],
     images: [
       {
         src: "/images/solutions/warehouse-interior.jpg",
@@ -576,7 +675,7 @@ export const solutions: Solution[] = [
     quickAnswer:
       "Milk chilling rooms hold +2 to +4 °C with 80–100 mm PUF or PIR cam-lock panels, continuous coving and thermal break door frames. Pasteurisation and culture areas need washdown-safe facings with sealed joints. CIP chemical exposure and FSSAI-style audit requirements vary — verify material compatibility and hygiene rules against your local dairy regulator.",
     engineeringRequirement:
-      "Size the milk chilling room from peak reception litres per hour, hold time and allowable temperature rise — not from a generic 'dairy cold room' thickness. Typical bulk milk stores target +2 to +4 °C with 80–100 mm panels and low door cycle frequency. Processing halls run +10 to +18 °C with daily washdown — specify smooth facings and coving at floor junctions. Culture and starter rooms may need tighter tolerance (+4 to +6 °C). Relative humidity during CIP cycles attacks cut panel edges if laps are not sealed. Indian FSSAI, EU dairy hygiene and national milk board rules differ — verify against your licensing authority.",
+      "Dairy panel buyers include cooperative milk unions, private dairy brands, cheese and yoghurt processors, and contractors fitting out reception bays and bulk chill stores. The plant mixes raw milk intake at the tanker bay, pasteurisation and culture rooms, packaging halls and chilled dispatch — each zone needs a different panel spec. Size the milk chilling room from peak reception litres per hour, hold time and allowable temperature rise — not from a generic 'dairy cold room' thickness. Typical bulk milk stores target +2 to +4 °C with 80–100 mm cam-lock panels and low door cycle frequency at the tanker bay. Processing halls run +10 to +18 °C with daily washdown — specify smooth facings and coving at floor junctions. Culture and starter rooms may need tighter tolerance (+4 to +6 °C) and flush joints where auditors scrutinise surfaces. Cheese ageing and high-humidity rooms need vapor control on the warm side of the envelope — thickness follows RH target, not temperature alone. Options: cam-lock kits for chill and age rooms; tongue-and-groove for pasteurisation halls; cleanroom-style profiles for culture rooms; PIR when existing steel limits headroom. Relative humidity during CIP cycles attacks cut panel edges if laps are not sealed. Indian FSSAI, EU dairy hygiene and national milk board rules differ — verify against your licensing authority.",
     recommendedSpec: [
       { label: "Bulk milk chilling", value: "+2 to +4", unit: "°C", verified: false, note: SPEC_NOTE },
       { label: "Chilling room panel thickness", value: "80–100", unit: "mm", verified: false, note: SPEC_NOTE },
@@ -606,7 +705,7 @@ export const solutions: Solution[] = [
       },
     ],
     estimatingGuidance:
-      "Send peak milk flow (litres/hour), chilling room dimensions, processing hall layout and CIP chemical list if available. Quote chilling box as cam-lock kit with door and coving; halls as wall and ceiling m² by zone. Include delivery port and facing colour. Refrigeration equipment is excluded — we comment on envelope heat gain only. Typical export lead time 4–6 weeks production plus ocean transit.",
+      "Send peak milk flow (litres/hour), milk intake temperature, chilling room dimensions, processing hall layout, tanker bay door size and CIP chemical list if available. Quote chilling box as cam-lock kit with door and coving; halls as wall and ceiling m² by zone. Price moves with chill room thickness, door cycle allowance, washdown facing grade, culture room profile premium, freight and Incoterm — peak reception volume affects door load sizing more than wall area. Container planning: hall cladding nests efficiently; chill kits with doors and coving reduce m² per 40 ft HC. We state indicative vessel count on the quotation. Export from Gujarat west-coast ports (Mundra, Kandla/Deendayal, Pipavav, Hazira, JNPT) suits dairy equipment routes to East Africa — confirm schedule per shipment with your forwarder. Include delivery port and facing colour. Refrigeration equipment is excluded — we comment on envelope heat gain only. Typical export lead time 4–6 weeks production plus ocean transit.",
     productRationale: [
       {
         slug: "cold-room-panels",
@@ -625,9 +724,26 @@ export const solutions: Solution[] = [
         why: "Flush joints for culture rooms where auditors scrutinise particle and microbial control surfaces.",
       },
     ],
+    processSteps: [
+      {
+        title: "Milk flow and zone mapping",
+        body: "Peak litres per hour, intake temperature and hold time feed chill room sizing. We split pasteurisation hall, culture room and bulk store on one panel schedule.",
+        duration: "2–3 days",
+      },
+      {
+        title: "Chill box and hall cladding schedule",
+        body: "Cam-lock milk store with tanker bay door detail; hall zones with washdown facing where CIP applies. Coving and jamb profiles listed before production release.",
+        duration: "3–5 days",
+      },
+      {
+        title: "Production and export packing",
+        body: "Chill room kits can release ahead of hall cladding if your programme needs early commissioning. Crates labelled by zone for site sequence.",
+        duration: "4–6 weeks typical",
+      },
+    ],
     relevantProducts: ["cold-room-panels", "pir-panels", "wall-panels", "cleanroom-panels"],
     applications: ["cold-room-construction", "food-processing-envelope"],
-    comparisons: [],
+    comparisons: ["puf-vs-pir-cold-storage", "puf-vs-pir-panels"],
     faqs: [
       {
         question: "What temperature should a milk chilling room hold?",
@@ -664,16 +780,41 @@ export const solutions: Solution[] = [
         answer:
           "Milk does not touch walls in a properly designed store — but washdown zones may specify food-grade facing per your consultant. State the requirement on enquiry.",
       },
+      {
+        question: "PUF or PIR for a bulk milk chill room at +3 °C?",
+        answer:
+          "Both work — PIR gives lower λ at the same thickness when headroom is tight or tanker bay door losses are high. Send box dimensions and peak flow; we compare options on the quotation. See our PUF-versus-PIR cold storage comparison for thermal trade-offs.",
+      },
+      {
+        question: "What should a dairy panel RFQ include?",
+        answer:
+          "Peak milk flow, intake temperature, chill room dimensions, tanker bay door size, CIP chemical list, processing hall layout and destination port. A consultant PDF is enough for a first schedule.",
+      },
     ],
     buyerChecklist: [
       "Send milk intake temperature, storage band and peak daily volume for chill room sizing",
       "Confirm washdown requirements in processing versus storage zones",
       "List door traffic between chill rooms and dispatch docks",
       "State whether food-grade facing is required in any zone",
+      "Provide CIP chemical list for sealant compatibility",
+      "Model tanker bay door-open time during peak reception hours",
       "Name destination port and Incoterm for export pricing",
+      "Ask for chill kit and hall cladding as separate line items",
     ],
     limitations:
-      "Dairy licensing and HACCP validation remain with your consultant and local authority. Condensation at floor coving in chill rooms is usually a detail gap, not insufficient foam thickness.",
+      "Dairy licensing and HACCP validation remain with your consultant and local authority. Condensation at floor coving in chill rooms is usually a detail gap, not insufficient foam thickness. Milk temperature during peak reception depends on door traffic and refrigeration capacity — envelope thickness alone does not fix overload at the tanker bay. Floor falls and drainage at washdown zones are civil scope — panels detail the wall-to-floor junction only.",
+    buyerScenarios: [
+      {
+        question: "Our cooperative adds a 50,000 L/day chill store to an existing pasteurisation hall — retrofit or extension?",
+        answer:
+          "Cam-lock chill boxes bolt to a level slab against an existing wall — send slab dimensions and tanker approach route. We quote the box kit with door and coving; hall cladding stays separate unless you are recladding the pasteurisation area at the same time.",
+      },
+      {
+        question: "Can chill room panels ship before hall cladding for early milk season?",
+        answer:
+          "Yes — phased dispatch is common. Order acknowledgement states gate-in dates per shipment; chill crates are labelled for first-open priority on site.",
+      },
+    ],
     images: [
       {
         src: "/images/hero/hero-cold-storage-hvac.jpg",
@@ -699,7 +840,7 @@ export const solutions: Solution[] = [
     quickAnswer:
       "Carcass chill rooms hold +2 to +4 °C with 80–100 mm cam-lock panels; cutting rooms sit at +8 to +12 °C; frozen stores target −18 °C with 100–120 mm panels. Processing areas need washdown facings and coving that survives daily hose-down. USDA, EU hygiene and local abattoir licensing rules differ — verify zone separation and audit requirements against your authority.",
     engineeringRequirement:
-      "Map the product path: kill floor ambient, carcass chill (+2 to +4 °C), evisceration and cutting (+8 to +12 °C), blast freeze (−30 to −40 °C short hold) and frozen dispatch (−18 °C). Each zone gets its own thickness and joint type. Washdown walls in dirty zones need smooth facings, sealed laps and stainless-compatible coving. Door cycles are high — specify traffic-rated cold room doors with thermal break frames. Condensation control between adjacent temperature zones requires vapor barriers on the warm side of cold rooms. Verify halal, kosher or national meat inspection layout rules with your consultant.",
+      "Meat and poultry panel buyers include abattoir developers, export meat processors, cold store operators and hygiene consultants laying out dirty-clean-dirty zone separation. The envelope follows product path from kill floor through chill, cutting, blast freeze and frozen dispatch — each transition is a different temperature, joint and door load. Map the product path: kill floor ambient, carcass chill (+2 to +4 °C), evisceration and cutting (+8 to +12 °C), blast freeze (−30 to −40 °C short hold) and frozen dispatch (−18 °C). Each zone gets its own thickness and joint type. Washdown walls in dirty zones need smooth facings, sealed laps and stainless-compatible coving that survives daily hose-down. Door cycles are high — specify traffic-rated cold room doors with thermal break frames; sliding doors suit pallet and carcass rail traffic. Condensation control between adjacent temperature zones requires vapor barriers on the warm side of cold rooms — an +8 °C cutting room beside a +3 °C chill store needs the barrier on the cutting room side. Options: cam-lock for all cold boxes; flush cleanroom-style joints in high-care cutting areas; standard tongue-and-groove on dry perimeter walls. Verify halal, kosher or national meat inspection layout rules with your consultant — panel walls define zones but do not replace process separation design.",
     recommendedSpec: [
       { label: "Carcass chill", value: "+2 to +4", unit: "°C", verified: false, note: SPEC_NOTE },
       { label: "Cutting room", value: "+8 to +12", unit: "°C", verified: false, note: SPEC_NOTE },
@@ -729,7 +870,7 @@ export const solutions: Solution[] = [
       },
     ],
     estimatingGuidance:
-      "Send line layout with zone temperatures, peak throughput (birds/hour or kg/day), door sizes and washdown classification per area. Quote each cold zone as a kit with doors; halls as wall m². Include facing colour, delivery port and whether halal layout separation affects wall positions. Refrigeration and overhead rail steel are excluded unless agreed. Export packing lists panels by zone for site sequence.",
+      "Send line layout with zone temperatures, peak throughput (birds/hour or kg/day), door sizes, door-open duration from hot to cold zones and washdown classification per area. Quote each cold zone as a kit with doors; halls as wall m². Price varies with zone count, blast freezer thickness, traffic-rated door size, washdown profile premium, freight and Incoterm — abattoir quotes are rarely comparable on m² alone. Container planning: multiple chill boxes and sliding doors reduce m² per 40 ft HC; we label crates by zone for kill-to-dispatch install sequence. Export from Gujarat west-coast ports (Mundra, Kandla/Deendayal, Pipavav, Hazira, JNPT) is typical for meat plant equipment lanes — confirm per shipment with your forwarder. Include facing colour, delivery port and whether halal layout separation affects wall positions. Refrigeration and overhead rail steel are excluded unless agreed. Export packing lists panels by zone for site sequence.",
     productRationale: [
       {
         slug: "cold-room-panels",
@@ -767,7 +908,7 @@ export const solutions: Solution[] = [
     ],
     relevantProducts: ["cold-room-panels", "industrial-doors", "wall-panels", "puf-panels"],
     applications: ["cold-room-construction", "food-processing-envelope"],
-    comparisons: [],
+    comparisons: ["puf-vs-pir-cold-storage", "puf-vs-pir-panels"],
     faqs: [
       {
         question: "What temperature is a carcass chill room?",
@@ -804,6 +945,16 @@ export const solutions: Solution[] = [
         answer:
           "Yes — sliding cold room doors with impact protection and thermal break frames. Specify opening width and daily cycle count.",
       },
+      {
+        question: "What drives price on an abattoir cold chain quote?",
+        answer:
+          "Zone count, blast freezer thickness, sliding door sizes, washdown profile on dirty areas and freight Incoterm. A plant with carcass chill, blast freeze and −18 °C dispatch costs more per total m² than a single chill box — ask for zone line items.",
+      },
+      {
+        question: "Can we use thinner panels on the cutting room than the carcass chill?",
+        answer:
+          "Often yes — cutting at +8 to +12 °C needs less insulation than +3 °C carcass chill, but washdown joints may need stricter detail than thickness alone. Each zone is specified separately on the panel schedule.",
+      },
     ],
     buyerChecklist: [
       "Map product path temperatures — kill floor, carcass chill, cutting and frozen hold",
@@ -811,9 +962,24 @@ export const solutions: Solution[] = [
       "Specify washdown classification per area for facing and joint choice",
       "Confirm halal or layout separation requirements on the drawing",
       "Quote traffic-rated doors with panel kits on the same schedule",
+      "Send peak throughput in birds/hour or kg/day for chill room load context",
+      "Name destination port and Incoterm for export pricing",
+      "Ask for blast freezer and dispatch freezer as separate line items",
     ],
     limitations:
-      "Abattoir licensing and hygiene audit outcomes are outside panel supply scope. Carcass chill rooms sized for steady state alone fail when kill-floor door traffic is omitted from load calcs.",
+      "Abattoir licensing and hygiene audit outcomes are outside panel supply scope. Carcass chill rooms sized for steady state alone fail when kill-floor door traffic is omitted from load calcs. Overhead rail and gambrel support steel are structural scope — panel openings are factory-located on drawing only. Blast freezer hold time depends on product load and refrigeration plant, not panel thickness alone.",
+    buyerScenarios: [
+      {
+        question: "Greenfield poultry plant — carcass chill and cutting room on one export order?",
+        answer:
+          "Send line layout with zone temperatures, door sizes and peak birds/hour. We quote carcass chill as cam-lock kit with traffic-rated sliding door, cutting room as washdown wall m², and frozen hold separately. Crates follow kill-to-dispatch install sequence.",
+      },
+      {
+        question: "Kill floor door opens straight into carcass chill — will 100 mm panels cope?",
+        answer:
+          "Only if door-open duration and air exchange are in the load brief — otherwise expect pull-down failure at shift start. We recommend vestibule or air curtain detail and may step up thickness; send cycle count and we flag it on the schedule.",
+      },
+    ],
     images: [
       {
         src: "/images/plant/industrial-warehouse-exterior.jpg",
@@ -839,7 +1005,7 @@ export const solutions: Solution[] = [
     quickAnswer:
       "OT and sterile supply partitions use cleanroom profiles with smooth facings and flush joints — not standard warehouse cladding. Pharmacy and vaccine stores hold +2 to +8 °C with 80–100 mm cam-lock panels and continuous temperature monitoring points at doors. Fire-rated separation between departments may require mineral wool panels — verify required fire period with local building and health regulators before quoting foam cores on escape routes.",
     engineeringRequirement:
-      "Define room function: OT suite, sterile store, pharmacy refrigerator room, mortuary cold store or general corridor partition. OT areas need washable surfaces, minimal joints and coordination with medical gas and HVAC laminar flow — panel scope stops at the partition line; ceiling and floor finishes may be separate trades. Pharmacy cold stores target +2 to +8 °C with alarmed monitoring and backup power on refrigeration — envelope spec includes vapor control and door seal compression tests. Mortuary rooms (+2 to +4 °C) need odour control coordination with exhaust — not panel scope alone. NBC of India, HTM (UK) and national hospital standards differ — verify fire, infection control and licensing with your authority.",
+      "Hospital panel buyers include hospital project consultants, facility managers retrofitting OT or pharmacy stores, NGO health programmes building regional stores, and contractors partitioning sterile supply areas inside existing shells. Scope spans OT anterooms, sterile stores, pharmacy and vaccine cold rooms, mortuary hold and corridor fire separations — rarely one panel type for the whole facility. Define room function: OT suite, sterile store, pharmacy refrigerator room, mortuary cold store or general corridor partition. OT areas need washable surfaces, minimal joints and coordination with medical gas and HVAC laminar flow — panel scope stops at the partition line; ceiling and floor finishes may be separate trades. Pharmacy cold stores target +2 to +8 °C with alarmed monitoring and backup power on refrigeration — envelope spec includes vapor control and door seal compression tests at commissioning. Mortuary rooms (+2 to +4 °C) need odour control coordination with exhaust — not panel scope alone. Options: cleanroom flush profiles for OT and isolation zones; cam-lock kits for pharmacy and vaccine stores; mineral wool fire-rated walls on escape routes and department boundaries where code restricts foam cores; PIR for cold stores in plant rooms with low headroom. NBC of India, HTM (UK) and national hospital standards differ — verify fire, infection control and licensing with your authority.",
     recommendedSpec: [
       { label: "Pharmacy / vaccine store", value: "+2 to +8", unit: "°C", verified: false, note: SPEC_NOTE },
       { label: "Cold store panel thickness", value: "80–100", unit: "mm", verified: false, note: SPEC_NOTE },
@@ -869,7 +1035,7 @@ export const solutions: Solution[] = [
       },
     ],
     estimatingGuidance:
-      "Send room list with function, dimensions, temperature (if cold), fire rating note and retrofit versus new build. Quote OT partitions, pharmacy cold box and mortuary store separately. Include door count, monitoring requirements and delivery port. Medical gas and HVAC are by others — we coordinate penetration locations only. Allow longer drawing review for hospital projects; export lead time typically 5–7 weeks after approval.",
+      "Send room list with function, dimensions, temperature (if cold), fire rating note and retrofit versus new build. Quote OT partitions, pharmacy cold box and mortuary store separately. Include door count, pass-through hatch positions, penetration list and delivery port. Price moves with cleanroom profile premium, fire-rated wall line metres, cold store thickness and door count, freight and Incoterm — hospital retrofit often costs more per m² than greenfield because penetration coordination adds drawing cycles. Cam-lock vaccine stores pack with doors and coving into fewer m² per 40 ft HC than OT partition bundles. Export from Gujarat west-coast ports (Mundra, Kandla/Deendayal, Pipavav, Hazira, JNPT) serves East African health projects — confirm per shipment with your forwarder. Medical gas and HVAC are by others — we coordinate penetration locations only. Allow longer drawing review for hospital projects; export lead time typically 5–7 weeks after approval.",
     productRationale: [
       {
         slug: "cleanroom-panels",
@@ -890,7 +1056,7 @@ export const solutions: Solution[] = [
     ],
     relevantProducts: ["cleanroom-panels", "cold-room-panels", "fire-rated-panels", "pir-panels"],
     applications: ["cold-room-construction", "cleanroom-fitout"],
-    comparisons: [],
+    comparisons: ["pir-vs-rockwool-panels", "puf-vs-pir-vs-rockwool"],
     faqs: [
       {
         question: "Can panels be retrofitted in an operating hospital?",
@@ -927,6 +1093,16 @@ export const solutions: Solution[] = [
         answer:
           "Yes — cam-lock kits ship in labelled crates with installation drawings. Cold chain validation after install is your facility's responsibility.",
       },
+      {
+        question: "What should a hospital panel RFQ include?",
+        answer:
+          "Room schedule with function, dimensions, temperature, fire note, retrofit or new build, penetration list and destination port. PDF plans from your hospital consultant are enough for budgetary pricing.",
+      },
+      {
+        question: "Foam panels on a corridor escape route — when is Rockwool required?",
+        answer:
+          "When local hospital code or fire department mandates non-combustible separation — often 60–120 minutes on escape routes. Verify before quoting PUF; we supply mineral wool fire-rated walls where specified.",
+      },
     ],
     buyerChecklist: [
       "Send room schedule with function — OT, pharmacy store, mortuary or corridor partition",
@@ -934,9 +1110,24 @@ export const solutions: Solution[] = [
       "State retrofit versus new build and existing structure type",
       "List cold store monitoring requirements — probes sit on BMS, not panel scope",
       "Plan infection-control barriers if retrofitting in an operating facility",
+      "Provide medical gas and HVAC penetration list before factory release",
+      "Name destination port and Incoterm for export pricing",
+      "Ask for OT, cold store and fire wall as separate quotation line items",
     ],
     limitations:
-      "Medical gas, HVAC laminar flow and fire authority approval are separate trades. Foam-cored partitions on escape routes may be rejected where mineral wool is mandated locally.",
+      "Medical gas, HVAC laminar flow and fire authority approval are separate trades. Foam-cored partitions on escape routes may be rejected where mineral wool is mandated locally. Pharmacy temperature mapping validates the installed room — a propped-open door during restocking is an operational failure, not a panel defect. Night-work retrofit logistics and infection-control barriers are site scope.",
+    buyerScenarios: [
+      {
+        question: "Regional hospital adds a +2 to +8 °C vaccine store inside an existing wing — feasible?",
+        answer:
+          "Yes — cam-lock kits suit retrofit on a level slab with modular partitions. Send room dimensions, door traffic estimate and existing services layout. We factory-locate penetrations to reduce site cutting; validation after install is your facility's scope.",
+      },
+      {
+        question: "OT anteroom failed infection control audit on joint gaps — can panels fix it?",
+        answer:
+          "Replace standard industrial profiles with cleanroom flush joints and gasketed geometry — send anteroom dimensions and we quote retrofit panels with factory-cut medical gas openings. Coordinate installation during planned theatre downtime.",
+      },
+    ],
     images: [
       {
         src: "/images/products/metal-cladding-exterior.jpg",
@@ -962,7 +1153,7 @@ export const solutions: Solution[] = [
     quickAnswer:
       "Data centre shells use 60–100 mm PUF or PIR wall and roof panels on PEB or steel frame structures — thermal target is stable ambient (+18 to +27 °C shell) so CRAC units size on IT load, not solar gain through the roof. Fire-rated mineral wool panels may be required on boundaries between electrical rooms and white space — verify fire period with local building authority. We do not claim Tier III or Tier IV from panel supply; uptime architecture is your MEP and redundancy design.",
     engineeringRequirement:
-      "Define shell U-value target, design wind and snow load, fire compartment lines and whether the building is single-tenant or multi-hall. Roof panels carry most solar load — 80–100 mm PIR is common where ambient peaks exceed +40 °C external. Wall panels at 60–80 mm reduce heat ingress on west-facing facades. Electrical and generator rooms may need fire-rated separation from white space — verify period (often 60–120 minutes) with local code; foam cores alone do not satisfy most fire wall specs. Vapor control matters in humid climates to protect downstream humidity control. ASHRAE thermal guidelines and national telecom building codes differ — verify against your authority.",
+      "Data centre panel buyers include colocation developers, enterprise IT facility teams, telecom tower companies housing edge nodes, and EPC firms building shell-and-core before MEP fit-out. Our scope is the weathertight insulated building skin — not precision cooling, redundancy architecture or Tier certification. Define shell U-value target, design wind and snow load, fire compartment lines and whether the building is single-tenant or multi-hall. Roof panels carry most solar load — 80–100 mm PIR is common where ambient peaks exceed +40 °C external; light facing colour reduces radiant gain on equatorial sites. Wall panels at 60–80 mm reduce heat ingress on west-facing facades. Electrical and generator rooms may need fire-rated separation from white space — verify period (often 60–120 minutes) with local code; foam cores alone do not satisfy most fire wall specs. Options: PIR roof and wall for thermal performance; mineral wool fire-rated boundaries; PEB portal frame or steel frame primary structure; standing-seam or trapezoidal roof at ~1000 mm cover. Vapor control matters in humid climates to protect downstream humidity control — roof endlap detail matters as much as thickness. ASHRAE thermal guidelines and national telecom building codes differ — verify against your authority.",
     recommendedSpec: [
       { label: "Shell internal target", value: "+18 to +27", unit: "°C ambient", verified: false, note: "White space HVAC by others" },
       { label: "Roof panel thickness", value: "80–100", unit: "mm PIR typical", verified: false, note: SPEC_NOTE },
@@ -992,7 +1183,7 @@ export const solutions: Solution[] = [
       },
     ],
     estimatingGuidance:
-      "Send building footprint, eave height, roof slope, fire compartment lines and design wind speed. Quote roof m², wall m² per facade and fire-rated wall line metres separately. State destination port and facing colour (light colours reduce solar load). PEB steel can quote with panels on one schedule. Precision cooling, UPS and Tier design are excluded — we supply building envelope panels only.",
+      "Send building footprint, eave height, bay spacing, roof slope, fire compartment lines and design wind speed. Quote roof m², wall m² per facade and fire-rated wall line metres separately. Price varies with roof thickness and core type, fire-rated wall metres, PEB steel tonnage (if in scope), facing colour, endlap and fixing specification for wind uplift, freight and Incoterm. A 40 ft HC holds roughly 700–1,000 m² of 80 mm PIR roof sheet depending on profile — multi-hall shells may need several containers. Light roof facing reduces solar load and downstream CRAC sizing margin. Export from Gujarat west-coast ports (Mundra, Kandla/Deendayal, Pipavav, Hazira, JNPT) is common for African telecom and enterprise shell projects — confirm per shipment with your forwarder. PEB steel can quote with panels on one schedule. Precision cooling, UPS and Tier design are excluded — we supply building envelope panels only.",
     productRationale: [
       {
         slug: "pir-panels",
@@ -1011,9 +1202,26 @@ export const solutions: Solution[] = [
         why: "Mineral wool boundaries between generator, electrical and white space where code mandates rated separation.",
       },
     ],
+    processSteps: [
+      {
+        title: "Shell thermal and fire line review",
+        body: "Footprint, eave height, fire compartment lines and design wind feed roof endlap and fixing detail. We flag where mineral wool replaces foam on boundaries.",
+        duration: "1 week",
+      },
+      {
+        title: "Steel and panel schedule",
+        body: "PEB frame and roof/wall m² quoted with fire-rated wall metres separate. Facing colour noted for solar load context.",
+        duration: "1 week",
+      },
+      {
+        title: "Production and aligned dispatch",
+        body: "Steel and panels release on matched schedules. Crates labelled by facade for site closure sequence.",
+        duration: "5–8 weeks typical",
+      },
+    ],
     relevantProducts: ["pir-panels", "roofing-panels", "wall-panels", "fire-rated-panels"],
     applications: ["industrial-envelope", "warehouse-insulation"],
-    comparisons: [],
+    comparisons: ["pir-vs-rockwool-panels", "panel-roof-vs-conventional-roof", "peb-vs-rcc"],
     faqs: [
       {
         question: "Do your panels achieve Tier III or Tier IV?",
@@ -1050,16 +1258,41 @@ export const solutions: Solution[] = [
         answer:
           "Footprint, eave height, bay spacing, roof slope, fire line locations, design wind and delivery port. MEP loads are helpful context but envelope sizing uses shell thermal targets.",
       },
+      {
+        question: "Insulated panel roof versus conventional roof plus insulation — which suits a data hall?",
+        answer:
+          "Sandwich panel roofs give faster weathertight closure and predictable U-value in one product — see our panel-roof-versus-conventional-roof comparison. Conventional build may suit sites where local code restricts foam cores on large roof areas.",
+      },
+      {
+        question: "What moves the price on a data centre shell quote?",
+        answer:
+          "Roof thickness and PIR versus PUF, fire-rated wall line metres, PEB steel tonnage, wind uplift fixing spec, facing colour and CIF Incoterm. Shell m² alone is not a fixed price.",
+      },
     ],
     buyerChecklist: [
       "Send shell U-value target and design wind speed for roof endlap detail",
       "Mark fire compartment lines between electrical, generator and white space",
       "Confirm we supply envelope only — not CRAC, UPS or Tier architecture",
       "Specify roof facing colour for solar load — dark roofs add CRAC sizing margin",
-      "Name destination port for export lead time planning",
+      "State bay spacing and eave height — not footprint area alone",
+      "Verify foam core acceptance on roof and walls with local fire authority",
+      "Name destination port and Incoterm for export lead time planning",
+      "Ask for fire-rated wall metres as a separate line item",
     ],
     limitations:
-      "We do not claim Tier III/IV or uptime certification from panel supply alone. Fire-rated boundaries need local code confirmation — standard PUF is not a generator-room fire wall.",
+      "We do not claim Tier III/IV or uptime certification from panel supply alone. Fire-rated boundaries need local code confirmation — standard PUF is not a generator-room fire wall. Humidity control inside white space depends on MEP design — roof leaks at endlaps introduce moisture that panels alone cannot manage after install. CRAC oversizing from underestimated solar load is a design-stage failure — confirm roof U-value before MEP sign-off.",
+    buyerScenarios: [
+      {
+        question: "Edge data centre in East Africa — 80 mm PIR roof enough for CRAC sizing?",
+        answer:
+          "Common starting point where external peaks exceed +35 °C, but west-facing wall area and facing colour matter too. Send footprint, eave height and MEP load assumptions — we return shell U-value build-up for your engineer before you freeze CRAC spec.",
+      },
+      {
+        question: "Generator room needs 120-minute fire separation from the hall — can panels do that?",
+        answer:
+          "Mineral wool fire-rated panel systems may qualify where tested for the required period — verify with local fire authority before PO. Standard PUF on that boundary will fail inspection.",
+      },
+    ],
     images: [
       {
         src: "/images/hero/hero-warehouse-ceiling.jpg",
@@ -1085,7 +1318,7 @@ export const solutions: Solution[] = [
     quickAnswer:
       "Manufacturing envelopes combine PEB steel with 40–100 mm wall and roof panels — thickness follows internal process temperature and fire rules, not a single catalogue value. Production halls at +25 to +40 °C internal may need ventilation coordination more than extra insulation; paint shops and chemical stores need fire-rated walls. Factory Act, NBC and local industrial licensing rules differ — verify fire and environmental requirements against your authority.",
     engineeringRequirement:
-      "Define bay spacing, crane hook height, internal process temperature range and any fire compartment lines between production, storage and office zones. Ambient production halls use 40–80 mm roof and wall panels for rain noise and condensation control. Process areas running +35 to +50 °C internal need ventilation and heat release coordination — insulation reduces radiant load but does not replace exhaust design. Chemical storage and paint lines often require fire-rated mineral wool walls — verify period with local fire department. Washdown bays in food-adjacent manufacturing need sealed joints and coving like food plants. Noise from punch presses and compressors may require acoustic lining — panel mass helps but is not a complete acoustic solution.",
+      "Manufacturing panel buyers include factory owners, industrial EPC contractors, auto and engineering ancillaries, paint shop operators and insurers mandating fire separation after equipment install. The envelope covers production halls, storage annexes, office mezzanine shells and fire partitions between solvent stores and live lines. Define bay spacing, crane hook height, internal process temperature range and any fire compartment lines between production, storage and office zones. Ambient production halls use 40–80 mm roof and wall panels for rain noise and condensation control on long spans. Process areas running +35 to +50 °C internal need ventilation and heat release coordination — insulation reduces radiant load but does not replace exhaust design. Crane bays above 20 m span drive PEB tonnage and purlin spacing — panel fixings follow steel layout, not the reverse. Chemical storage and paint lines often require fire-rated mineral wool walls — verify period with local fire department before quoting foam on those boundaries. Washdown bays in food-adjacent manufacturing need sealed joints and coving like food plants. Options: PUF for ambient halls; PIR where roof solar load stacks with process heat; Rockwool fire-rated partitions; PEB portal frame sized to crane and bay grid. Noise from punch presses and compressors may require acoustic lining — panel mass helps but is not a complete acoustic solution.",
     recommendedSpec: [
       { label: "Production hall internal", value: "+25 to +40", unit: "°C typical", verified: false, note: SPEC_NOTE },
       { label: "Roof panel thickness", value: "50–80", unit: "mm PUF/PIR", verified: false, note: SPEC_NOTE },
@@ -1115,7 +1348,7 @@ export const solutions: Solution[] = [
       },
     ],
     estimatingGuidance:
-      "Send plan, eave height, bay width, crane capacity if any, fire line locations and process temperature range. Quote PEB steel, roof m², wall m² per facade and fire-rated wall metres separately. Include facing colour, delivery port and whether office mezzanine is in scope (often separate trade). Typical production lead time 4–7 weeks plus ocean transit for export orders.",
+      "Send plan, eave height, bay width, crane capacity if any, fire line locations, process temperature range and design wind speed. Quote PEB steel, roof m², wall m² per facade and fire-rated wall metres separately. Price moves with steel tonnage, roof thickness and core type, fire-rated wall line metres, facing colour, ventilator and exhaust penetration count, freight and Incoterm. A 40 ft HC holds roughly 800–1,100 m² of 60 mm roof sheet — large factories with fire walls and thick PIR roofs may need multiple vessels. Crates label by facade zone for corner-first erection. Export from Gujarat west-coast ports (Mundra, Kandla/Deendayal, Pipavav, Hazira, JNPT) is typical for industrial export orders to Africa — confirm per shipment with your forwarder. Include facing colour, delivery port and whether office mezzanine is in scope (often separate trade). Typical production lead time 4–7 weeks plus ocean transit for export orders.",
     productRationale: [
       {
         slug: "peb-prefabricated-buildings",
@@ -1153,7 +1386,7 @@ export const solutions: Solution[] = [
     ],
     relevantProducts: ["peb-prefabricated-buildings", "roofing-panels", "wall-panels", "fire-rated-panels"],
     applications: ["industrial-envelope", "warehouse-insulation"],
-    comparisons: [],
+    comparisons: ["peb-vs-rcc", "pir-vs-rockwool-panels", "sandwich-panel-vs-masonry"],
     faqs: [
       {
         question: "What panel thickness suits a general manufacturing hall?",
@@ -1190,16 +1423,41 @@ export const solutions: Solution[] = [
         answer:
           "4–7 weeks production after drawing approval, plus ocean transit. Large orders may split dispatch by wall zone to match site crane availability.",
       },
+      {
+        question: "PEB and sandwich panels versus RCC factory — what changes on programme?",
+        answer:
+          "PEB with insulated cladding usually closes the envelope faster than cast shell plus applied insulation — see our PEB-versus-RCC comparison. Local code may still require block on office or boundary walls.",
+      },
+      {
+        question: "When should solvent storage use Rockwool instead of PUF partition?",
+        answer:
+          "When insurer or fire department mandates non-combustible separation — often after a site survey, not at first quote. Confirm fire period early; retrofit fire walls cost more than specifying them on the original drawing.",
+      },
     ],
     buyerChecklist: [
       "Send process heat range and ventilation brief — insulation does not replace exhaust design",
       "Mark fire lines between solvent storage, paint lines and production bays",
       "Confirm crane capacity and bay spacing if overhead lift is in scope",
       "State washdown zones versus dry production areas for facing spec",
-      "Name destination port and whether steel and panels ship phased",
+      "Provide roof ventilator and exhaust penetration locations before production",
+      "Verify foam core acceptance on boundaries with fire department early",
+      "Name destination port, Incoterm and whether steel and panels ship phased",
+      "Ask for PEB steel, roof, wall and fire wall as separate line items",
     ],
     limitations:
-      "Acoustic performance needs a full partition build-up — panel mass alone is not a complete noise solution. Insurance-driven fire upgrades after equipment install are costly — confirm combustibility limits at quote stage.",
+      "Acoustic performance needs a full partition build-up — panel mass alone is not a complete noise solution. Insurance-driven fire upgrades after equipment install are costly — confirm combustibility limits at quote stage. Process heat and solar load stack on the roof — sizing on winter ambient alone leaves soffit temperatures above +45 °C in summer. Office mezzanine fit-out and overhead crane rail are usually separate trades from panel supply.",
+    buyerScenarios: [
+      {
+        question: "New auto ancillary factory with paint line and 10 t crane — one envelope quote?",
+        answer:
+          "Send bay grid, hook height, crane capacity, fire lines between paint store and line, and process heat notes. We quote PEB steel, roof and wall m², and mineral wool fire partition metres separately — insurer often mandates non-combustible separation on paint boundaries.",
+      },
+      {
+        question: "Insurance survey rejected foam partition between solvent store and production — now what?",
+        answer:
+          "Retrofit mineral wool fire-rated wall on the surveyed line — send existing opening coordinates and required fire period. Factory-cut openings reduce site work; expect longer lead time than standard wall cladding.",
+      },
+    ],
     images: [
       {
         src: "/images/hero/hero-peb-steel-frame.jpg",
