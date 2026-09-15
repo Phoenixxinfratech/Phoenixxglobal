@@ -10,6 +10,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import type { Lead } from "@/lib/leads/types";
+import { raiseInternalAlert } from "./alert";
 
 const DEAD_LETTER_FILE = "leads-failed.json";
 
@@ -60,4 +61,25 @@ export async function recordDeadLetter(
       error instanceof Error ? error.message : String(error),
     );
   }
+
+  // A failure nobody hears about is the same as a lost lead.
+  await raiseInternalAlert(
+    `[DELIVERY FAILED] ${lead.id} · ${lead.band} · ${lead.country}`,
+    [
+      `Enquiry ${lead.id} was captured but could not be delivered everywhere.`,
+      "",
+      "Failed channels:",
+      ...failures.map(({ adapter, detail }) => `- ${adapter}: ${detail}`),
+      "",
+      "The buyer's details:",
+      `${lead.name}${lead.company ? `, ${lead.company}` : ""}`,
+      lead.email,
+      lead.phoneE164 || "(no phone)",
+      `${lead.city ? `${lead.city}, ` : ""}${lead.country}`,
+      "",
+      lead.message ?? "(no message)",
+      "",
+      "Contact this buyer manually, then follow the delivery-failure steps in docs/RUNBOOK.md.",
+    ].join("\n"),
+  );
 }

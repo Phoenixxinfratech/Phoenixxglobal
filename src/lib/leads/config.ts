@@ -44,6 +44,10 @@ export const SCORE_BANDS = {
 /**
  * Routing table. Single owner for every band per client decision —
  * escalation target is the founder. Channels are adapter names.
+ *
+ * "sheets", "crm" and "webhook" are record-keeping: every non-spam lead goes to
+ * all three. "email", "alert" and "whatsapp" interrupt a human, so they are
+ * rationed by band — a team that gets paged for cold leads stops reading alerts.
  */
 export const ROUTING: Record<
   "hot" | "warm" | "cold" | "spam",
@@ -51,17 +55,17 @@ export const ROUTING: Record<
 > = {
   hot: {
     owner: "sales-owner",
-    channel: ["sheets", "email", "alert", "whatsapp"],
+    channel: ["sheets", "crm", "webhook", "email", "alert", "whatsapp"],
     slaMinutes: 60,
   },
   warm: {
     owner: "sales-owner",
-    channel: ["sheets", "email", "alert"],
+    channel: ["sheets", "crm", "webhook", "email", "whatsapp"],
     slaMinutes: 240,
   },
   cold: {
     owner: "sales-owner",
-    channel: ["sheets", "email"],
+    channel: ["sheets", "crm", "webhook", "email"],
     slaMinutes: 1440,
   },
   spam: {

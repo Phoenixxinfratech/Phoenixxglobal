@@ -43,7 +43,9 @@ next-env.d.ts
 
 # local lead capture (dev only)
 leads.json
+leads-failed.json
 /data/leads.json
+/data/follow-up-queue.json
 
 # IDE
 .idea/

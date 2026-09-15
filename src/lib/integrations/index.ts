@@ -4,13 +4,33 @@
  * the buyer their enquiry was received.
  */
 import type { Lead } from "@/lib/leads/types";
+import { alertIntegration } from "./alert";
+import { crmIntegration } from "./crm";
 import { recordDeadLetter } from "./deadLetter";
+import { emailIntegration } from "./email";
 import { sheetsIntegration } from "./sheets";
+import { webhookIntegration } from "./webhook";
+import { whatsappIntegration } from "./whatsapp";
 import type { LeadIntegration } from "./types";
 
-/** Registry. Adapters added in later batches append here. */
+/**
+ * Registry, in the order they matter. The ledger goes first because it is the
+ * permanent record; everything after it is a notification.
+ */
 export function allIntegrations(): LeadIntegration[] {
-  return [sheetsIntegration];
+  return [
+    sheetsIntegration,
+    emailIntegration,
+    alertIntegration,
+    whatsappIntegration,
+    crmIntegration,
+    webhookIntegration,
+  ];
+}
+
+/** Status table for docs, the launch checklist and the health endpoint. */
+export function integrationStatus(): Array<{ name: string; enabled: boolean }> {
+  return allIntegrations().map(({ name, enabled }) => ({ name, enabled }));
 }
 
 export type DispatchSummary = {

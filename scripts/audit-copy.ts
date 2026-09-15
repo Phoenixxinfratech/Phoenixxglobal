@@ -12,6 +12,9 @@ const ROOT = path.resolve(import.meta.dirname, "..");
 const SCAN_DIRS = [
   path.join(ROOT, "src/content"),
   path.join(ROOT, "src/app"),
+  // Phase 4 Section 12: automated message copy is held to the same standard as
+  // page copy — emails, WhatsApp templates and follow-up sequences included.
+  path.join(ROOT, "src/lib/messages"),
 ];
 const EXCLUDE_DIRS = new Set(["docs"]);
 const SELF_PATH = path.resolve(import.meta.filename);
@@ -307,7 +310,9 @@ async function main() {
       console.error(`    ${m.excerpt}\n`);
     }
   } else {
-    console.log("No banned words found in src/content or src/app.\n");
+    console.log(
+      "No banned words found in src/content, src/app or src/lib/messages.\n",
+    );
   }
 
   console.log("=== Copy audit — duplicate paragraphs ===\n");

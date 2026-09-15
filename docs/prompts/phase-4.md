@@ -1,43 +1,29 @@
-# Phase 4 — Lead automation, integrations, analytics, CRO, hardening, launch
+# PHOENIXX SMARTBUILD — CURSOR MASTER PROMPT 04 of 04
+# PHASE 4: LEAD AUTOMATION, CRM + WHATSAPP + EMAIL INTEGRATION, ANALYTICS, CRO, HARDENING, QA AND LAUNCH
 
-Master prompt 04 of 04. Full text held by the client; this file records the
-operative constraints and batch plan so any session can resume.
+Saved from the client master prompt. Operative constraints:
 
-## Standing rules (unchanged from Phases 1–3)
+- Same repository as Phases 1–3. Do not start a new project.
+- Batches A–F. Build, audit and commit after each. Resume with "continue Phase 4 from Batch C".
+- Section 16 launch checklist is the gate — nothing ships until every box is ticked.
 
-- Do not re-scaffold, duplicate or rename anything from Phases 1–3.
-- Extend `LeadForm`, `QuoteButton`, `WhatsAppButton`, `StickyCtaBar` and
-  `/api/lead` — never build a second version of any of them.
-- Tokens only. No new colours, fonts, spacing, radii, shadows.
-- No URL changes. No popups, interstitials, countdown timers, fake urgency.
-- Never weaken the draft flag, `isPublishable()` or any audit script.
-- Never invent credentials, template IDs, CRM field mappings or DNS records.
-- Every prior-phase file touched gets a `docs/CHANGE-LOG.md` entry.
+## Standing instruction
 
-## Pre-approved dependencies (only if actually needed)
+Do not disrupt or duplicate Phases 1–3. Extend `LeadForm`, `QuoteButton`, `WhatsAppButton`, `StickyCtaBar` and `/api/lead`. No second lead form, no new colours, no URL changes, no popups. Tokens only. Additions through `navigation.ts` / `footer.ts`. Never invent credentials, template IDs, CRM mappings or DNS records.
 
-`resend` or `nodemailer`, `googleapis`, `@upstash/ratelimit` + `@upstash/redis`
-(or an in-memory limiter), `@playwright/test` (dev only), `libphonenumber-js`.
-Anything else requires approval with the rejected alternative stated.
+Pre-approved dependencies only if needed: `resend` or `nodemailer`, `googleapis`, in-memory rate limiter (or Upstash), `@playwright/test` (dev), `libphonenumber-js`. Anything else: stop and ask.
 
 ## Batch plan
 
 | Batch | Scope |
 |-------|-------|
-| A | Lead types + attribution, harden `/api/lead`, scoring engine, Sheets ledger |
+| A | Lead types + attribution, harden `/api/lead`, scoring, Sheets ledger |
 | B | email / alert / whatsapp / crm / webhook adapters, retry + dead-letter, `INTEGRATIONS.md` |
-| C | Acknowledgement + internal brief + follow-up sequence copy, SLA escalation, digests, `SALES-SCRIPTS.md` |
-| D | GTM/GA4/Clarity with consent, `track()` taxonomy, Measurement Protocol, dashboard spec, CRO pass, experiment helper |
-| E | Perf budgets, CSP enforce, rate limiting, `audit:a11y`, `audit:perf`, privacy policy + consent banner |
-| F | Playwright E2E, device matrix, real end-to-end lead test, content + SEO QA, launch checklist, `OPERATIONS.md` + `RUNBOOK.md`, final report |
+| C | Acknowledgement + internal brief + follow-up sequence, SLA, digests, `SALES-SCRIPTS.md` |
+| D | GTM/GA4/Clarity with consent, `track()` taxonomy, Measurement Protocol, dashboard spec, CRO, experiments |
+| E | Perf budgets, CSP enforce, `audit:a11y`, `audit:perf`, privacy policy + consent banner |
+| F | Playwright, launch checklist, `OPERATIONS.md` + `RUNBOOK.md`, final report |
 
-## The governing test
+## Governing test
 
-If nobody logs in for a week, does a serious enquiry from Nairobi still get
-acknowledged in 60 seconds, land in front of a human who can act on it from a
-phone, and get followed up — without anyone remembering to do it?
-
-## Launch gate
-
-Section 16 of the master prompt. Nothing ships until every box in
-`docs/LAUNCH-CHECKLIST.md` passes.
+If nobody logs in for a week, does a serious enquiry from Nairobi still get acknowledged in 60 seconds, land in front of a human who can act from a phone, and get followed up — without anyone remembering to do it?

@@ -2,6 +2,55 @@
 
 Additive Phase 1 touches made during later phases. Prefer extension over modification.
 
+## 2026-09-15 Phase 4 (Batch B)
+
+### File: `src/lib/integrations/email.ts`, `alert.ts`, `whatsapp.ts`, `crm.ts`, `webhook.ts`
+**Change:** Independent adapters behind env flags. Email (Resend: buyer ack + internal brief), alert (email + optional Telegram), WhatsApp Cloud API templates, Zoho/HubSpot CRM, signed generic webhook. Shared `withRetry` (3× exponential backoff).
+**Reason:** Phase 4 Section 6 — provider-agnostic integration layer.
+**Backwards compatible:** yes — all adapters default off
+
+### File: `src/lib/integrations/index.ts`, `deadLetter.ts`
+**Change:** Dispatcher runs enabled adapters independently; spam band routes only to sheets; permanent failures write a dead-letter record and raise `raiseInternalAlert`.
+**Reason:** A failing WhatsApp API must never surface an error to the buyer; a lead must never be silently lost.
+**Backwards compatible:** yes
+
+### File: `src/lib/leads/config.ts`
+**Change:** Routing channels include `crm` and `webhook` on every non-spam band so those adapters receive leads once enabled. Alert reserved for hot leads.
+**Reason:** Record-keeping vs interrupt channels.
+**Backwards compatible:** yes — adapters still no-op when disabled
+
+### File: `docs/INTEGRATIONS.md`
+**Change:** Non-developer setup for Sheets, Resend, DNS, Telegram, WhatsApp templates, webhook signature, CRM.
+**Reason:** Phase 4 Section 6 documentation requirement.
+**Backwards compatible:** n/a (docs)
+
+### File: `.gitignore`
+**Change:** Ignore `leads-failed.json` and local follow-up queue.
+**Reason:** Dead-letter files can contain PII.
+**Backwards compatible:** yes
+
+## 2026-09-15 Phase 4 (Batch A)
+
+### File: `src/lib/validation.ts`
+**Change:** `LEAD_VARIANTS` extended with `export` and `selection-tool`. Added optional fields (`industry`, `thickness`, `temperature`, `pageTitle`, `referrer`, `landingPage`, `pagesViewed`, `selectionToolCompleted`, `marketingConsent`, `firstTouch`, `lastTouch`). `company` and `phone` moved from unconditionally required to required-by-variant via `superRefine`, with `MINIMAL_GATE_VARIANTS` exempting `datasheet`.
+**Reason:** Phase 4 Section 3 requires six variants, contextual attribution and a minimally gated datasheet form. A PDF download should not demand a phone number.
+**Backwards compatible:** yes for the four existing variants — every previously valid payload still validates, and `quote`/`consultation`/`contact` still require company and phone.
+
+### File: `src/app/api/lead/route.ts`
+**Change:** Extended the Phase 1 stub in place. Added content-type, origin and body-size checks, per-IP rate limiting, 60-second idempotency, `Lead` construction with scoring and routing, non-blocking integration dispatch, structured logging keyed by lead id, and a 405 `GET` handler. Response now returns `leadId`, `band` and a `delivery` field.
+**Reason:** Phase 4 Section 5.
+**Backwards compatible:** yes — `{ ok: true }` still returned on success and `{ ok: false, error }` on failure, so the existing client contract holds.
+
+### File: `src/components/conversion/LeadForm.tsx`
+**Change:** Added `defaultCountry` and `defaultCity` props, `export` and `selection-tool` variant copy, `thickness` and `temperature` fields inside the existing optional project-details section, blur-time validation (`mode: "onBlur"`), a dial-code hint driven by the selected country, attribution capture on submit, and a success screen that states the lead reference, the response promise and the WhatsApp fallback. POST target changed from `/api/lead` to `/api/lead/`.
+**Reason:** Phase 4 Section 3 micro-UX and Section 4 attribution. The trailing slash avoids a 308 redirect on every submission under `trailingSlash: true`.
+**Backwards compatible:** yes — all existing call sites pass `variant` only and render unchanged apart from the added response-time line.
+
+### File: `.env.example`
+**Change:** Restructured into commented blocks covering analytics, per-adapter enable flags, Sheets, Resend, WhatsApp Cloud API, CRM, webhook, Telegram and the cron secret. Existing keys retained.
+**Reason:** Phase 4 Sections 6 and 13 require a complete, non-developer-readable env reference.
+**Backwards compatible:** yes (no key renamed or removed)
+
 ## 2026-09-14 Phase 3 Batch F (blog, AI layer, sitemaps)
 
 ### File: `src/content/authors.ts`, `src/content/articles.ts`
@@ -297,25 +346,3 @@ Additive Phase 1 touches made during later phases. Prefer extension over modific
 **Change:** Anchor-overuse check now counts only links inside `<p>` tags on live pages; city routes recognised; legal/FAQ underlink exemptions; chrome CTA allowlist.
 **Reason:** Product grids and related lists inevitably repeat product names; prose is where money-keyword overuse matters.
 **Backwards compatible:** yes
-
-## 2026-09-15 Phase 4 (Batch A)
-
-### File: `src/lib/validation.ts`
-**Change:** `LEAD_VARIANTS` extended with `export` and `selection-tool`. Added optional fields (`industry`, `thickness`, `temperature`, `pageTitle`, `referrer`, `landingPage`, `pagesViewed`, `selectionToolCompleted`, `marketingConsent`, `firstTouch`, `lastTouch`). `company` and `phone` moved from unconditionally required to required-by-variant via `superRefine`, with `MINIMAL_GATE_VARIANTS` exempting `datasheet`.
-**Reason:** Phase 4 Section 3 requires six variants, contextual attribution and a minimally gated datasheet form. A PDF download should not demand a phone number.
-**Backwards compatible:** yes for the four existing variants — every previously valid payload still validates, and `quote`/`consultation`/`contact` still require company and phone.
-
-### File: `src/app/api/lead/route.ts`
-**Change:** Extended the Phase 1 stub in place. Added content-type, origin and body-size checks, per-IP rate limiting, 60-second idempotency, `Lead` construction with scoring and routing, non-blocking integration dispatch, structured logging keyed by lead id, and a 405 `GET` handler. Response now returns `leadId`, `band` and a `delivery` field.
-**Reason:** Phase 4 Section 5.
-**Backwards compatible:** yes — `{ ok: true }` still returned on success and `{ ok: false, error }` on failure, so the existing client contract holds.
-
-### File: `src/components/conversion/LeadForm.tsx`
-**Change:** Added `defaultCountry` and `defaultCity` props, `export` and `selection-tool` variant copy, `thickness` and `temperature` fields inside the existing optional project-details section, blur-time validation (`mode: "onBlur"`), a dial-code hint driven by the selected country, attribution capture on submit, and a success screen that states the lead reference, the response promise and the WhatsApp fallback. POST target changed from `/api/lead` to `/api/lead/`.
-**Reason:** Phase 4 Section 3 micro-UX and Section 4 attribution. The trailing slash avoids a 308 redirect on every submission under `trailingSlash: true`.
-**Backwards compatible:** yes — all existing call sites pass `variant` only and render unchanged apart from the added response-time line.
-
-### File: `.env.example`
-**Change:** Restructured into commented blocks covering analytics, per-adapter enable flags, Sheets, Resend, WhatsApp Cloud API, CRM, webhook, Telegram and the cron secret. Existing keys retained.
-**Reason:** Phase 4 Sections 6 and 13 require a complete, non-developer-readable env reference.
-**Backwards compatible:** yes (no key renamed or removed)
