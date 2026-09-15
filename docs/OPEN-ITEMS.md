@@ -92,3 +92,15 @@ Then merge any new fields into the category sections below.
 | Lighthouse mobile scores | Engineering | Chrome binary unavailable at Batch F ship — see `docs/LIGHTHOUSE-PHASE3.md` |
 | `site.canonicalDescription` | Done (Batch F) | Client may refine wording; currently feeds schema and `llms.txt` |
 | Blog author bylines | Client | Company author only until named reviewers approved |
+
+## Phase 4 — credentials and business decisions
+
+| Item | Owner | Blocks | Notes |
+| --- | --- | --- | --- |
+| Google Sheets service account | Client + Engineering | Lead ledger | Create the sheet, share it with the service-account email, set `GOOGLE_SHEETS_*` and `INTEGRATION_SHEETS_ENABLED=true`. Steps in `docs/INTEGRATIONS.md`. Until this is done, leads exist only in the server log. |
+| Resend account and verified sending domain | Client | Buyer auto-reply, internal brief | Auto-replies from an unverified domain land in spam, which silently kills the funnel. |
+| SPF, DKIM, DMARC records | Client | Email deliverability | Launch-blocking. Records and test procedure in `docs/INTEGRATIONS.md`. |
+| WhatsApp Cloud API number and template approval | Client | WhatsApp adapter | Adapter built and disabled. `wa.me` links work today and need no approval. Template text drafted in Batch C; Meta approval pending. |
+| CRM decision | Client | CRM adapter | Client confirmed no CRM for now — the Sheets ledger is the system of record. Adapter is built behind `CRM_PROVIDER` and stays disabled. |
+| Business phone, WhatsApp number and email | Client | Every conversion surface | Still `[CONFIRM]` in `src/config/site.ts`. The UI hides these fields while unconfirmed, so the sticky Call button and the WhatsApp path do not render. This must be resolved before launch. |
+| Lead ownership | Client | Routing | Confirmed: one owner for all bands, escalation to the founder. Set the real name and contact in `ROUTING` in `src/lib/leads/config.ts`. |

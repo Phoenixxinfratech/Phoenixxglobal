@@ -2,13 +2,20 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, useWatch } from "react-hook-form";
 import { Button, Input, Select, Textarea } from "@/components/ui";
+import { site } from "@/config/site";
 import { cn } from "@/lib/cn";
+import { confirmed } from "@/lib/confirmed";
+import { captureAttribution } from "@/lib/leads/attribution";
+import { RESPONSE_PROMISE } from "@/lib/leads/config";
+import { dialCodeForCountry } from "@/lib/leads/phone";
+import { whatsAppUrl } from "@/lib/links";
 import {
   isLeadSubmitTooFast,
   leadFormSchema,
   MIN_LEAD_SUBMIT_MS,
+  MINIMAL_GATE_VARIANTS,
   type LeadFormValues,
   type LeadVariant,
 } from "@/lib/validation";
@@ -77,12 +84,32 @@ const VARIANT_COPY: Record<
     success: "Thank you — your message was sent. We will respond within one business day.",
     messageLabel: "Message",
   },
+  export: {
+    title: "Request an export quotation",
+    submit: "Send export enquiry",
+    success:
+      "Thank you — we received your export enquiry and will reply within one working day.",
+    messageLabel: "Project and shipment details",
+    messageHint:
+      "Port of discharge, room sizes, operating temperature and required-by date help us quote accurately.",
+  },
+  "selection-tool": {
+    title: "Send these selections to our engineer",
+    submit: "Send my selections",
+    success:
+      "Thank you — your selections are with our engineering team. Expect a reply within one working day.",
+    messageLabel: "Your selections and any site notes",
+    messageHint: "Edit anything the tool got wrong before sending.",
+  },
 };
 
 type LeadFormProps = {
   variant: LeadVariant;
   defaultProduct?: string;
   defaultMessage?: string;
+  /** Country and city pages pre-select their own market. */
+  defaultCountry?: string;
+  defaultCity?: string;
   className?: string;
 };
 
@@ -90,32 +117,44 @@ export function LeadForm({
   variant,
   defaultProduct,
   defaultMessage,
+  defaultCountry,
+  defaultCity,
   className,
 }: LeadFormProps) {
   const [showProjectDetails, setShowProjectDetails] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [leadReference, setLeadReference] = useState<string | null>(null);
   const [formStartedAt] = useState(() => Date.now());
 
   const copy = VARIANT_COPY[variant];
+  const whatsapp = confirmed(site.contact.whatsapp);
 
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors, isSubmitting },
     reset,
   } = useForm<LeadFormValues>({
     resolver: zodResolver(leadFormSchema),
+    mode: "onBlur",
+    reValidateMode: "onBlur",
     defaultValues: {
       variant,
       productInterest: defaultProduct ?? "",
       message: defaultMessage ?? "",
-      country: "",
+      country: defaultCountry ?? "",
+      city: defaultCity ?? "",
       formStartedAt,
       website: "",
       sourcePage: typeof window !== "undefined" ? window.location.pathname : "",
     },
   });
+
+  const isMinimalGate = MINIMAL_GATE_VARIANTS.includes(variant);
+  const watchedCountry = useWatch({ control, name: "country" });
+  const dialCode = dialCodeForCountry(watchedCountry);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -132,28 +171,44 @@ export function LeadForm({
   async function onSubmit(values: LeadFormValues) {
     setSubmitError(null);
 
+    // Reads the 90-day first-touch cookie, refreshing last touch. Returns the
+    // current page as first touch only when no earlier visit was recorded.
+    const attribution = captureAttribution();
+
     if (isLeadSubmitTooFast(values.formStartedAt)) {
       setSubmitError(`Please wait a moment before submitting — at least ${MIN_LEAD_SUBMIT_MS / 1000} seconds.`);
       return;
     }
 
     try {
-      const response = await fetch("/api/lead", {
+      // Trailing slash matters: the site redirects /api/lead, costing a round trip.
+      const response = await fetch("/api/lead/", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...values,
           sourcePage: values.sourcePage || window.location.pathname,
+          pageTitle: document.title,
+          referrer: document.referrer || undefined,
+          landingPage: attribution?.firstTouch.landingPage,
+          firstTouch: attribution?.firstTouch,
+          lastTouch: attribution?.lastTouch,
+          selectionToolCompleted: variant === "selection-tool" ? true : undefined,
         }),
       });
 
-      const data = (await response.json()) as { ok?: boolean; error?: string };
+      const data = (await response.json()) as {
+        ok?: boolean;
+        error?: string;
+        leadId?: string;
+      };
 
       if (!response.ok || !data.ok) {
         setSubmitError(data.error ?? "Something went wrong. Please try again or contact us on WhatsApp.");
         return;
       }
 
+      setLeadReference(data.leadId ?? null);
       setIsSuccess(true);
     } catch {
       setSubmitError("Network error — check your connection and try again.");
@@ -168,11 +223,37 @@ export function LeadForm({
           className,
         )}
         role="status"
+        aria-live="polite"
       >
         <p className="text-lg font-medium text-ink">{copy.success}</p>
-        <p className="mt-2 text-sm text-steel">
-          Working hours: Mon–Sat, 9:30 AM – 6:30 PM IST.
+        {leadReference ? (
+          <p className="mt-2 text-sm text-steel">
+            Your reference is{" "}
+            <span className="font-medium text-ink">{leadReference}</span>. Quote it in any
+            reply and we can pull up your enquiry straight away.
+          </p>
+        ) : null}
+        <p className="mt-3 text-sm text-steel">
+          An engineer replies {RESPONSE_PROMISE.full}. To speed up the quotation, send room
+          dimensions, operating temperature, delivery location and your required-by date.
         </p>
+        {whatsapp ? (
+          <p className="mt-3 text-sm text-steel">
+            If you have not heard from us within one working day,{" "}
+            <a
+              className="font-medium text-ember-deep underline underline-offset-4"
+              href={whatsAppUrl(
+                `Following up on enquiry ${leadReference ?? ""} — please confirm you received it.`,
+                whatsapp,
+              )}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              message us on WhatsApp
+            </a>{" "}
+            directly.
+          </p>
+        ) : null}
       </div>
     );
   }
@@ -187,7 +268,8 @@ export function LeadForm({
       <div>
         <h2 className="text-2xl font-semibold text-ink">{copy.title}</h2>
         <p className="mt-1 text-sm text-steel">
-          Fields marked with <span className="text-ember">*</span> are required.
+          An engineer replies {RESPONSE_PROMISE.full}. Fields marked with{" "}
+          <span className="text-ember">*</span> are required.
         </p>
       </div>
 
@@ -214,7 +296,7 @@ export function LeadForm({
         />
         <Input
           label="Company"
-          required
+          required={!isMinimalGate}
           autoComplete="organization"
           error={errors.company?.message}
           {...register("company")}
@@ -229,10 +311,14 @@ export function LeadForm({
         />
         <Input
           label="Phone / WhatsApp"
-          required
+          required={!isMinimalGate}
           type="tel"
           autoComplete="tel"
-          hint="Include country code so we can reach you on WhatsApp."
+          hint={
+            dialCode
+              ? `Include the country code — ${dialCode} for ${watchedCountry}.`
+              : "Include country code so we can reach you on WhatsApp."
+          }
           error={errors.phone?.message}
           {...register("phone")}
         />
@@ -305,6 +391,18 @@ export function LeadForm({
               placeholder="e.g. 2,000 m² panels"
               error={errors.quantity?.message}
               {...register("quantity")}
+            />
+            <Input
+              label="Panel thickness"
+              placeholder="e.g. 100 mm, or ask us to recommend"
+              error={errors.thickness?.message}
+              {...register("thickness")}
+            />
+            <Input
+              label="Operating temperature"
+              placeholder="e.g. −25 °C freezer, +2 to +8 °C chiller"
+              error={errors.temperature?.message}
+              {...register("temperature")}
             />
             <Input
               label="Required by"
