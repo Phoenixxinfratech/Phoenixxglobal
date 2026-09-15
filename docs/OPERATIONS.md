@@ -136,5 +136,61 @@ days.
 
 ---
 
-Sections on analytics, digests, follow-up sequences, the weekly SOP and the
-handover procedures are added in later Phase 4 batches.
+Sections on analytics, experiments, the weekly SOP and handover live in later
+Phase 4 batches (`docs/ANALYTICS.md`, `docs/RUNBOOK.md`).
+
+---
+
+## 7. Follow-up sequence
+
+The buyer acknowledgement is sent at once (D0). A human should send the
+quotation on D+1. The system then sends:
+
+| When | What |
+| --- | --- |
+| D+3 | A relevant guide or comparison, tied to their product or application |
+| D+7 | "Has the layout been finalised?" — one attachment request |
+| D+14 | Similar-application note plus a soft close |
+| D+45 | Dormant reactivation, or close the file |
+
+Any reply stops the sequence. From a phone: POST `/api/cron/` with
+`{ "job": "stop", "leadId": "PSB-…" }` and the `Authorization: Bearer` cron
+secret. Marking `{ "job": "touched", "leadId": "…" }` records that an owner
+acted, which also stops SLA escalation.
+
+Copy lives in `src/lib/messages/followUp.ts`. Change the words there, not in
+the cron route.
+
+On Netlify the queue file is ephemeral. Until a persistent store is wired,
+treat the Google Sheet as the backup record and run follow-ups from the sheet
+if a deploy wipes `data/follow-up-queue.json`.
+
+---
+
+## 8. Cron jobs
+
+Set `CRON_SECRET` in the host. Call these URLs on a schedule (Netlify scheduled
+functions, cron-job.org, or GitHub Actions):
+
+| Job | When | URL |
+| --- | --- | --- |
+| SLA sweep | every 15 minutes, working hours | `GET /api/cron/?job=sla` |
+| Follow-ups | 10:00 IST daily | `GET /api/cron/?job=follow-up` |
+| Daily digest | 09:30 IST Mon–Sat | `GET /api/cron/?job=digest-daily` |
+| Weekly digest | 09:30 IST Mondays | `GET /api/cron/?job=digest-weekly` |
+
+Every request needs `Authorization: Bearer $CRON_SECRET` (or `?secret=`).
+
+A hot lead still untouched after 60 working minutes raises a WhatsApp/email
+alert to the owner. Daily digest: new leads, untouched files, follow-ups due.
+Weekly digest: counts by country, product and band.
+
+---
+
+## 9. Weekly SOP (15 minutes, Monday)
+
+1. Open the weekly digest email.
+2. Sweep untouched rows in the sheet. Call or WhatsApp anything still hot.
+3. Publish or outline one item from `docs/EDITORIAL-CALENDAR.md`.
+4. Once a fortnight, decide the CRO experiment in `docs/EXPERIMENTS.md`.
+

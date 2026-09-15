@@ -2,6 +2,28 @@
 
 Additive Phase 1 touches made during later phases. Prefer extension over modification.
 
+## 2026-09-15 Phase 4 (Batch C)
+
+### File: `src/lib/messages/followUp.ts`, `src/lib/leads/sequence.ts`, `src/lib/leads/workingHours.ts`
+**Change:** D+3 / D+7 / D+14 / D+45 follow-up copy; IST working-hours SLA maths; JSON follow-up queue with stop/touched controls.
+**Reason:** Phase 4 Section 7 automation that runs without anyone logging in.
+**Backwards compatible:** yes — new modules
+
+### File: `src/app/api/cron/route.ts`
+**Change:** Authenticated cron endpoint for follow-up, SLA, daily/weekly digest, stop and touched.
+**Reason:** Netlify/external schedulers need a single POST/GET to hit.
+**Backwards compatible:** yes — new route
+
+### File: `src/lib/integrations/index.ts`
+**Change:** Enqueue the follow-up sequence after dispatch (non-fatal if the queue write fails).
+**Reason:** D0 ack is the email adapter; D+3 onwards needs a record at capture time.
+**Backwards compatible:** yes
+
+### File: `docs/SALES-SCRIPTS.md`, `docs/OPERATIONS.md`
+**Change:** Phone/WhatsApp/email scripts; operations follow-up and cron SOP.
+**Reason:** Phase 4 Sections 7.5 and 17.
+**Backwards compatible:** n/a (docs)
+
 ## 2026-09-15 Phase 4 (Batch B)
 
 ### File: `src/lib/integrations/email.ts`, `alert.ts`, `whatsapp.ts`, `crm.ts`, `webhook.ts`

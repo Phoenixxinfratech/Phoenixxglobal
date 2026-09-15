@@ -11,6 +11,7 @@ import { emailIntegration } from "./email";
 import { sheetsIntegration } from "./sheets";
 import { webhookIntegration } from "./webhook";
 import { whatsappIntegration } from "./whatsapp";
+import { enqueueSequence } from "@/lib/leads/sequence";
 import type { LeadIntegration } from "./types";
 
 /**
@@ -95,6 +96,18 @@ export async function dispatchLead(lead: Lead): Promise<DispatchSummary> {
 
   if (summary.failed.length > 0) {
     await recordDeadLetter(lead, summary.failed);
+  }
+
+  try {
+    await enqueueSequence(lead);
+  } catch (error) {
+    console.warn(
+      "[lead:sequence]",
+      JSON.stringify({
+        leadId: lead.id,
+        detail: error instanceof Error ? error.message : String(error),
+      }),
+    );
   }
 
   return summary;
