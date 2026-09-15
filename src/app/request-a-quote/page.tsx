@@ -5,6 +5,7 @@ import { Container, Heading, Section } from "@/components/ui";
 import { buildMetadata } from "@/lib/metadata";
 import { routes } from "@/lib/links";
 import { breadcrumbSchema } from "@/lib/schema";
+import { LEAD_VARIANTS, type LeadVariant } from "@/lib/validation";
 
 const PATH = "/request-a-quote/";
 
@@ -22,6 +23,9 @@ type PageProps = {
 export default async function RequestAQuotePage({ searchParams }: PageProps) {
   const params = await searchParams;
   const defaultProduct = params.product ?? undefined;
+  const variant: LeadVariant = LEAD_VARIANTS.includes(params.variant as LeadVariant)
+    ? (params.variant as LeadVariant)
+    : "quote";
 
   return (
     <>
@@ -105,7 +109,7 @@ export default async function RequestAQuotePage({ searchParams }: PageProps) {
               </p>
             </div>
 
-            <LeadForm variant="quote" defaultProduct={defaultProduct} />
+            <LeadForm variant={variant} defaultProduct={defaultProduct} />
           </div>
         </Container>
       </Section>

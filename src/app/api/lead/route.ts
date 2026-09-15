@@ -111,12 +111,14 @@ export async function POST(request: Request) {
   }
 
   const ip = clientIp(request);
-  const rate = checkRateLimit(ip);
-  if (!rate.allowed) {
-    return NextResponse.json(
-      { ok: false, error: "Too many submissions. Try again shortly or message us on WhatsApp." },
-      { status: 429, headers: { "Retry-After": String(rate.retryAfterSeconds) } },
-    );
+  if (process.env.LEAD_LOCAL_LEDGER !== "true") {
+    const rate = checkRateLimit(ip);
+    if (!rate.allowed) {
+      return NextResponse.json(
+        { ok: false, error: "Too many submissions. Try again shortly or message us on WhatsApp." },
+        { status: 429, headers: { "Retry-After": String(rate.retryAfterSeconds) } },
+      );
+    }
   }
 
   let raw: string;

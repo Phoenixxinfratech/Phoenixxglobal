@@ -189,8 +189,76 @@ Weekly digest: counts by country, product and band.
 
 ## 9. Weekly SOP (15 minutes, Monday)
 
-1. Open the weekly digest email.
+1. Open the Looker Studio dashboard (`docs/ANALYTICS.md`) or the weekly digest email.
 2. Sweep untouched rows in the sheet. Call or WhatsApp anything still hot.
 3. Publish or outline one item from `docs/EDITORIAL-CALENDAR.md`.
 4. Once a fortnight, decide the CRO experiment in `docs/EXPERIMENTS.md`.
+5. If zero enquiries in 48 hours, follow `docs/RUNBOOK.md` section 1 immediately — do not wait for Monday.
+
+Dashboard: one Looker Studio page (spec in `docs/ANALYTICS.md`). Runbook: `docs/RUNBOOK.md`. Launch gate: `docs/LAUNCH-CHECKLIST.md`.
+
+---
+
+## 10. How to add a product
+
+1. Open `src/content/products.ts`.
+2. Copy an existing product object (start from `puf-panels`).
+3. Change `slug`, names, copy, specs. Keep `verified: false` on any number you have not measured.
+4. Add the slug to the products hub and to `src/content/pages.ts` only if a new hub URL is required — product URLs are `/products/{slug}/` automatically.
+5. Add the product to `related` arrays on solutions and countries that should link to it.
+6. Run `npm run build` and `npm run audit:links`. If the build fails, the slug is missing somewhere.
+7. Commit, deploy. The sitemap picks it up on the next publish.
+
+Do not invent certifications, capacities or prices. If a fact is unconfirmed, omit it or it will be hidden.
+
+---
+
+## 11. How to add a country
+
+1. Open `src/content/countries.ts`. Copy `kenya` as the shape.
+2. Fill only confirmed facts. `isPublishableCountry()` in `src/lib/publishable.ts` decides whether the page indexes.
+3. Add cities in `src/content/cities.ts` with `countrySlug` matching the country.
+4. Add the country to `TARGET_EXPORT_COUNTRIES` in `src/lib/leads/config.ts` if it should score +20.
+5. Run `npm run build`. Thin pages stay `draft` / unpublished until the publish gate passes.
+
+---
+
+## 12. How to publish an article
+
+1. Open `src/content/articles.ts`. Copy a live article.
+2. Set `slug`, `title`, `description`, body, `date`, `author: "phoenixx-smartbuild"`.
+3. `draft: false` only when every claim is confirmed.
+4. Run `npm run generate:llms` so `public/llms.txt` stays current.
+5. Commit, deploy. URL is `/blog/{slug}/`.
+
+---
+
+## 13. How to change a phone number or WhatsApp
+
+1. Open `src/config/site.ts`.
+2. Put the real E.164 number in `contact.phonePrimary` and `contact.whatsapp`. Never leave `[CONFIRM]`.
+3. Save, commit, deploy. Header, footer, sticky bar and `wa.me` links read from this file only.
+4. Call the number from a personal phone before you announce the change.
+
+---
+
+## 14. How to tune scoring
+
+1. Open `src/lib/leads/config.ts`.
+2. Change one constant in `SCORE_WEIGHTS`, `SCORE_BANDS` or `ROUTING`.
+3. Deploy. Watch a fortnight of leads before changing another number.
+4. Owner names live in `ROUTING.*.owner`.
+
+---
+
+## 15. How to read the dashboard
+
+Monday, 15 minutes:
+
+1. Enquiries by source — if IndiaMART is zero and LinkedIn is not, the IndiaMART URL or UTM is wrong.
+2. Page-to-lead conversion — a product page with traffic and no leads needs a clearer CTA, not more blog posts.
+3. Band mix — if everything is cold, the form is asking too little or traffic is the wrong country.
+4. Search Console overlay — queries in positions 8–20 become next week's article (`docs/EDITORIAL-CALENDAR.md`).
+
+If the dashboard is empty, GA4 IDs are not set. The sheet still has the leads.
 

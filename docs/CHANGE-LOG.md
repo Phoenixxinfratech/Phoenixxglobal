@@ -2,6 +2,28 @@
 
 Additive Phase 1 touches made during later phases. Prefer extension over modification.
 
+## 2026-09-15 Phase 4 (Batch F)
+
+### File: `src/app/request-a-quote/page.tsx`
+**Change:** Honours `?variant=` when it is a known `LeadVariant` (consultation, export, etc.).
+**Reason:** Hero already linked to `?variant=consultation`; the page ignored it.
+**Backwards compatible:** yes — default remains quote
+
+### File: `src/app/api/lead/route.ts`
+**Change:** Rate limit skipped when `LEAD_LOCAL_LEDGER=true` so Playwright can submit more than five times.
+**Reason:** E2E coverage without raising production limits.
+**Backwards compatible:** yes — production default unchanged
+
+### File: `e2e/*`, `playwright.config.ts`
+**Change:** Playwright suite for variants, dead-letter success path, selection-tool prefill, 404, robots/sitemap, sentinels, footer identity.
+**Reason:** Phase 4 Section 15.
+**Backwards compatible:** n/a
+
+### File: `docs/LAUNCH-CHECKLIST.md`, `docs/RUNBOOK.md`, `docs/OPERATIONS.md`, `docs/PHASE-4-REPORT.md`
+**Change:** Launch gate, incident runbook, handover procedures, Phase 4 report.
+**Reason:** Phase 4 Sections 16–17, 21.
+**Backwards compatible:** n/a (docs)
+
 ## 2026-09-15 Phase 4 (Batch E)
 
 ### File: `next.config.ts`

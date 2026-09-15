@@ -15,6 +15,7 @@
     "audit:open-items": "tsx scripts/generate-open-items.ts",
     "audit:a11y": "tsx scripts/audit-a11y.ts",
     "audit:perf": "tsx scripts/audit-perf.ts",
+    "test:e2e": "playwright test",
     "generate:llms": "tsx scripts/generate-llms-txt.ts"
   },
   "dependencies": {
