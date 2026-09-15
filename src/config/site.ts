@@ -10,6 +10,11 @@ export const site = {
   legalName: "NXT Phoenixx SmartBuild LLP",
   brand: "PHOENIXX SMARTBUILD",
   brandShort: "PHOENIXX",
+  /** Market / domain descriptors only — not used in nav or logo. */
+  alternateNames: [
+    "PHOENIXX SMARTBUILD GLOBAL",
+    "PHOENIXX GLOBAL",
+  ] as readonly string[],
   domain: "https://phoenixxglobal.com",
   tagline:
     "Africa's trusted engineering and export partner for industrial building solutions",

@@ -13,6 +13,7 @@ import { Container, Heading, Link, Section } from "@/components/ui";
 import {
   comparisons,
   getComparison,
+  getGuide,
   getProduct,
   getSolution,
 } from "@/content";
@@ -48,6 +49,9 @@ export default async function ComparisonPage({ params }: PageProps) {
 
   const productA = getProduct(comparison.productA);
   const productB = getProduct(comparison.productB);
+  const productC = comparison.productC
+    ? getProduct(comparison.productC)
+    : undefined;
 
   const breadcrumbs = [
     { name: "Home", path: routes.home },
@@ -56,18 +60,38 @@ export default async function ComparisonPage({ params }: PageProps) {
     { name: comparison.name, path: routes.comparison(slug) },
   ];
 
-  const optionALabel = productA?.shortName ?? "Option A";
-  const optionBLabel = productB?.shortName ?? "Option B";
+  const optionALabel =
+    comparison.optionALabel ?? productA?.shortName ?? "Option A";
+  const optionBLabel =
+    comparison.optionBLabel ?? productB?.shortName ?? "Option B";
+  const optionCLabel =
+    comparison.optionCLabel ?? productC?.shortName ?? "Option C";
+
+  const hasThird =
+    Boolean(comparison.productC) ||
+    comparison.decisionTable.some((row) => Boolean(row.optionC));
+
+  const columns = hasThird
+    ? [optionALabel, optionBLabel, optionCLabel]
+    : [optionALabel, optionBLabel];
 
   const tableRows =
     comparison.decisionTable?.map((row) => ({
       label: row.criterion,
-      values: [row.optionA, row.optionB],
+      values: hasThird
+        ? [row.optionA, row.optionB, row.optionC ?? "—"]
+        : [row.optionA, row.optionB],
     })) ?? [];
 
   const faqSchema = comparison.faqs.length
     ? faqPageSchema(comparison.faqs)
     : null;
+
+  const verdictCount = [
+    comparison.chooseAWhen,
+    comparison.chooseBWhen,
+    comparison.chooseCWhen,
+  ].filter(Boolean).length;
 
   return (
     <>
@@ -100,18 +124,22 @@ export default async function ComparisonPage({ params }: PageProps) {
       {tableRows.length > 0 ? (
         <ComparisonTable
           heading="Decision table"
-          columns={[optionALabel, optionBLabel]}
+          columns={columns}
           rows={tableRows}
         />
       ) : null}
 
-      {(comparison.chooseAWhen || comparison.chooseBWhen) && (
+      {verdictCount > 0 ? (
         <Section background="white">
           <Container>
             <Heading as="h2" className="text-2xl md:text-3xl">
               Verdict — when to choose each option
             </Heading>
-            <div className="mt-8 grid gap-8 md:grid-cols-2">
+            <div
+              className={`mt-8 grid gap-8 ${
+                verdictCount >= 3 ? "md:grid-cols-3" : "md:grid-cols-2"
+              }`}
+            >
               {comparison.chooseAWhen ? (
                 <div className="rounded-[2px] border border-line p-6">
                   <h3 className="text-lg font-semibold text-ink">
@@ -146,10 +174,27 @@ export default async function ComparisonPage({ params }: PageProps) {
                   ) : null}
                 </div>
               ) : null}
+              {comparison.chooseCWhen ? (
+                <div className="rounded-[2px] border border-line p-6">
+                  <h3 className="text-lg font-semibold text-ink">
+                    Choose {optionCLabel} when…
+                  </h3>
+                  <p className="prose-body mt-3 text-base text-steel">
+                    {comparison.chooseCWhen}
+                  </p>
+                  {productC && !productC.draft ? (
+                    <p className="mt-4">
+                      <Link href={routes.product(productC.slug)}>
+                        View {productC.name} specifications →
+                      </Link>
+                    </p>
+                  ) : null}
+                </div>
+              ) : null}
             </div>
           </Container>
         </Section>
-      )}
+      ) : null}
 
       {comparison.costNotes ? (
         <Section background="paper">
@@ -192,6 +237,13 @@ export default async function ComparisonPage({ params }: PageProps) {
                 </InlineLink>
               </li>
             ) : null}
+            {productC && !productC.draft ? (
+              <li>
+                <InlineLink href={routes.product(productC.slug)}>
+                  {productC.name} — full specifications
+                </InlineLink>
+              </li>
+            ) : null}
             {comparison.relatedSolutions.map((solutionSlug) => {
               const solution = getSolution(solutionSlug);
               if (!solution || solution.draft) return null;
@@ -199,6 +251,17 @@ export default async function ComparisonPage({ params }: PageProps) {
                 <li key={solutionSlug}>
                   <InlineLink href={routes.solution(solutionSlug)}>
                     {solution.name}
+                  </InlineLink>
+                </li>
+              );
+            })}
+            {comparison.relatedGuides.map((guideSlug) => {
+              const guide = getGuide(guideSlug);
+              if (!guide || guide.draft) return null;
+              return (
+                <li key={guideSlug}>
+                  <InlineLink href={routes.guide(guideSlug)}>
+                    {guide.name}
                   </InlineLink>
                 </li>
               );

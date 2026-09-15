@@ -116,11 +116,12 @@ export const pages: PageMeta[] = [
     path: "/export/africa/",
     title: "Sandwich Panel Export to Africa",
     description:
-      "Insulated panels and PEB systems for African cold chain, warehousing and industrial projects — shipped from India.",
+      "PUF and PIR panels for African hot climates, humid coasts and highland sites — port corridors, thickness guidance and import notes from India.",
     h1: "Export to Africa",
     holdingCopy:
-      "African buyers ask the same hard questions we would: lead time to the named port, packing that survives rough handling, and documents that clear without drama. Country pages expand on ports and local demand. For a quotation, send destination port, Incoterm preference and panel BOQ.",
-    draft: true,
+      "Climate bands from Sahel heat to Indian Ocean humidity change panel thickness and facing choice. Country pages carry port names and clearing-agent checklists — Kenya is the deepest example today.",
+    draft: false,
+    updatedAt: "2026-09-15",
     section: "export",
   },
   {
@@ -185,13 +186,14 @@ export const pages: PageMeta[] = [
   },
   {
     path: "/resources/",
-    title: "Technical Resources",
+    title: "Technical Resources for Panel Buyers",
     description:
-      "Guides, comparisons, datasheets, FAQs and glossary for specifying insulated sandwich panels.",
+      "Live guides, comparisons, FAQs, glossary, panel selection and datasheets — specification help before you request a quotation.",
     h1: "Resources",
     holdingCopy:
-      "Technical pages live here so buyers can compare cores and thickness choices before calling. Guides and comparisons are being written to the same standard as our product pages — no filler, no invented test data. Start with FAQs or the PUF vs PIR comparison stub and request datasheets by email.",
-    draft: true,
+      "Guides, comparisons and FAQs are live for thickness, joints, fire performance and export packing. Use panel selection or request a datasheet if you need a PDF.",
+    draft: false,
+    updatedAt: "2026-09-15",
     section: "resources",
   },
   {

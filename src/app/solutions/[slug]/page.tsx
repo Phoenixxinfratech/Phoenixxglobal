@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
 import {
+  BuyerChecklist,
+  BuyerScenarios,
   CtaBand,
   FaqAccordion,
   HoldingPage,
@@ -222,6 +224,10 @@ export default async function SolutionPage({ params }: PageProps) {
         <QuickAnswer heading="Quick answer" text={solution.quickAnswer} />
       ) : null}
 
+      {solution.buyerChecklist?.length ? (
+        <BuyerChecklist items={solution.buyerChecklist} />
+      ) : null}
+
       {solution.engineeringRequirement ? (
         <Section background="white">
           <Container>
@@ -308,6 +314,23 @@ export default async function SolutionPage({ params }: PageProps) {
             </p>
           </Container>
         </Section>
+      ) : null}
+
+      {solution.limitations ? (
+        <Section background="paper">
+          <Container>
+            <Heading as="h2" className="text-xl md:text-2xl">
+              Limitations and scope notes
+            </Heading>
+            <p className="prose-body mt-4 max-w-3xl text-base text-steel">
+              {solution.limitations}
+            </p>
+          </Container>
+        </Section>
+      ) : null}
+
+      {solution.buyerScenarios?.length ? (
+        <BuyerScenarios scenarios={solution.buyerScenarios} />
       ) : null}
 
       {solution.faqs.length > 0 ? (

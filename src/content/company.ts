@@ -88,7 +88,7 @@ export const aboutContent: AboutContent = {
     {
       heading: "Who we are",
       paragraphs: [
-        "PHOENIXX SMARTBUILD is an Ahmedabad-based manufacturer of insulated sandwich panels, cold room kits, industrial doors and PEB structures. We run continuous foam lines, coil slitting and panel forming under one roof — enough control to answer thickness, facing grade and joint detail from the same team that signs the packing list.",
+        "PHOENIXX SMARTBUILD is an Ahmedabad-based manufacturer of insulated sandwich panels, cold room kits, industrial doors and PEB structures. phoenixxglobal.com is the global web presence for PHOENIXX SMARTBUILD (PHOENIXX SMARTBUILD GLOBAL as the market descriptor on export documentation). We run continuous foam lines, coil slitting and panel forming under one roof — enough control to answer thickness, facing grade and joint detail from the same team that signs the packing list.",
         "Most of our export work goes to East and West Africa, where buyers ask hard questions about container utilisation, documentation at Mombasa or Dar es Salaam, and what happens when a panel arrives with a crushed edge. We have loaded enough 40-foot HC containers to know that packing is not an afterthought.",
       ],
     },

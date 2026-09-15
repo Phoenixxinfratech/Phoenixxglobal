@@ -172,6 +172,9 @@ for (const solution of validatedSolutions) {
 for (const comparison of validatedComparisons) {
   assertSlugsExist(comparison.slug, "productA", [comparison.productA], productSlugs);
   assertSlugsExist(comparison.slug, "productB", [comparison.productB], productSlugs);
+  if (comparison.productC) {
+    assertSlugsExist(comparison.slug, "productC", [comparison.productC], productSlugs);
+  }
 }
 
 for (const city of validatedCities) {

@@ -76,6 +76,10 @@ export function organizationSchema(): JsonLd {
     areaServed: "Worldwide",
   };
 
+  if (site.alternateNames?.length) {
+    schema.alternateName = [...site.alternateNames];
+  }
+
   if (sameAs.length) schema.sameAs = sameAs;
   if (identifiers.length) schema.identifier = identifiers;
   if (contactPoints.length) schema.contactPoint = contactPoints;

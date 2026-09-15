@@ -224,6 +224,10 @@ State whether compressors are ammonia or HFC — COP curves differ and change sa
       {
         h2: "Integrating envelope data into CAPEX models",
         content: `Capital expenditure models for cold chain projects should line-item panel cost against refrigeration plant cost — sensitivity shows which line responds to thickness change. Spreadsheet scenario at 0.20 vs 0.24 W/m²K on same wall area quantifies kWh delta when consultant provides factor. Include refrigerant type GWP if carbon reporting required — envelope savings may support green finance application. Depreciation period for panels may differ from plant — finance team treats separately. Export duty and freight step up with thickness — CAPEX model must refresh panel line when thickness changes, not only plant line.`,
+      },
+      {
+        h2: "R-value and how it relates to U-value",
+        content: `Thermal resistance R (m²·K/W) is the inverse of U for a single homogeneous layer approximation: R ≈ 1/U when U is expressed in W/(m²·K). For a sandwich panel build-up, manufacturer U-value already combines core and both steel facings plus standard surface films — do not manually invert brochure U and treat it as the foam core R alone. Example (illustrative): if a declared wall U-value is 0.22 W/(m²·K), the overall assembly resistance is R ≈ 1/0.22 ≈ 4.5 m²·K/W total for that build-up, not for foam only. Adding layers in series: R_total ≈ R_facing_ext + R_core + R_facing_int (each in m²·K/W) before surface corrections. Core R alone can be estimated from thickness d (m) and λ (W/m·K): R_core ≈ d/λ — e.g. 0.100 m / 0.024 W/m·K ≈ 4.2 m²·K/W for foam only, but the declared panel U will be higher (worse) once thin steel facings and surface coefficients are included. Assumptions: steady-state conduction, listed test age, indoor/outdoor film coefficients per EN 14509 or equivalent as stated on the report. Use SI units throughout — thickness in metres, λ in W/(m·K), U in W/(m²·K), R in m²·K/W. For procurement, compare supplier-declared U at the same thickness rather than recalculating R from memory; use R ≈ 1/U only to explain why a 0.04 U-step matters in conversation with non-technical stakeholders.`,
       }
     ],
     limitations: "Payback examples use simplified assumptions — actual refrigeration load requires qualified software and local tariff structures. U-values cited are indicative; use supplier test reports for contract. We do not size compressors or guarantee energy savings on this page. Values and examples are indicative for u-values and running cost planning — confirm against project drawings, local codes and supplier test reports before purchase. Contact our export team with your application details if you need a written recommendation tied to a quotation.",
@@ -393,6 +397,10 @@ Laser check first row level — cumulative error is visible by panel five if ign
       {
         h2: "Warranty scope for joint performance",
         content: `Panel warranty often excludes joint leakage if install not by approved method — read warranty footnote on cam-lock engagement and vapor mastic brand. Supplier may warrant material but not air leakage rate unless install certified — clarify before bid. Photographic install record supports warranty claim for frost at joint. Cap profile warranty may be shorter than panel facing — replace caps on maintenance cycle. Export buyer should ask whether remote install support is included in warranty year one — email review of daily photos sometimes included, site visit extra.`,
+      },
+      {
+        h2: "Concealed-fix vs exposed-fix",
+        content: `Concealed-fix systems hide screws or clips inside the tongue-and-groove or standing seam — cleaner appearance, fewer penetration paths through the external facing, better for offices, showrooms and hygiene-sensitive walls where wipe-down matters. Exposed-fix roofs and walls drive screws through the external sheet with washers — faster on site, easier to inspect and retighten after thermal cycling, common on industrial sheds and long trapezoidal roof runs where aesthetics are secondary. Trade-offs: concealed systems need precise purlin alignment and manufacturer clip spacing; a missed clip is hard to add after the next panel locks. Exposed systems show fastener rows that must follow span tables — overtightening dimples facings and invites corrosion. Thermal bridging is similar in magnitude but linear at exposed screw heads versus distributed at clip lines in concealed walls. For coastal roofs, exposed fixings must use the washer and screw grade in the supplier detail — stainless or coated as specified. Do not specify concealed-fix walls on a relocatable cold room that expects cam-lock disassembly — different product families. Hybrid jobs (concealed wall, exposed roof) are normal on PEB warehouses; document the change at the eave junction so installers do not mix clip types.`,
       },
       {
         h2: "Summary for specification writers",
@@ -1007,10 +1015,398 @@ Arbitration seat and language matter for cross-border disputes — agree before 
       {
         h2: "Quick reference for buyers",
         content: `Minimum enquiry return: EN 14509 or equivalent report, coating spec, thickness tolerance, packing photos, shop drawing offer, export reference. Reject missing test PDF. Score price after docs pass. Contract: spec on order, damage clause, drawing approval hold. Call one reference project installer before final award on cold chain orders. Keep scored evaluation sheet in procurement file.`,
+      },
+      {
+        h2: "Twenty questions to ask before you order",
+        content: `1) Which test report number covers the exact thickness and core type on my PO? 2) What is the declared core density and tolerance? 3) What steel thickness and Z mass are on each face? 4) What topcoat system and thickness (µm) apply to external and internal faces? 5) Who operates the lamination line — your factory or a subcontract mill? 6) Will shop drawings be issued for written approval before production? 7) What thickness tolerance do you guarantee (± mm)? 8) Can you share export packing photos from the last three shipments? 9) How are panels labelled for batch traceability? 10) What is production lead time after drawing approval? 11) How many containers for my schedule, and what m² per TEU? 12) Which Incoterm is quoted and what is excluded? 13) Who replaces transit-damaged panels at port and within what days? 14) Can you provide two reference projects in a similar climate with contactable installers? 15) What documents accompany the shipment for customs in my country? 16) Is fumigation or ISPM-compliant packing included if required? 17) What is the spare panel policy and price for future matching? 18) Who is the technical contact during install, and is remote support included? 19) What happens if coil colour shifts on a reorder — batch matching process? 20) Which payment milestones tie to drawing approval, pre-shipment photos and document delivery?`,
       }
     ],
     limitations: "Supplier evaluation is buyer responsibility — we describe common practice, not rankings of named competitors. Test report validity depends on test body and scope. Legal terms require your counsel for international contracts. Values and examples are indicative for evaluating sandwich panel suppliers planning — confirm against project drawings, local codes and supplier test reports before purchase. Contact our export team with your application details if you need a written recommendation tied to a quotation. Bank reference and trade registration check complements technical scoring on first international order. Scoring examples are illustrative — weight criteria to your project risk. We do not endorse or rank third-party suppliers on this page. Legal review of export contracts remains the buyer's responsibility. Past export success to one country does not guarantee identical customs treatment elsewhere. Request proof of insurance for cargo in transit on first large order. Factory visit or live video audit remains the strongest verification step. Retain scored evaluation worksheets with procurement files for audit trail on public-sector tenders.",
     draft: false,
     updatedAt: "2026-09-14",
-  }
+  },
+  {
+    slug: "what-affects-puf-panel-price",
+    name: "What Affects PUF Panel Price",
+    h1: "What Affects PUF Panel Price on Export Orders",
+    seoTitle: "What Affects PUF Panel Price | PHOENIXX",
+    metaDescription:
+      "What moves panel quotes — thickness, density, steel, coating, dimensions, qty, accessories, packing, freight and Incoterms. How to read a quotation line by line.",
+    relatedProducts: ["puf-panels", "pir-panels", "roofing-panels"],
+    relatedSolutions: ["cold-storage", "warehousing-logistics"],
+    relatedComparisons: ["50mm-vs-75mm-vs-100mm-puf-panels", "manufacturer-vs-trader"],
+    quickAnswer:
+      "PUF panel price moves with foam thickness and density, steel gauge and coating on both faces, custom lengths versus module widths, order quantity, accessories, export packing, freight mode and Incoterm. No single m² rate applies across projects — read the quotation line by line and match each line to your BOQ before comparing suppliers.",
+    bodySections: [
+      {
+        h2: "Core thickness and density",
+        content: `Foam volume is the largest material cost driver after steel. Stepping from 75 mm to 100 mm adds polyurethane across every square metre. Density — commonly 40 ± 2 kg/m³ on export cold room lines — affects both thermal performance and raw material use. A quote that omits density or cites "standard" without a number is hard to audit at receipt. When value-engineering, ask for alternate pricing at the next thickness down with the declared U-value shown side by side — not only the cheaper m² rate.`,
+      },
+      {
+        h2: "Steel facings and coating",
+        content: `External and internal steel thickness (0.4 mm vs 0.5 mm vs 0.6 mm) changes coil cost and stiffness. Coating system — polyester, SMP, PVDF — and substrate (PPGI vs PPGL) add premium on exposed roofs. Colour from standard RAL ranges is usually no extra; special metallics or low-volume colours may carry MOQ. Quotes should state Z mass, topcoat type and thickness per side (typical polyester 25–28 µm). If internal face is plain galvanised or lighter coating, that should appear as a separate line or note.`,
+      },
+      {
+        h2: "Dimensions, module width and waste",
+        content: `Cover width (often 1.0 m or 1.115 m module) and custom lengths drive cutting waste on the line. Non-standard lengths below MOQ may price as setup surcharges. Curved, tapered or L-cut panels cost more than rectangular wall runs. Your take-off should state module assumption — a supplier quote on 1.115 m module may look cheaper per m² than 1.0 m until you add cut waste for your grid.`,
+      },
+      {
+        h2: "Quantity, accessories and packing",
+        content: `Larger orders spread fixed setup and testing cost — but container fill matters more than m² alone on export. Accessories — flashings, ridge caps, fixings, cam-lock pins, coving — should be itemised, not buried in "misc." Export packing (edge protectors, shrink wrap, desiccant, bundle strapping) is real cost; cheap wrap shows up as rust at port. Ask whether shop drawings and panel schedule are included or billed separately.`,
+      },
+      {
+        h2: "Freight, Incoterms and destination",
+        content: `FOB, CIF and DAP shift who pays ocean freight, insurance and inland haul. Panel thickness affects how many m² fit per TEU — thick freezer walls may need more containers than a thin partition order of the same wall area. Destination port congestion and inland distance are not in the ex-works m² rate. When comparing Indian FOB to a local landed quote, build the same Incoterm stack on both sides.`,
+      },
+      {
+        h2: "How to read a quotation against your BOQ",
+        content: `Match mark numbers on the supplier schedule to your drawing grid. Confirm thickness, density, steel spec and coating on every line — not only on the cover sheet. Check whether m² is net wall area or includes waste factor. Note currency, validity date and payment milestones tied to drawing approval. Red flags: one lump sum with no schedule, U-value claim with no test report reference, or price far below market without density on the order. Request revision in writing before PO so the contract spec matches the priced schedule.`,
+      },
+      {
+        h2: "What we need to quote accurately",
+        content: `Send panel schedule or marked drawings, required thickness and temperature class, facing spec (coastal vs inland), destination port, preferred Incoterm and target delivery window. Optional: accessory list, inspection preference, colour codes. We return an itemised quotation — not a public price list — because freight and duty treatment vary by buyer and country.`,
+      },
+    ],
+    limitations: "Figures on this page explain quotation structure — we do not publish live INR or USD panel rates. Duties and inland costs are buyer-verified. Final price is valid only on the dated quotation we issue for your project. Contact our export team with drawings for a written quote.",
+    draft: false,
+    updatedAt: "2026-09-15",
+  },
+  {
+    slug: "sandwich-panel-rfq-from-india",
+    name: "Sandwich Panel RFQ from India",
+    h1: "How to Write a Sandwich Panel RFQ to an Indian Exporter",
+    seoTitle: "Sandwich Panel RFQ from India | PHOENIXX",
+    metaDescription:
+      "What to include in a sandwich panel RFQ — drawings, BOQ, temperatures, fire requirements, colour, port, Incoterm and inspection preference for export from India.",
+    relatedProducts: ["puf-panels", "cold-room-panels", "roofing-panels"],
+    relatedSolutions: ["cold-storage", "warehousing-logistics", "manufacturing-plants"],
+    relatedComparisons: ["manufacturer-vs-trader"],
+    quickAnswer:
+      "A usable RFQ includes marked drawings or a panel schedule, design temperatures, fire or hygiene requirements, steel and coating spec, colour codes, destination port, Incoterm, required delivery date and how you want inspection handled. Vague 'approx 500 m² cold room' emails get vague quotes — give dimensions, openings and thickness target so the supplier can return a schedule you can reconcile to your BOQ.",
+    bodySections: [
+      {
+        h2: "Drawings and quantity schedule",
+        content: `Attach plan and elevation sketches with door positions, ceiling height and panel direction arrows. A table of mark numbers (W1, W2, CE1) with length, width, net m² and waste allowance beats narrative description. State whether corners, floor coving and ceiling are in scope. If phased construction, split quantities by phase so production hold on Phase 2 is explicit.`,
+      },
+      {
+        h2: "Temperature, humidity and fire",
+        content: `Design setpoint and ambient design temperature drive thickness — state "+2 °C chiller" or "−25 °C freezer" clearly. Note wash-down, chemical exposure or cleanroom class if relevant. Fire requirement: reaction class only, or rated REI wall with test system reference? If unknown, say "follow local code" and name the country — supplier can flag rockwool vs foam early.`,
+      },
+      {
+        h2: "Material specification",
+        content: `Core type (PUF, PIR, rockwool), thickness per elevation, density if specified, joint system (cam-lock, tongue-and-groove, standing seam roof). Facing: PPGI or PPGL, steel thickness each side, coating system, colour RAL inside and out. Accessories: doors, windows, flashings — or state "panels only."`,
+      },
+      {
+        h2: "Commercial and logistics terms",
+        content: `Destination port and country, preferred Incoterm (FOB Mundra, CIF Dar es Salaam, etc.), target ex-works or arrival date, and currency for quote. State whether you need separate freight option or panel-only FOB. Mention if letter of credit or inspection before shipment applies — affects production hold points.`,
+      },
+      {
+        h2: "Inspection and documentation preference",
+        content: `Request test report IDs, shop drawing approval before production, pre-shipment photos or third-party inspection contact. List documents needed for customs — commercial invoice detail, packing list format, certificate of origin, fumigation if wooden packing. First-time importers should ask what delayed clearance on the supplier's last shipment to your country.`,
+      },
+      {
+        h2: "RFQ template checklist",
+        content: `1) Project name and site address 2) Panel schedule or drawing PDF 3) Temperatures and fire note 4) Core, thickness, joint 5) Facing and colour 6) Accessories scope 7) Port and Incoterm 8) Delivery target 9) Inspection preference 10) Contact for technical queries. One email with attachments reduces back-and-forth. We respond with schedule questions if anything is missing — incomplete RFQs delay quote validity.`,
+      },
+      {
+        h2: "After you receive quotations",
+        content: `Compare schedules line by line, not cover letter adjectives. Confirm same thickness, density and coating before comparing m² rate. Ask for packing photos from a recent similar export. See our guide on evaluating suppliers before final award.`,
+      },
+    ],
+    limitations: "RFQ guidance is general — your consultant may require additional submittals for rated systems or bank finance. We quote from complete RFQs; incomplete specs may carry assumptions stated in writing on the quotation. Legal and customs advice remains with your advisers.",
+    draft: false,
+    updatedAt: "2026-09-15",
+  },
+  {
+    slug: "landed-cost-of-imported-puf-panels",
+    name: "Landed Cost of Imported PUF Panels",
+    h1: "Landed Cost of Imported PUF Panels — Calculation Method",
+    seoTitle: "Landed Cost Imported PUF Panels | PHOENIXX",
+    metaDescription:
+      "Build landed cost for imported sandwich panels — ex-works, ocean freight, insurance, duty, inland haul and install. Buyer verifies duty; no invented tariff rates.",
+    relatedProducts: ["puf-panels", "roofing-panels", "wall-panels"],
+    relatedSolutions: ["cold-storage", "warehousing-logistics"],
+    relatedComparisons: ["manufacturer-vs-trader"],
+    quickAnswer:
+      "Landed cost = ex-works panel price + export packing + ocean freight + marine insurance + import duty and taxes (you verify with customs broker) + port handling + inland transport to site + unloading + install labour. Compare suppliers only after the same Incoterm boundary — FOB ex-works vs CIF port are not comparable without filling in the missing legs.",
+    bodySections: [
+      {
+        h2: "Start from ex-works and packing",
+        content: `The supplier quotation should itemise panels, accessories and export packing. Confirm whether shop drawings and documentation are included. Ex-works price excludes freight — that is correct for FOB comparisons. Note currency and validity; FX movement between quote and shipment affects landed cost on USD-invoiced orders paid in local currency.`,
+      },
+      {
+        h2: "Ocean freight and insurance",
+        content: `Freight depends on container count, not m² alone — thick panels fill fewer square metres per TEU. Request loading plan or estimated containers with the quote. Marine insurance is usually a small percent of cargo value on CIF; on FOB the buyer arranges cover from port of loading. Heavy bundles need correct weight declaration for vessel stowage.`,
+      },
+      {
+        h2: "Import duty and taxes — buyer verifies",
+        content: `Duty rate and VAT depend on HS classification, origin, trade agreements and local law — we do not publish duty percentages on this site because they change and vary by destination. Your customs broker classifies the shipment and calculates duty on CIF or declared value per local rules. Ask broker early whether panels and accessories classify together or split. Misclassification delays clearance and adds storage cost at port.`,
+      },
+      {
+        h2: "Port handling and inland haul",
+        content: `Terminal handling, documentation fees, demurrage if clearance slips, and inland truck or rail to site add to landed cost. Oversize or overweight bundles may need special permits on inland roads. Plan unloading equipment — container unload at site vs port strip and reload affects cost and damage risk.`,
+      },
+      {
+        h2: "Installation and ancillary site cost",
+        content: `Landed cost for project finance often includes install labour, cranes, fixings not in panel scope, and vapor seal consumables. Imported kits save little if local install crew is untrained on cam-lock — budget supervisor or supplier remote support. Spare panels for damage should sit in capex, not opex surprise.`,
+      },
+      {
+        h2: "Worked comparison structure (no fake numbers)",
+        content: `Build a spreadsheet with columns: Line item | Supplier A FOB | Supplier B FOB | Freight | Insurance | Duty (broker input) | Inland | Install. Fill duty only after broker advice. Sensitivity tab: +10% FX, +1 container freight, 5 days demurrage. Winner on FOB alone may lose on extra containers if thickness differs. This method beats dividing total project cost by m² from memory.`,
+      },
+      {
+        h2: "Common gaps that distort comparison",
+        content: `Missing accessories in FOB quote, different Incoterms, unstated waste factor on m², no packing standard, trader margin hidden in "CIF lump sum," and duty estimated from outdated blog posts. Fix each before board approval.`,
+      },
+    ],
+    limitations: "We supply FOB or agreed Incoterm quotations — we do not calculate your local duty or inland haul. Duty rates and tax law are jurisdiction-specific and change; verify with a licensed customs broker before budget lock. Examples here are methodological, not financial guarantees.",
+    draft: false,
+    updatedAt: "2026-09-15",
+  },
+  {
+    slug: "fm-approval-and-sandwich-panels",
+    name: "FM Approval and Sandwich Panels",
+    h1: "FM Approval and Sandwich Panels — What Buyers Should Know",
+    seoTitle: "FM Approval and Sandwich Panels | PHOENIXX",
+    metaDescription:
+      "What FM Approvals means for sandwich panels, FM vs non-FM listings, and a buyer checklist. No FM Approved claim here without a published certificate.",
+    relatedProducts: ["puf-panels", "rockwool-panels", "fire-rated-panels"],
+    relatedSolutions: ["data-centres", "warehousing-logistics"],
+    relatedComparisons: ["pir-vs-rockwool-panels", "puf-vs-pir-vs-rockwool"],
+    quickAnswer:
+      "FM Approvals (FM Global) is a commercial testing and certification scheme insurers and some multinationals reference for building materials including sandwich panels. FM-listed assemblies are tested as systems — panel, joint, fixing and structure — not a generic core badge. PHOENIXX SMARTBUILD does not claim FM Approved panels on this site unless a verified certificate is published for the exact product you are buying — ask for current listing documents on enquiry.",
+    bodySections: [
+      {
+        h2: "What FM Approvals means",
+        content: `FM Global tests products and publishes approval guides used by insurers and risk engineers. An FM Approved sandwich panel assembly has a report number, scope (wall/roof, max span, joint detail) and maintenance conditions. It is not the same as EN 13501 reaction class or a local fire REI rating — though projects may need both FM insurer sign-off and statutory code compliance.`,
+      },
+      {
+        h2: "FM vs non-FM panels in practice",
+        content: `Non-FM panels with valid EN or local fire tests may be fully code-compliant in your country while not appearing in FM guides. FM is often requested on multinational logistics, data centre and pharma projects where the insurer names FM in the questionnaire. Using non-FM panels where FM is mandated can block insurance or commissioning — clarify with broker before spec freeze.`,
+      },
+      {
+        h2: "PHOENIXX position on FM claims",
+        content: `We do not state FM Approved status on this website unless a verified FM certificate for the listed build-up is published and current. Marketing language like "FM quality" without a report number is useless at audit. On enquiry we disclose what test reports and listings apply to the panels we produce for your destination and spec — and what does not.`,
+      },
+      {
+        h2: "Buyer checklist before specifying FM",
+        content: `1) Confirm insurer or owner mandate in writing — FM number required or "FM equivalent"? 2) Request full FM approval document, not brochure icon. 3) Match panel thickness, joint and fixing to approved detail exactly. 4) Confirm approval valid in project country or needs local engineer letter. 5) Plan inspection of joint detail during install — FM system fails in field if detail drifts. 6) Archive report in O&M manual for renewals.`,
+      },
+      {
+        h2: "Alternatives when FM is not available",
+        content: `Many African and Gulf industrial sheds use rockwool or tested foam systems under local fire codes without FM listing. Route: statutory approval path with local fire engineer, LPCB or EN test reports where accepted, and insurer equivalency review. Start early — swapping to FM-listed rockwool late doubles lead time.`,
+      },
+      {
+        h2: "Documentation to request from any supplier",
+        content: `Full test or approval report with scope limits, compatible fixings list, installer constraints, and date. Cross-check report thickness and facing against your PO. If supplier cannot produce document, treat as non-FM regardless of sales language.`,
+      },
+      {
+        h2: "Coordination with PEB and penetrations",
+        content: `FM assemblies include structure interaction — purlin spacing, clip type, penetration seals. MEP trades must use listed fire stop kits. Changing screw spacing "for speed" voids listing even if panel SKU matches.`,
+      },
+    ],
+    limitations: "This page is educational — not FM Global guidance. FM listing status changes; verify on approval documents at order time. PHOENIXX SMARTBUILD does not claim FM Approved panels on this site unless a verified certificate is published for that product. Statutory fire code in your jurisdiction may differ from insurer FM requirements — engage both fire engineer and broker.",
+    draft: false,
+    updatedAt: "2026-09-15",
+  },
+  {
+    slug: "custom-sandwich-panels-from-india",
+    name: "Custom Sandwich Panels from India",
+    h1: "Custom Sandwich Panels from India — Thickness, Length, Colour, Drawings",
+    seoTitle: "Custom Sandwich Panels from India | PHOENIXX",
+    metaDescription:
+      "Order custom thickness, length, colour and accessories on sandwich panels from India — shop drawings, RFQ inputs and honest notes on installation responsibility.",
+    relatedProducts: ["puf-panels", "pir-panels", "cold-room-panels"],
+    relatedSolutions: ["cold-storage", "manufacturing-plants"],
+    relatedComparisons: ["50mm-vs-75mm-vs-100mm-puf-panels"],
+    quickAnswer:
+      "Custom panels mean non-catalogue thickness, length, colour, joint detail or accessory integration — produced after shop drawing approval. Send grid dimensions, openings, temperature class and facing spec; we return a marked schedule for sign-off before lamination. Installation is usually by your local contractor unless agreed separately — we supply panels and documentation, not site labour by default on export orders.",
+    bodySections: [
+      {
+        h2: "What can be customised",
+        content: `Thickness across PUF, PIR and rockwool lines, panel length up to transport and container limits, asymmetric steel thickness (heavier external face), colour on standard RAL ranges, cam-lock vs fixed joint systems, and factory cut-outs for doors and pipes when shown on approved drawings. Curved or tapered panels need explicit feasibility review.`,
+      },
+      {
+        h2: "Shop drawing workflow",
+        content: `You send layout PDF or CAD; we return panel schedule with mark numbers, lengths, quantities and edge details. Production hold until written approval — email sign-off with revision letter. Changes after approval may reset lead time and scrap partially cut stock. For PEB projects, coordinate purlin spacing with panel span table before approving schedule.`,
+      },
+      {
+        h2: "Information we need on first enquiry",
+        content: `Room or wall dimensions, design temperature, core type and target thickness, facing spec (coastal roof vs internal wall), door and window locations, accessory list, destination port, Incoterm and delivery target. Photos of existing structure help retrofit jobs. Missing vapour seal or floor detail on cold rooms should be flagged early.`,
+      },
+      {
+        h2: "Accessories and factory integration",
+        content: `Flashings, ridge caps, corner panels, coving, cam-lock hardware and fixings can ship in the same container when listed on the PO. Doors and refrigeration plant are usually separate contracts — provide rough opening sizes on drawings so panel cuts align. Mixed suppliers need interface detail at door jamb.`,
+      },
+      {
+        h2: "Export packing for custom lengths",
+        content: `Long panels may dictate container type or angle-racked loading. Custom lengths above standard module may reduce m² per TEU — freight estimate should refresh after schedule approval. Edge protection and bundle labelling by mark number speeds site unload.`,
+      },
+      {
+        h2: "Installation responsibility",
+        content: `Export terms typically supply panels ex-works or FOB — installation by buyer's erector, local PEB contractor or cold room specialist. We can advise sequence and review install photos; on-site supervision is a separate scope if agreed. Untrained crews on cam-lock freezers cause callbacks unrelated to panel quality — budget training or supervisor.`,
+      },
+      {
+        h2: "Lead time expectations",
+        content: `Custom colour coil, non-standard thickness or large rockwool fire walls extend lead time versus stock 100 mm PUF. Confirm production window after drawing approval, not at RFQ alone. Sea freight adds weeks after ex-works — plan backward from commissioning date.`,
+      },
+    ],
+    limitations: "Custom feasibility limits apply to transport, line capability and minimum order size — we state constraints on quotation. Installation, structural design and refrigeration are buyer or consultant scope unless explicitly contracted. Colours and thickness subject to coil availability at order date.",
+    draft: false,
+    updatedAt: "2026-09-15",
+  },
+  {
+    slug: "peb-warehouse-with-puf-panels",
+    name: "PEB Warehouse with PUF Panels",
+    h1: "PEB Warehouse with PUF Panels — Coordination Guide",
+    seoTitle: "PEB Warehouse with PUF Panels | PHOENIXX",
+    metaDescription:
+      "Coordinate pre-engineered steel buildings with PUF roof and wall panels — roofing system, quote inputs and export packaging for warehouse projects from India.",
+    relatedProducts: ["peb-prefabricated-buildings", "puf-panels", "roofing-panels"],
+    relatedSolutions: ["warehousing-logistics", "manufacturing-plants"],
+    relatedComparisons: ["peb-vs-rcc", "panel-roof-vs-conventional-roof"],
+    quickAnswer:
+      "A PEB warehouse with PUF panels needs the steel frame designed for panel loads, purlin spacing matched to roof panel span tables, and wall girts aligned to wall module width. Quote inputs: span, eave height, bay spacing, design wind, insulation target, port and whether steel and panels ship together. Export packages often containerise steel and panels in coordinated sequences for site erection.",
+    bodySections: [
+      {
+        h2: "Why PEB and panels should be designed together",
+        content: `Purlin and girt spacing follows panel span and fixing pattern — not the other way around. If steel is already fabricated at 1.5 m purlin centres but roof panels span 1.2 m economically, you add extra fixings or change panels. Single source or early coordination between frame designer and panel supplier avoids rework. Thermal movement on long roof runs needs joint type matched to bay length.`,
+      },
+      {
+        h2: "Roofing system selection",
+        content: `Trapezoidal insulated roof panels with concealed fixings are standard on logistics sheds. Thickness follows insulation target — ambient warehouse may use 50–80 mm; conditioned storage needs more. PPGL facing on coastal sites. Gutters, ridge and eave flashings should appear on panel schedule, not only steel GA drawing.`,
+      },
+      {
+        h2: "Wall panels and doors",
+        content: `Wall PUF thickness may differ from roof. Door openings need framed openings or factory cuts — coordinate overhead door supplier weight with steel frame. Canopy and dock leveller details affect first panel row height. Colour: external corporate, internal white is common export spec.`,
+      },
+      {
+        h2: "Information needed for a combined quote",
+        content: `Building footprint, span, eave and ridge height, bay spacing, collateral loads (MEP, solar if any), wind and seismic zone, insulation U-value target or thickness, door count and sizes, destination port, Incoterm, and whether crane exists on site for erection. Soil report is for foundation — separate from panel scope but affects programme.`,
+      },
+      {
+        h2: "Export packaging and shipment sequence",
+        content: `Primary steel, secondary purlins/girts, panels and fixings may ship in multiple containers — erection sequence document tells site which container to open first. Panels need moisture protection; steel needs pack separation to avoid coil edge damage against panel bundles. Mark bundles by bay where possible.`,
+      },
+      {
+        h2: "Erection sequence on site",
+        content: `Typical flow: foundations → primary steel → secondary → roof panels → wall panels → flashings → doors. Standing seam or concealed-fix roofs need qualified crew. Do not load roof panels before purlins are aligned — torsion from misaligned steel damages panel shoulders.`,
+      },
+      {
+        h2: "When to split vendors",
+        content: `Splitting PEB steel and panels between vendors works if span tables and interface details are exchanged before steel order. Risk rises — use one exporter or a documented coordination clause. Mixed Incoterms complicate damage claims at port.`,
+      },
+    ],
+    limitations: "Structural design and local building approval remain with qualified engineers in the project country. We coordinate panel-ready steel when scope includes both; split-supply projects need explicit interface drawings. Erection labour and equipment are site scope unless contracted separately.",
+    draft: false,
+    updatedAt: "2026-09-15",
+  },
+  {
+    slug: "sandwich-panel-buyers-guide",
+    name: "Sandwich Panel Buyer's Guide",
+    h1: "Sandwich Panel Buyer's Guide — Selection, RFQ, Export and Verification",
+    seoTitle: "Sandwich Panel Buyer's Guide | PHOENIXX",
+    metaDescription:
+      "Consolidated buyer guide for PUF, PIR, rockwool, roof and wall panels — core selection, RFQ, export logistics, landed cost and supplier verification in one place.",
+    relatedProducts: ["puf-panels", "pir-panels", "rockwool-panels", "roofing-panels", "cold-room-panels"],
+    relatedSolutions: ["cold-storage", "warehousing-logistics", "food-processing", "manufacturing-plants"],
+    relatedComparisons: ["puf-vs-pir-vs-rockwool", "manufacturer-vs-trader", "50mm-vs-75mm-vs-100mm-puf-panels"],
+    quickAnswer:
+      "Start with temperature and fire requirement, pick core (PUF, PIR or rockwool), thickness from U-value target, facing for environment (PPGI inland, PPGL coastal roof), joint system for use (cam-lock cold room vs clip-fixed wall), then issue RFQ with drawings and port. Verify supplier on test reports and packing before price. Model landed cost, not FOB alone.",
+    bodySections: [
+      {
+        h2: "Step 1 — Define the envelope job",
+        content: `Cold store, ambient warehouse, processing hall or fire-rated partition? Design temperature, hygiene, fire rating and whether the room relocates drive core and joint choice. Write one paragraph scope before contacting suppliers — reduces wrong product quotes.`,
+      },
+      {
+        h2: "Step 2 — Choose core and thickness",
+        content: `PUF for standard cold storage economics. PIR when thinner wall for same U-value. Rockwool when non-combustible or rated wall is mandatory. Map thickness using consultant U-value target — see cold storage thickness and U-value guides. Do not copy a neighbour's 80 mm spec if your setpoint differs.`,
+      },
+      {
+        h2: "Step 3 — Roof vs wall facing",
+        content: `Roofs see UV and rain — PPGL and higher-tier topcoat on coastal exports. Walls inland often use PPGI polyester both sides. State external and internal environment on RFQ. Colour and steel gauge affect price and lead time.`,
+      },
+      {
+        h2: "Step 4 — Issue a complete RFQ",
+        content: `Drawings, BOQ, temperatures, fire note, core, thickness, joint, facing, port, Incoterm, delivery date, inspection preference. Use our RFQ-from-India guide as template. Incomplete RFQs get assumption-heavy quotes.`,
+      },
+      {
+        h2: "Step 5 — Evaluate suppliers",
+        content: `Score on test reports, export packing evidence, shop drawing process and references — before final m² price. Manufacturer vs trader trade-offs matter on first import. Twenty-question checklist in supplier evaluation guide.`,
+      },
+      {
+        h2: "Step 6 — Landed cost and contract",
+        content: `Build freight, insurance, broker-calculated duty, inland and install. Match Incoterms. Contract exhibits: spec, schedule, test report IDs, damage replacement, drawing approval hold. See landed cost guide.`,
+      },
+      {
+        h2: "Step 7 — Receipt, install and records",
+        content: `Count bundles before unload. Measure random panel lengths. Photo vapor seal and joints before close-in. Keep batch labels and test report PDF with O&M file. Install sequence matters on cam-lock freezers.`,
+      },
+      {
+        h2: "Where PHOENIXX SMARTBUILD fits",
+        content: `We manufacture and export PUF, PIR, rockwool, roof and cold room panels factory-direct from India with shop drawings and export packing documentation. Send RFQ for itemised quotation — we do not publish live price lists or unverified FM claims on site.`,
+      },
+    ],
+    limitations: "This guide consolidates practice — it does not replace project engineers, refrigeration designers or customs brokers. Regulations vary by country. Product pages carry family-specific detail; verify test reports on your order.",
+    draft: false,
+    updatedAt: "2026-09-15",
+  },
+  {
+    slug: "mistakes-importing-sandwich-panels-from-india",
+    name: "Mistakes Importing Sandwich Panels from India",
+    h1: "Ten Mistakes When Importing Sandwich Panels from India",
+    seoTitle: "Importing Sandwich Panels Mistakes | PHOENIXX",
+    metaDescription:
+      "Ten import mistakes from India — documents, packing, thickness guesses, trader confusion, Incoterms, inspection, colour, joints, lead time and landed cost.",
+    relatedProducts: ["puf-panels", "cold-room-panels", "roofing-panels"],
+    relatedSolutions: ["cold-storage", "warehousing-logistics"],
+    relatedComparisons: ["manufacturer-vs-trader"],
+    quickAnswer:
+      "Repeat failures on first import: incomplete customs documents, thin export wrap, thickness chosen without load calc, buying from an undisclosed trader, comparing FOB to CIF, skipping pre-shipment inspection, non-standard colour without coil lead time, wrong joint for freezer vapour, unrealistic delivery date, and landed cost built from guessed duty rates.",
+    bodySections: [
+      {
+        h2: "1 — Shipping without complete documentation",
+        content: `Commercial invoice, packing list, certificate of origin and coating description must match HS classification your broker expects. Typos on colour or thickness hold containers. Ask supplier for document checklist used on last shipment to your port.`,
+      },
+      {
+        h2: "2 — Accepting weak export packing",
+        content: `Bare strapping and thin film lead to edge rust and facing dents at humid ports. Specify edge protectors, shrink wrap and desiccant. Photograph packing standard in contract. Damage at port with poor wrap is disputed for weeks.`,
+      },
+      {
+        h2: "3 — Guessing thickness from a brochure",
+        content: `100 mm on a flyer is not your freezer spec until load calc and local code agree. Under-thickness saves FOB, loses on kWh and condensation. Put declared U-value and thickness on PO after consultant sign-off.`,
+      },
+      {
+        h2: "4 — Trader confusion about who made the panels",
+        content: `Low FOB from undisclosed mill with no test report match fails audit and spare panel match later. Insist on mill name, report scope and packing accountability before advance payment.`,
+      },
+      {
+        h2: "5 — Comparing Incoterms incorrectly",
+        content: `FOB India vs local supplier CIF delivered is not one number. Build same cost stack or you award on false economy. Freight and duty belong in the model — see landed cost guide.`,
+      },
+      {
+        h2: "6 — Skipping inspection when you needed it",
+        content: `First large order without drawing approval hold or pre-shipment count risks wrong lengths and short shipment. Third-party inspection cost is small versus container of misfab panels.`,
+      },
+      {
+        h2: "7 — Non-standard colour without lead time",
+        content: `Special RAL may need coil order — adds weeks. If programme is fixed, pick from mill stock colours on RFQ. Colour mismatch on replacement panels years later if coil changed — note coil batch on PO.`,
+      },
+      {
+        h2: "8 — Wrong joint for application",
+        content: `Clip-fixed warehouse wall joint detail on a −25 °C cam-lock freezer without vapor strategy fails. Joint type belongs in RFQ and contract, not site improvisation.`,
+      },
+      {
+        h2: "9 — Ignoring realistic lead time",
+        content: `Production after drawing approval plus ocean transit plus clearance — often 10–14 weeks minimum on custom export. "Six weeks total" promises without schedule review break commissioning. Plan backward from pull-down date.`,
+      },
+      {
+        h2: "10 — Landed cost from invented duty rates",
+        content: `Blog-post duty percentages go stale and vary by classification. Broker input required. Budget demurrage if clearance documents were mistake 1. Finance approval on FOB alone underfunds project.`,
+      },
+    ],
+    limitations: "List is experience-based, not exhaustive. Local law and port practice vary. We help buyers avoid these on factory-direct orders with documented process — your broker and engineer remain essential.",
+    draft: false,
+    updatedAt: "2026-09-15",
+  },
 ];

@@ -67,7 +67,7 @@ All URLs use lowercase hyphenated slugs and a trailing slash (`trailingSlash: tr
 | URL | Status | Notes |
 | --- | --- | --- |
 | `/export/` | phase-3 live | Full hub — QuickAnswer, support links, country list, FAQ |
-| `/export/africa/` | phase-1 shell | Regional overview |
+| `/export/africa/` | prompt-5 live | Regional climate bands, ports, country grid |
 | `/export/process/` | phase-3 live | ProcessTimeline enquiry → installation |
 | `/export/documentation/` | phase-3 live | Commercial docs; agent caveat |
 | `/export/packaging-and-container-loading/` | phase-3 live | Bundles, 20/40/40HC, stock images |
@@ -85,7 +85,9 @@ All URLs use lowercase hyphenated slugs and a trailing slash (`trailingSlash: tr
 | `/export/angola/` | phase-3 live | Full country template — Luanda port, Portuguese docs caveat |
 | `/export/ethiopia/` | phase-3 live | Full country template — landlocked via Djibouti corridor |
 | `/export/nigeria/` | phase-3 live | Full country template — Lagos Apapa/Tin Can, coastal/inland specs |
-| `/export/south-africa/` | phase-1 shell | |
+| `/export/south-africa/` | prompt-5 live | Durban / Cape Town / Gqeberha; Highveld vs KZN vs Cape |
+| `/export/uae/` | prompt-5 live | Jebel Ali / Khalifa; heat UV warehouse + cold chain |
+| `/export/saudi-arabia/` | prompt-5 live | Jeddah / Dammam / KAP; arid industrial + warehousing |
 | `/export/zimbabwe/` | phase-1 shell | |
 | `/export/mauritius/` | phase-1 shell | |
 | `/export/drc/` | phase-1 shell | |
@@ -116,21 +118,29 @@ Pattern: `/export/[country]/[city]/`
 
 | URL | Status | Notes |
 | --- | --- | --- |
-| `/resources/` | phase-1 shell | Hub noindex until expanded |
-| `/resources/guides/` | phase-3 live | Hub listing 12 live guides |
+| `/resources/` | prompt-5 live | Hub — guides, comparisons, FAQs, glossary, selection, datasheets |
+| `/resources/guides/` | phase-3 live | Hub listing live guides |
 | `/resources/guides/cold-storage-panel-thickness/` | phase-3 live | Full guide template |
 | `/resources/guides/puf-core-density-explained/` | phase-3 live | Full guide template |
-| `/resources/guides/u-values-and-running-cost/` | phase-3 live | Full guide template |
+| `/resources/guides/u-values-and-running-cost/` | phase-3 live | Full guide + R-value section (Prompt 5) |
 | `/resources/guides/fire-performance-insulated-panels/` | phase-3 live | Full guide template |
-| `/resources/guides/joint-systems-compared/` | phase-3 live | Full guide template |
+| `/resources/guides/joint-systems-compared/` | phase-3 live | Full guide + concealed vs exposed fix |
 | `/resources/guides/ppgi-coating-selection/` | phase-3 live | Full guide template |
 | `/resources/guides/roofing-panel-spans/` | phase-3 live | Full guide template |
 | `/resources/guides/condensation-vapour-control/` | phase-3 live | Full guide template |
 | `/resources/guides/cleanroom-panel-requirements/` | phase-3 live | Full guide template |
 | `/resources/guides/estimating-panel-quantity/` | phase-3 live | Full guide template |
 | `/resources/guides/installation-sequence-mistakes/` | phase-3 live | Full guide template |
-| `/resources/guides/evaluating-sandwich-panel-suppliers/` | phase-3 live | Full guide template |
-| `/resources/comparisons/` | phase-3 live | Hub — 8 live comparisons |
+| `/resources/guides/evaluating-sandwich-panel-suppliers/` | phase-3 live | Full guide + 20 questions (Prompt 5) |
+| `/resources/guides/what-affects-puf-panel-price/` | prompt-5 live | Price variables only — no invented rates |
+| `/resources/guides/sandwich-panel-rfq-from-india/` | prompt-5 live | RFQ field checklist |
+| `/resources/guides/landed-cost-of-imported-puf-panels/` | prompt-5 live | Landed-cost methodology |
+| `/resources/guides/fm-approval-and-sandwich-panels/` | prompt-5 live | Educational — no PHOENIXX FM claim |
+| `/resources/guides/custom-sandwich-panels-from-india/` | prompt-5 live | Custom length/colour/drawings |
+| `/resources/guides/peb-warehouse-with-puf-panels/` | prompt-5 live | PEB + cladding coordination |
+| `/resources/guides/sandwich-panel-buyers-guide/` | prompt-5 live | Consolidated buyer guide |
+| `/resources/guides/mistakes-importing-sandwich-panels-from-india/` | prompt-5 live | Import pitfall guide |
+| `/resources/comparisons/` | phase-3 live | Hub — live comparisons |
 | `/resources/comparisons/puf-vs-pir-panels/` | phase-3 live | Full decision table + FAQ |
 | `/resources/comparisons/pir-vs-rockwool-panels/` | phase-3 live | Thermal vs fire |
 | `/resources/comparisons/puf-vs-eps-panels/` | phase-3 live | PUF vs EPS board build-ups |
@@ -139,6 +149,10 @@ Pattern: `/export/[country]/[city]/`
 | `/resources/comparisons/puf-vs-pir-cold-storage/` | phase-3 live | Cold room core choice |
 | `/resources/comparisons/panel-roof-vs-conventional-roof/` | phase-3 live | Insulated roof vs site-built |
 | `/resources/comparisons/peb-vs-rcc/` | phase-3 live | Steel frame vs concrete |
+| `/resources/comparisons/puf-vs-pir-vs-rockwool/` | prompt-5 live | Three-way core pillar |
+| `/resources/comparisons/manufacturer-vs-trader/` | prompt-5 live | Manufacturer vs trading company |
+| `/resources/comparisons/50mm-vs-75mm-vs-100mm-puf-panels/` | prompt-5 live | Thickness band decision |
+| `/resources/comparisons/ppgi-vs-ppgl-sandwich-panels/` | prompt-5 live | Facing substrate decision |
 | `/resources/faqs/` | phase-3 live | Categorised searchable FAQs |
 | `/resources/glossary/` | phase-3 live | 56 terms with letter anchors |
 | `/resources/glossary/[slug]/` | phase-3 | Per-term pages (sitemap reserved) |

@@ -633,4 +633,393 @@ export const comparisons: ComparisonInput[] = [
     draft: false,
     updatedAt: "2026-09-14",
   },
+  {
+    slug: "puf-vs-pir-vs-rockwool",
+    name: "PUF vs PIR vs Rockwool Panels",
+    h1: "PUF vs PIR vs Rockwool — Three Core Types Compared",
+    seoTitle: "PUF vs PIR vs Rockwool Panels | PHOENIXX",
+    metaDescription:
+      "PUF, PIR and rockwool cores compared — thermal λ, fire, thickness, weight, humidity and cost for cold storage and industrial walls.",
+    productA: "puf-panels",
+    productB: "pir-panels",
+    productC: "rockwool-panels",
+    summary:
+      "PUF is the default foam core for cost-sensitive cold storage. PIR gives better λ per millimetre. Rockwool is non-combustible where fire codes exclude foam — at higher weight and thickness for the same insulation.",
+    quickAnswer:
+      "Pick PUF when budget and standard chiller or freezer temperatures drive the spec. Pick PIR when you need a thinner wall or roof for the same U-value. Pick rockwool when non-combustibility or a rated fire wall is mandatory — accept thicker panels and higher weight. None of the three replaces a complete fire-rated system without the correct joint and fixing detail.",
+    decisionTable: [
+      {
+        criterion: "Typical core λ (indicative)",
+        optionA: "0.022–0.024 W/m·K",
+        optionB: "0.019–0.022 W/m·K",
+        optionC: "0.034–0.040 W/m·K",
+      },
+      {
+        criterion: "Fire behaviour",
+        optionA: "Combustible foam — reaction class B typical",
+        optionB: "Combustible foam — often B-s1,d0",
+        optionC: "Non-combustible mineral wool — A1 core",
+      },
+      {
+        criterion: "Typical thickness for cold room (−20 °C class)",
+        optionA: "100–120 mm walls common",
+        optionB: "80–100 mm for similar U-value",
+        optionC: "120–150 mm for similar U-value",
+      },
+      {
+        criterion: "Weight tendency (100 mm class)",
+        optionA: "Lightest — ~12–14 kg/m²",
+        optionB: "Similar to PUF — ~12–14 kg/m²",
+        optionC: "Heaviest — ~18–22 kg/m²",
+      },
+      {
+        criterion: "Humidity and vapour",
+        optionA: "Closed-cell — good when envelope sealed",
+        optionB: "Closed-cell — similar vapour behaviour",
+        optionC: "Open fibre — needs vapour control on cold side",
+      },
+      {
+        criterion: "Cost tendency (same facing gauge)",
+        optionA: "Lowest foam option",
+        optionB: "Mid — premium over PUF",
+        optionC: "Highest per m² at equal U-value",
+        cheaperWins: true,
+      },
+      {
+        criterion: "Best-fit applications",
+        optionA: "Chillers, food halls, standard warehouses",
+        optionB: "Freezers, tight clearances, hot-side plant rooms",
+        optionC: "Fire walls, escape routes, data hall partitions",
+      },
+    ],
+    chooseAWhen:
+      "Choose PUF when the room temperature stays in normal cold storage bands, fire regulations allow a foam core, and panel cost per m² matters more than saving 20 mm of wall thickness. PUF is the workhorse on export cold stores, processing walls and logistics sheds across Africa and the Middle East.",
+    chooseBWhen:
+      "Choose PIR when floor area is tight, roof dead load limits purlin depth, or you want a lower U-value without stepping up to 120 mm PUF. PIR suits walk-in freezers and plant rooms where the envelope may see higher ambient or process-side temperatures than a standard chiller.",
+    chooseCWhen:
+      "Choose rockwool when the specification names non-combustibility, a fire-rated compartment wall, or insurer questionnaire answers that exclude foam cores on escape routes. Cold stores can still use PUF or PIR where local code permits — rockwool everywhere adds cost and structural load without benefit on unrated internal partitions.",
+    costNotes:
+      "At equal thickness and facing, PUF is usually the lowest ex-works panel cost, PIR sits mid-range, and rockwool is highest because the core is denser and the line runs slower. PIR may offset part of its premium by allowing a thinner panel to hit the same U-value, which can reduce freight volume. Rockwool needs more millimetres for the same U-value — compare total installed cost including frame loading, not core name alone.",
+    relatedSolutions: ["cold-storage", "warehousing-logistics", "manufacturing-plants"],
+    relatedGuides: [
+      "fire-performance-insulated-panels",
+      "cold-storage-panel-thickness",
+      "evaluating-sandwich-panel-suppliers",
+    ],
+    faqs: [
+      {
+        question: "Can I use different cores on walls and roof in one building?",
+        answer:
+          "Yes — common pattern is PIR or thicker PUF on the roof where condensation control is tighter, and PUF on walls where thickness is less critical. Rockwool on escape-route walls with PUF cold rooms behind is also normal. Document transitions on drawings so inspectors and installers see a deliberate strategy.",
+      },
+      {
+        question: "Does rockwool always mean better fire safety on a cold store?",
+        answer:
+          "Rockwool is non-combustible, but a cold store that does not require a fire-rated envelope often runs fine on PUF or PIR when detection, distance and local code allow foam cores. Fire safety is about the complete system — joints, penetrations and compartment lines — not the core name alone.",
+      },
+      {
+        question: "Which core handles coastal humidity best?",
+        answer:
+          "Facing specification matters more than core type at the coast. PPGL or heavier galvanizing with the right topcoat protects both foam and rockwool panels. Closed-cell PUF and PIR resist moisture absorption when the envelope is sealed; rockwool needs a continuous vapour barrier on the cold side in freezer applications.",
+      },
+      {
+        question: "How do I compare U-value across three cores?",
+        answer:
+          "Request declared U-values at the thickness you will buy from the same test standard and facing gauge. Do not compare a 80 mm PIR number against a 100 mm PUF brochure figure. Your refrigeration consultant should model load at the build-up you will install.",
+      },
+      {
+        question: "Is rockwool harder to install than foam panels?",
+        answer:
+          "Rockwool panels are heavier — crane capacity and fixings must match. Joint detail differs by system but trained crews handle both. Allow longer install time on long wall runs where weight slows handling.",
+      },
+      {
+        question: "Which core is most common on export orders from India?",
+        answer:
+          "PUF dominates cold storage export volume. PIR share grows on freezers and thickness-constrained roofs. Rockwool ships where fire-rated walls or insurer requirements are written into the spec before enquiry.",
+      },
+    ],
+    draft: false,
+    updatedAt: "2026-09-15",
+  },
+  {
+    slug: "manufacturer-vs-trader",
+    name: "Manufacturer vs Trading Company",
+    h1: "Sandwich Panel Manufacturer vs Trading Company — Who to Buy From",
+    seoTitle: "Panel Manufacturer vs Trader | PHOENIXX",
+    metaDescription:
+      "Sandwich panel manufacturer vs trader — factory control, drawings, packing, MOQ, price transparency and after-sales on export orders.",
+    productA: "puf-panels",
+    productB: "puf-panels",
+    optionALabel: "Manufacturer",
+    optionBLabel: "Trading company",
+    summary:
+      "Manufacturers control lamination, QC and packing on their own line. Traders aggregate stock or subcontract production — useful for small urgent fills but weaker on drawing accountability and batch traceability.",
+    quickAnswer:
+      "Buy from a manufacturer when you need shop drawings tied to production, export packing you can inspect, and a single contact for thickness, coating and test report queries. A trading company can fit a small urgent top-up or a mixed container when they hold stock — verify who owns production and who replaces damaged panels at port before you pay.",
+    decisionTable: [
+      {
+        criterion: "Factory and process control",
+        optionA: "Direct — line, QC and batch records in-house",
+        optionB: "Indirect — may source from multiple mills",
+      },
+      {
+        criterion: "Shop drawings before production",
+        optionA: "Standard on export orders — hold until approval",
+        optionB: "Varies — may rely on buyer drawings only",
+      },
+      {
+        criterion: "Packing accountability",
+        optionA: "Documented method — photos per order common",
+        optionB: "Depends on upstream mill — ask who packs",
+      },
+      {
+        criterion: "MOQ flexibility",
+        optionA: "Production MOQ — partial containers at premium",
+        optionB: "Can fill gaps from stock — small lots possible",
+      },
+      {
+        criterion: "Price transparency",
+        optionA: "Spec on invoice matches line output",
+        optionB: "Margin stacked — harder to value-engineer thickness",
+        cheaperWins: true,
+      },
+      {
+        criterion: "After-sales and replacement panels",
+        optionA: "Batch traceability — colour and thickness match",
+        optionB: "May need to re-source if stock gone",
+      },
+      {
+        criterion: "When each fits best",
+        optionA: "New cold store, PEB cladding, repeat export buyer",
+        optionB: "Urgent site fill, small repair lot, local stock check",
+      },
+    ],
+    chooseAWhen:
+      "Choose a manufacturer when the order includes custom lengths, a defined coating spec, export sea freight, or when your bank and consultant expect test reports and shop drawings from the same entity that produced the panels. First-time importers benefit from one technical contact through production, packing and documentation.",
+    chooseBWhen:
+      "A trading company can fit when you need ten panels tomorrow from local stock, a single colour match for damage replacement and the trader holds the original batch, or when your main manufacturer is on lead time and the trader sources from a mill you have already approved. Confirm mill name, test report scope and who signs the commercial invoice before treating trader price as comparable.",
+    costNotes:
+      "Trader quotes sometimes look lower on small quantities because they absorb mill MOQ across several buyers — or higher because margin and storage are included. Manufacturer pricing is clearer to audit against thickness, density and coating on the order. Compare landed cost and replacement terms, not FOB alone. A low FOB from an unclear source is expensive if panels fail thickness check at site.",
+    relatedSolutions: ["cold-storage", "warehousing-logistics"],
+    relatedGuides: ["evaluating-sandwich-panel-suppliers", "sandwich-panel-rfq-from-india"],
+    faqs: [
+      {
+        question: "How do I verify someone is a manufacturer and not only a trader?",
+        answer:
+          "Ask for a live video walk of the lamination line during your order week, QC records with your PO number, and whether the commercial invoice issuer matches the factory address on the packing list. Traders can facilitate export legitimately — the issue is undisclosed subcontracting.",
+      },
+      {
+        question: "Can a trader provide EN 14509 test reports?",
+        answer:
+          "They may forward a mill report — check that the report scope covers your thickness and that the issuing entity is the same mill producing your panels. A report dated three years ago from a different line is not proof for your batch.",
+      },
+      {
+        question: "Is after-sales support weaker through a trader?",
+        answer:
+          "Often yes, because the trader may not control spare panel production or colour matching after stock clears. Agree in writing who replaces transit-damaged panels and the lead time for matching thickness years later.",
+      },
+      {
+        question: "When is a trader the practical choice on an export project?",
+        answer:
+          "When you need a small quantity urgently to close a wall before commissioning and the primary manufacturer shipment is weeks away — provided the trader discloses mill source and packing matches your spec. Not ideal for a full cold store kit on first order.",
+      },
+      {
+        question: "Should payment terms differ for trader vs manufacturer?",
+        answer:
+          "Link final payment to documents you can verify — test report PDF, approved shop drawing, packing photos. New traders warrant smaller advance than a manufacturer you have visited or audited remotely.",
+      },
+      {
+        question: "Can PHOENIXX SMARTBUILD supply both factory-direct and through agents?",
+        answer:
+          "We produce panels at our works and export factory-direct. Regional agents may assist logistics — ask that contracts name production source and documentation issuer clearly on the order.",
+      },
+    ],
+    draft: false,
+    updatedAt: "2026-09-15",
+  },
+  {
+    slug: "50mm-vs-75mm-vs-100mm-puf-panels",
+    name: "50 vs 75 vs 100 mm PUF Panels",
+    h1: "50 mm vs 75 mm vs 100 mm PUF Panels — Thickness Compared",
+    seoTitle: "50 vs 75 vs 100 mm PUF Panels | PHOENIXX",
+    metaDescription:
+      "Compare 50, 75 and 100 mm PUF sandwich panel thickness — typical use, U-value tendency, container area per shipment, structural feel and cold-room suitability.",
+    productA: "puf-panels",
+    productB: "puf-panels",
+    productC: "puf-panels",
+    optionALabel: "50 mm PUF",
+    optionBLabel: "75 mm PUF",
+    optionCLabel: "100 mm PUF",
+    summary:
+      "50 mm suits partitions and mild temperature differences. 75 mm is a mid option for chillers. 100 mm is the common cold-room and freezer wall thickness when U-value targets sit near 0.22 W/m²·K class.",
+    quickAnswer:
+      "Use 50 mm PUF for internal partitions, ambient warehouses with minimal insulation need, or where structure limits depth. Use 75 mm when the room is chilled but not deep freezer class and you want a balance of cost and U-value. Use 100 mm for −18 °C to −25 °C freezers and export cold stores where consultants target ~0.22 W/m²·K walls — confirm with your load calculation.",
+    decisionTable: [
+      {
+        criterion: "Typical use",
+        optionA: "Partitions, +5 °C to +15 °C service rooms",
+        optionB: "Chillers +2 °C to −5 °C, light processing",
+        optionC: "Freezers −18 °C to −25 °C, export cold stores",
+      },
+      {
+        criterion: "Indicative U tendency (wall build-up)",
+        optionA: "~0.36 W/m²·K class",
+        optionB: "~0.26 W/m²·K class",
+        optionC: "~0.22 W/m²·K class",
+      },
+      {
+        criterion: "Container m² tendency (qualitative)",
+        optionA: "Most m² per TEU — thinnest bundle",
+        optionB: "Mid — fewer m² than 50 mm per container",
+        optionC: "Fewest m² per TEU — thickest core",
+      },
+      {
+        criterion: "Structural feel and handling",
+        optionA: "Lightest — easier manual handling",
+        optionB: "Mid stiffness — standard wall runs",
+        optionC: "Stiffer — plan lifting for long lengths",
+      },
+      {
+        criterion: "Cold-room suitability",
+        optionA: "Not for deep freezers — vapour and load risk",
+        optionB: "Acceptable for many chillers — verify load calc",
+        optionC: "Standard freezer export spec — consultant default",
+      },
+    ],
+    chooseAWhen:
+      "Choose 50 mm when the temperature difference across the panel is modest, the wall is internal or within a conditioned factory, or when an existing frame only accepts shallow girts. Do not specify 50 mm on a −25 °C freezer to save freight — running cost and condensation risk will exceed the panel savings.",
+    chooseBWhen:
+      "Choose 75 mm when the room operates in chiller bands, door traffic is moderate, and the consultant accepts the U-value at this thickness. Useful value-engineering step when 100 mm is over-spec for a +2 °C vegetable store.",
+    chooseCWhen:
+      "Choose 100 mm when the refrigeration spec names freezer class temperatures, export buyers want alignment with common African and Gulf cold-store norms, or when upgrading from an under-insulated legacy room. Pair with correct vapour seal and door detail — thickness alone does not fix infiltration.",
+    costNotes:
+      "Panel cost rises with thickness — roughly proportional to foam volume plus slightly heavier facings on thick cores. Freight per m² rises because fewer panels fit per container. A 100 mm order may ship fewer m² per TEU than 50 mm but save compressor kWh over five to ten years on a busy freezer — model both capex and running cost with your consultant. We quote per schedule; no fixed public price list applies across destinations.",
+    relatedSolutions: ["cold-storage", "food-processing"],
+    relatedGuides: ["cold-storage-panel-thickness", "u-values-and-running-cost"],
+    faqs: [
+      {
+        question: "Can I mix 75 mm walls with 100 mm ceiling in one cold room?",
+        answer:
+          "Yes — roofs often need equal or greater insulation than walls because of solar gain and condensation risk. State both thicknesses on the RFQ so shop drawings and container loading reflect the mix.",
+      },
+      {
+        question: "Is 50 mm ever acceptable on a freezer?",
+        answer:
+          "Rarely — only if a qualified load calculation proves adequate and local code accepts it, which is uncommon for −20 °C class rooms. Most export specs move to 100 mm or thicker for freezers.",
+      },
+      {
+        question: "How much does U-value improve from 75 mm to 100 mm?",
+        answer:
+          "Indicative step from ~0.26 to ~0.22 W/m²·K on a standard PUF wall build-up — not linear because steel facings add fixed resistance. Request declared values from the supplier test report for your order.",
+      },
+      {
+        question: "Does thicker PUF always mean stronger panels?",
+        answer:
+          "Thicker core adds stiffness but span tables still govern purlin spacing. Structural design follows manufacturer load tables — do not assume 100 mm allows wider spans without checking deflection limits.",
+      },
+      {
+        question: "Which thickness ships fastest from India?",
+        answer:
+          "50 mm and 100 mm are standard line items on most export mills. 75 mm is available but confirm lead time — some lines optimise for 50/80/100 mm modules.",
+      },
+      {
+        question: "Should I pick thickness before or after refrigeration design?",
+        answer:
+          "After envelope load is estimated. Provide room size, setpoint and ambient to your refrigeration consultant first — they will suggest minimum U-value, then you map that to 75 mm or 100 mm PUF with supplier data.",
+      },
+    ],
+    draft: false,
+    updatedAt: "2026-09-15",
+  },
+  {
+    slug: "ppgi-vs-ppgl-sandwich-panels",
+    name: "PPGI vs PPGL Facings",
+    h1: "PPGI vs PPGL Sandwich Panel Facings — Which Steel Substrate",
+    seoTitle: "PPGI vs PPGL Panel Facings | PHOENIXX",
+    metaDescription:
+      "Compare PPGI and PPGL steel facings on sandwich panels — coastal corrosion, UV exposure, typical coating systems and cost tendency for roofs and walls.",
+    productA: "roofing-panels",
+    productB: "wall-panels",
+    optionALabel: "PPGI facing",
+    optionBLabel: "PPGL facing",
+    summary:
+      "PPGI uses galvanised steel (GI). PPGL uses galvalume (Al-Zn alloy). Both are pre-painted. PPGL tends to win on coastal and high-UV roofs; PPGI is common on inland walls and standard industrial rooms.",
+    quickAnswer:
+      "Specify PPGL facings on coastal roofs, heavy-rain ports and high-UV sites where you want longer coating life before maintenance. PPGI with adequate zinc mass (Z275 typical) and 25–28 µm polyester topcoat fits many inland walls and chillers. Match topcoat system — SMP or PVDF — to environment, not only substrate.",
+    decisionTable: [
+      {
+        criterion: "Substrate",
+        optionA: "Hot-dip galvanised (GI)",
+        optionB: "Galvalume (Al-Zn alloy)",
+      },
+      {
+        criterion: "Coastal and salt-spray tendency",
+        optionA: "Good inland — edge rust risk at cuts if unprotected",
+        optionB: "Better cut-edge and coastal durability typical",
+      },
+      {
+        criterion: "UV and chalking (roof exposure)",
+        optionA: "Fine with SMP/PVDF topcoat — PE weathers faster",
+        optionB: "Often paired with SMP/PVDF on export roofs",
+      },
+      {
+        criterion: "Typical topcoat on industrial panels",
+        optionA: "25–28 µm polyester interior; SMP/PVDF on exposed roof",
+        optionB: "Same topcoat options — substrate differs",
+      },
+      {
+        criterion: "Cost tendency",
+        optionA: "Lower substrate cost — standard spec",
+        optionB: "Premium over PPGI — justified on harsh sites",
+        cheaperWins: true,
+      },
+      {
+        criterion: "Common application fit",
+        optionA: "Inland warehouses, internal faces, moderate climate walls",
+        optionB: "Coastal roofs, port logistics, high-UV industrial roofs",
+      },
+    ],
+    chooseAWhen:
+      "Choose PPGI when the building sits inland, the facing sees limited direct UV, or the wall is inside a conditioned envelope. Food and pharma internal faces often use standard polyester on Z275 GI when wash-down chemicals are compatible with the topcoat datasheet.",
+    chooseBWhen:
+      "Choose PPGL on roof panels facing open sky within 5–10 km of salt water, on sheds in tropical UV with long warranty expectations, or when the buyer's O&M plan cannot repaint at year eight. Pair with stainless or coated fixings on coastal exports.",
+    costNotes:
+      "PPGL coil carries a substrate premium over PPGI — often single-digit percent on total panel price, not double. The cost of one premature roof repaint or edge rust repair at a port warehouse exceeds that premium on most projects. Compare warranty years and topcoat system together; a cheap polyester on PPGL still chalks fast in harsh UV.",
+    relatedSolutions: ["warehousing-logistics", "food-processing"],
+    relatedGuides: ["ppgi-coating-selection"],
+    faqs: [
+      {
+        question: "Can I use PPGI outside and PPGL inside on the same panel?",
+        answer:
+          "Yes — export orders often specify different coatings per face. State external and internal environment on the RFQ so the mill paints the correct side.",
+      },
+      {
+        question: "Does PPGL remove the need for a good topcoat?",
+        answer:
+          "No — substrate and topcoat work together. PPGL with thin polyester on a coastal roof still weathers. Specify SMP or PVDF where UV and salt are severe.",
+      },
+      {
+        question: "What zinc mass should I specify with PPGI?",
+        answer:
+          "Z275 (275 g/m² total both sides) is common on export panels. Heavier zinc may help inland industrial walls — confirm availability on the order.",
+      },
+      {
+        question: "Are cut edges a problem on site?",
+        answer:
+          "Both substrates expose metal at cuts. Use factory swaged edges where possible, touch-up paint approved by the supplier, and avoid storing cut panels open to rain at port.",
+      },
+      {
+        question: "Which facing do cold room cam-lock panels use?",
+        answer:
+          "Most export cold room kits use PPGI with food-safe facing on the internal side unless the room faces a corrosive wash-down — then discuss coated or stainless options.",
+      },
+      {
+        question: "How do I document facing choice for customs?",
+        answer:
+          "Commercial invoice and packing list should state substrate (GI vs GL), coating type and colour code. Mismatch with clearance documents delays port release.",
+      },
+    ],
+    draft: false,
+    updatedAt: "2026-09-15",
+  },
 ];

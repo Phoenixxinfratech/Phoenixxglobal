@@ -2,6 +2,61 @@
 
 Additive Phase 1 touches made during later phases. Prefer extension over modification.
 
+## 2026-09-15 Prompt 5 — Content, SEO & GEO authority
+
+### Docs
+**Change:** Added `docs/PROMPT-5-AUDIT.md`, `PROMPT-5-OPPORTUNITY-MAP.md`, `PROMPT-5-CLUSTERS.md`, `PROMPT-5-BRIEFS.md`. Updated `URL-MAP.md`, `KEYWORD-MAP.md`, `AI-SEARCH-STRATEGY.md`.
+**Reason:** Prompt 5 §27 strategy deliverables before/with content ship.
+**Backwards compatible:** yes (docs)
+
+### Schema / types / UI blocks
+**Files:** `src/content/types.ts`, `src/config/site.ts`, `src/lib/schema.ts`, `src/content/index.ts`, `src/components/blocks/BuyerChecklist.tsx`, `BuyerScenarios.tsx`, product/solution/country/comparison page templates
+**Change:** Optional `buyerChecklist`, `limitations`, `buyerScenarios` on products/solutions/countries; comparison `productC` / `optionC` / label overrides / `chooseCWhen`; Organization `alternateName`; render blocks without redesign.
+**Reason:** GEO answer structure + three-way comparisons without redesign.
+**Backwards compatible:** yes — new fields optional
+
+### Hubs un-drafted
+**Files:** `src/app/resources/page.tsx`, `src/app/export/africa/page.tsx`, `src/content/pages.ts`
+**Change:** Live resources and Africa hubs (no HoldingPage); `draft: false`.
+**Reason:** Topical authority crawl paths.
+**Backwards compatible:** URLs unchanged
+
+### Export hub refresh
+**File:** `src/content/export.ts`
+**Change:** India sandwich-panel export hub framing; Africa + Gulf notes; MOQ/container/manufacturer FAQs; CTA “Request export pricing”.
+**Reason:** Phase B commercial authority on existing URL.
+**Backwards compatible:** yes
+
+### Products / solutions GEO copy
+**Files:** `src/content/products.ts`, `src/content/solutions.ts`, `src/content/company.ts`
+**Change:** Buyer checklists, limitations, scenarios; brand GLOBAL sentence on About; product comparison links to three-way.
+**Reason:** Prompt 5 product/solution depth without new URLs.
+**Backwards compatible:** yes
+
+### New comparisons (12 live)
+**File:** `src/content/comparisons.ts`
+**Change:** `puf-vs-pir-vs-rockwool`, `manufacturer-vs-trader`, `50mm-vs-75mm-vs-100mm-puf-panels`, `ppgi-vs-ppgl-sandwich-panels`.
+**Reason:** True comparison gaps only.
+**Backwards compatible:** existing pairwise URLs untouched
+
+### New + refreshed guides (20 live)
+**File:** `src/content/guides.ts`
+**Change:** Eight new guides (price factors, RFQ, landed cost, FM education, custom, PEB+PUF, buyers guide, import mistakes). Refresh: 20 questions, R-value, concealed vs exposed fix.
+**Reason:** P0/P1 authority cluster.
+**Backwards compatible:** existing guide URLs untouched
+
+### Countries
+**File:** `src/content/countries.ts`
+**Change:** South Africa published; UAE + Saudi Arabia added (publish gate passed). Zimbabwe/Mauritius/DRC remain draft shells.
+**Reason:** Africa completion + MENA P1 unique pages.
+**Backwards compatible:** yes
+
+### llms.txt
+**Files:** `src/lib/llms.ts`, `public/llms.txt`
+**Change:** Include Africa hub, resources hub, new countries/guides/comparisons.
+**Reason:** AI crawler discovery.
+**Backwards compatible:** yes
+
 ## 2026-09-15 Client contact decision
 
 ### File: `src/config/site.ts`

@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
 import {
+  BuyerChecklist,
+  BuyerScenarios,
   CtaBand,
   DownloadBlock,
   FaqAccordion,
@@ -372,7 +374,28 @@ export default async function ProductPage({ params }: PageProps) {
         <QuickAnswer heading="Quick answer" text={product.quickAnswer} />
       ) : null}
 
+      {product.buyerChecklist?.length ? (
+        <BuyerChecklist items={product.buyerChecklist} />
+      ) : null}
+
       <ProductBodySections product={product} />
+
+      {product.limitations ? (
+        <Section background="paper">
+          <Container>
+            <Heading as="h2" className="text-xl md:text-2xl">
+              Limitations and honest caveats
+            </Heading>
+            <p className="prose-body mt-4 max-w-3xl text-base text-steel">
+              {product.limitations}
+            </p>
+          </Container>
+        </Section>
+      ) : null}
+
+      {product.buyerScenarios?.length ? (
+        <BuyerScenarios scenarios={product.buyerScenarios} />
+      ) : null}
 
       {product.faqs.length > 0 ? (
         <FaqAccordion faqs={product.faqs} heading="Buyer questions on this panel type" />

@@ -80,7 +80,7 @@ export type ExportLeadTimeContent = {
 
 export const exportHubContent: ExportHubContent = {
   intro:
-    "We manufacture insulated sandwich panels, cold room kits, industrial doors and PEB cladding in Ahmedabad and ship them to buyers who need accurate packing lists, commercial documents and containers that survive a rough port unload — not marketing promises. This hub explains what we export, how an order runs from enquiry to vessel sailing, and where to read country-specific port notes.",
+    "This is PHOENIXX SMARTBUILD's India sandwich panel export hub — we manufacture PUF, PIR and Rockwool panels, cold room kits, industrial doors and PEB cladding in Ahmedabad and ship them to buyers who need accurate packing lists, commercial documents and containers that survive a rough port unload. Africa is our primary market cluster; this hub explains what we export, how an order runs from enquiry to vessel sailing, and where to read country-specific port notes.",
   keySpecs: [
     { label: "Origin", value: "Ahmedabad, Gujarat" },
     { label: "Dispatch", value: "Indian ports (confirm per shipment)" },
@@ -89,7 +89,7 @@ export const exportHubContent: ExportHubContent = {
   ],
   quickAnswer: {
     heading: "How do I import sandwich panels from India?",
-    text: "Find a manufacturer who will quote panel thickness, joint type and m² per container against your room layout — then confirm destination port, Incoterm and what documents your clearing agent needs before production starts. We manufacture in Ahmedabad, pack for ocean freight, and issue commercial invoice, packing list, bill of lading and certificate of origin as standard; you or your agent handle import declaration, duty assessment and inland haulage at the destination country. Send port name, temperature band and a layout PDF through the quotation form — we reply with a dated offer and flag missing inputs rather than guessing.",
+    text: "Start with an Indian manufacturer who quotes panel thickness, joint type and indicative m² per 40-foot HC container against your room layout — then lock destination port, Incoterm and your clearing agent's document checklist before production release. We manufacture in Ahmedabad, pack for ocean freight to African ports (and other export enquiries), and issue commercial invoice, packing list, bill of lading and certificate of origin as standard; import declaration, duty and inland haulage sit with your agent at destination. Send port name, temperature band and a layout PDF through the quotation form — we reply with a dated offer and flag missing inputs rather than guessing.",
   },
   sections: [
     {
@@ -137,8 +137,8 @@ export const exportHubContent: ExportHubContent = {
     {
       heading: "Markets we ship to",
       paragraphs: [
-        "Most export enquiries come from East and West Africa — cold storage, food processing and warehouse projects around major ports and inland industrial corridors. Kenya has the most complete country page on this site, with Mombasa port and documentation notes written for real import workflows. Other country pages are being expanded with port names and agent checklists — links below include live and in-progress routes.",
-        "We do not maintain warehouses or sales offices outside India. Every shipment is ex-factory Ahmedabad through Indian ports (e.g. Mundra / Nhava Sheva as typical West Coast options — confirm per shipment). Inland delivery in your country is arranged by your agent or haulier after clearance.",
+        "Most export enquiries come from East and West Africa — cold storage, food processing and warehouse projects around Mombasa, Dar es Salaam, Tema, Lagos and Durban corridors. Kenya has the most complete country page on this site, with Mombasa port and documentation notes written for real import workflows. Other African country pages expand as we publish unique logistics notes — links below include live and in-progress routes.",
+        "Enquiries also come from Gulf destinations on cold chain and industrial projects. We do not maintain country pages for every Gulf port yet — country pages expand as we publish unique logistics notes rather than duplicate generic copy. We do not maintain warehouses or sales offices outside India. Every shipment is ex-factory Ahmedabad through Indian ports (e.g. Mundra / Nhava Sheva as typical West Coast options — confirm per shipment). Inland delivery in your country is arranged by your agent or haulier after clearance.",
       ],
     },
   ],
@@ -171,7 +171,7 @@ export const exportHubContent: ExportHubContent = {
     {
       label: "Export to Africa overview",
       href: "/export/africa/",
-      description: "Regional context — expanding",
+      description: "Climate bands, port corridors and country page links",
     },
   ],
   faqs: [
@@ -205,6 +205,21 @@ export const exportHubContent: ExportHubContent = {
       answer:
         "Read the Kenya export page for Mombasa port context and documentation notes, then send your layout with target temperatures. That page is written for buyers who already have a clearing agent — if you do not, appoint one before production release.",
     },
+    {
+      question: "Why does m² per container vary so much between quotations?",
+      answer:
+        "Thickness, profile, longest panel length and accessory mix all change stack geometry. A 100 mm wall profile loads differently from a 150 mm roof sheet or a crate of doors nested between bundles. Your proforma states indicative m² at your spec — do not copy another project's container count.",
+    },
+    {
+      question: "How do I verify I am dealing with a manufacturer, not a trader?",
+      answer:
+        "Ask for factory address, production lead time tied to drawing approval, m² per container at your thickness, and sample packing photos from a recent dispatch. Traders often quote headline m² price without joint type, document list or load count. Plant visits in Ahmedabad can be arranged before first order.",
+    },
+    {
+      question: "Do you ship sandwich panels to the UAE or Saudi Arabia?",
+      answer:
+        "Yes — we manufacture in Ahmedabad and ship to Gulf ports such as Jebel Ali or Jeddah / Dammam on a made-to-order basis. Read the UAE and Saudi Arabia country pages for climate, packing and agent notes, then send port, Incoterm and layout for a dated quotation.",
+    },
   ],
   heroImage: {
     src: "/images/hero/hero-export-containers.jpg",
@@ -214,7 +229,7 @@ export const exportHubContent: ExportHubContent = {
     caption: STOCK_CAPTION,
     isStock: true,
   },
-  ctaHeading: "Send port, Incoterm and layout for a dated quotation",
+  ctaHeading: "Request export pricing — port, Incoterm and layout",
   ctaCopy:
     "Attach room dimensions and temperature targets. We reply with panel schedule, indicative container load and export pricing — with missing inputs flagged, not filled with guesses.",
 };
@@ -402,7 +417,7 @@ export const exportDocumentationContent: ExportDocumentationContent = {
 
 export const exportPackagingContent: ExportPackagingContent = {
   intro:
-    "Panels that survive Ahmedabad QC can still arrive with crushed edges if the bundle was packed for a smooth factory floor and unloaded with a fork lift at a congested port. This page covers how we build export bundles, how container type follows panel length, and the damage modes we design against.",
+    "How many panels fit in a container depends on thickness, profile and longest length — your proforma carries the number, not a generic table. Panels that survive Ahmedabad QC can still arrive with crushed edges if the bundle was packed for a smooth factory floor and unloaded with a fork lift at a congested port. This page covers how we build export bundles, how container type follows panel length, and the damage modes we design against.",
   bundleSection: {
     heading: "Bundle construction",
     paragraphs: [
@@ -483,7 +498,7 @@ export const exportPackagingContent: ExportPackagingContent = {
     {
       question: "How many m² fit in a 40-foot HC?",
       answer:
-        "Depends on thickness, profile and length — typically higher m² for thin wall panels, lower for thick roof panels. Your quotation states indicative m² at your spec. Do not use another project's load count.",
+        "Depends on thickness, profile and length — thin 50–80 mm wall panels often pack more m² than 120–150 mm freezer roofs or mixed crates with doors. Accessory-heavy kits reduce panel m² in the same box. Your quotation states indicative m² at your spec. Do not use another project's load count.",
     },
     {
       question: "Can panels overhang a container?",

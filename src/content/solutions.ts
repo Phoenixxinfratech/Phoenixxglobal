@@ -121,6 +121,15 @@ export const solutions: Solution[] = [
           "The door frame is a steel bridge through the insulation line. Without thermal break gaskets and a correctly detailed jamb profile, the frame stays warmer than the panel field and condenses first. We supply jamb kits matched to your wall thickness.",
       },
     ],
+    buyerChecklist: [
+      "Define coldest room temperature and ambient design peak before fixing thickness",
+      "Send door count, size and daily cycle frequency — door losses often force a step up",
+      "Confirm whether refrigeration plant is in scope elsewhere — we supply envelope only",
+      "Specify cam-lock modular versus fixed wall build-up per room",
+      "Name destination port and Incoterm for export kit planning",
+    ],
+    limitations:
+      "Condensation at joints and door frames causes more field issues than wrong foam density alone. We do not supply compressors, evaporators or site erection labour as part of a panel order.",
     images: [
       {
         src: "/images/solutions/cold-storage-exterior-hvac.jpg",
@@ -132,7 +141,7 @@ export const solutions: Solution[] = [
       },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     slug: "food-processing",
@@ -252,6 +261,15 @@ export const solutions: Solution[] = [
           "Your hygiene consultant and local food authority — we supply material declarations and facing specifications; you verify them against your HACCP plan and local rules.",
       },
     ],
+    buyerChecklist: [
+      "Map hygiene zones — raw, clean and washdown areas need different facing and joint detail",
+      "Send HACCP or consultant notes on washable surfaces and coving requirements",
+      "List cold dock and chill room temperatures separately from ambient processing halls",
+      "Confirm fire boundaries between plant and storage with local authority if required",
+      "Name destination port for export scheduling",
+    ],
+    limitations:
+      "HACCP and local food safety approval sit with your consultant — we supply material declarations and panel specs, not regulatory sign-off. Washdown joints fail audits when exposed fixings trap residue.",
     images: [
       {
         src: "/images/hero/hero-manufacturing-panels.jpg",
@@ -263,7 +281,7 @@ export const solutions: Solution[] = [
       },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     slug: "pharmaceutical-cleanroom",
@@ -383,6 +401,15 @@ export const solutions: Solution[] = [
           "Yes — send existing wall dimensions and services layout. Retrofits need careful penetration planning; factory-cut openings reduce validation risk versus site cutting.",
       },
     ],
+    buyerChecklist: [
+      "Send room matrix with ISO or GMP class, setpoints and pressure cascade per room",
+      "List cold chain zones (+2 to +8 °C or lower) separately from classified production areas",
+      "Confirm validation documentation needs — joint diagrams and material declarations only",
+      "State fire compartment lines between production and warehouse if known",
+      "Name destination port and phased delivery requirements if site sequence demands it",
+    ],
+    limitations:
+      "IQ/OQ/PQ execution is your validator's scope — we do not sign validation protocols. ISO class is a system outcome; panels alone do not certify the room.",
     images: [
       {
         src: "/images/products/metal-cladding-exterior.jpg",
@@ -394,7 +421,7 @@ export const solutions: Solution[] = [
       },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     slug: "warehousing-logistics",
@@ -514,6 +541,16 @@ export const solutions: Solution[] = [
           "Rules vary — some jurisdictions require non-combustible cladding on fire boundaries. Verify with your local building authority; we supply mineral wool fire-rated walls where specified.",
       },
     ],
+    buyerChecklist: [
+      "Send plan dimensions, eave height, bay width and roof slope — not total m² alone",
+      "State whether PEB steel is in scope or cladding-only on existing frame",
+      "Confirm ambient versus chilled zones inside the shed",
+      "Verify local fire rules for foam-cored panels on boundary walls",
+      "Align steel and panel dispatch dates to site erection programme",
+      "Name destination port for container load estimates",
+    ],
+    limitations:
+      "Structural design submission to local engineer is buyer scope unless agreed otherwise. Roof endlap leaks in monsoon usually trace to fixings or missing closure strips, not panel thickness alone.",
     images: [
       {
         src: "/images/solutions/warehouse-interior.jpg",
@@ -525,7 +562,7 @@ export const solutions: Solution[] = [
       },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     slug: "dairy",
@@ -628,6 +665,15 @@ export const solutions: Solution[] = [
           "Milk does not touch walls in a properly designed store — but washdown zones may specify food-grade facing per your consultant. State the requirement on enquiry.",
       },
     ],
+    buyerChecklist: [
+      "Send milk intake temperature, storage band and peak daily volume for chill room sizing",
+      "Confirm washdown requirements in processing versus storage zones",
+      "List door traffic between chill rooms and dispatch docks",
+      "State whether food-grade facing is required in any zone",
+      "Name destination port and Incoterm for export pricing",
+    ],
+    limitations:
+      "Dairy licensing and HACCP validation remain with your consultant and local authority. Condensation at floor coving in chill rooms is usually a detail gap, not insufficient foam thickness.",
     images: [
       {
         src: "/images/hero/hero-cold-storage-hvac.jpg",
@@ -639,7 +685,7 @@ export const solutions: Solution[] = [
       },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     slug: "poultry-meat-processing",
@@ -759,6 +805,15 @@ export const solutions: Solution[] = [
           "Yes — sliding cold room doors with impact protection and thermal break frames. Specify opening width and daily cycle count.",
       },
     ],
+    buyerChecklist: [
+      "Map product path temperatures — kill floor, carcass chill, cutting and frozen hold",
+      "Model door-open time from hot zones into chill rooms on the enquiry",
+      "Specify washdown classification per area for facing and joint choice",
+      "Confirm halal or layout separation requirements on the drawing",
+      "Quote traffic-rated doors with panel kits on the same schedule",
+    ],
+    limitations:
+      "Abattoir licensing and hygiene audit outcomes are outside panel supply scope. Carcass chill rooms sized for steady state alone fail when kill-floor door traffic is omitted from load calcs.",
     images: [
       {
         src: "/images/plant/industrial-warehouse-exterior.jpg",
@@ -770,7 +825,7 @@ export const solutions: Solution[] = [
       },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     slug: "hospitals",
@@ -873,6 +928,15 @@ export const solutions: Solution[] = [
           "Yes — cam-lock kits ship in labelled crates with installation drawings. Cold chain validation after install is your facility's responsibility.",
       },
     ],
+    buyerChecklist: [
+      "Send room schedule with function — OT, pharmacy store, mortuary or corridor partition",
+      "Confirm fire period with local hospital and fire authority before specifying foam cores",
+      "State retrofit versus new build and existing structure type",
+      "List cold store monitoring requirements — probes sit on BMS, not panel scope",
+      "Plan infection-control barriers if retrofitting in an operating facility",
+    ],
+    limitations:
+      "Medical gas, HVAC laminar flow and fire authority approval are separate trades. Foam-cored partitions on escape routes may be rejected where mineral wool is mandated locally.",
     images: [
       {
         src: "/images/products/metal-cladding-exterior.jpg",
@@ -884,7 +948,7 @@ export const solutions: Solution[] = [
       },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     slug: "data-centres",
@@ -987,6 +1051,15 @@ export const solutions: Solution[] = [
           "Footprint, eave height, bay spacing, roof slope, fire line locations, design wind and delivery port. MEP loads are helpful context but envelope sizing uses shell thermal targets.",
       },
     ],
+    buyerChecklist: [
+      "Send shell U-value target and design wind speed for roof endlap detail",
+      "Mark fire compartment lines between electrical, generator and white space",
+      "Confirm we supply envelope only — not CRAC, UPS or Tier architecture",
+      "Specify roof facing colour for solar load — dark roofs add CRAC sizing margin",
+      "Name destination port for export lead time planning",
+    ],
+    limitations:
+      "We do not claim Tier III/IV or uptime certification from panel supply alone. Fire-rated boundaries need local code confirmation — standard PUF is not a generator-room fire wall.",
     images: [
       {
         src: "/images/hero/hero-warehouse-ceiling.jpg",
@@ -998,7 +1071,7 @@ export const solutions: Solution[] = [
       },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     slug: "manufacturing-plants",
@@ -1118,6 +1191,15 @@ export const solutions: Solution[] = [
           "4–7 weeks production after drawing approval, plus ocean transit. Large orders may split dispatch by wall zone to match site crane availability.",
       },
     ],
+    buyerChecklist: [
+      "Send process heat range and ventilation brief — insulation does not replace exhaust design",
+      "Mark fire lines between solvent storage, paint lines and production bays",
+      "Confirm crane capacity and bay spacing if overhead lift is in scope",
+      "State washdown zones versus dry production areas for facing spec",
+      "Name destination port and whether steel and panels ship phased",
+    ],
+    limitations:
+      "Acoustic performance needs a full partition build-up — panel mass alone is not a complete noise solution. Insurance-driven fire upgrades after equipment install are costly — confirm combustibility limits at quote stage.",
     images: [
       {
         src: "/images/hero/hero-peb-steel-frame.jpg",
@@ -1129,6 +1211,6 @@ export const solutions: Solution[] = [
       },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
 ];

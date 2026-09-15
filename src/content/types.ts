@@ -89,6 +89,19 @@ export const ProductSchema = z.object({
   installationNotes: z.string().optional(),
   comparisonNotes: z.string().optional(),
   keySpec: z.string().optional(),
+  /** Practical checks before ordering — rendered after QuickAnswer. */
+  buyerChecklist: z.array(z.string().min(1)).optional(),
+  /** Honest limits of the product family. */
+  limitations: z.string().optional(),
+  /** High-intent project scenarios answered on this page (GEO). */
+  buyerScenarios: z
+    .array(
+      z.object({
+        question: z.string().min(1),
+        answer: z.string().min(1),
+      }),
+    )
+    .optional(),
   draft: z.boolean(),
   updatedAt: z.string().optional(),
 });
@@ -119,6 +132,16 @@ export const SolutionSchema = z.object({
         title: z.string().min(1),
         body: z.string().min(1),
         duration: z.string().optional(),
+      }),
+    )
+    .optional(),
+  buyerChecklist: z.array(z.string().min(1)).optional(),
+  limitations: z.string().optional(),
+  buyerScenarios: z
+    .array(
+      z.object({
+        question: z.string().min(1),
+        answer: z.string().min(1),
       }),
     )
     .optional(),
@@ -170,6 +193,15 @@ export const CountrySchema = z.object({
   specificationNotes: z.string().optional(),
   sectionOrder: z.array(z.string()).optional(),
   wordCountHint: z.number().int().positive().optional(),
+  buyerChecklist: z.array(z.string().min(1)).optional(),
+  buyerScenarios: z
+    .array(
+      z.object({
+        question: z.string().min(1),
+        answer: z.string().min(1),
+      }),
+    )
+    .optional(),
   draft: z.boolean(),
   updatedAt: z.string().optional(),
 });
@@ -214,6 +246,8 @@ export const ComparisonRowSchema = z.object({
   criterion: z.string().min(1),
   optionA: z.string().min(1),
   optionB: z.string().min(1),
+  /** Optional third column for three-way comparisons. */
+  optionC: z.string().optional(),
   cheaperWins: z.boolean().optional(),
 });
 export type ComparisonRow = z.infer<typeof ComparisonRowSchema>;
@@ -226,12 +260,19 @@ export const ComparisonSchema = z.object({
   metaDescription: z.string().min(1).max(170),
   productA: z.string().min(1),
   productB: z.string().min(1),
+  /** Optional third product for three-way decision tables. */
+  productC: z.string().optional(),
+  /** Override column labels when options are not product names (e.g. manufacturer vs trader). */
+  optionALabel: z.string().optional(),
+  optionBLabel: z.string().optional(),
+  optionCLabel: z.string().optional(),
   summary: z.string().optional(),
   holdingCopy: z.string().optional(),
   quickAnswer: z.string().optional(),
   decisionTable: z.array(ComparisonRowSchema).default([]),
   chooseAWhen: z.string().optional(),
   chooseBWhen: z.string().optional(),
+  chooseCWhen: z.string().optional(),
   costNotes: z.string().optional(),
   relatedSolutions: z.array(z.string()).default([]),
   relatedGuides: z.array(z.string()).default([]),

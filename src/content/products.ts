@@ -64,7 +64,12 @@ export const products: Product[] = [
       "controlled-temperature-storage",
     ],
     industries: ["cold-storage", "food-processing", "warehousing-logistics", "dairy"],
-    comparisons: ["puf-vs-pir-panels", "puf-vs-eps-panels"],
+    comparisons: [
+      "puf-vs-pir-panels",
+      "puf-vs-pir-vs-rockwool",
+      "puf-vs-eps-panels",
+      "manufacturer-vs-trader",
+    ],
     relatedProducts: ["pir-panels", "cold-room-panels", "roofing-panels"],
     faqs: [
       {
@@ -120,6 +125,24 @@ export const products: Product[] = [
     ],
     exportNotes:
       "PUF panels ship flat-stacked in 40 ft or 20 ft containers. Thicker panels (150 mm and above) reduce m² per container — we provide a loading schedule with your quotation. Corner profiles, flashings and cam-lock accessories are packed separately in the same container where possible.",
+    buyerChecklist: [
+      "Confirm target room temperature band and ambient design condition for each zone",
+      "Specify cam-lock versus tongue-and-groove joint type on the enquiry",
+      "State facing or coating grade — coastal salt air may need AZ150 or equivalent",
+      "Name destination port and preferred Incoterm for export pricing",
+      "Provide layout PDF or internal dimensions — floor area alone is not enough for thickness",
+      "Confirm whether food-grade facing is required in any zone",
+      "Ask for indicative m² per 40-foot HC at your thickness on the quotation",
+    ],
+    limitations:
+      "PUF is self-extinguishing but not a fire-compartment solution on its own. Condensation streaks at joints usually trace to gasket or vapour-barrier detail, not foam density alone.",
+    buyerScenarios: [
+      {
+        question: "I need a −18 °C freezer in Mombasa — is 100 mm PUF enough?",
+        answer:
+          "Often a starting point for a medium-sized box in coastal East Africa, but door schedule and ambient peak (+35 °C external) can force 120 mm. Send internal dimensions, door size and daily open cycles — we run a build-up before you release production.",
+      },
+    ],
     images: [
       {
         src: "/images/hero/hero-cold-storage-hvac.jpg",
@@ -153,7 +176,7 @@ export const products: Product[] = [
       },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     slug: "pir-panels",
@@ -216,7 +239,7 @@ export const products: Product[] = [
       "warehouse-insulation",
     ],
     industries: ["cold-storage", "pharmaceutical-cleanroom", "food-processing", "dairy"],
-    comparisons: ["puf-vs-pir-panels", "pir-vs-rockwool-panels"],
+    comparisons: ["puf-vs-pir-panels", "puf-vs-pir-vs-rockwool", "pir-vs-rockwool-panels"],
     relatedProducts: ["puf-panels", "cold-room-panels", "cleanroom-panels"],
     faqs: [
       {
@@ -272,6 +295,23 @@ export const products: Product[] = [
     ],
     exportNotes:
       "PIR panels follow the same container loading approach as PUF. Because PIR achieves lower λ, projects often use thinner panels — this can increase m² per container compared to an equivalent PUF specification. Accessories and flashings packed in the same shipment where possible.",
+    buyerChecklist: [
+      "State whether headroom or external wall thickness is capped — the usual reason to step up from PUF",
+      "Send any fire-performance note from the insurer or consultant — PIR is not automatic compartmentation",
+      "Confirm joint type matches adjacent PUF zones if any — we do not recommend mixing cores in one room",
+      "Name destination port and Incoterm for export line items",
+      "Provide target U-value or temperature band plus room dimensions",
+      "Ask for side-by-side PUF and PIR pricing on the same quotation when undecided",
+    ],
+    limitations:
+      "PIR costs more per m² than PUF and does not replace mineral wool when a named fire period is specified. Improved fire behaviour versus standard PUF still requires the test report your authority accepts.",
+    buyerScenarios: [
+      {
+        question: "Fixed ceiling height in a freezer — should I specify PIR instead of thicker PUF?",
+        answer:
+          "Often yes when 80 mm PIR clears the thermal load that would need 100 mm PUF — you recover internal volume without widening the external footprint. Send room size and ambient design condition; we quote both cores on one schedule so you see the premium against floor area saved.",
+      },
+    ],
     images: [
       {
         src: "/images/hero/hero-manufacturing-panels.jpg",
@@ -304,7 +344,7 @@ export const products: Product[] = [
       },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     slug: "rockwool-panels",
@@ -362,7 +402,11 @@ export const products: Product[] = [
     finishes: ["standard RAL colours on request"],
     applications: ["warehouse-insulation", "industrial-envelope", "food-processing-envelope"],
     industries: ["manufacturing-plants", "warehousing-logistics", "food-processing"],
-    comparisons: ["pir-vs-rockwool-panels", "rockwool-vs-glasswool-panels"],
+    comparisons: [
+      "puf-vs-pir-vs-rockwool",
+      "pir-vs-rockwool-panels",
+      "rockwool-vs-glasswool-panels",
+    ],
     relatedProducts: ["fire-rated-panels", "wall-panels", "puf-panels"],
     faqs: [
       {
@@ -418,6 +462,23 @@ export const products: Product[] = [
     ],
     exportNotes:
       "Rockwool panels add significant weight per container. We load to axle and port handling limits, often reducing m² per 40 ft HC versus foam. Edge protection is critical — core compression damages fire performance. Fire-stop accessories ship in labelled crates within the same container.",
+    buyerChecklist: [
+      "Send the fire period or non-combustible requirement from the drawing — not a generic 'fire rated' note",
+      "Confirm purlin spacing and fixing density against panel weight — do not copy foam shed tables",
+      "State whether the wall is also holding cold temperature — thermal and fire brief may conflict",
+      "Name destination port; weight limits affect m² per container versus PUF",
+      "Plan dry storage on site — wet mineral fibre must be replaced, not dried in place",
+      "Request transition details where rockwool meets foam panels on the same project",
+    ],
+    limitations:
+      "Rockwool is heavier and thermally inferior to PUF at the same thickness — wrong first choice for a primary −25 °C freezer on cost alone. Fire performance belongs to the tested system including joints and trim, not the core name alone.",
+    buyerScenarios: [
+      {
+        question: "Insurer wants non-combustible insulation between plant and office — rockwool or PIR?",
+        answer:
+          "Rockwool when the brief names non-combustible mineral fibre or a fire period on the partition. PIR improves foam fire behaviour but does not replace a certified compartment wall unless your test report says otherwise. Send the insurer letter or drawing note and we map the build-up honestly.",
+      },
+    ],
     images: [
       {
         src: "/images/plant/industrial-warehouse-exterior.jpg",
@@ -450,7 +511,7 @@ export const products: Product[] = [
       },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     slug: "roofing-panels",
@@ -564,6 +625,23 @@ export const products: Product[] = [
     ],
     exportNotes:
       "Long roof panels dominate container geometry — we nest accessories in the gaps and may split lengths for port handling if access is tight. Outer sheets are protected with film where the coil supplier provides it. Weight limits apply sooner on rockwool roofs than foam.",
+    buyerChecklist: [
+      "Send purlin spacing and design wind load reference — span tables are profile-specific",
+      "State longest panel length and site access for delivery above 11 m",
+      "Specify outer facing colour and UV exposure — dark roofs chalk faster in equatorial sun",
+      "Confirm whether the roof is part of a fire-rated boundary",
+      "Name destination port and Incoterm for export crate planning",
+      "Request ridge, eave and endlap flashings on the same schedule as panels",
+    ],
+    limitations:
+      "Roof sag from purlin spacing too wide is corrected by adding purlins, not overtightening screws. Sandwich roof panels are not walkable except on designated paths — foot traffic dents ribs and causes ponding.",
+    buyerScenarios: [
+      {
+        question: "30 m warehouse bay in Nairobi — what roof panel spacing can I use?",
+        answer:
+          "Depends on profile depth, outer gauge and core type — typical PUF trapezoidal roofs land near 1.5–2.0 m purlin centres on standard industrial loads. Send bay width, eave height and wind region; we confirm against the structural table before you fix steel.",
+      },
+    ],
     images: [
       {
         src: "/images/hero/hero-warehouse-ceiling.jpg",
@@ -596,7 +674,7 @@ export const products: Product[] = [
       },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     slug: "wall-panels",
@@ -710,6 +788,23 @@ export const products: Product[] = [
     ],
     exportNotes:
       "Wall panels pack efficiently flat — often higher m² per container than roof lengths of the same thickness. Colour-facing must be confirmed before coil allocation; changes after order entry delay production. Flashings and cill sections are nested between panel faces with protective interleaving.",
+    buyerChecklist: [
+      "Confirm girt spacing and wind load reference on the structural note",
+      "State core type per wall — foam for general envelope, rockwool for fire or acoustic partitions",
+      "Send elevation drawings with door and window opening sizes for framed details",
+      "Specify outer RAL colour before coil allocation — field repainting large walls is costly",
+      "Name destination port and whether walls are exterior, partition or cold-store interface",
+      "Plan dry storage — panels stored wet before install risk facing delamination at joints",
+    ],
+    limitations:
+      "Delamination at joints is usually installation damage or wet storage, not a factory defect. Wall tongue-and-groove profiles are for building envelopes — not interchangeable with cam-lock cold room modules on the same face.",
+    buyerScenarios: [
+      {
+        question: "Food plant needs washable internal walls between chill and packing — which wall panel?",
+        answer:
+          "Smooth-faced PUF or PIR wall panels with sealed tongue-and-groove joints and coved floor interface on the washdown side. Send zone temperatures and cleaning chemical list — we flag sealant compatibility and whether rockwool is needed on any fire boundary.",
+      },
+    ],
     images: [
       {
         src: "/images/products/metal-cladding-exterior.jpg",
@@ -742,7 +837,7 @@ export const products: Product[] = [
       },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     slug: "cold-room-panels",
@@ -860,6 +955,23 @@ export const products: Product[] = [
     ],
     exportNotes:
       "Cold room kits ship as panel stacks plus accessory crates in 40 ft HC containers. Door jamb and coving profiles are nested between panel faces with edge protection. Hardware bags are labelled by room elevation to reduce customs unpacking errors on first-time African sites.",
+    buyerChecklist: [
+      "Send internal L × W × H and target temperature per room — not external building shell dimensions alone",
+      "Include door size, position and daily traffic cycle in the enquiry",
+      "Confirm cam-lock kit includes corners, coving and jamb profiles — panels-only orders need explicit approval",
+      "State ambient design condition for coastal versus inland sites",
+      "Name destination port and Incoterm for container load planning",
+      "Coordinate door order on the same schedule so jamb depth matches wall thickness",
+    ],
+    limitations:
+      "Heat bridging at door frames and floor coving gaps causes more callbacks than wrong foam thickness. Cam-lock kits suit box rooms — not long continuous warehouse walls without a different joint system.",
+    buyerScenarios: [
+      {
+        question: "First cold room export to Ghana — what should be in the container besides panels?",
+        answer:
+          "Labelled crates for corners, coving, cam-lock hardware and door jambs matched to your wall thickness — not panels alone. We issue a packing list mapped to assembly sequence so Tema port unpack does not scatter small parts. Refrigeration plant is always separate.",
+      },
+    ],
     images: [
       {
         src: "/images/solutions/freezer-boxes.jpg",
@@ -892,7 +1004,7 @@ export const products: Product[] = [
       },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     slug: "cleanroom-panels",
@@ -1006,6 +1118,23 @@ export const products: Product[] = [
     ],
     exportNotes:
       "Cleanroom panels ship flat with facing protection between each sheet. Coving and trim lengths are bundled separately with colour-coded labels matching elevation drawings. Chemical compatibility notes for coatings travel with the packing list for QA file inclusion.",
+    buyerChecklist: [
+      "State target ISO or GMP class and pressure cascade direction relative to adjacent rooms",
+      "Send disinfectant and cleaning chemical list for sealant and coating compatibility",
+      "Confirm concealed-fix versus exposed joint profile required by your validator",
+      "List penetration locations on the factory drawing — field-cut holes increase validation risk",
+      "Name destination port and whether cold chain rooms are on the same order",
+      "Clarify whether coved skirting and cap profiles are included in scope",
+    ],
+    limitations:
+      "ISO class is a system outcome — HVAC, procedures and monitoring matter as much as panel facing. Washdown pressure at unsealed horizontal laps is the contamination path we design out first; panels alone do not qualify a room.",
+    buyerScenarios: [
+      {
+        question: "Pharma filling room ISO Class 7 — are standard wall panels enough?",
+        answer:
+          "Usually not — you need flush cleanroom profiles with gasketed joints and coved bases, not industrial tongue-and-groove with visible fixings. Send room dimensions and validator requirements; we quote joint type and facing spec for your qualification pack.",
+      },
+    ],
     images: [
       {
         src: "/images/details/metal-siding-detail.jpg",
@@ -1038,7 +1167,7 @@ export const products: Product[] = [
       },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     slug: "fire-rated-panels",
@@ -1152,6 +1281,16 @@ export const products: Product[] = [
     ],
     exportNotes:
       "Fire-rated panels add weight and need edge protection to prevent core crushing. Trim and fire-stop lengths ship in marked bundles aligned to container unload order. Documentation references the project-matched system — request copies for QA files before sail date.",
+    buyerChecklist: [
+      "Send fire period and test standard reference from the drawing or insurer letter",
+      "Confirm wall versus roof orientation — approvals often differ by element",
+      "List adjacent build-ups (foam panels, masonry) for transition detail quotes",
+      "Verify fixing density follows the fire system note — not foam panel spacing",
+      "Name destination port; heavier panels reduce m² per container",
+      "Request system documentation for consultant review before manufacturing release",
+    ],
+    limitations:
+      "We do not publish generic fire periods on this site — the rating belongs to the named tested system including joints and trim. PIR and PUF foam panels are not interchangeable with mineral wool compartmentation unless your approved report covers that build-up.",
     images: [
       {
         src: "/images/hero/hero-peb-steel-frame.jpg",
@@ -1183,7 +1322,7 @@ export const products: Product[] = [
       },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     slug: "industrial-doors",
@@ -1295,6 +1434,16 @@ export const products: Product[] = [
     ],
     exportNotes:
       "Doors ship in crates separate from flat panel stacks to prevent frame bending. Hardware kits are labelled by opening mark matching the elevation drawing. Threshold heaters include wiring diagrams only — local electrician connects on site.",
+    buyerChecklist: [
+      "Quote doors on the same order as wall or cold room panels so jamb depth matches thickness",
+      "State room temperature and daily door cycle count — freezer openings need threshold strategy",
+      "Specify hinged, sliding or rapid-roll format and clear opening size for forklift traffic",
+      "Confirm electrical scope for heated sills — wiring is site MEP, not panel supply",
+      "Name destination port; doors ship in separate crates from flat panel stacks",
+      "Plan gasket maintenance in O&M — compressed gaskets are the main energy leak path",
+    ],
+    limitations:
+      "Seal failure at the sill and jamb bottom causes more energy loss than leaf thickness alone. We supply doors and frames — installation, electrical connection and commissioning remain site scope unless separately agreed.",
     images: [
       {
         src: "/images/solutions/logistics-warehouse.jpg",
@@ -1327,7 +1476,7 @@ export const products: Product[] = [
       },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
   {
     slug: "peb-prefabricated-buildings",
@@ -1440,6 +1589,23 @@ export const products: Product[] = [
     ],
     exportNotes:
       "Steel members are marked, bundled by erection sequence and protected against salt air in transit. Panel containers may sail on a later vessel to match site readiness. Anchor bolt templates travel with the first steel shipment — email copies go to your civil engineer simultaneously.",
+    buyerChecklist: [
+      "Send bay width, eave height, design wind region and crane hook requirement if any",
+      "Request anchor bolt template before concrete pour — field correction is costly on remote sites",
+      "Confirm purlin spacing matches roof panel span table on the same drawing revision",
+      "State whether steel and panels ship together or phased to site programme",
+      "Name destination port and inland access for long member delivery",
+      "Provide civil engineer contact for reaction loads and footing design",
+    ],
+    limitations:
+      "We issue anchor bolt templates and reaction summaries — stamped foundation design stays with your local civil engineer. Widening purlin spacing without checking panel span limits causes roof sag within a season.",
+    buyerScenarios: [
+      {
+        question: "40 × 60 m warehouse in Tanzania — can you supply steel and panels together?",
+        answer:
+          "Yes on one coordinated schedule — portal frame, purlins at spacing matched to the roof panel table, and wall/roof cladding in aligned shipments. Send wind region and port; steel may sail separately from panel containers to match erection sequence.",
+      },
+    ],
     images: [
       {
         src: "/images/hero/hero-peb-steel-frame.jpg",
@@ -1472,6 +1638,6 @@ export const products: Product[] = [
       },
     ],
     draft: false,
-    updatedAt: "2026-09-14",
+    updatedAt: "2026-09-15",
   },
 ];

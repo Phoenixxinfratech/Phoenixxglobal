@@ -1270,22 +1270,126 @@ export const countries: CountryInput[] = [
     name: "South Africa",
     iso2: "ZA",
     region: "Southern Africa",
-    h1: "Sandwich Panel Export to South Africa",
-    seoTitle: "Export Sandwich Panels to South Africa | PHOENIXX",
+    h1: "Sandwich Panel Export to South Africa — Durban, Cape Town and Inland Cold Chain",
+    seoTitle: "Sandwich Panel Supplier and Exporter to South Africa | PHOENIXX",
     metaDescription:
-      "Insulated panels for South Africa — Durban, Cape Town, Port Elizabeth. Full page coming soon.",
+      "PUF and cold room panels exported from India to South Africa via Durban, Cape Town and Gqeberha. Retail cold chain, mining sheds and food processing. Request a quote.",
     portsOfEntry: ["Durban", "Cape Town", "Port Elizabeth (Gqeberha)"],
     majorCities: [],
-    relevantProducts: ["puf-panels", "pir-panels", "rockwool-panels", "roofing-panels"],
-    relevantIndustries: ["cold-storage", "warehousing-logistics", "manufacturing-plants"],
     industrialZones: [],
-    demandDrivers: [],
-    logisticsNotes: "",
-    documentationNotes: "",
-    faqs: [],
-    holdingCopy:
-      "We're publishing the full export page for South Africa shortly — port options, SABS requirements and import documentation included. If you need a quotation now, send us your delivery port and we'll respond the same day.",
-    draft: true,
+    demandDrivers: [
+      "Supermarket and third-party logistics cold chain expansion in Gauteng and KwaZulu-Natal drives repeat orders for chiller and freezer cam-lock rooms cleared through Durban.",
+      "Mining and industrial shed construction on the Highveld and in the Northern Cape specifies insulated roof and wall panels where daytime heat and dust load the building envelope.",
+      "Food processing and poultry plants around Johannesburg, Durban and Cape Town need hygienic cold rooms with washable internal facings — not the same humidity profile as East African coast sites.",
+      "Wine and fruit packhouses in the Western Cape need controlled-temperature rooms sized for Mediterranean-climate harvest peaks rather than tropical year-round heat.",
+    ],
+    relevantProducts: ["puf-panels", "pir-panels", "cold-room-panels", "roofing-panels", "industrial-doors"],
+    relevantIndustries: ["cold-storage", "warehousing-logistics", "food-processing", "manufacturing-plants", "poultry-meat-processing"],
+    quickAnswer:
+      "PHOENIXX exports PUF, PIR and cam-lock cold room panels from India to South Africa through Durban, Cape Town or Port Elizabeth (Gqeberha). Durban handles most containerised building materials for Gauteng and KwaZulu-Natal; Cape Town serves the Western Cape wine and fruit belt. We manufacture to order from India, provide standard export documents and quote CIF destination port or FOB India. Your South African clearing agent handles SARS clearance and any SABS or NRCS conformity steps that apply to your product classification — confirm those requirements with your agent before we dispatch.",
+    marketContext:
+      "South Africa spans three distinct climate bands that matter for panel specification. The Western Cape around Cape Town is Mediterranean — dry summers, wet winters, moderate heat — so wine cellars and fruit packhouses need rooms that hold steady through harvest peaks without assuming tropical humidity. Gauteng and the Highveld inland plateau see hot summers, cold dry winters and low winter humidity; warehouse roofs there bake in summer sun but night-time cooling is real, which affects how you size refrigeration plant versus wall insulation. KwaZulu-Natal along the Durban corridor is humid subtropical — closer to coastal East Africa on moisture but with different port and inland haul patterns through the N3 to Johannesburg. Retail cold chain is a steady enquiry: national supermarket groups and third-party logistics operators add chiller and freezer capacity near Durban and Gauteng distribution nodes. Mining and industrial sheds in platinum, coal and manganese belts specify insulated envelopes where dust ingress at roof endlaps is a field complaint if flashings are underspecified. Food processing and poultry plants around Johannesburg, Durban and George need hygienic cold rooms — buyers often compare landed cost at Durban against local panel fabricators; our quotes include bundle packing for the long sea leg from India. We do not maintain stock or an office in South Africa — every order is made to order and shipped from India.",
+    specificationNotes:
+      "Western Cape installs should use facings and fixings rated for winter rain and summer UV — light external colours on roof panels reduce heat gain in Paarl and Stellenbosch packhouse yards where panels may sit uninstalled for a week post-clearance. Highveld Gauteng warehouses face wide diurnal swings — specify design temperatures for summer afternoon peaks, not annual averages. KZN humid sites need sealed MEP penetrations and stainless or coated fasteners; cam-lock joints alone do not stop condensation if cold rooms run against unconditioned humid air. Freezer rooms at −18 °C to −22 °C for retail distribution commonly use 100–150 mm PUF depending on room size and door cycle frequency. Mining shed roofs on long spans need purlin spacing confirmed against panel profile tables — do not copy warehouse span tables onto industrial frames with different wind load notes. Wine and fruit cold rooms often target +2 °C to +8 °C with frequent door cycles during harvest — send peak load and hold time, not steady-state alone. If panels sit in a Durban or Cape Town bonded yard awaiting release, keep bundles under cover and off bare ground; facings are not designed for prolonged ground contact in winter rain.",
+    climateNotes:
+      "Western Cape Mediterranean (dry summers, wet winters); Highveld inland hot summers and cold dry winters; KZN humid subtropical along the Durban corridor.",
+    temperatureRange: "Cape Town roughly 7–27 °C seasonal; Gauteng Highveld roughly 5–30 °C; Durban coastal roughly 16–32 °C year-round",
+    coastal: true,
+    keyPorts: [
+      "Durban — largest container port; primary gateway for Gauteng and KZN inland haul",
+      "Cape Town — Western Cape wine, fruit and coastal project gateway",
+      "Port Elizabeth (Gqeberha) — Eastern Cape industrial and automotive belt alternative",
+    ],
+    inlandRoutes: [
+      "Durban–Johannesburg N3 highway haulage for Gauteng distribution and cold storage sites",
+      "Cape Town–Paarl–Stellenbosch wine and fruit belt road distribution",
+      "Durban–Pietermaritzburg–Richards Bay KZN industrial corridor",
+    ],
+    demandSectors: [
+      "Supermarket and third-party logistics cold chain in Gauteng and KZN",
+      "Mining and industrial insulated sheds on the Highveld and in the Northern Cape",
+      "Food processing, poultry and beverage cold rooms",
+      "Western Cape wine and fruit controlled-temperature packhouses",
+      "Warehouse ambient-to-cold conversions near Durban and Johannesburg",
+    ],
+    typicalProjectTypes: [
+      "Retail distribution chiller and freezer rooms near Durban or Johannesburg",
+      "Mining workshop and industrial shed insulated roof and wall envelopes",
+      "Poultry processing cam-lock hygienic panel rooms",
+      "Western Cape fruit and wine packhouse cold rooms",
+    ],
+    importConsiderations:
+      "South African Revenue Service (SARS) clears imports at Durban, Cape Town or Gqeberha. Your clearing agent registers the consignment and manages applicable duty and VAT. SABS or NRCS conformity requirements may apply to certain building products depending on classification — confirm with your agent whether a certificate of conformity, test report or other documentation is needed for your panel type before shipment. We do not claim SABS or NRCS certification for PHOENIXX panels from India; conformity assessment is a buyer and agent responsibility where mandated. We issue commercial invoice, packing list, bill of lading and certificate of origin from India. Inland haulage from Durban to Gauteng on the N3 is normally booked after port release — allow for port-side storage charges if clearance slips.",
+    localInstallationNotes:
+      "South African cold room contractors and steel builders assemble panels after port release. Durban and Cape Town yard conditions vary — confirm unloading window and lifting equipment with your agent before the container lands. KZN humid installs need corrosion-resistant fixings and sealed pipework penetrations. Highveld sites follow the same cam-lock sequence with numbered panels from our drawings but account for winter dust when storing bundles on open sites. Floor insulation, refrigeration plant and electrical work remain local trades. Schedule harvest-critical Western Cape installs outside peak rain weeks where site access is mud-limited.",
+    researchSources: [
+      "Durban–Gauteng retail cold chain and third-party logistics warehouse demand",
+      "Highveld mining and industrial shed construction activity",
+      "Western Cape wine and fruit packhouse cold room enquiries",
+    ],
+    logisticsNotes:
+      "Durban is the primary port of entry for containerised panels from India serving Gauteng and KZN. Cape Town handles Western Cape projects; Gqeberha suits Eastern Cape sites. Transit from Indian west coast ports is typically 20–28 days depending on service and discharge port. After vessel discharge, containers move to a depot or bonded yard for SARS processing — clearance duration varies with documentation completeness. Inland haulage Durban–Johannesburg adds one to two days by road on the N3. We share vessel ETD and document scans before sailing so your agent can pre-file where the port system allows.",
+    documentationNotes:
+      "Standard Indian export set: commercial invoice, packing list, bill of lading, certificate of origin and shipping bill. Your agent may request SABS, NRCS or other conformity certificates depending on product classification — share their checklist when you place the order so labels and descriptions match. Certificate of conformity or local test reports are buyer and agent responsibilities where mandated; we do not issue South African statutory certificates from India.",
+    buyerChecklist: [
+      "Confirm destination port — Durban for Gauteng/KZN, Cape Town for Western Cape, Gqeberha for Eastern Cape",
+      "Ask your clearing agent whether SABS or NRCS conformity applies to your panel classification before dispatch",
+      "Send room dimensions, target temperature and installation province — Highveld, KZN and Cape specs differ",
+      "State whether the project is retail cold chain, mining shed or food processing — facing and joint detail varies",
+      "Quote CIF port and Incoterm; inland N3 haul from Durban is booked separately after release",
+      "Plan site storage under cover if port clearance delays — winter rain in Cape Town damages unprotected bundles",
+    ],
+    buyerScenarios: [
+      {
+        question: "We need a 5,000 m² insulated warehouse roof in Gauteng — which port and panel spec?",
+        answer:
+          "Durban is the usual discharge port for Gauteng projects; panels haul inland on the N3 after SARS release. Send bay width, eave height and design wind reference for roof profile selection. Highveld summer afternoon heat favours light external facing colour and 80–100 mm PUF or PIR roof panels depending on whether the shed is ambient or partially conditioned. We quote CIF Durban; inland haulage is your agent's scope unless agreed otherwise.",
+      },
+      {
+        question: "Cold room for poultry processing near Durban — KZN humidity considerations?",
+        answer:
+          "KZN installs face persistent humidity — specify washable internal facings, stainless or coated fixings and sealed MEP penetrations. Chiller rooms at +2 °C to +4 °C commonly use 80–100 mm cam-lock PUF; confirm door cycle frequency and washdown zones on enquiry. Clear through Durban and allow acclimatisation if panels sit in a humid yard before assembly.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Which South African port should panels discharge at?",
+        answer:
+          "Durban for Gauteng, KZN and most inland projects. Cape Town for Western Cape wine, fruit and coastal sites. Port Elizabeth (Gqeberha) for Eastern Cape industrial projects. Your freight forwarder selects routing based on carrier service and final site location.",
+      },
+      {
+        question: "Does SABS or NRCS certification apply to imported sandwich panels?",
+        answer:
+          "Requirements depend on product classification and current schedules. Your clearing agent confirms whether a certificate of conformity or test documentation is needed for your specific panel type before we dispatch. We do not claim SABS or NRCS certification for PHOENIXX panels from India.",
+      },
+      {
+        question: "How do Highveld and KZN cold room specs differ?",
+        answer:
+          "Highveld sites are drier with cold winter nights — design for summer afternoon peaks and low winter humidity affecting defrost cycles. KZN is humid subtropical — facings, fixings and joint sealing need higher corrosion and moisture resistance. Send the installation province on enquiry.",
+      },
+      {
+        question: "Can panels be shipped CIF to Durban or Cape Town?",
+        answer:
+          "Yes — we quote CIF Durban, Cape Town or Gqeberha per routing, or FOB Indian port. CIF includes sea freight to the named port; local clearance, port charges and inland haulage remain the buyer's responsibility unless agreed otherwise in writing.",
+      },
+      {
+        question: "What panel thickness suits South African freezer rooms?",
+        answer:
+          "Freezer rooms at −18 °C to −22 °C commonly use 100–150 mm PUF cam-lock panels depending on room size and door cycle frequency. Send room dimensions and target temperature for a thickness recommendation on your layout.",
+      },
+      {
+        question: "Do you supply installation teams in South Africa?",
+        answer:
+          "We manufacture and export panels from India. Installation is normally handled by your local contractor. We provide numbered panels, layout drawings and remote technical support during assembly.",
+      },
+      {
+        question: "Are Western Cape wine cold rooms specified differently from retail freezers?",
+        answer:
+          "Wine holding rooms often target narrow temperature bands (+12 °C to +18 °C or similar) with stable humidity — different from −18 °C retail freezers. Fruit packhouses need +2 °C to +8 °C with heavy door traffic at harvest. Send the product and peak load on enquiry.",
+      },
+    ],
+    draft: false,
+    updatedAt: "2026-09-15",
   },
   {
     slug: "zimbabwe",
@@ -1352,5 +1456,255 @@ export const countries: CountryInput[] = [
     holdingCopy:
       "We're publishing the full export page for DRC shortly — transit logistics via East and Southern African ports included. If you need a quotation now, send us your delivery city and we'll respond the same day.",
     draft: true,
+  },
+  {
+    slug: "uae",
+    name: "United Arab Emirates",
+    iso2: "AE",
+    region: "Middle East",
+    h1: "Sandwich Panel Export to UAE — Jebel Ali, Abu Dhabi and Gulf Warehousing",
+    seoTitle: "Sandwich Panel Supplier and Exporter to UAE | PHOENIXX",
+    metaDescription:
+      "PUF and PIR panels exported from India to UAE via Jebel Ali and Khalifa Port. Warehouses, F&B cold chain and industrial sheds for extreme Gulf heat. Request a quote.",
+    portsOfEntry: ["Jebel Ali (Dubai)", "Khalifa Port (Abu Dhabi)", "Port Rashid (Dubai)"],
+    majorCities: [],
+    industrialZones: [],
+    demandDrivers: [
+      "Free-zone and mainland warehouse construction around Dubai and Abu Dhabi specifies insulated roof and wall panels where summer roof surface temperatures exceed 70 °C without light-coloured facing.",
+      "Food and beverage cold chain for import redistribution and central kitchens drives chiller and freezer room orders cleared through Jebel Ali — the dominant container hub for the northern Emirates.",
+      "Industrial sheds and logistics parks in Sharjah, Ajman and Ras Al Khaimah add ambient and partially conditioned envelopes where dust ingress at roof endlaps is a common site complaint.",
+    ],
+    relevantProducts: ["puf-panels", "pir-panels", "cold-room-panels", "roofing-panels", "industrial-doors"],
+    relevantIndustries: ["cold-storage", "warehousing-logistics", "food-processing", "manufacturing-plants"],
+    quickAnswer:
+      "PHOENIXX exports PUF, PIR and cam-lock cold room panels from India to the UAE through Jebel Ali, Khalifa Port or Port Rashid depending on carrier routing. Jebel Ali handles most containerised building materials for Dubai, Sharjah and northern Emirates projects; Khalifa Port suits Abu Dhabi and Al Ain inland haul. We manufacture to order from India — we do not maintain local stock or a UAE office. Your clearing agent handles UAE customs, applicable duties and any ESMA or EQM conformity steps for your product classification. Send room dimensions, target temperature and delivery emirate for CIF or FOB pricing.",
+    marketContext:
+      "The UAE combines one of the world's busiest container ports at Jebel Ali with Khalifa Port serving Abu Dhabi and the western emirates. Dubai logistics parks and free zones — JAFZA, Dubai South, DIP — generate steady warehouse and cold storage enquiries where panel specification must survive extreme summer heat, intense UV and periodic shamal dust events. Roof panels on unconditioned sheds can see surface temperatures well above ambient; light external colours and adequate core thickness matter more than in temperate climates. Food import redistribution cold rooms near Jebel Ali break bulk from reefer containers into local chiller and freezer rooms before last-mile delivery across the Emirates. Abu Dhabi mainland industrial projects and Al Ain distribution centres often clear through Khalifa Port with shorter road haul than routing via Dubai. Sharjah and northern emirate sheds face similar heat but different port access patterns — confirm discharge port with your forwarder early. Buyers compare CIF Jebel Ali pricing against regional suppliers and ex-works India plus local installation; our quotes include bundle packing for the short but hot Gulf sea transit from Indian west coast ports. We export from India only — no local fabrication yard or distributor network in the UAE.",
+    specificationNotes:
+      "Gulf summer installs demand light external facing colours — white or light grey — to limit roof heat gain; dark roofs add CRAC and refrigeration margin even on ambient warehouses. Specify polyester or equivalent external coating rated for high UV exposure; chalking at endlaps shows up within two seasons if facing grade is wrong. Dust storms load roof gutters and endlaps — detail flashings for positive drainage, not flat laps that trap sand. Cold rooms for F&B at +2 °C to +8 °C or −18 °C freezer holding need thickness matched to door cycle frequency in high ambient — do not size using European design temperatures. PIR can reduce wall thickness where headroom is capped in mezzanine cold stores. Fixings should be stainless or suitably coated; galvanised-only screws corrode faster in coastal Jebel Ali humidity than inland buyers expect. If panels sit in a port-side yard awaiting clearance, keep bundles under cover — direct sun on stacked panels heats the core and can soften adhesive at joints on the bottom sheets.",
+    climateNotes:
+      "Hot arid desert climate; extreme summer heat and UV; occasional shamal dust; coastal humidity higher at Jebel Ali than inland Al Ain.",
+    temperatureRange: "Dubai and Abu Dhabi roughly 14–45 °C seasonal; summer daytime peaks often 40–45 °C with high solar load on roofs",
+    coastal: true,
+    keyPorts: [
+      "Jebel Ali — primary container hub for Dubai, Sharjah and northern Emirates",
+      "Khalifa Port (Abu Dhabi) — main gateway for Abu Dhabi and Al Ain projects",
+      "Port Rashid (Dubai) — limited container traffic; confirm routing with forwarder",
+    ],
+    inlandRoutes: [
+      "Jebel Ali–Dubai–Sharjah E11 corridor for logistics park and warehouse sites",
+      "Khalifa Port–Abu Dhabi–Al Ain inland haul for mainland industrial projects",
+      "Jebel Ali–Dubai South and JAFZA free-zone distribution",
+    ],
+    demandSectors: [
+      "Free-zone and mainland warehouse and logistics park construction",
+      "Food import redistribution and F&B cold chain cold rooms",
+      "Industrial sheds and light manufacturing insulated envelopes",
+      "Supermarket and hospitality central kitchen cold storage",
+      "Ambient-to-cold conversion rooms in existing logistics facilities",
+    ],
+    typicalProjectTypes: [
+      "Large-span insulated warehouse roofs in Dubai and Sharjah logistics parks",
+      "Jebel Ali port-side chiller and freezer redistribution rooms",
+      "F&B processing and central kitchen cam-lock cold rooms",
+      "Industrial shed roof and wall panel supply for manufacturing zones",
+    ],
+    importConsiderations:
+      "UAE Federal Customs clears imports at Jebel Ali, Khalifa Port or other approved terminals. Your clearing agent manages duty, VAT and product registration where applicable. Emirates Authority for Standardization and Metrology (ESMA) or Emirates Quality Mark (EQM) requirements may apply to certain building products — confirm classification with your agent before shipment. We do not claim ESMA or EQM certification for PHOENIXX panels from India. We issue commercial invoice, packing list, bill of lading and certificate of origin from India. Port storage charges accrue if clearance is delayed — loop your agent into document threads when we send draft invoices.",
+    localInstallationNotes:
+      "UAE cold room contractors and steel erectors assemble panels after port release. Summer installation should avoid midday heat where possible — panel expansion at joints is measurable on long walls. Coastal Jebel Ali sites need corrosion-resistant fixings. Floor insulation, refrigeration plant and MEP remain local trades. Cam-lock panels ship numbered per layout drawing — sequence from a corner and verify room dimensions before the first cut. Allow acclimatisation if panels move from hot port yard to air-conditioned assembly area.",
+    researchSources: [
+      "Jebel Ali and Dubai logistics park warehouse construction demand",
+      "UAE F&B cold chain and import redistribution cold room enquiries",
+      "Abu Dhabi Khalifa Port industrial and warehouse project activity",
+    ],
+    logisticsNotes:
+      "Jebel Ali is the primary port of entry for containerised panels from India serving Dubai and the northern Emirates. Khalifa Port suits Abu Dhabi and Al Ain projects. Transit from Indian west coast ports is typically 5–10 days depending on service. After discharge, containers clear through UAE customs at the port terminal or designated CFS — clearance is usually faster than East or West African gateways when documentation is complete. We share vessel ETD and document scans before sailing.",
+    documentationNotes:
+      "Standard Indian export set: commercial invoice, packing list, bill of lading, certificate of origin and shipping bill. Your agent may request ESMA, EQM or additional conformity documents depending on product classification — share their checklist at order stage so descriptions match. Local conformity certificates are buyer and agent responsibilities where mandated; we do not issue UAE statutory certificates from India.",
+    buyerChecklist: [
+      "Confirm discharge port — Jebel Ali for Dubai/Sharjah, Khalifa Port for Abu Dhabi/Al Ain",
+      "Ask your agent whether ESMA or EQM conformity applies to your panel type before dispatch",
+      "Specify light external roof colour and UV-rated facing for Gulf summer conditions",
+      "Send building dimensions, eave height and whether ambient or chilled zones apply",
+      "Quote CIF port and Incoterm; inland haul from Jebel Ali or Khalifa is separate after release",
+      "Plan covered storage on site — direct sun on stacked panels heats cores at port-side yards",
+    ],
+    buyerScenarios: [
+      {
+        question: "We are building a 10,000 m² warehouse in Dubai — panel spec and port?",
+        answer:
+          "Jebel Ali is the usual discharge port for Dubai mainland and free-zone projects. Send bay spacing, eave height, design wind reference and whether the shed is fully ambient or partially conditioned. Large-span roofs in Gulf summer typically use 80–100 mm PUF or PIR with light external colour. We quote CIF Jebel Ali; erection and inland delivery from port are your contractor's scope unless agreed otherwise.",
+      },
+      {
+        question: "Freezer room for food import redistribution near Jebel Ali — what thickness?",
+        answer:
+          "−18 °C to −22 °C holding rooms in high ambient commonly need 100–150 mm PUF cam-lock depending on room size and door openings per day. Coastal humidity at Jebel Ali favours coated fixings and sealed penetrations. Send room dimensions and daily container break-bulk cycle for a thickness recommendation.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Which UAE port receives sandwich panels — Jebel Ali or Khalifa?",
+        answer:
+          "Jebel Ali handles most container imports for Dubai, Sharjah and northern Emirates. Khalifa Port serves Abu Dhabi and Al Ain with shorter inland haul. Port Rashid receives some containers but routing is carrier-specific — confirm with your forwarder before we finalise the bill of lading.",
+      },
+      {
+        question: "Does ESMA or EQM apply to imported sandwich panels?",
+        answer:
+          "Requirements depend on product classification and current UAE schedules. Your clearing agent confirms whether registration or conformity documentation is needed for your panel type before we dispatch. We do not claim ESMA or EQM certification from India.",
+      },
+      {
+        question: "Why specify light roof colours in the UAE?",
+        answer:
+          "Dark roof facing absorbs solar load — surface temperatures on summer afternoons can exceed ambient by 25 °C or more. Light colours reduce heat gain into ambient warehouses and lower refrigeration plant margin on cold stores.",
+      },
+      {
+        question: "Can panels be shipped CIF to Jebel Ali?",
+        answer:
+          "Yes — we quote CIF Jebel Ali, Khalifa Port or FOB Indian port per routing. CIF includes sea freight to the named UAE port; local clearance, port charges and inland haulage remain the buyer's responsibility unless agreed otherwise in writing.",
+      },
+      {
+        question: "Do you have a local office or stock in the UAE?",
+        answer:
+          "We export from India on a made-to-order basis. We do not maintain local stock or an office in the UAE. Lead time is manufacturing plus shipping — typically 5–10 days sea transit from India after dispatch.",
+      },
+      {
+        question: "What panel thickness suits UAE freezer rooms in high ambient?",
+        answer:
+          "Freezer rooms at −18 °C to −22 °C in Gulf summer commonly use 100–150 mm PUF cam-lock panels. High ambient design temperature drives thickness more than room volume alone — send dimensions and target temperature for a layout-based recommendation.",
+      },
+      {
+        question: "How does dust affect roof panel installation in the UAE?",
+        answer:
+          "Shamal dust collects in flat endlaps and gutters if drainage is not positive. Specify flashings for sand shedding and inspect sealant lines before handover — dust trapped under laps accelerates facing wear at joints.",
+      },
+    ],
+    draft: false,
+    updatedAt: "2026-09-15",
+  },
+  {
+    slug: "saudi-arabia",
+    name: "Saudi Arabia",
+    iso2: "SA",
+    region: "Middle East",
+    h1: "Sandwich Panel Export to Saudi Arabia — Jeddah, Dammam and Riyadh Projects",
+    seoTitle: "Sandwich Panel Supplier and Exporter to Saudi Arabia | PHOENIXX",
+    metaDescription:
+      "PUF and cold room panels exported from India to Saudi Arabia via Jeddah, Dammam and King Abdullah Port. Warehouses, cold chain and industrial sheds. Request a quote.",
+    portsOfEntry: ["Jeddah Islamic Port", "King Abdulaziz Port (Dammam)", "King Abdullah Port"],
+    majorCities: [],
+    industrialZones: [],
+    demandDrivers: [
+      "Warehouse and logistics park construction around Riyadh, Jeddah and Dammam specifies insulated envelopes as industrial and e-commerce capacity expands — buyers size roofs for extreme summer heat inland, not coastal averages alone.",
+      "Food processing, poultry and dairy cold rooms in the Central and Eastern provinces drive cam-lock panel orders cleared through Jeddah or Dammam with long inland haul to Riyadh when needed.",
+      "Industrial sheds in Jubail, Yanbu and secondary cities specify roof and wall panels where dust, UV and wide day–night temperature swings load the building envelope differently from UAE free-zone projects.",
+    ],
+    relevantProducts: ["puf-panels", "pir-panels", "cold-room-panels", "roofing-panels", "industrial-doors"],
+    relevantIndustries: ["cold-storage", "warehousing-logistics", "food-processing", "manufacturing-plants", "dairy"],
+    quickAnswer:
+      "PHOENIXX exports PUF, PIR and cam-lock cold room panels from India to Saudi Arabia through Jeddah Islamic Port, King Abdulaziz Port (Dammam) or King Abdullah Port. Jeddah serves western province and Riyadh inland haul; Dammam suits Eastern Province and Jubail industrial sites. We manufacture to order from India with standard export documentation. Your Saudi clearing agent handles customs, applicable duties and any SASO or SABER conformity requirements for your product classification — confirm those steps with your agent before we dispatch. We do not claim SASO certification for PHOENIXX panels.",
+    marketContext:
+      "Saudi Arabia's panel demand splits across three port gateways with different inland haul patterns. Jeddah Islamic Port on the Red Sea is the traditional entry for western province projects and for Riyadh-bound cargo that crosses 950 km inland — plan truck availability and road transit in programmes tied to port release. King Abdulaziz Port at Dammam serves the Eastern Province, Jubail industrial city and Dammam–Khobar logistics belt with shorter haul to site than routing via Jeddah. King Abdullah Port north of Jeddah handles growing container volume and can reduce congestion on the main Jeddah terminals for some carriers. Industrial and warehouse construction continues across Riyadh, Jeddah and Dammam as manufacturing and logistics capacity expands — factual market context, not marketing copy. Cold chain for food processing, poultry and dairy adds chiller and freezer rooms where high ambient summer design temperatures inland exceed coastal UAE norms. Unlike Dubai's free-zone cluster, many Saudi projects sit on greenfield industrial land with longer site access roads — confirm panel delivery truck limits for lengths above 11 m. We export from India only; no local stock, fabrication yard or office in the Kingdom.",
+    specificationNotes:
+      "Inland Riyadh and Central Province installs face extreme summer dry heat — roof panels need light external colour and core thickness sized for 45 °C+ ambient design, not temperate-climate tables. Coastal Jeddah and Dammam add humidity and salt aerosol — specify coated or stainless fixings on port-adjacent warehouses. Wide day–night swings mean panel expansion joints on long walls matter; do not pull fixings tight at midday summer peak. Cold rooms for dairy and poultry at +2 °C to +4 °C commonly use 80–100 mm cam-lock PUF; freezer holding at −18 °C needs 100–150 mm depending on door cycles. Dust storms load roof endlaps — detail positive drainage like UAE sites but confirm local wind notes on the structural drawing. PIR reduces wall thickness where headroom is limited in mezzanine cold stores. If containers sit in Jeddah or Dammam yard during Ramadan or peak import periods, storage charges and clearance timing vary — keep your agent on document threads when we send pre-shipment scans.",
+    climateNotes:
+      "Hot arid continental climate inland; coastal humidity at Jeddah and Dammam; extreme summer heat and UV; occasional dust storms.",
+    temperatureRange: "Riyadh inland roughly 8–45 °C seasonal; Jeddah coastal roughly 18–42 °C; Dammam coastal similar with higher humidity",
+    coastal: true,
+    keyPorts: [
+      "Jeddah Islamic Port — primary Red Sea gateway; Riyadh inland haul from here",
+      "King Abdulaziz Port (Dammam) — Eastern Province and Jubail industrial entry",
+      "King Abdullah Port — north of Jeddah; growing container alternative",
+    ],
+    inlandRoutes: [
+      "Jeddah–Riyadh highway haulage (~950 km) for Central Province warehouse and cold storage",
+      "Dammam–Jubail–Khobar Eastern Province industrial corridor",
+      "Jeddah–Makkah–Madinah western province distribution",
+    ],
+    demandSectors: [
+      "Riyadh and Jeddah warehouse and logistics park construction",
+      "Food processing, poultry and dairy cold rooms",
+      "Jubail and Yanbu industrial shed and manufacturing envelopes",
+      "E-commerce and third-party logistics ambient-to-cold conversions",
+      "Central Province distribution centre chiller and freezer rooms",
+    ],
+    typicalProjectTypes: [
+      "Large-span insulated warehouse roofs in Riyadh and Jeddah logistics parks",
+      "Poultry and dairy processing cam-lock hygienic cold rooms",
+      "Jubail industrial shed roof and wall panel supply",
+      "Import redistribution freezer rooms near Jeddah port",
+    ],
+    importConsiderations:
+      "Saudi Customs clears imports at Jeddah, Dammam or King Abdullah Port. Your clearing agent manages duty, VAT and product conformity under the SASO/SABER system where applicable to your classification. Conformity assessment and product certificate of conformity are buyer and agent responsibilities — confirm whether your panel type requires SABER registration before shipment. We do not claim SASO or SABER certification for PHOENIXX panels from India. We issue commercial invoice, packing list, bill of lading and certificate of origin from India. Riyadh inland haul from Jeddah adds road cost and transit time — book trucks after port release and confirm oversize limits for long panel lengths.",
+    localInstallationNotes:
+      "Saudi cold room contractors and steel builders assemble panels after port release. Summer midday installation should be avoided on long wall runs — thermal expansion is significant. Coastal sites need corrosion-resistant fixings; inland Riyadh sites still need UV-stable external facing. Floor insulation, refrigeration and electrical work are local trades. Cam-lock panels ship numbered per drawing — verify room dimensions before cutting. Allow extra programme float for Jeddah–Riyadh haul when the site is inland.",
+    researchSources: [
+      "Riyadh and Jeddah warehouse and logistics park construction demand",
+      "Eastern Province Jubail industrial shed and food processing activity",
+      "Saudi food processing and dairy cold chain project enquiries",
+    ],
+    logisticsNotes:
+      "Jeddah Islamic Port is the main Red Sea entry for containerised panels from India; Dammam serves the east coast. Transit from Indian west coast ports is typically 7–12 days depending on service and discharge port. King Abdullah Port is an alternative for some carriers serving western province sites. After discharge, customs clearance timing depends on SABER documentation completeness — start agent paperwork before the vessel sails. Jeddah–Riyadh inland haul is approximately 950 km and one to two days by truck.",
+    documentationNotes:
+      "Standard Indian export set: commercial invoice, packing list, bill of lading, certificate of origin and shipping bill. Your agent may require SABER product registration, SASO conformity certificates or additional forms — share their checklist at order stage. Local conformity documentation is the buyer and agent scope where mandated; we do not issue Saudi statutory certificates from India.",
+    buyerChecklist: [
+      "Confirm port — Jeddah for western province and Riyadh haul, Dammam for Eastern Province",
+      "Verify SASO/SABER conformity requirements with your agent before manufacturing release",
+      "Send installation city — inland Riyadh heat spec differs from coastal Jeddah humidity",
+      "State project type: warehouse roof, cold room or industrial shed — span tables differ",
+      "Plan Jeddah–Riyadh truck booking after port release if site is in Central Province",
+      "Specify light external roof colour for inland summer solar load",
+    ],
+    buyerScenarios: [
+      {
+        question: "Warehouse in Riyadh — Jeddah port and inland haul?",
+        answer:
+          "Most container imports discharge at Jeddah Islamic Port and haul inland to Riyadh (~950 km). Send bay width, eave height and wind load reference for roof panel selection. Inland summer design temperatures drive 80–100 mm roof core thickness on ambient sheds with light external colour. We quote CIF Jeddah; Riyadh truck haul is booked after customs release unless your agent arranges door delivery.",
+      },
+      {
+        question: "Cold room for dairy processing in Dammam — Eastern Province spec?",
+        answer:
+          "Clear through King Abdulaziz Port (Dammam) for shorter haul to Eastern Province sites. Chiller rooms at +2 °C to +4 °C commonly use 80–100 mm cam-lock PUF with washable internal facing. Coastal humidity favours coated fixings. Send room dimensions, washdown requirements and daily door cycles for thickness confirmation.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Which Saudi port should panels arrive at — Jeddah or Dammam?",
+        answer:
+          "Jeddah for western province, Makkah region and Riyadh inland haul. Dammam for Eastern Province, Jubail and Dammam–Khobar sites. King Abdullah Port is a carrier-specific alternative north of Jeddah — confirm routing with your forwarder before bill of lading finalisation.",
+      },
+      {
+        question: "Does SASO or SABER apply to imported sandwich panels?",
+        answer:
+          "Conformity requirements depend on product classification under the current SABER system. Your clearing agent confirms registration and certificate of conformity needs for your panel type before dispatch. We do not claim SASO certification for PHOENIXX panels from India.",
+      },
+      {
+        question: "How long is inland haul from Jeddah to Riyadh?",
+        answer:
+          "Approximately 950 km by road — typically one to two days depending on truck availability and load type. Book haulage after port release and confirm escort or oversize rules if panel lengths exceed standard flatbed limits.",
+      },
+      {
+        question: "Can panels be shipped CIF to Jeddah or Dammam?",
+        answer:
+          "Yes — we quote CIF Jeddah, Dammam or King Abdullah Port per routing, or FOB Indian port. CIF includes sea freight to the named Saudi port; local clearance, port charges and inland haulage remain the buyer's responsibility unless agreed otherwise in writing.",
+      },
+      {
+        question: "How do Saudi and UAE panel specs differ?",
+        answer:
+          "Both face extreme Gulf heat and UV, but Saudi inland Riyadh sites see drier continental peaks while UAE coastal Jebel Ali adds humidity. Port choice and inland haul patterns differ — Saudi Riyadh projects often clear Jeddah then haul 950 km inland. Send the installation city on enquiry.",
+      },
+      {
+        question: "What thickness suits Saudi freezer rooms?",
+        answer:
+          "Freezer rooms at −18 °C to −22 °C in high ambient commonly use 100–150 mm PUF cam-lock panels depending on room size and door frequency. Inland Riyadh summer design temperature often drives thicker cores than coastal sites — send layout and target temperature.",
+      },
+      {
+        question: "Do you supply installation teams in Saudi Arabia?",
+        answer:
+          "We manufacture and export panels from India. Installation is handled by your local contractor. We provide numbered panels, layout drawings and remote technical support during assembly.",
+      },
+    ],
+    draft: false,
+    updatedAt: "2026-09-15",
   },
 ];

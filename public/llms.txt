@@ -39,6 +39,7 @@ Legal entity: NXT Phoenixx SmartBuild LLP. Manufacturing: Ahmedabad, Gujarat, In
 
 ## Export
 - [Export hub](https://phoenixxglobal.com/export/)
+- [Export to Africa](https://phoenixxglobal.com/export/africa/)
 - [Export process](https://phoenixxglobal.com/export/process/)
 - [Export documentation](https://phoenixxglobal.com/export/documentation/)
 - [Packaging and container loading](https://phoenixxglobal.com/export/packaging-and-container-loading/)
@@ -56,6 +57,9 @@ Legal entity: NXT Phoenixx SmartBuild LLP. Manufacturing: Ahmedabad, Gujarat, In
 - [Angola](https://phoenixxglobal.com/export/angola/)
 - [Ethiopia](https://phoenixxglobal.com/export/ethiopia/)
 - [Nigeria](https://phoenixxglobal.com/export/nigeria/)
+- [South Africa](https://phoenixxglobal.com/export/south-africa/)
+- [United Arab Emirates](https://phoenixxglobal.com/export/uae/)
+- [Saudi Arabia](https://phoenixxglobal.com/export/saudi-arabia/)
 
 ## Cities
 - [Nairobi (kenya)](https://phoenixxglobal.com/export/kenya/nairobi/)
@@ -86,6 +90,14 @@ Legal entity: NXT Phoenixx SmartBuild LLP. Manufacturing: Ahmedabad, Gujarat, In
 - [Estimating Panel Quantity](https://phoenixxglobal.com/resources/guides/estimating-panel-quantity/)
 - [Installation Sequence Mistakes](https://phoenixxglobal.com/resources/guides/installation-sequence-mistakes/)
 - [Evaluating Sandwich Panel Suppliers](https://phoenixxglobal.com/resources/guides/evaluating-sandwich-panel-suppliers/)
+- [What Affects PUF Panel Price](https://phoenixxglobal.com/resources/guides/what-affects-puf-panel-price/)
+- [Sandwich Panel RFQ from India](https://phoenixxglobal.com/resources/guides/sandwich-panel-rfq-from-india/)
+- [Landed Cost of Imported PUF Panels](https://phoenixxglobal.com/resources/guides/landed-cost-of-imported-puf-panels/)
+- [FM Approval and Sandwich Panels](https://phoenixxglobal.com/resources/guides/fm-approval-and-sandwich-panels/)
+- [Custom Sandwich Panels from India](https://phoenixxglobal.com/resources/guides/custom-sandwich-panels-from-india/)
+- [PEB Warehouse with PUF Panels](https://phoenixxglobal.com/resources/guides/peb-warehouse-with-puf-panels/)
+- [Sandwich Panel Buyer's Guide](https://phoenixxglobal.com/resources/guides/sandwich-panel-buyers-guide/)
+- [Mistakes Importing Sandwich Panels from India](https://phoenixxglobal.com/resources/guides/mistakes-importing-sandwich-panels-from-india/)
 
 ## Comparisons
 - [Comparisons hub](https://phoenixxglobal.com/resources/comparisons/)
@@ -97,6 +109,10 @@ Legal entity: NXT Phoenixx SmartBuild LLP. Manufacturing: Ahmedabad, Gujarat, In
 - [PUF vs PIR for Cold Storage](https://phoenixxglobal.com/resources/comparisons/puf-vs-pir-cold-storage/)
 - [Panel Roof vs Conventional Roof](https://phoenixxglobal.com/resources/comparisons/panel-roof-vs-conventional-roof/)
 - [PEB vs RCC Construction](https://phoenixxglobal.com/resources/comparisons/peb-vs-rcc/)
+- [PUF vs PIR vs Rockwool Panels](https://phoenixxglobal.com/resources/comparisons/puf-vs-pir-vs-rockwool/)
+- [Manufacturer vs Trading Company](https://phoenixxglobal.com/resources/comparisons/manufacturer-vs-trader/)
+- [50 vs 75 vs 100 mm PUF Panels](https://phoenixxglobal.com/resources/comparisons/50mm-vs-75mm-vs-100mm-puf-panels/)
+- [PPGI vs PPGL Facings](https://phoenixxglobal.com/resources/comparisons/ppgi-vs-ppgl-sandwich-panels/)
 
 ## Blog
 - [Blog hub](https://phoenixxglobal.com/blog/)
@@ -114,6 +130,7 @@ Legal entity: NXT Phoenixx SmartBuild LLP. Manufacturing: Ahmedabad, Gujarat, In
 - [Pre-Shipment Inspection Checklist for Panel Export Orders](https://phoenixxglobal.com/blog/pre-shipment-inspection-checklist/)
 
 ## Resources
+- [Resources hub](https://phoenixxglobal.com/resources/)
 - [FAQs](https://phoenixxglobal.com/resources/faqs/)
 - [Glossary](https://phoenixxglobal.com/resources/glossary/)
 - [Panel selection tool](https://phoenixxglobal.com/resources/panel-selection/)

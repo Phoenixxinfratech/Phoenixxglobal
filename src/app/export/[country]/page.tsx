@@ -1,5 +1,7 @@
 import { notFound } from "next/navigation";
 import {
+  BuyerChecklist,
+  BuyerScenarios,
   CtaBand,
   FaqAccordion,
   HoldingPage,
@@ -237,6 +239,10 @@ export default async function ExportCountryPage({ params }: PageProps) {
         <QuickAnswer heading="Quick answer" text={country.quickAnswer} />
       ) : null}
 
+      {country.buyerChecklist?.length ? (
+        <BuyerChecklist items={country.buyerChecklist} />
+      ) : null}
+
       {country.marketContext ? (
         <Section background="white">
           <Container>
@@ -458,6 +464,10 @@ export default async function ExportCountryPage({ params }: PageProps) {
           </Container>
         </Section>
       )}
+
+      {country.buyerScenarios?.length ? (
+        <BuyerScenarios scenarios={country.buyerScenarios} />
+      ) : null}
 
       {country.faqs.length > 0 ? (
         <FaqAccordion

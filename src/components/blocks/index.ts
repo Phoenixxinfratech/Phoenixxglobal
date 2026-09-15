@@ -1,4 +1,6 @@
 export { ApplicationShowcase } from "./ApplicationShowcase";
+export { BuyerChecklist } from "./BuyerChecklist";
+export { BuyerScenarios } from "./BuyerScenarios";
 export { ComparisonTable } from "./ComparisonTable";
 export { CtaBand } from "./CtaBand";
 export { DownloadBlock } from "./DownloadBlock";
