@@ -29,9 +29,6 @@ export default function NotFound() {
             <InlineLink href={routes.export}>Export from India</InlineLink>
           </li>
           <li>
-            <InlineLink href={routes.contact}>Contact our team</InlineLink>
-          </li>
-          <li>
             <InlineLink href={routes.requestQuote}>Request a quotation</InlineLink>
           </li>
           <li>

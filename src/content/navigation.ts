@@ -275,7 +275,6 @@ export const primaryNav: NavGroup[] = [
       { label: "Quality & Testing", href: "/quality-and-testing/" },
       { label: "Projects", href: "/projects/" },
       { label: "Careers", href: "/careers/" },
-      { label: "Contact", href: "/contact/" },
     ],
   },
 ];

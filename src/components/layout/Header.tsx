@@ -141,6 +141,8 @@ export function Header() {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const whatsappHref = buildWhatsAppHref();
+  const phone = confirmed(site.contact.phonePrimary);
+  const callHref = phone ? `tel:${phone.replace(/\s/g, "")}` : null;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -205,6 +207,11 @@ export function Header() {
             </nav>
 
             <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3">
+              {callHref ? (
+                <Button href={callHref} variant="ghost" size="sm" className="hidden sm:inline-flex">
+                  Call
+                </Button>
+              ) : null}
               {whatsappHref ? (
                 <Button
                   href={whatsappHref}

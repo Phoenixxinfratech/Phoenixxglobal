@@ -24,8 +24,8 @@ Nothing ships until every row is **Done**. Blocked items name the owner. Enginee
 | Submit sitemap to Google Search Console | Blocked — GSC property | Client |
 | Submit sitemap to Bing Webmaster | Blocked — Bing property | Client |
 | Search Console + Bing verified | Blocked | Client |
-| GA4 receiving live data | Blocked — `NEXT_PUBLIC_GA4_MEASUREMENT_ID` empty | Client |
-| Clarity live | Blocked — `NEXT_PUBLIC_CLARITY_PROJECT_ID` empty | Client |
+| GA4 receiving live data | Deferred until production deploy | Client |
+| Clarity live | Deferred until production deploy | Client |
 | Structured data valid on templates | Done (`audit:schema`) | Engineering |
 | Indexing requested for `/`, `/products/puf-panels/`, `/export/kenya/`, `/resources/panel-selection/` | Blocked on GSC | Client |
 
@@ -33,7 +33,7 @@ Nothing ships until every row is **Done**. Blocked items name the owner. Enginee
 
 | Item | Status | Owner |
 | --- | --- | --- |
-| Phone, WhatsApp and email tested on a real device | Blocked — still `[CONFIRM]` in `src/config/site.ts`. Call and WhatsApp CTAs are hidden until confirmed. | Client |
+| Phone, WhatsApp and email tested on a real device | Ready to test — Call + WhatsApp live on +91 8866556879. Email is not shown. Confirm on a real phone before launch. | Client |
 | Buyer auto-reply in Inbox, not spam | Blocked — Resend + SPF/DKIM/DMARC | Client |
 | Internal alert on the sales phone | Blocked — WhatsApp templates / alert email | Client |
 | Sheets ledger populating | Blocked — service account | Client |
@@ -47,7 +47,7 @@ Nothing ships until every row is **Done**. Blocked items name the owner. Enginee
 | Item | Status | Owner |
 | --- | --- | --- |
 | OPEN-ITEMS business facts resolved **or** dependent UI hidden | Done for UI hiding via `confirmed()`. Facts themselves still open. | Client |
-| Legal pages reviewed | Draft only — privacy updated in Phase 4, still pending lawyer | Client / counsel |
+| Lawyer review of privacy/terms | Deferred — client will review later. Draft stays marked pending. | Client / counsel |
 | No placeholder images on live indexed pages | Company pages still use stock until plant photos arrive (`docs/IMAGE-BRIEF.md`) | Client |
 | No unverified claim rendered | Done — sentinels hidden | Engineering |
 

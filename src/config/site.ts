@@ -20,10 +20,13 @@ export const site = {
   entityType: "LLP",
 
   contact: {
-    salesEmail: "[CONFIRM]",
-    exportEmail: "[CONFIRM]",
-    phonePrimary: "[CONFIRM]",
-    whatsapp: "[CONFIRM]",
+    salesEmail: "info@phoenixxsmartbuild.com",
+    exportEmail: "info@phoenixxsmartbuild.com",
+    /** Same number for voice call and WhatsApp. Do not print the email in the UI. */
+    phonePrimary: "+91 8866556879",
+    whatsapp: "+91 8866556879",
+    /** Email is for forms and auto-replies only — not a public contact method. */
+    publishEmail: false,
     workingHours: "Mon–Sat, 9:30 AM – 6:30 PM IST",
   },
 

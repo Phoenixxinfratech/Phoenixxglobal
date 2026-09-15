@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { site } from "@/config/site";
 import { Button } from "@/components/ui";
 import { confirmed } from "@/lib/confirmed";
-import { requestQuoteUrl } from "@/lib/links";
+import { requestQuoteUrl, whatsAppUrl } from "@/lib/links";
 import { track } from "@/lib/analytics/track";
 import { cn } from "@/lib/cn";
 
@@ -15,6 +15,7 @@ type StickyCtaBarProps = {
 
 export function StickyCtaBar({ productSlug, className }: StickyCtaBarProps) {
   const phone = confirmed(site.contact.phonePrimary);
+  const whatsapp = confirmed(site.contact.whatsapp);
   const [visible, setVisible] = useState(false);
   const [hiddenByForm, setHiddenByForm] = useState(false);
 
@@ -56,27 +57,44 @@ export function StickyCtaBar({ productSlug, className }: StickyCtaBarProps) {
         className,
       )}
     >
-      <div className="mx-auto flex max-w-[1280px] gap-3 px-3">
+      <div className="mx-auto flex max-w-[1280px] flex-col gap-2 px-3">
         <Button
           href={requestQuoteUrl({ product: productSlug, variant: "quote" })}
           variant="primary"
           size="md"
-          className="flex-1"
+          className="w-full"
           onClick={() => track("cta_click", { location: "sticky_mobile", product: productSlug })}
         >
           Get a panel specification and quote
         </Button>
-        {phone ? (
-          <Button
-            href={`tel:${phone.replace(/\s/g, "")}`}
-            variant="secondary"
-            size="md"
-            className="flex-1"
-            onClick={() => track("call_click", { location: "sticky_mobile" })}
-          >
-            Call
-          </Button>
-        ) : null}
+        <div className="flex gap-3">
+          {phone ? (
+            <Button
+              href={`tel:${phone.replace(/\s/g, "")}`}
+              variant="secondary"
+              size="md"
+              className="flex-1"
+              onClick={() => track("call_click", { location: "sticky_mobile" })}
+            >
+              Call
+            </Button>
+          ) : null}
+          {whatsapp ? (
+            <Button
+              href={whatsAppUrl(
+                `Hello ${site.brandShort} — I would like a quotation for sandwich panels.`,
+                whatsapp,
+              )}
+              variant="whatsapp"
+              size="md"
+              className="flex-1"
+              external
+              onClick={() => track("whatsapp_click", { location: "sticky_mobile" })}
+            >
+              WhatsApp
+            </Button>
+          ) : null}
+        </div>
       </div>
     </div>
   );

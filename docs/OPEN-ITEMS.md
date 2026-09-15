@@ -2,7 +2,7 @@
 
 Items blocking full UI rendering or final publication. **Owner: Client** for all rows unless noted.
 
-> **Note:** Contact details (email, phone, WhatsApp, address) and the brand logo were promised by the client but not yet provided at build time. Components hide unconfirmed fields via `src/lib/confirmed.ts`; nothing prints `[CONFIRM]` on live pages.
+> **Note:** Email `info@phoenixxsmartbuild.com` is stored for forms and auto-replies but is **not** shown on the site. Public CTAs are Call and WhatsApp on `+91 8866556879`. Other facts (address, registrations, logo) still use `confirmed()` hiding.
 
 Regenerate sentinel rows with:
 
@@ -19,10 +19,10 @@ Then merge any new fields into the category sections below.
 | Path | Value | Owner | Notes |
 | --- | --- | --- | --- |
 | `foundedYear` | [CONFIRM] | Client | Replace sentinel with verified value before rendering in UI |
-| `contact.salesEmail` | [CONFIRM] | Client | Replace sentinel with verified value before rendering in UI |
-| `contact.exportEmail` | [CONFIRM] | Client | Replace sentinel with verified value before rendering in UI |
-| `contact.phonePrimary` | [CONFIRM] | Client | Replace sentinel with verified value before rendering in UI |
-| `contact.whatsapp` | [CONFIRM] | Client | Replace sentinel with verified value before rendering in UI |
+| `contact.salesEmail` | info@phoenixxsmartbuild.com | — | Stored for forms. **Not shown** (`publishEmail: false`). |
+| `contact.exportEmail` | info@phoenixxsmartbuild.com | — | Same inbox. Not shown. |
+| `contact.phonePrimary` | +91 8866556879 | — | Call CTA (`tel:`). Same as WhatsApp. |
+| `contact.whatsapp` | +91 8866556879 | — | WhatsApp message CTA (`wa.me`). |
 | `address.line1` | [CONFIRM] | Client | Replace sentinel with verified value before rendering in UI |
 | `address.postalCode` | [CONFIRM] | Client | Replace sentinel with verified value before rendering in UI |
 | `address.mapsUrl` | [CONFIRM] | Client | Replace sentinel with verified value before rendering in UI |
@@ -80,7 +80,7 @@ Then merge any new fields into the category sections below.
 | --- | --- | --- |
 | Project references | Client | `/projects/` publishes no case studies — references shared only with written client consent |
 | Third-party certifications | Client | `certifications.ts` empty — quality page lists in-house checks only; formal certs shared when documents exist |
-| Contact details + logo | Client | Still `[CONFIRM]` in `site.ts` — header/footer hide unconfirmed fields |
+| Contact details + logo | Client | Phone and WhatsApp live. Email stored but not published. Logo still pending. |
 
 ## Engineering follow-up (not client blockers)
 
@@ -98,10 +98,12 @@ Then merge any new fields into the category sections below.
 
 | Item | Owner | Blocks | Notes |
 | --- | --- | --- | --- |
-| Google Sheets service account | Client + Engineering | Lead ledger | Create the sheet, share it with the service-account email, set `GOOGLE_SHEETS_*` and `INTEGRATION_SHEETS_ENABLED=true`. Steps in `docs/INTEGRATIONS.md`. Until this is done, leads exist only in the server log. |
-| Resend account and verified sending domain | Client | Buyer auto-reply, internal brief | Auto-replies from an unverified domain land in spam, which silently kills the funnel. |
+| Google Sheets service account | Client + Engineering | Lead ledger | Human owner of the sheet: `phoenixxinfratech@gmail.com` (share the sheet with this Gmail as Editor). The website **cannot** log into Gmail. It needs a Google Cloud **service account** JSON (`…@….iam.gserviceaccount.com`) — share the same sheet with that email too. Steps in `docs/INTEGRATIONS.md`. |
+| Resend account and verified sending domain | Client | Buyer auto-reply, internal brief | Auto-replies from an unverified domain land in spam, which silently kills the funnel. Notify inbox when ready: `info@phoenixxsmartbuild.com`. |
 | SPF, DKIM, DMARC records | Client | Email deliverability | Launch-blocking. Records and test procedure in `docs/INTEGRATIONS.md`. |
-| WhatsApp Cloud API number and template approval | Client | WhatsApp adapter | Adapter built and **disabled**. `wa.me` links work today and need no approval. Submit `WHATSAPP_ACK_TEMPLATE` and `WHATSAPP_ALERT_TEMPLATE` bodies from `docs/INTEGRATIONS.md` / `src/lib/messages/buyerAck.ts` to Meta; keep `INTEGRATION_WHATSAPP_ENABLED=false` until both template IDs exist. |
+| WhatsApp Cloud API number and template approval | Client | WhatsApp adapter | `wa.me` links are live on `+91 8866556879`. Cloud API templates still pending Meta. Keep `INTEGRATION_WHATSAPP_ENABLED=false` until template IDs exist. |
 | CRM decision | Client | CRM adapter | Client confirmed no CRM for now — the Sheets ledger is the system of record. Adapter is built behind `CRM_PROVIDER` and stays disabled. |
-| Business phone, WhatsApp number and email | Client | Every conversion surface | Still `[CONFIRM]` in `src/config/site.ts`. The UI hides these fields while unconfirmed, so the sticky Call button and the WhatsApp path do not render. This must be resolved before launch. |
+| Business phone, WhatsApp number and email | Done | Conversion CTAs | Call + WhatsApp on `+91 8866556879`. Email not shown on the site. |
+| Lawyer review of privacy/terms | Client | Legal pages | Deferred — draft stays marked pending review. |
+| GA4 / GTM / Clarity / Search Console | Client | Analytics | Deferred until production deploy. IDs stay empty; consent bar still works. |
 | Lead ownership | Client | Routing | Confirmed: one owner for all bands, escalation to the founder. Set the real name and contact in `ROUTING` in `src/lib/leads/config.ts`. |

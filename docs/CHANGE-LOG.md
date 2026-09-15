@@ -2,6 +2,18 @@
 
 Additive Phase 1 touches made during later phases. Prefer extension over modification.
 
+## 2026-09-15 Client contact decision
+
+### File: `src/config/site.ts`
+**Change:** Email `info@phoenixxsmartbuild.com` stored; `publishEmail: false`. Call and WhatsApp both use `+91 8866556879`.
+**Reason:** Client: contact details must not show; only WhatsApp call and WhatsApp message.
+**Backwards compatible:** yes — email still available to forms and Resend env
+
+### File: Header, Footer, TopBar, MobileNav, StickyCtaBar, contact page, navigation.ts, footer.ts
+**Change:** Call + WhatsApp CTAs live. Email not rendered. "Contact" removed from nav and footer; `/contact/` form remains. Schema omits email while `publishEmail` is false.
+**Reason:** Same decision. Additions via navigation.ts / footer.ts.
+**Backwards compatible:** `/contact/` URL unchanged
+
 ## 2026-09-15 Phase 4 (Batch F)
 
 ### File: `src/app/request-a-quote/page.tsx`

@@ -4,7 +4,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Container, Heading, Section } from "@/components/ui";
 import { site } from "@/config/site";
 import { buildMetadata } from "@/lib/metadata";
-import { confirmed } from "@/lib/confirmed";
+import { confirmed, publishedEmail } from "@/lib/confirmed";
 import { routes } from "@/lib/links";
 import { breadcrumbSchema } from "@/lib/schema";
 
@@ -20,9 +20,10 @@ export const metadata = buildMetadata({
 export default function ContactPage() {
   const addressLine1 = confirmed(site.address.line1);
   const postalCode = confirmed(site.address.postalCode);
-  const salesEmail = confirmed(site.contact.salesEmail);
-  const exportEmail = confirmed(site.contact.exportEmail);
+  const salesEmail = publishedEmail();
+  const exportEmail = publishedEmail();
   const phone = confirmed(site.contact.phonePrimary);
+  const whatsapp = confirmed(site.contact.whatsapp);
   const mapsUrl = confirmed(site.address.mapsUrl);
 
   const addressParts = [
@@ -112,31 +113,44 @@ export default function ContactPage() {
                 </>
               ) : null}
 
-              {(salesEmail || exportEmail || phone) ? (
+              {(salesEmail || exportEmail || phone || whatsapp) ? (
                 <>
                   <h2 className="mt-8 text-xl font-semibold text-ink">Direct contact</h2>
                   <ul className="mt-2 space-y-1">
+                    {phone ? (
+                      <li>
+                        Call:{" "}
+                        <a href={`tel:${phone.replace(/\s/g, "")}`} className="text-ember-deep underline underline-offset-4">
+                          {phone}
+                        </a>
+                      </li>
+                    ) : null}
+                    {whatsapp ? (
+                      <li>
+                        WhatsApp:{" "}
+                        <a
+                          href={`https://wa.me/${whatsapp.replace(/\D/g, "")}`}
+                          className="text-ember-deep underline underline-offset-4"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Message on WhatsApp
+                        </a>
+                      </li>
+                    ) : null}
                     {salesEmail ? (
                       <li>
                         Sales:{" "}
-                        <a href={`mailto:${salesEmail}`} className="text-ember hover:underline">
+                        <a href={`mailto:${salesEmail}`} className="text-ember-deep underline underline-offset-4">
                           {salesEmail}
                         </a>
                       </li>
                     ) : null}
-                    {exportEmail ? (
+                    {exportEmail && exportEmail !== salesEmail ? (
                       <li>
                         Export:{" "}
-                        <a href={`mailto:${exportEmail}`} className="text-ember hover:underline">
+                        <a href={`mailto:${exportEmail}`} className="text-ember-deep underline underline-offset-4">
                           {exportEmail}
-                        </a>
-                      </li>
-                    ) : null}
-                    {phone ? (
-                      <li>
-                        Phone:{" "}
-                        <a href={`tel:${phone.replace(/\s/g, "")}`} className="text-ember hover:underline">
-                          {phone}
                         </a>
                       </li>
                     ) : null}

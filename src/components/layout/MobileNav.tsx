@@ -36,6 +36,7 @@ const FOCUSABLE_SELECTOR =
 export function MobileNav({ open, onClose }: MobileNavProps) {
   const drawerRef = useRef<HTMLDivElement>(null);
   const whatsappHref = buildWhatsAppHref();
+  const phone = confirmed(site.contact.phonePrimary);
 
   useEffect(() => {
     if (!open) return;
@@ -170,6 +171,11 @@ export function MobileNav({ open, onClose }: MobileNavProps) {
             <Button href="/request-a-quote/" variant="primary" size="md" className="w-full">
               Request a Quote
             </Button>
+            {phone ? (
+              <Button href={`tel:${phone.replace(/\s/g, "")}`} variant="secondary" size="md" className="w-full">
+                Call
+              </Button>
+            ) : null}
             {whatsappHref ? (
               <Button
                 href={whatsappHref}

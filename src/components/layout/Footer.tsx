@@ -2,7 +2,7 @@ import NextLink from "next/link";
 import { Clock, Mail, MapPin, Phone } from "lucide-react";
 import { site } from "@/config/site";
 import { getFooterData, footerCompanyDescription } from "@/content/footer";
-import { confirmed } from "@/lib/confirmed";
+import { confirmed, publishedEmail } from "@/lib/confirmed";
 import { currentYear } from "@/lib/format";
 import { Container } from "@/components/ui";
 
@@ -75,8 +75,7 @@ export function Footer() {
     popularSearches,
   } = getFooterData();
 
-  const exportEmail = confirmed(site.contact.exportEmail);
-  const salesEmail = confirmed(site.contact.salesEmail);
+  const contactEmail = publishedEmail();
   const phone = confirmed(site.contact.phonePrimary);
   const whatsappHref = buildWhatsAppHref();
   const hours = confirmed(site.contact.workingHours);
@@ -105,7 +104,6 @@ export function Footer() {
     iec ? `IEC ${iec}` : null,
   ].filter(Boolean);
 
-  const contactEmail = exportEmail ?? salesEmail;
   const hasContactStrip = Boolean(
     phone || contactEmail || whatsappHref || hours || mapsUrl,
   );
@@ -177,7 +175,7 @@ export function Footer() {
                   className="inline-flex items-center gap-2 transition-colors hover:text-white"
                 >
                   <Phone className="size-4 shrink-0" aria-hidden="true" />
-                  {phone}
+                  Call
                 </a>
               ) : null}
               {contactEmail ? (

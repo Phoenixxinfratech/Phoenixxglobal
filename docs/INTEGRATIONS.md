@@ -28,6 +28,10 @@ Set each flag to `true` in the hosting dashboard (Netlify → Site configuration
 
 This is the cheapest reliable CRM for a three-person team. One row per enquiry. Readable on a phone.
 
+The team’s Google login for reading the sheet is **phoenixxinfratech@gmail.com**. Share the finished sheet with that Gmail as Editor so people can open it on their phones.
+
+The website cannot sign in as that Gmail. Google requires a **service account** (an email that looks like `phoenixx-leads@PROJECT.iam.gserviceaccount.com`). Create that in Google Cloud, download the JSON key, and share the **same** sheet with the service-account email as Editor too.
+
 ### Create the sheet
 
 1. Open Google Drive. Create a Google Sheet named `PHOENIXX leads`.
@@ -77,8 +81,8 @@ Two messages per enquiry: the buyer acknowledgement, and the internal lead brief
 2. Add and verify the sending domain (`phoenixxglobal.com`). Resend will show DNS records.
 3. Create an API key. Put it in `RESEND_API_KEY`.
 4. Set `LEAD_FROM_EMAIL` to an address on that verified domain, e.g. `enquiries@phoenixxglobal.com`.
-5. Set `LEAD_REPLY_TO_EMAIL` to the inbox the team actually reads.
-6. Set `LEAD_NOTIFY_EMAIL` to one or more internal inboxes, comma-separated.
+5. Set `LEAD_REPLY_TO_EMAIL` to `info@phoenixxsmartbuild.com` (the inbox the team reads).
+6. Set `LEAD_NOTIFY_EMAIL` to `info@phoenixxsmartbuild.com`.
 
 ```
 INTEGRATION_EMAIL_ENABLED=true

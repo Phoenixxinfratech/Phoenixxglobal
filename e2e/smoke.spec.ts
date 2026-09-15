@@ -20,7 +20,7 @@ test.describe("site smoke", () => {
     const response = await page.goto("/this-path-does-not-exist/");
     expect(response?.status()).toBe(404);
     await expect(page.getByRole("heading", { name: "Page not found" })).toBeVisible();
-    await expect(page.getByRole("link", { name: /Request a quotation/i })).toBeVisible();
+    await expect(page.getByRole("link", { name: /Request a quotation/i }).first()).toBeVisible();
   });
 
   test("no sentinel strings render on live templates", async ({ page }) => {
@@ -49,13 +49,12 @@ test.describe("site smoke", () => {
     expect(productFooter).toBe(homeFooter);
   });
 
-  test("quote CTA is present; WhatsApp and Call hide while numbers are unconfirmed", async ({
-    page,
-  }) => {
-    await page.goto("/products/puf-panels/");
+  test("Call and WhatsApp are visible; email is not published", async ({ page }) => {
+    await page.goto("/");
     await dismissConsent(page);
+    await expect(page.getByRole("link", { name: /^WhatsApp$/i }).first()).toBeVisible();
+    await expect(page.getByRole("link", { name: /^Call$/i }).first()).toBeVisible();
+    expect(await page.content()).not.toContain("info@phoenixxsmartbuild.com");
     await expect(page.getByRole("link", { name: /Get a panel specification and quote/i }).first()).toBeVisible();
-    await expect(page.getByRole("link", { name: /^WhatsApp$/i })).toHaveCount(0);
-    await expect(page.getByRole("link", { name: /^Call$/i })).toHaveCount(0);
   });
 });

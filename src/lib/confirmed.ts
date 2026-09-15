@@ -2,6 +2,8 @@
  * Sentinel values that must never appear in rendered UI.
  * Components call confirmed() / isConfirmed() before rendering any site.ts field.
  */
+import { site } from "@/config/site";
+
 export const UNCONFIRMED = ["[CONFIRM]", "VERIFY_REQUIRED"] as const;
 
 export function isConfirmed(value: unknown): value is string {
@@ -14,6 +16,12 @@ export function isConfirmed(value: unknown): value is string {
 /** Returns the value if confirmed, otherwise null (caller must render nothing). */
 export function confirmed(value: unknown): string | null {
   return isConfirmed(value) ? value.trim() : null;
+}
+
+/** Public mailto — null when the client has asked not to show email. */
+export function publishedEmail(): string | null {
+  if (!site.contact.publishEmail) return null;
+  return confirmed(site.contact.salesEmail) ?? confirmed(site.contact.exportEmail);
 }
 
 /** Dev-only guard: throws if a sentinel string reaches the DOM path. */

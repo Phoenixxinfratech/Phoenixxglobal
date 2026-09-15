@@ -40,11 +40,11 @@ export function organizationSchema(): JsonLd {
   if (isConfirmed(site.address.postalCode)) address.postalCode = site.address.postalCode;
 
   const contactPoints: JsonLd[] = [];
-  if (isConfirmed(site.contact.salesEmail) || isConfirmed(site.contact.phonePrimary)) {
+  if (isConfirmed(site.contact.phonePrimary) || (site.contact.publishEmail && isConfirmed(site.contact.salesEmail))) {
     contactPoints.push({
       "@type": "ContactPoint",
       contactType: "sales",
-      ...(isConfirmed(site.contact.salesEmail)
+      ...(site.contact.publishEmail && isConfirmed(site.contact.salesEmail)
         ? { email: site.contact.salesEmail }
         : {}),
       ...(isConfirmed(site.contact.phonePrimary)
@@ -54,7 +54,7 @@ export function organizationSchema(): JsonLd {
       areaServed: "Worldwide",
     });
   }
-  if (isConfirmed(site.contact.exportEmail)) {
+  if (site.contact.publishEmail && isConfirmed(site.contact.exportEmail)) {
     contactPoints.push({
       "@type": "ContactPoint",
       contactType: "export sales",

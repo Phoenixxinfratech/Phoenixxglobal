@@ -18,7 +18,6 @@ export const footerPopularSearches: FooterLink[] = [
   { label: "Sandwich panel FAQs", href: "/resources/faqs/" },
   { label: "Panel glossary — U-value and cam-lock", href: "/resources/glossary/" },
   { label: "Request a panel quotation", href: "/request-a-quote/" },
-  { label: "Contact export team", href: "/contact/" },
   { label: "Cold storage building solutions", href: "/solutions/cold-storage/" },
   { label: "All insulated panel products", href: "/products/" },
   { label: "Industry solutions hub", href: "/solutions/" },
@@ -63,7 +62,7 @@ export function getFooterData() {
     { label: "About", href: "/about/" },
     { label: "Projects", href: "/projects/" },
     { label: "Careers", href: "/careers/" },
-    { label: "Contact", href: "/contact/" },
+    { label: "Request a quotation", href: "/request-a-quote/" },
   ];
 
   return {
