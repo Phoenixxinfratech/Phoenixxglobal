@@ -12,7 +12,7 @@ type QuoteButtonProps = {
 
 export function QuoteButton({
   productSlug,
-  label = "Get a quote",
+  label = "Get a panel specification and quote",
   className,
   size = "md",
 }: QuoteButtonProps) {

@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { Button, Select } from "@/components/ui";
+import { track } from "@/lib/analytics/track";
 import {
   APPLICATION_OPTIONS,
   CLIMATE_OPTIONS,
@@ -33,6 +34,13 @@ export function PanelSelectionTool({ onRecommend }: PanelSelectionToolProps) {
   const [fireRequirement, setFireRequirement] = useState<FireRequirement>("standard");
   const [span, setSpan] = useState<SpanBand>("medium");
   const [hygiene, setHygiene] = useState<HygieneLevel>("standard");
+  const [started, setStarted] = useState(false);
+
+  function markStarted() {
+    if (started) return;
+    setStarted(true);
+    track("selection_tool_start");
+  }
 
   const result = useMemo(
     () =>
@@ -58,6 +66,7 @@ export function PanelSelectionTool({ onRecommend }: PanelSelectionToolProps) {
   ].join("\n");
 
   function handleQuotePrefill() {
+    track("selection_tool_complete", { product: result.productSlug });
     onRecommend?.({
       productSlug: result.productSlug,
       message: recommendationMessage,
@@ -75,7 +84,10 @@ export function PanelSelectionTool({ onRecommend }: PanelSelectionToolProps) {
         structural engineer.
       </p>
 
-      <div className="mt-6 grid gap-5 md:grid-cols-2">
+      <div
+        className="mt-6 grid gap-5 md:grid-cols-2"
+        onChangeCapture={markStarted}
+      >
         <Select
           label="Application"
           value={application}

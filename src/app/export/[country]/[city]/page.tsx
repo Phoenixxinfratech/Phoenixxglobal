@@ -429,6 +429,8 @@ export default async function ExportCityPage({ params }: PageProps) {
       <LeadFormSection
         variant="quote"
         defaultProduct={primaryProduct}
+        defaultCountry={country.name}
+        defaultCity={city.name}
         heading={`Request a ${city.name} export quotation`}
         background="white"
         className="pb-16 md:pb-24"

@@ -6,6 +6,8 @@ type LeadFormSectionProps = {
   variant: LeadVariant;
   defaultProduct?: string;
   defaultMessage?: string;
+  defaultCountry?: string;
+  defaultCity?: string;
   heading?: string;
   background?: "paper" | "white";
   className?: string;
@@ -22,6 +24,8 @@ export function LeadFormSection({
   variant,
   defaultProduct,
   defaultMessage,
+  defaultCountry,
+  defaultCity,
   heading,
   background = "paper",
   className,
@@ -38,6 +42,8 @@ export function LeadFormSection({
           variant={variant}
           defaultProduct={defaultProduct}
           defaultMessage={defaultMessage}
+          defaultCountry={defaultCountry}
+          defaultCity={defaultCity}
         />
       </Container>
     </Section>

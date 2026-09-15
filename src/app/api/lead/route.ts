@@ -2,6 +2,7 @@ import { promises as fs } from "fs";
 import path from "path";
 import { NextResponse } from "next/server";
 import { dispatchLead } from "@/lib/integrations";
+import { sendGenerateLead } from "@/lib/analytics/measurementProtocol";
 import { ANTI_SPAM } from "@/lib/leads/config";
 import { buildLead } from "@/lib/leads/build";
 import {
@@ -213,6 +214,10 @@ export async function POST(request: Request) {
         detail: error instanceof Error ? error.message : String(error),
       }),
     );
+  }
+
+  if (lead.band !== "spam") {
+    void sendGenerateLead(lead);
   }
 
   return NextResponse.json({

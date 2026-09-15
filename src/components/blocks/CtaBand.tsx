@@ -22,7 +22,7 @@ const VARIANT_DEFAULTS: Record<
   quote: {
     heading: "Ready to specify your project?",
     copy: "Send us your room dimensions, temperature target, and delivery port. We respond with panel recommendations and export pricing within one business day.",
-    quoteLabel: "Get a quote",
+    quoteLabel: "Get a panel specification and quote",
     background: "paper",
   },
   consult: {

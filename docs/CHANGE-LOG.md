@@ -2,6 +2,28 @@
 
 Additive Phase 1 touches made during later phases. Prefer extension over modification.
 
+## 2026-09-15 Phase 4 (Batch D)
+
+### File: `src/lib/analytics/*`, `src/components/analytics/AnalyticsRoot.tsx`, `src/app/layout.tsx`
+**Change:** Consent bar (reject is real; DNT respected); GTM/GA4/Clarity load `afterInteractive` only after grant; typed `track()` helper; scroll_75.
+**Reason:** Phase 4 Section 9. Scripts must not load without consent.
+**Backwards compatible:** yes — scripts no-op when IDs are empty
+
+### File: `src/app/api/lead/route.ts`
+**Change:** Fire GA4 Measurement Protocol `generate_lead` after dispatch, keyed by lead id.
+**Reason:** Ad-blocked sessions still register a conversion.
+**Backwards compatible:** yes — skipped when `GA4_API_SECRET` is empty
+
+### File: `LeadForm.tsx`, `WhatsAppButton.tsx`, `StickyCtaBar.tsx`, `QuoteButton.tsx`, `CtaBand.tsx`, `LeadFormSection.tsx`, country/city pages
+**Change:** form_start / form_submit / generate_lead / whatsapp_click / cta_click / call_click. Sticky bar hides when the form is on screen. Default CTA label states the outcome. Country/city forms pre-select market.
+**Reason:** Phase 4 Section 10 CRO on highest-intent templates.
+**Backwards compatible:** yes for form fields; CTA label is an intentional copy change on quote buttons
+
+### File: `src/lib/experiments.ts`, `docs/ANALYTICS.md`, `docs/EXPERIMENTS.md`
+**Change:** 50/50 helper; taxonomy and dashboard spec; explicit "no experiment running" until traffic exists.
+**Reason:** Phase 4 Sections 9–10.
+**Backwards compatible:** n/a
+
 ## 2026-09-15 Phase 4 (Batch C)
 
 ### File: `src/lib/messages/followUp.ts`, `src/lib/leads/sequence.ts`, `src/lib/leads/workingHours.ts`

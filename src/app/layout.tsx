@@ -3,6 +3,7 @@ import { Archivo, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import { TopBar, Header, Footer } from "@/components/layout";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { WhatsAppButton, StickyCtaBar } from "@/components/conversion";
+import { AnalyticsRoot } from "@/components/analytics/AnalyticsRoot";
 import { organizationSchema, websiteSchema } from "@/lib/schema";
 import { site } from "@/config/site";
 import { seo } from "@/config/seo";
@@ -64,7 +65,7 @@ export default function RootLayout({
         <Footer />
         <WhatsAppButton />
         <StickyCtaBar />
-        {/* GTM stub — Phase 4: load via next/script afterInteractive when ID is set */}
+        <AnalyticsRoot />
       </body>
     </html>
   );

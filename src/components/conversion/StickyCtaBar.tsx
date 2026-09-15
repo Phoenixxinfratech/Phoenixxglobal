@@ -5,6 +5,7 @@ import { site } from "@/config/site";
 import { Button } from "@/components/ui";
 import { confirmed } from "@/lib/confirmed";
 import { requestQuoteUrl } from "@/lib/links";
+import { track } from "@/lib/analytics/track";
 import { cn } from "@/lib/cn";
 
 type StickyCtaBarProps = {
@@ -15,6 +16,7 @@ type StickyCtaBarProps = {
 export function StickyCtaBar({ productSlug, className }: StickyCtaBarProps) {
   const phone = confirmed(site.contact.phonePrimary);
   const [visible, setVisible] = useState(false);
+  const [hiddenByForm, setHiddenByForm] = useState(false);
 
   useEffect(() => {
     function onScroll() {
@@ -32,7 +34,20 @@ export function StickyCtaBar({ productSlug, className }: StickyCtaBarProps) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  if (!visible) return null;
+  useEffect(() => {
+    const form = document.querySelector("[data-lead-form]");
+    if (!form) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setHiddenByForm(entry?.isIntersecting ?? false);
+      },
+      { threshold: 0.15 },
+    );
+    observer.observe(form);
+    return () => observer.disconnect();
+  }, []);
+
+  if (!visible || hiddenByForm) return null;
 
   return (
     <div
@@ -47,11 +62,18 @@ export function StickyCtaBar({ productSlug, className }: StickyCtaBarProps) {
           variant="primary"
           size="md"
           className="flex-1"
+          onClick={() => track("cta_click", { location: "sticky_mobile", product: productSlug })}
         >
-          Get quote
+          Get a panel specification and quote
         </Button>
         {phone ? (
-          <Button href={`tel:${phone.replace(/\s/g, "")}`} variant="secondary" size="md" className="flex-1">
+          <Button
+            href={`tel:${phone.replace(/\s/g, "")}`}
+            variant="secondary"
+            size="md"
+            className="flex-1"
+            onClick={() => track("call_click", { location: "sticky_mobile" })}
+          >
             Call
           </Button>
         ) : null}

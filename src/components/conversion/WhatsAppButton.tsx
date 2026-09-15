@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { site } from "@/config/site";
 import { Button } from "@/components/ui";
 import { confirmed } from "@/lib/confirmed";
+import { track } from "@/lib/analytics/track";
 import { whatsAppUrl } from "@/lib/links";
 import { cn } from "@/lib/cn";
 
@@ -53,6 +54,7 @@ export function WhatsAppButton({ className, prefilledMessage }: WhatsAppButtonPr
         aria-label="Chat on WhatsApp"
         className="shadow-lg"
         onClick={() => {
+          track("whatsapp_click", { location: "floating" });
           const url = whatsAppUrl(buildWhatsAppMessage(prefilledMessage), whatsapp);
           window.open(url, "_blank", "noopener,noreferrer");
         }}

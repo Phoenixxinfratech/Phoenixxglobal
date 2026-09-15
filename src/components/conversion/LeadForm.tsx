@@ -10,6 +10,7 @@ import { confirmed } from "@/lib/confirmed";
 import { captureAttribution } from "@/lib/leads/attribution";
 import { RESPONSE_PROMISE } from "@/lib/leads/config";
 import { dialCodeForCountry } from "@/lib/leads/phone";
+import { track } from "@/lib/analytics/track";
 import { whatsAppUrl } from "@/lib/links";
 import {
   isLeadSubmitTooFast,
@@ -126,6 +127,7 @@ export function LeadForm({
   const [isSuccess, setIsSuccess] = useState(false);
   const [leadReference, setLeadReference] = useState<string | null>(null);
   const [formStartedAt] = useState(() => Date.now());
+  const [started, setStarted] = useState(false);
 
   const copy = VARIANT_COPY[variant];
   const whatsapp = confirmed(site.contact.whatsapp);
@@ -210,6 +212,10 @@ export function LeadForm({
 
       setLeadReference(data.leadId ?? null);
       setIsSuccess(true);
+      track("form_submit", { variant, lead_id: data.leadId });
+      if (data.leadId) {
+        track("generate_lead", { variant, lead_id: data.leadId });
+      }
     } catch {
       setSubmitError("Network error — check your connection and try again.");
     }
@@ -262,6 +268,11 @@ export function LeadForm({
     <form
       data-lead-form
       onSubmit={handleSubmit(onSubmit)}
+      onFocusCapture={() => {
+        if (started) return;
+        setStarted(true);
+        track("form_start", { variant });
+      }}
       className={cn("space-y-5 rounded-[2px] border border-line bg-white p-6 md:p-8", className)}
       noValidate
     >
